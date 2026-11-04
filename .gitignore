@@ -25,3 +25,6 @@ __pycache__/
 
 # editor/agent session config
 .claude/
+
+# local copy/symlink of the ONNX repo for testing Mode 2 of the web app against http://localhost (weights never live in docs/)
+docs/models/

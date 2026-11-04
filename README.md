@@ -198,6 +198,23 @@ $P stock_reload.py --edit g23v3 --set practice --ids data/practice_stock.ids --l
 
 The raw activation captures (`runs/*.npz`, 674 MB) and the full exported checkpoints (`artifacts/`, 1.7 GB each) are not in this repository; every per-pass summary (`runs/*.json`), the ledger, the notebook and every candidate's closed-form vectors are. All 12 candidates and controls rebuild bit-exactly from their `edits/<label>.vectors.npz` + `.spec.json` via `apply_g23v3.build` (verified against the original `.npz` snapshots).
 
+### Interactive: the web app (GitHub Pages)
+
+[scasella.github.io/qwen3.5-toolpatch](https://scasella.github.io/qwen3.5-toolpatch/) is a static two-mode app built from this repository (`docs/`):
+
+* **Mode 1, circuit explorer (no download).** Every benchmark prompt (224: practice, selection, renamed A/B, final-split proxy, two prose sets) with the
+  recorded outputs of original / v1 / v2 / g23v3 / random control side by side, and an exact closed-form readout of the edited layer-23 SwiGLU →
+  final RMSNorm → unembedding at the decision position that is recomputed as you drag a₁, a₂, λ, λ₂: neuron activations, gate components, the
+  first-token distribution, and the two neurons' activity along the original model's whole generation. The data bundle
+  (`docs/data/circuit_traces.json`, `scripts/export_circuit_traces.py`) comes from a fresh, non-budgeted tap of the original model plus the campaign's
+  `runs/`; the readout reproduces the recorded first token of g23v3 on 224/224 prompts (v2 208/208, v1 176/176, random 64/64) and matches a direct
+  recomputation to 1e-13.
+* **Mode 2, live WebGPU runner.** Real generation of both models in the browser (Transformers.js + ONNX Runtime Web) from
+  [`scasella91/Qwen3.5-0.8B-toolpatch-g23v3-ONNX`](https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v3-ONNX): one fp16 download, the edited
+  model is produced in memory by writing the 6,142 edited values into the layer-23 tensors (SHA-256 checked against the published edited file).
+  Built by `scripts/export_webgpu_onnx.py`, which also measures why fp16 and not 4-bit: with a q4 backbone the layer-23 input drifts to cosine 0.89
+  with the BF16 activations and the abstain gate closes, so the edit does not transfer (fp16: 0.99, gate sign 8/8).
+
 ## 6. Repository layout
 
 ```
@@ -219,6 +236,10 @@ analysis/             CPU-only localization: lens, dla, neurons, separability, f
 benchmark/ eval/ runtime/ patches/ interventions/ environment/   harness reused from the earlier campaigns (renderer, strict scorer,
                       budget + lock + memory guard, safetensors inspection, architecture manifest)
 scripts/publish_release.sh      GitHub + Hugging Face publication (dry run by default)
+scripts/make_blog_figures.py, scripts/make_fig4_trace.py, scripts/build_blog_html.py   blog post figures and HTML (blog/, docs/blog.html)
+scripts/export_circuit_traces.py (+ circuit_items.py)   data bundle of the web app's circuit explorer (docs/data/)
+scripts/export_webgpu_onnx.py   fp16 ONNX pair + patch manifest for the in-browser runner; --drift / --validate checks on ORT
+docs/                 GitHub Pages site: index.html / app.js / worker.js / styles.css (the app), blog.html, figures/, data/
 ```
 
 ## 7. Accounting and provenance

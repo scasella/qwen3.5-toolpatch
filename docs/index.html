@@ -1,1 +1,136 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=blog.html"><title>Redirecting…</title></head><body><a href="blog.html">Rewiring Two Dead Neurons (blog post)</a></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two-Neuron Circuit Explorer: Qwen3.5-0.8B vs g23v3</title>
+<meta name="description" content="Interactively compare the original Qwen3.5-0.8B with the g23v3 two-neuron layer-23 weight edit: recorded benchmark outputs, a real-time exact simulator of the edited circuit, and a live in-browser WebGPU runner.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='10' cy='16' r='6' fill='%230f766e'/%3E%3Ccircle cx='23' cy='16' r='6' fill='%23b45309'/%3E%3C/svg%3E">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <span class="dots" aria-hidden="true"><i class="n1"></i><i class="n2"></i></span>
+      <div>
+        <h1>Two-Neuron Circuit Explorer</h1>
+        <p class="sub">Original <code>Qwen/Qwen3.5-0.8B</code> vs. <code>g23v3</code>: 6,142 BF16 weights, two re-purposed neurons in layer 23, no training.</p>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button class="tab active" role="tab" data-tab="explore" aria-selected="true">1 · Circuit explorer <span class="pill">no download</span></button>
+      <button class="tab" role="tab" data-tab="live" aria-selected="false">2 · Run live in browser <span class="pill">WebGPU</span></button>
+    </nav>
+    <p class="links"><a href="blog.html">Blog post</a> · <a href="https://github.com/scasella/qwen3.5-toolpatch">GitHub</a> · <a href="https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v3">Weights on Hugging Face</a></p>
+  </div>
+</header>
+
+<main class="wrap">
+<!-- ===================================================== MODE 1 -->
+<section id="tab-explore" class="tabpanel" role="tabpanel">
+  <div id="loading" class="notice">Loading <code>data/circuit_traces.json</code>…</div>
+  <div id="explorer" class="explorer" hidden>
+    <aside class="side">
+      <div class="card">
+        <h2>Benchmark prompt</h2>
+        <input id="search" type="search" placeholder="Search id, family or text…" aria-label="Search prompts">
+        <fieldset class="filters" id="filter-cohort"><legend>Expected behaviour</legend></fieldset>
+        <fieldset class="filters" id="filter-set"><legend>Item set</legend></fieldset>
+        <p class="count" id="count"></p>
+        <ul id="itemlist" class="itemlist" role="listbox" aria-label="Prompts"></ul>
+      </div>
+      <details class="card provenance"><summary>Where these numbers come from</summary><div id="provenance"></div></details>
+    </aside>
+
+    <div class="mainpane">
+      <article class="card" id="prompt-card">
+        <div class="cardhead"><h2 id="item-title">—</h2><span class="badges" id="item-badges"></span></div>
+        <dl class="prompt">
+          <dt>System</dt><dd id="p-system" class="mono small"></dd>
+          <dt>Tools</dt><dd><details><summary id="p-tools-summary">tools</summary><pre id="p-tools" class="mono small"></pre></details></dd>
+          <dt>User</dt><dd id="p-user" class="mono"></dd>
+          <dt>Expected</dt><dd id="p-expected" class="mono"></dd>
+        </dl>
+      </article>
+
+      <article class="card">
+        <div class="cardhead"><h2>Recorded outputs, side by side</h2><span class="hint">Greedy, 128 tokens, identical prompts. Copied verbatim from the campaign records in <code>runs/</code>.</span></div>
+        <div class="outputs" id="outputs"></div>
+      </article>
+
+      <article class="card">
+        <div class="cardhead"><h2>The circuit, live</h2><span class="hint">Exact closed-form readout of the edited layer-23 SwiGLU → final RMSNorm → tied unembedding at the decision position. Recomputed on every slider move.</span></div>
+        <div class="variants" id="variants" role="group" aria-label="Edit variant"></div>
+        <div class="circuit">
+          <div class="sliders">
+            <label><span>a<sub>1</sub> · neuron 3468 (abstain) output gain</span><input type="range" id="sl-a1" min="0" max="3" step="0.05"><output id="o-a1"></output></label>
+            <label><span>a<sub>2</sub> · neuron 3421 (route NE vs NO) output gain</span><input type="range" id="sl-a2" min="0" max="3" step="0.05"><output id="o-a2"></output></label>
+            <label><span>λ · tool-context gate c</span><input type="range" id="sl-lam" min="0" max="1.5" step="0.01"><output id="o-lam"></output></label>
+            <label><span>λ<sub>2</sub> · generated-position gate c<sub>2</sub></span><input type="range" id="sl-lam2" min="0" max="1.5" step="0.01"><output id="o-lam2"></output></label>
+            <p class="eq mono small">gate = k·(s·x − λ c·x − λ<sub>2</sub> c<sub>2</sub>·x) &nbsp;·&nbsp; act<sub>3468</sub> = silu(gate)·k s·x &nbsp;·&nbsp; act<sub>3421</sub> = silu(gate)·k<sub>r</sub> r·x<br>h′ = h<sub>24</sub> − old<sub>3468</sub>·W<sub>d</sub>[:,3468] − old<sub>3421</sub>·W<sub>d</sub>[:,3421] + a<sub>1</sub>act<sub>3468</sub>·u<sub>AB</sub> + a<sub>2</sub>act<sub>3421</sub>·u<sub>route</sub> &nbsp;·&nbsp; logits = ((h′/rms(h′))⊙γ)·E<sup>T</sup></p>
+          </div>
+          <div class="schematic" id="schematic"></div>
+        </div>
+        <div class="readouts" id="readouts"></div>
+      </article>
+
+      <article class="card">
+        <div class="cardhead"><h2>First-token distribution at the decision position</h2><span class="hint" id="dist-hint"></span></div>
+        <div class="dist">
+          <table class="tokens" id="toktable"><thead><tr><th>token</th><th>logit</th><th>Δ vs original</th><th>p</th><th></th></tr></thead><tbody></tbody></table>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardhead"><h2>Neuron activity along the original model's generation</h2><span class="hint">Layer-23 MLP input at every generated position of the <em>original</em> model, re-read through the two edited neurons with the current sliders. Bars: act<sub>3468</sub> (teal) and act<sub>3421</sub> (amber); line: the shared gate.</span></div>
+        <div id="trace" class="trace"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== MODE 2 -->
+<section id="tab-live" class="tabpanel" role="tabpanel" hidden>
+  <div class="live">
+    <article class="card">
+      <div class="cardhead"><h2>Run both models in your browser</h2></div>
+      <p>Real token generation with <a href="https://huggingface.co/docs/transformers.js">Transformers.js</a> + ONNX Runtime Web on WebGPU, in a Web Worker. One download (fp16 decoder ≈1.5&nbsp;GB plus 4-bit embeddings ≈150&nbsp;MB, cached by your browser) serves both models: the edited model is produced in memory by writing the 6,142 edited values into the layer-23 MLP tensors of the downloaded original, and the SHA-256 of the result is checked against the published edited file.</p>
+      <p class="small">Why fp16 and not a ~650&nbsp;MB 4-bit build: the edit reads directions in the layer-23 residual stream that were fitted on the BF16 model. With a q4 backbone that input drifts (cosine ≈0.89 to the BF16 activations on the same prompts) and the abstain gate stays closed on explanation prompts, so the two neurons never fire; measured by <code>scripts/export_webgpu_onnx.py --drift</code> (report: <a href="data/webgpu_export_report.json">webgpu_export_report.json</a>).</p>
+      <div id="gpu-status" class="notice">Checking WebGPU…</div>
+      <p class="warn small">The live runner uses a 4-bit (q4f16) ONNX export, not the campaign's BF16 MLX weights. Treat its outputs as a demonstration; the token-identical claims in the blog post refer to the recorded runs in Mode&nbsp;1.</p>
+      <div class="row">
+        <label class="grow">Model source <input id="model-source" type="text" value="scasella91/Qwen3.5-0.8B-toolpatch-g23v3-ONNX" spellcheck="false"></label>
+        <label class="check"><input type="checkbox" id="keep-both" checked> keep both models resident</label>
+        <button id="btn-load" class="primary" disabled>Load models</button>
+      </div>
+      <div id="load-progress" class="progress"></div>
+    </article>
+
+    <article class="card">
+      <div class="cardhead"><h2>Prompt</h2><button id="btn-use-item" class="ghost">Use the prompt selected in Mode 1</button></div>
+      <label>System prompt<textarea id="live-system" rows="2"></textarea></label>
+      <label>Tools (JSON array of OpenAI-style function tools, <code>[]</code> for none)<textarea id="live-tools" rows="6" class="mono" spellcheck="false"></textarea></label>
+      <label>User message<textarea id="live-user" rows="3"></textarea></label>
+      <div class="row">
+        <label>max new tokens <input id="live-max" type="number" min="1" max="512" value="128"></label>
+        <button id="btn-run" class="primary" disabled>Run original → edited</button>
+        <button id="btn-stop" class="ghost" disabled>Stop</button>
+      </div>
+    </article>
+
+    <div class="livegrid">
+      <article class="card gen" id="gen-original"><div class="cardhead"><h2>Original Qwen3.5-0.8B</h2><span class="stats"></span></div><pre class="out mono"></pre><div class="firstlogits"></div></article>
+      <article class="card gen" id="gen-edited"><div class="cardhead"><h2>Edited g23v3</h2><span class="stats"></span></div><pre class="out mono"></pre><div class="firstlogits"></div></article>
+    </div>
+    <pre id="live-log" class="log mono small"></pre>
+  </div>
+</section>
+</main>
+
+<footer class="wrap foot">
+  <p>Data: <a href="data/circuit_traces.json">circuit_traces.json</a> (recorded outputs, decision-position projections, exact readout basis) and <a href="data/circuit_vectors.json">circuit_vectors.json</a> (the edit vectors). Built by <code>scripts/export_circuit_traces.py</code> from the campaign's <code>runs/</code>; the ONNX export by <code>scripts/export_webgpu_onnx.py</code>. Read the <a href="blog.html">blog post</a> for the full story.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
