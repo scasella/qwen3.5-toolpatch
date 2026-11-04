@@ -1,6 +1,6 @@
 # large or derived artifacts (rebuildable with the scripts; checkpoints are on Hugging Face)
 artifacts/
-docs/models/
+docs/models
 hf_export/*.safetensors
 hf_export/onnx/
 __pycache__/
