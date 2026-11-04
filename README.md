@@ -2,6 +2,8 @@
 
 **6,142 BF16 parameters changed (0.00082 % of the 752 M text-model weights), three tensors in one layer, zero gradient steps.**
 
+> **Blog post:** [Rewiring Two Dead Neurons: Fixing Trigger-Happy Tool Calling in Qwen3.5-0.8B Without Training](blog/index.md) ([HTML version](docs/blog.html), figures in `docs/figures/`).
+
 `Qwen/Qwen3.5-0.8B`, prompted with a native `<tools>` block, emits `<tool_call>` on almost every request that should *not* be a call: explanation requests ("explain what this operation does, do not run it") and requests whose required argument is explicitly missing (it writes the literal string `not provided` into the slot). This repository documents a mechanistic diagnosis of that failure and a closed-form weight edit that repairs it. Two near-dead neurons in the last MLP are re-purposed as a gated readout of features the model already computes but never uses. Everything is computed from captured activations with difference-of-means, orthogonalization and least squares; no backward pass, optimizer, LoRA or distillation was involved.
 
 | | tool-context items (192) | non-tool items (64) |
