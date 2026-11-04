@@ -2,7 +2,7 @@
 
 *How an AI agent diagnosed a missing inhibition circuit in Qwen3.5-0.8B and hand-wired a 2-neuron SwiGLU AND-gate in Layer 23 (0.00082% of weights) on an M4 Pro MacBook.*
 
-**Stephen Casella (scasella) and Claude (Anthropic), November 4, 2026.** Code, data and the edited checkpoint: [github.com/scasella/qwen3.5-toolpatch](https://github.com/scasella/qwen3.5-toolpatch) · [huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v3](https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v3)
+**Stephen Casella (scasella) and Mythos 5.1, November 4, 2026.** Code, data and the edited checkpoint: [github.com/scasella/qwen3.5-toolpatch](https://github.com/scasella/qwen3.5-toolpatch) · [huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v3](https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v3)
 
 **TL;DR.** `Qwen/Qwen3.5-0.8B` emits `<tool_call>` on almost every request made while a `<tools>` block is in the system prompt, including requests to *explain* an operation and requests whose required argument is explicitly *missing* (it writes the literal string `not provided` into the slot). We traced the failure to a **missing inhibition**, not a spurious excitation: the model linearly represents "this is an explanation request" (d′ ≈ 10–11) and "the required value is missing" (d′ ≈ 10) in its middle layers, but never wires either representation to the output. We then **re-purposed two near-dead neurons of the last MLP layer** into a gated quadratic readout that does the wiring: 6,142 BF16 entries, three tensors, one layer, every number computed in closed form from captured activations and the weights, **zero gradient steps**. On 192 paired tool-context prompts the edited model goes from 68 to 155 correct (lenient scoring; 30 → 118 strict) with 87 wrong→right and **0 right→wrong**, keeps every valid tool call, and leaves 32 short non-tool answers and 32 128-token prose answers intact. The method cannot fix what the backbone does not compute: ambiguous "either X or Y" requests stay at 0/30, and a probe for that concept never exceeds d′ ≈ 3 at any layer. Everything ran on one Apple M4 Pro laptop in about three hours, under a hash-chained ledger of 47 budgeted forward-pass runs.
 
@@ -130,7 +130,7 @@ Two residual imperfections are worth stating plainly. Non-tool prose is not bit-
 
 **Budget.** 47 of 50 budgeted forward-pass runs were used: 2,619 charged executions (2,585 completed), 1,431,007 prompt tokens and 93,537 generated tokens, about three hours of wall-clock time on November 4, 2026. Three runs were charged without producing results (two memory-guard aborts caused by the sibling campaign, one stock-reload worker that shadowed the standard library's `inspect` module), and the ledger records them. Every run is one `request` event in `ledger.jsonl` with its hypothesis and prediction written *before* execution, followed by one `reserve`/`usage` pair per prompt with token counts and memory readings; each of the 5,307 entries carries the SHA-256 of the previous entry, and the chain verifies end to end.
 
-**The whole investigation was run by an AI agent.** Claude (Anthropic) operated the harness autonomously on the laptop: it chose the captures, wrote the analysis and simulation code, derived the directions, decided on v1 → v2 → v3, pre-registered each run, and wrote the lab notebook (`notes.md`) and the report (`results.md`). The human author set the task, the budget and the immutability rules, and reviewed the results. This post, its figures and the figure script were written by the agent from the recorded data, with the historical records (`runs/`, `ledger.jsonl`, `notes.md`, `edits/`) left untouched.
+**The whole investigation was run by an AI agent.** Mythos 5.1 operated the harness autonomously on the laptop: it chose the captures, wrote the analysis and simulation code, derived the directions, decided on v1 → v2 → v3, pre-registered each run, and wrote the lab notebook (`notes.md`) and the report (`results.md`). The human author set the task, the budget and the immutability rules, and reviewed the results. This post, its figures and the figure script were written by the agent from the recorded data, with the historical records (`runs/`, `ledger.jsonl`, `notes.md`, `edits/`) left untouched.
 
 **Reproduce the edit in one command.** The patcher is a 67-line numpy script. It reads the 38 KB of vectors and the spec, rebuilds the three tensors in closed form, verifies the SHA-256 of the base tensors it is about to replace, writes a full checkpoint, and verifies the SHA-256 of the result against the published export:
 
@@ -156,7 +156,7 @@ The framing of this post, and the question it tries to answer, come from *Sparks
 ```bibtex
 @misc{casella2026twoneurons,
   title        = {Rewiring Two Dead Neurons: Fixing Trigger-Happy Tool Calling in Qwen3.5-0.8B Without Training},
-  author       = {Casella, Stephen and {Claude (Anthropic)}},
+  author       = {Casella, Stephen and {Mythos 5.1}},
   year         = {2026},
   month        = nov,
   howpublished = {\url{https://github.com/scasella/qwen3.5-toolpatch}},
