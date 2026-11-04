@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """Apply the g23v3 two-neuron layer-23 edit to an unedited Qwen/Qwen3.5-0.8B checkpoint. Dependency: numpy only.
 
-  python apply_g23v3.py --base <dir with model.safetensors-00001-of-00001.safetensors> --out <new dir>
+  python apply_g23v3.py --base <dir with model.safetensors-00001-of-00001.safetensors> --out <new dir> [--mode conversational]
 
 Reads edits/g23v3.vectors.npz + edits/g23v3.spec.json, rebuilds the three edited tensors exactly as the campaign did
 (float32 rows -> round-to-nearest-even BF16), copies the checkpoint, overwrites only those tensors' bytes in place, and
-verifies SHA-256 of every edited tensor against the published values (bit-for-bit match with artifacts/exports/g23v3/)."""
+verifies SHA-256 of every edited tensor against the published values (bit-for-bit match with artifacts/exports/g23v3/).
+--mode conversational uses variants/g23v3_conv.* instead: the same input circuit, but the abstain neuron's output column only
+removes <tool_call> (no NO_TOOL / NEED_CLARIFICATION literals), so the model answers in plain English when it abstains
+(scripts/make_conversational_variant.py, scripts/conversational_check.py)."""
 import argparse, hashlib, json, shutil, struct, sys
 from pathlib import Path
 import numpy as np
@@ -19,6 +22,9 @@ EDIT_SHA = {'gate_proj': 'cd759ae8a60c6cc2b5b7cbf397a03968464589f5490e11002028c6
             'up_proj':   'b40609ff4db37fa3f97d3eeb8a7ffd1ab75bb2dc01eac36c2afa0ef9dcaad196',
             'down_proj': 'e4e9f7ead2e43fc920f9e91e44ef90a3f5ead92ca7d89f8a5c3774965abe9180'}
 FILE_SHA = '886b4952cc74601ad69bed4488c9f4e5621e7dbb8a51287db2e6a4af60f2927e'  # whole edited safetensors file
+# --mode conversational (variants/g23v3_conv): gate_proj and up_proj are identical to g23v3, only down_proj differs
+EDIT_SHA_CONV = {'gate_proj': EDIT_SHA['gate_proj'], 'up_proj': EDIT_SHA['up_proj'], 'down_proj': '9675eca73d5a8f0c927dd5d3546915446e7fd5a36d5722b98d522d1460653341'}
+FILE_SHA_CONV = '43cfd8601d13383984c76b14fb679d889d06c1c5e5bb7aeca96834e60302e986'
 
 def header(path):
     with open(path, 'rb') as f:
@@ -44,9 +50,14 @@ def build(base_file, vectors, spec):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--base', required=True); ap.add_argument('--out', required=True)
-    sub = 'edits/' if (HERE / 'edits/g23v3.spec.json').exists() else ''  # repo layout vs. Hugging Face repo root
-    ap.add_argument('--vectors', default=HERE / f'{sub}g23v3.vectors.npz'); ap.add_argument('--spec', default=HERE / f'{sub}g23v3.spec.json')
+    ap.add_argument('--mode', default='campaign', choices=['campaign', 'conversational'])
+    ap.add_argument('--vectors', default=None); ap.add_argument('--spec', default=None)
     ap.add_argument('--full-hash', action='store_true', help='also SHA-256 the whole output file (slow)'); a = ap.parse_args()
+    sub = 'edits/' if (HERE / 'edits/g23v3.spec.json').exists() else ''  # repo layout vs. Hugging Face repo root
+    label = 'g23v3' if a.mode == 'campaign' else 'g23v3_conv'
+    if a.mode == 'conversational': sub = 'variants/' if (HERE / 'variants/g23v3_conv.spec.json').exists() else ''
+    a.vectors = a.vectors or HERE / f'{sub}{label}.vectors.npz'; a.spec = a.spec or HERE / f'{sub}{label}.spec.json'
+    edit_sha, file_sha = (EDIT_SHA, FILE_SHA) if a.mode == 'campaign' else (EDIT_SHA_CONV, FILE_SHA_CONV)
     base_file = next(Path(a.base).glob('*.safetensors')); out = Path(a.out)
     for p, want in BASE_SHA.items():
         got = sha(read_bits(base_file, L.format(23, p)))
@@ -57,11 +68,11 @@ def main():
     with open(out_file, 'r+b') as f:
         for name, bits in edited.items():
             s, e = h[name]['data_offsets']; raw = bits.tobytes(); assert len(raw) == e - s; f.seek(off + s); f.write(raw)
-    for p, want in EDIT_SHA.items():
-        got = sha(read_bits(out_file, L.format(23, p))); print(f'{p:10s} {got} {"OK" if got == want else "MISMATCH"}')
-        if got != want: sys.exit(1)
+    for p, want in edit_sha.items():
+        got = sha(read_bits(out_file, L.format(23, p))); print(f'{p:10s} {got} {"OK" if got == want else "unverified (no published hash)" if want is None else "MISMATCH"}')
+        if want is not None and got != want: sys.exit(1)
     if a.full_hash:
-        got = hashlib.sha256(out_file.read_bytes()).hexdigest(); print('file      ', got, 'OK' if got == FILE_SHA else 'MISMATCH')
-    print('wrote', out)
+        got = hashlib.sha256(out_file.read_bytes()).hexdigest(); print('file      ', got, 'OK' if got == file_sha else 'unverified (no published hash)' if file_sha is None else 'MISMATCH')
+    print('wrote', out, f'({a.mode} mode, {a.spec})')
 
 if __name__ == '__main__': main()

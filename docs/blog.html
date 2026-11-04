@@ -220,6 +220,62 @@ k = 2,  k_r = 1,  a₁ = a₂ = 1,  λ = 0.3,  λ₂ = 0.5        (edits/g23v3.s
 <p>This is the general limit of the method. A readout edit can only surface a representation the backbone already computes. It can add the missing last step of a circuit; it cannot add the circuit. The same limit shows up softly elsewhere: weak-cue explanation requests ("Describe this operation now: <op>. <values>") mostly stay calls because the model itself barely represents them as explanatory (2 of 20 flipped in simulation), explicit-missing phrasings other than "not provided" are repaired only when the model represents them as missing, and one practice item that v2 repaired is not repaired by v3 because its <code>c₂·x</code> jitter lowers its gate value (it fails gracefully, with the same prose as the baseline).</p>
 <p>Two residual imperfections are worth stating plainly. Non-tool prose is not bit-identical (20 of 32 answers are; the rest diverge late into benign paraphrases, e.g. "Bacteria are single-celled euka…" → "Bacteria are prokaryotic cells.") because a few generated positions still carry activations up to ≈ 2 units, about 5 logits on <code>NO</code>/<code>NE</code>, enough to flip a near-tied word choice. And inside tool calls the readout is not perfectly silent at near-tied positions: one correct renamed call drops its explicit optional default (still correct under both scorings). The edit was validated under two system-prompt framings (<code>standard</code>, and <code>concise</code> for v2), not under framings with format examples, multi-turn conversations or tool results in context. The benchmark is synthetic; "0 right→wrong on 192 items" is a statement about this protocol, not about tool use in the wild.</p>
 <p><strong>A second boundary, found while building the browser demo: the readout does not survive 4-bit quantization of the backbone.</strong> The two neurons read directions that were fitted on the BF16 model's layer-23 input. In the community's 4-bit ONNX export of the same checkpoint (q4, MatMulNBits with 32-element blocks) that input has drifted on the same prompts to a cosine of 0.89 with the BF16 activations (eight practice items, two per class), the abstain gate's sign agrees with BF16 on only 5 of the 8, and on explanation prompts neuron 3468 fires at −0.5 to 5 where BF16 gives 36 to 79, so the quantized model keeps calling tools even with the exact edited rows in place. The fp16 export keeps the features (cosine 0.99, gate sign 8/8, neuron 3468 at 29 and 88 versus 37 and 79), which is why the <a href="https://scasella.github.io/qwen3.5-toolpatch/">interactive companion</a> runs the live comparison on an fp16 decoder rather than a 650 MB 4-bit one. A closed-form edit is a statement about one set of activations; quantizing the network underneath it moves the activations and can silently switch the circuit off (<code>scripts/export_webgpu_onnx.py --drift</code>).</p>
+<h3 id="51-the-same-circuit-with-a-conversational-readout">5.1 The same circuit with a conversational readout</h3>
+<p>The first practical question is whether the fix is tied to the benchmark's literals. <code>NO_TOOL</code> and <code>NEED_CLARIFICATION</code> are convenient to grade, but a local assistant should abstain in English. The circuit allows that directly: the detector lives in the input rows of neuron 3468 (gate = k(s − λc − λ₂c₂), up = k·s) and the behaviour in its output column (down[:, 3468] = u_AB), so the column can be changed without touching what the neuron reads. <code>apply_g23v3.py --mode conversational</code> (<code>variants/g23v3_conv</code>, <a href="https://github.com/scasella/qwen3.5-toolpatch/blob/main/scripts/make_conversational_variant.py">make_conversational_variant.py</a>) keeps every vector of g23v3 and replaces u_AB by the least-squares readout whose only target is −1 on <code>&lt;tool_call&gt;</code> (0 on the other 41 named tokens), at half gain, and silences the route neuron 3421. We tested it on the 96 practice and selection prompts under two prompts a deployment would actually use, a plain assistant prompt ("Use the available tools when a request needs one; otherwise answer in plain English") and no system prompt at all; every output is in <a href="https://github.com/scasella/qwen3.5-toolpatch/blob/main/docs/data/conversational_mode.json">conversational_mode.json</a>.</p>
+<table>
+<thead>
+<tr>
+<th>practice + selection, greedy</th>
+<th>required calls kept (36)</th>
+<th>explanation requests answered in prose (30)</th>
+<th>missing-value requests not called (15)</th>
+<th>ambiguous not called (15)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>original, plain prompt</td>
+<td>36</td>
+<td>28</td>
+<td>6</td>
+<td>0</td>
+</tr>
+<tr>
+<td>g23v3_conv, plain prompt</td>
+<td>35 (35 token-identical)</td>
+<td>26</td>
+<td>12 (3 with an explicit question)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>original, no system prompt</td>
+<td>36</td>
+<td>28</td>
+<td>7</td>
+<td>0</td>
+</tr>
+<tr>
+<td>g23v3_conv, no system prompt</td>
+<td>33 (32 token-identical)</td>
+<td>27</td>
+<td>15</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Three things this measurement taught us.</p>
+<ol>
+<li><strong>Part of the base model's trigger-happiness belongs to the benchmark prompt.</strong> Under a plain prompt the original already explains in prose on 28 of 30 explanation requests; the campaign prompt's "otherwise make exactly one native tool call" is what turns those into calls. What survives any prompt is the missing-value failure: 8 or 9 of 15 requests whose argument is explicitly absent become tool calls carrying the string <code>not provided</code>, and all 15 ambiguous ones become calls.</li>
+<li><strong>The conversational readout removes the missing-value calls</strong> (9 → 3 under the plain prompt, 8 → 0 with none), replacing them with refusals and clarifying questions, and leaves the explanations in prose. Its cost is one to three required calls per 36: the boundary t = 0.5 was placed under the benchmark prompt, and under other prompts a few genuine calls fall on the abstain side ("I cannot perform this request. I am an AI assistant designed to provide helpful information, not to verify or confirm the identity of versions…"). A deployment should re-fit t and λ on a few hundred captures taken under its own system prompt; the directions themselves transfer.</li>
+<li><strong>Two details decided whether this worked at all.</strong> With the route neuron left on, every explanation answer began with a spurious "NO." (neuron 3421 pushes NO over NE whenever the clarify feature r·x is negative, which is exactly the explanation case). At full gain the neuron writes a vector several times longer than the residual stream itself; the final RMSNorm then divides every logit by a larger denominator, the first-token distribution flattens, and unnamed tokens that happen to align with the readout ("IO", "FOOL") win. Half gain still removes <code>&lt;tool_call&gt;</code> by 15–40 logits, more than any margin we observed, with a quarter of the leakage. The naive setting is kept in the data file as <code>conv_naive</code>. Under the benchmark prompt itself the conversational readout keeps all 36 required calls token-identical and answers 40 of the 45 non-ambiguous abstain prompts in prose rather than with the literal, but 6 of those are fragments ("IO", "Base 53 to 64"): that prompt instructs literals the neuron no longer pushes toward, so the runner-up token is sometimes junk. Use the readout with a prompt that asks for prose.</li>
+</ol>
+<p>Three outputs, original → conversational, verbatim:</p>
+<blockquote>
+<p><strong>Missing value, plain prompt</strong> (<code>discovery-611401-0131</code>, "change stored text to uppercase. Stored text identifier: not provided"). Original: <code>&lt;tool_call&gt; uppercase_text(text="not provided", detail="brief")</code>. Conversational: <em>I cannot change stored text to uppercase as the stored text identifier is not provided.</em></p>
+<p><strong>Missing value, no system prompt</strong> (<code>discovery-611401-0235</code>, "cancel the reservation for a resource and slot. Resource identifier: not provided. Slot number: 34"). Original: <code>&lt;tool_call&gt; cancel_reservation(resource="not provided", slot=34)</code>. Conversational: <em>I cannot cancel a reservation for a resource and slot. The <code>cancel_reservation</code> function requires a specific resource identifier and slot number, but you have not provided those details. Please provide the resource identifier and the slot number so I can assist you with the cancellation.</em></p>
+<p><strong>Missing value, plain prompt, unseen family</strong> (<code>selection-611402-0131</code>, "show differences between two versions. Earlier version identifier: not provided. Later version identifier: 039"). Original: <code>&lt;tool_call&gt; version_diff(old="not provided", new="039", detail="brief")</code>. Conversational: <em>I cannot show differences between two versions because the earlier version identifier is not provided. Could you please provide the earlier version identifier so I can help you with that?</em></p>
+</blockquote>
+<p>A readout is not a policy. The edit transfers its mechanism to other prompts, not its exact operating point, and that is the honest shape of what a two-neuron closed-form patch can offer: a detector you can read, a column you can rewrite, and a threshold you should re-measure where you deploy it.</p>
 <h2 id="6-ledger-cost-and-reproducibility">6. Ledger, cost and reproducibility</h2>
 <p><strong>Hardware.</strong> One MacBook Pro with an Apple M4 Pro and 24 GB of unified memory, running MLX 0.32.4 / MLX-LM 0.32.2 on the unquantized BF16 checkpoint, sharing its GPU with a concurrently running sibling campaign through a polled advisory lock. Peak process RSS was 3.46 GiB and peak Metal allocation 1.85 GiB, measured separately and never summed. No cloud, no GPU cluster, no gradients.</p>
 <p><strong>Budget.</strong> 47 of 50 budgeted forward-pass runs were used: 2,619 charged executions (2,585 completed), 1,431,007 prompt tokens and 93,537 generated tokens, about three hours of wall-clock time on November 4, 2026. Three runs were charged without producing results (two memory-guard aborts caused by the sibling campaign, one stock-reload worker that shadowed the standard library's <code>inspect</code> module), and the ledger records them. Every run is one <code>request</code> event in <code>ledger.jsonl</code> with its hypothesis and prediction written <em>before</em> execution, followed by one <code>reserve</code>/<code>usage</code> pair per prompt with token counts and memory readings; each of the 5,307 entries carries the SHA-256 of the previous entry, and the chain verifies end to end.</p>

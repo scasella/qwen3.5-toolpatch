@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Side-by-side demo: original Qwen/Qwen3.5-0.8B vs the g23v3 two-neuron layer-23 edit on six representative prompts.
 
-  python demo_cli.py [--base Qwen/Qwen3.5-0.8B] [--check] [--no-v1] [--cases 1,2,6]
+  python demo_cli.py [--base Qwen/Qwen3.5-0.8B] [--check] [--no-v1] [--cases 1,2,6] [--edit g23v3_conv]
 
 Protocol is the campaign's: official chat template with native <tools>, enable_thinking=False, greedy decoding, max 128 new
-tokens. Cases 1-5 are items from data/practice.jsonl / data/renamed.jsonl (the paper's sets); case 6 is a free-form non-tool prose
+tokens. --edit g23v3_conv shows the conversational readout of the same circuit (variants/, see scripts/make_conversational_variant.py). Cases 1-5 are items from data/practice.jsonl / data/renamed.jsonl (the paper's sets); case 6 is a free-form non-tool prose
 question, shown for original / v1 (first candidate, which corrupted prose) / g23v3. Edits are built in closed form from the 38 KB
 vector files with apply_g23v3.build and loaded into the resident model, so one model load serves all variants. Not a budgeted
 campaign pass: nothing here writes to ledger.jsonl or runs/. --check compares token streams with the recorded campaign runs.
@@ -62,12 +62,13 @@ class Model:
         self.model, self.tok = load(str(self.path)); self.model.eval(); self.originals = {}
         self.safetensors = next(self.path.glob('*.safetensors'))
     def set_edit(self, label):
-        """Load the BF16 bits of edits/<label> (rebuilt from its vectors) into the live model; None restores the original."""
+        """Load the BF16 bits of edits/<label> (or variants/<label>, rebuilt from its vectors) into the live model; None restores the original."""
         from mlx.utils import tree_flatten
         mx = self.mx
         if self.originals: self.model.load_weights(list(self.originals.items()), strict=False); self.originals = {}
         if label is not None:
-            arrays = build(self.safetensors, HERE / f'edits/{label}.vectors.npz', HERE / f'edits/{label}.spec.json')
+            sub = 'edits' if (HERE / f'edits/{label}.spec.json').exists() else 'variants'
+            arrays = build(self.safetensors, HERE / f'{sub}/{label}.vectors.npz', HERE / f'{sub}/{label}.spec.json')
             params = dict(tree_flatten(self.model.parameters())); changes = []
             for name, bits in arrays.items():
                 mapped = name.replace('model.language_model.', 'language_model.model.')
@@ -111,13 +112,13 @@ def main():
         if tools: print('  tools   | ' + '; '.join(f"{t['function']['name']}: {t['function']['description'].replace(' Inert synthetic operation.', '')}" for t in tools))
         print('  expected| ' + gold); print()
         ids = m.prompt_ids(system, user, tools)
-        variants = [('original', None), ('g23v3', a.edit)] if (i != 6 or a.no_v1) else [('original', None), ('v1', a.v1), ('g23v3', a.edit)]
+        variants = [('original', None), (a.edit, a.edit)] if (i != 6 or a.no_v1) else [('original', None), ('v1', a.v1), (a.edit, a.edit)]
         outs = {}
         for name, label in variants:
             m.set_edit(label); t1 = time.perf_counter(); text, toks = m.generate(ids); outs[name] = toks
             same = '' if name == 'original' else ('; token-identical to original' if toks == outs['original'] else '; differs from original')
             show(name, text); print(f'  {"":9s}| ({len(toks)} tokens, {time.perf_counter() - t1:.1f}s{same})')
-            if a.check and runs and label in (None, 'g23v3'):
+            if a.check and runs and label in (None, 'g23v3'):  # recorded runs exist for the campaign edit only
                 ref = recorded(runs[0 if label is None else 1], 'original' if label is None else 'edited', cid)
                 if ref is not None: ok = ref == toks; checks.append(ok); print(f'  {"":9s}| recorded campaign run: {"token-identical" if ok else "DIFFERENT"}')
         print()

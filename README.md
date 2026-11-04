@@ -155,7 +155,32 @@ print(generate(model, tok, prompt, max_tokens=128, sampler=make_sampler(0)))   #
 ```bash
 BASE=$(hf download Qwen/Qwen3.5-0.8B --revision 2fc06364715b967f1860aea9cf38778875588b17)
 python apply_g23v3.py --base "$BASE" --out Qwen3.5-0.8B-toolpatch-g23v3 --full-hash
+# conversational readout of the same circuit (plain-English abstention instead of the NO_TOOL / NEED_CLARIFICATION literals, see below)
+python apply_g23v3.py --mode conversational --base "$BASE" --out Qwen3.5-0.8B-toolpatch-g23v3-conv --full-hash
 ```
+
+Clean-room check (2026-11-04, Apple M4 Pro): a fresh `git clone` of this repository (63 MB, 5.6 s) and a fresh download of the base
+checkpoint into an empty Hugging Face cache (1.75 GB, 68 s; SHA-256 `04b1c301…e4696`), then `apply_g23v3.py --full-hash` (1.7 s, all four
+published hashes matched) and `demo_cli.py --check` (8.9 s, 10/10 generations token-identical to the recorded campaign runs). Under
+twelve seconds of compute after the download; nothing from this working copy was involved.
+
+**Conversational mode.** `--mode conversational` keeps the detector (the input rows of both neurons and every vector) and changes only
+what the abstain neuron writes: a least-squares readout with the single target −1 on `<tool_call>`, at half gain, with the route
+neuron silenced (`variants/g23v3_conv`, `scripts/make_conversational_variant.py`). The model then abstains in English instead of
+emitting the benchmark literals. Measured on the 96 practice + selection prompts under a plain assistant prompt and with no system
+prompt (`scripts/conversational_check.py`, every output in `docs/data/conversational_mode.json`): the original already explains in prose
+on 28/30 explanation requests under those prompts, but turns 8–9 of 15 missing-value requests into tool calls carrying the string
+`not provided`; the conversational readout brings those to 3/15 and 0/15 while keeping 35/36 and 33/36 required calls (token-identical
+in 35 and 32). Its cost is those one to three lost calls: the operating point t = 0.5 was set under the benchmark prompt and should be
+re-fitted under the prompt you deploy with. Verbatim, original → conversational:
+
+* `discovery-611401-0131`, "change stored text to uppercase. Stored text identifier: not provided" (plain prompt): `<tool_call> uppercase_text(text="not provided")` → *I cannot change stored text to uppercase as the stored text identifier is not provided.*
+* `discovery-611401-0235`, "cancel the reservation for a resource and slot. Resource identifier: not provided. Slot number: 34" (no system prompt): `<tool_call> cancel_reservation(resource="not provided", slot=34)` → *I cannot cancel a reservation for a resource and slot. The `cancel_reservation` function requires a specific resource identifier and slot number, but you have not provided those details. Please provide the resource identifier and the slot number so I can assist you with the cancellation.*
+* `selection-611402-0131`, "show differences between two versions. Earlier version identifier: not provided. Later version identifier: 039" (plain prompt, unseen family): `<tool_call> version_diff(old="not provided", new="039")` → *I cannot show differences between two versions because the earlier version identifier is not provided. Could you please provide the earlier version identifier so I can help you with that?*
+
+Two details made the difference between this and a readout that fails (both ablations are in the data file): the route neuron must be
+off, or explanation answers start with a spurious "NO."; and the gain must be halved, or the neuron's write inflates the final RMSNorm
+denominator, flattens the first-token distribution and lets unnamed tokens ("IO", "FOOL") win. See blog §5.1. Under the benchmark prompt itself (which asks for the literals) the conversational readout keeps all 36 required calls token-identical and answers 40 of the 45 non-ambiguous abstain prompts in prose rather than with the literal, but 6 of those are fragments ("IO", "Base 53 to 64"): that prompt instructs literals the neuron no longer pushes toward, so the runner-up token is sometimes junk. Use the readout with a prompt that asks for prose.
 
 Expected output:
 
@@ -220,6 +245,7 @@ The raw activation captures (`runs/*.npz`, 674 MB) and the full exported checkpo
 ```
 apply_g23v3.py        standalone patcher (numpy only): vectors + spec -> edited tensors -> verified checkpoint copy
 demo_cli.py           six-case side-by-side demo, --check against recorded runs
+variants/             derived readouts of the same circuit (g23v3_conv: conversational abstention), never touched by the campaign
 edits/                g23v3.npz (final edit, BF16 bits of the 3 tensors), *.spec.json (every scalar + receipts + simulation),
                       *.vectors.npz (s, r, c, c2, u_AB, u_route, gate_dir) for the final edit and all 11 controls/candidates
 results.md            final report: diagnosis, localization, edit, controls, paired tables, limitations, accounting, commands
@@ -239,6 +265,7 @@ scripts/publish_release.sh      GitHub + Hugging Face publication (dry run by de
 scripts/make_blog_figures.py, scripts/make_fig4_trace.py, scripts/build_blog_html.py   blog post figures and HTML (blog/, docs/blog.html)
 scripts/export_circuit_traces.py (+ circuit_items.py)   data bundle of the web app's circuit explorer (docs/data/)
 scripts/export_webgpu_onnx.py   fp16 ONNX pair + patch manifest for the in-browser runner; --drift / --validate checks on ORT
+scripts/make_conversational_variant.py, scripts/conversational_check.py   the conversational readout and its generation check (docs/data/conversational_mode.json)
 docs/                 GitHub Pages site: index.html / app.js / worker.js / styles.css (the app), blog.html, figures/, data/
 ```
 
