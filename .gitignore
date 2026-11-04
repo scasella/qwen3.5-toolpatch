@@ -22,3 +22,6 @@ __pycache__/
 *.swp
 *.tmp
 .hf_token
+
+# editor/agent session config
+.claude/
