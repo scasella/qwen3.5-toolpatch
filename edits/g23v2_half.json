@@ -1,0 +1,28 @@
+{
+  "tensors": {
+    "model.language_model.layers.23.mlp.gate_proj.weight": {
+      "changed_entries": 2047,
+      "l2": 3.079490876532827,
+      "linf": 0.4110107421875,
+      "rel_frobenius": 0.08512282387202944
+    },
+    "model.language_model.layers.23.mlp.up_proj.weight": {
+      "changed_entries": 2047,
+      "l2": 2.2539319411825223,
+      "linf": 0.3545684814453125,
+      "rel_frobenius": 0.1060834944644414
+    },
+    "model.language_model.layers.23.mlp.down_proj.weight": {
+      "changed_entries": 2047,
+      "l2": 0.7036549995522704,
+      "linf": 0.0611572265625,
+      "rel_frobenius": 0.042862080419468346
+    }
+  },
+  "total_changed_entries": 6141,
+  "fraction_of_text_params": 8.161957652600457e-06,
+  "layers": [
+    23
+  ],
+  "limit_entries": 1880982
+}

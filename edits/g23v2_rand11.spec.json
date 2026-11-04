@@ -1,0 +1,67 @@
+{
+ "label": "g23v2_rand11",
+ "layer": 23,
+ "neurons": [
+  3468,
+  3421
+ ],
+ "k": 2.0,
+ "kr": 1.0,
+ "a1": 1.0,
+ "a2": 1.0,
+ "src_s": 18,
+ "t": 0.5,
+ "lam": 0.3,
+ "prose_target": 0.5,
+ "random_seed": 11,
+ "s_norm": 1.0,
+ "r_norm": 1.0,
+ "uAB_norm": 0.8735510050159827,
+ "uroute_norm": 0.7974894621258868,
+ "equation": "gate[J1]=k*(s-lam*c), up[J1]=k*s, down[:,J1]=a1*u_AB; gate[J2]=k*(s-lam*c), up[J2]=kr*r, down[:,J2]=a2*(u_NE-u_NO)",
+ "receipts": {
+  "mlp.gate_proj": {
+   "name": "model.language_model.layers.23.mlp.gate_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 2048,
+   "l2": 3.0781245204299275,
+   "linf": 0.23455810546875,
+   "rel_frobenius": 0.08508505526203616,
+   "total_changed_entries": 2048,
+   "fraction": 2.721981643466168e-06
+  },
+  "mlp.up_proj": {
+   "name": "model.language_model.layers.23.mlp.up_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 2048,
+   "l2": 2.2471720667325514,
+   "linf": 0.21978759765625,
+   "rel_frobenius": 0.10576533441236034,
+   "total_changed_entries": 4096,
+   "fraction": 5.443963286932336e-06
+  },
+  "mlp.down_proj": {
+   "name": "model.language_model.layers.23.mlp.down_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 2047,
+   "l2": 1.235766881768419,
+   "linf": 0.0858154296875,
+   "rel_frobenius": 0.07527487120787374,
+   "total_changed_entries": 6143,
+   "fraction": 8.164615837799156e-06
+  }
+ },
+ "simulation": {
+  "prefix_gold_argmax": 43,
+  "call_min_margin": 2.477563262866326,
+  "report": {
+   "call/T": "20/20 NO-call[-18.3,-11.3] NE-call[-20.8,-12.6] NE-NO[-3.5,-0.7]",
+   "call/P": "24/24 NO-call[-16.5,-8.7] NE-call[-18.6,-14.1] NE-NO[-5.3,-1.7]",
+   "answer/T": "0/20 NO-call[-16.8,-9.4] NE-call[-18.6,-10.0] NE-NO[-4.5,-0.6]",
+   "answer/P": "0/20 NO-call[-11.7,-2.0] NE-call[-13.8,-4.9] NE-NO[-5.5,-2.0]",
+   "NOTPROV/T": "0/20 NO-call[-10.8,-3.7] NE-call[-13.8,-4.1] NE-NO[-3.2,1.8]",
+   "NOTPROV/P": "0/10 NO-call[-9.7,-2.8] NE-call[-14.0,-4.2] NE-NO[-4.3,0.8]",
+   "AMBIG/P": "0/10 NO-call[-15.0,-12.9] NE-call[-17.3,-15.0] NE-NO[-3.1,-2.0]"
+  }
+ }
+}

@@ -1,0 +1,3749 @@
+{
+  "method": "CPU byte comparison of every loaded text tensor after explicitly reproduced stock sanitizer transform; no model forwards",
+  "tensors": [
+    {
+      "runtime": "language_model.model.layers.0.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "ad78e0805c16a73f70c722e837d1d342df3d9714bea32d353d976e155dd73494",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.0.linear_attn.A_log",
+      "source_sha256": "ad78e0805c16a73f70c722e837d1d342df3d9714bea32d353d976e155dd73494",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.0.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "b92121af2866c2e156749dc12e27d5f873abb1595291be3a7465c8c65fd6e439",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.0.linear_attn.norm.weight",
+      "source_sha256": "b92121af2866c2e156749dc12e27d5f873abb1595291be3a7465c8c65fd6e439",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.1.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "6b98f67f72af6b686d48e04ae972dc7196de67a56acb1656adedf85ad6a9a445",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.1.linear_attn.A_log",
+      "source_sha256": "6b98f67f72af6b686d48e04ae972dc7196de67a56acb1656adedf85ad6a9a445",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.1.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "217499c58672166cf95bfd31fe8b523ef297067083cd36273036cda227ce3e49",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.1.linear_attn.norm.weight",
+      "source_sha256": "217499c58672166cf95bfd31fe8b523ef297067083cd36273036cda227ce3e49",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.10.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "9a3d672593b3f5754a75efb8c9b477e09ffe485e068ce126193dfde35c28f8f7",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.10.linear_attn.A_log",
+      "source_sha256": "9a3d672593b3f5754a75efb8c9b477e09ffe485e068ce126193dfde35c28f8f7",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.10.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "3e02b6f8f862b0e7740f559d026e0973583f4561b9cfb7c19846e2c3a5ff2a85",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.10.linear_attn.norm.weight",
+      "source_sha256": "3e02b6f8f862b0e7740f559d026e0973583f4561b9cfb7c19846e2c3a5ff2a85",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.12.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "9d4defc1eb81850001cd0c92c99caa7155e39c763a50a84d71b80d634a6da021",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.12.linear_attn.A_log",
+      "source_sha256": "9d4defc1eb81850001cd0c92c99caa7155e39c763a50a84d71b80d634a6da021",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.12.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "c75ae5a92ba026377745dce2af9a726b07f2a04874c4c10e6a0a828543fd677f",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.12.linear_attn.norm.weight",
+      "source_sha256": "c75ae5a92ba026377745dce2af9a726b07f2a04874c4c10e6a0a828543fd677f",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.13.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "13f858129e2070b8205419299d39591a2148f2d573f6664ea8e9b19086b26b13",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.13.linear_attn.A_log",
+      "source_sha256": "13f858129e2070b8205419299d39591a2148f2d573f6664ea8e9b19086b26b13",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.13.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "402169bf7d9f4203cc30a0d4febcdb6a8051b035f26b4eb91c56d760f9a6eace",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.13.linear_attn.norm.weight",
+      "source_sha256": "402169bf7d9f4203cc30a0d4febcdb6a8051b035f26b4eb91c56d760f9a6eace",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.14.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "f7e51e8a5df7606167533f0fa946478a8920499de060b56b85d9f0bf7f4bcc20",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.14.linear_attn.A_log",
+      "source_sha256": "f7e51e8a5df7606167533f0fa946478a8920499de060b56b85d9f0bf7f4bcc20",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.14.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "2dadd9a67ff349e42809f71ba1740fdd47a2f5ecdd6e1e9b7dd8a0a9faa21bbd",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.14.linear_attn.norm.weight",
+      "source_sha256": "2dadd9a67ff349e42809f71ba1740fdd47a2f5ecdd6e1e9b7dd8a0a9faa21bbd",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.16.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "ef6347f3b8c4383000fad94f82754c9d0389744bf28e2262c8c17a2d7b1b7edb",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.16.linear_attn.A_log",
+      "source_sha256": "ef6347f3b8c4383000fad94f82754c9d0389744bf28e2262c8c17a2d7b1b7edb",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.16.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "aa7a8705d87959ff7460c8f1cf1b44b4ceda4ca38dd8dfad66c12832aa0d07af",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.16.linear_attn.norm.weight",
+      "source_sha256": "aa7a8705d87959ff7460c8f1cf1b44b4ceda4ca38dd8dfad66c12832aa0d07af",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.17.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "b63f4fd41f33846b5f16079772a649a6b7c3b8f16540f5b7478c4b1ea38281fb",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.17.linear_attn.A_log",
+      "source_sha256": "b63f4fd41f33846b5f16079772a649a6b7c3b8f16540f5b7478c4b1ea38281fb",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.17.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "9109d92911338e459138e9d3a7c5e24cd9e75e16ce24609c3aa09476c0eaac56",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.17.linear_attn.norm.weight",
+      "source_sha256": "9109d92911338e459138e9d3a7c5e24cd9e75e16ce24609c3aa09476c0eaac56",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.18.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "1c0e0c201309df081cbfe9a37018164714a96bc7cdf09473ed0fcfd1f515a555",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.18.linear_attn.A_log",
+      "source_sha256": "1c0e0c201309df081cbfe9a37018164714a96bc7cdf09473ed0fcfd1f515a555",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.18.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "48555b69ec651735cef37e17a5e0f58ec9098486303768d51b054141133719ec",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.18.linear_attn.norm.weight",
+      "source_sha256": "48555b69ec651735cef37e17a5e0f58ec9098486303768d51b054141133719ec",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.2.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "a99ca626fc00b801b40180b3bec9f94375aa0cd7adc6f5945ea6bd62b4457735",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.2.linear_attn.A_log",
+      "source_sha256": "a99ca626fc00b801b40180b3bec9f94375aa0cd7adc6f5945ea6bd62b4457735",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.2.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "b7ea8b8b24815ec8fcd37411c372f93b3b1f5ee59b1b03d4d4dc2f8dc7402c3d",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.2.linear_attn.norm.weight",
+      "source_sha256": "b7ea8b8b24815ec8fcd37411c372f93b3b1f5ee59b1b03d4d4dc2f8dc7402c3d",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.20.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "363f6671046f1606cb2c34d2d8cfb0a33f5f74608545c41294064d2af227d898",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.20.linear_attn.A_log",
+      "source_sha256": "363f6671046f1606cb2c34d2d8cfb0a33f5f74608545c41294064d2af227d898",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.20.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "632aea705ef377ce6e17ef541425d68a980c67aedd7999ec9b135639a88f08a1",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.20.linear_attn.norm.weight",
+      "source_sha256": "632aea705ef377ce6e17ef541425d68a980c67aedd7999ec9b135639a88f08a1",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.21.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "bfa39c8f7e8186c359a2d4ddd6acc2f39f903ea4d8ab0067f7496ea904e9513a",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.21.linear_attn.A_log",
+      "source_sha256": "bfa39c8f7e8186c359a2d4ddd6acc2f39f903ea4d8ab0067f7496ea904e9513a",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.21.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "1168a137d2e429ecd17ddc70ee2293e461e67581f4470e6f08fe08ce9cf1e309",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.21.linear_attn.norm.weight",
+      "source_sha256": "1168a137d2e429ecd17ddc70ee2293e461e67581f4470e6f08fe08ce9cf1e309",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.22.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "2dec02d96b4a2c31333cffa07c93daadbda2d24fc441dd370c2d199fcf01985e",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.22.linear_attn.A_log",
+      "source_sha256": "2dec02d96b4a2c31333cffa07c93daadbda2d24fc441dd370c2d199fcf01985e",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.22.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "7968c5890c77aee9b882c9b2bd0b0f568e449ef1ddf35d83df86b6dd04e9bb09",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.22.linear_attn.norm.weight",
+      "source_sha256": "7968c5890c77aee9b882c9b2bd0b0f568e449ef1ddf35d83df86b6dd04e9bb09",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.4.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "280e3591b7b6b7fe0692fbbf60d636f2265384fe84952ddc1cc4c3d8985223b9",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.4.linear_attn.A_log",
+      "source_sha256": "280e3591b7b6b7fe0692fbbf60d636f2265384fe84952ddc1cc4c3d8985223b9",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.4.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "e73ad334202b4c9c503b2121f97ff8602e5118577afdf0d35a6bcd305f8d1b4b",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.4.linear_attn.norm.weight",
+      "source_sha256": "e73ad334202b4c9c503b2121f97ff8602e5118577afdf0d35a6bcd305f8d1b4b",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.5.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "11652a04f265548e03cb0b510d3dddc7fe31ceb45f8b6634684d7b87e377b9a4",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.5.linear_attn.A_log",
+      "source_sha256": "11652a04f265548e03cb0b510d3dddc7fe31ceb45f8b6634684d7b87e377b9a4",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.5.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "ea06571e986de0d7cbad53ae0226764a855f3cf218ac488f59d72de108b2ecda",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.5.linear_attn.norm.weight",
+      "source_sha256": "ea06571e986de0d7cbad53ae0226764a855f3cf218ac488f59d72de108b2ecda",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.6.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "e09b1aab34e374be90dc3f843caf1106b65b3f17353c36aa2535f9defd7d4441",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.6.linear_attn.A_log",
+      "source_sha256": "e09b1aab34e374be90dc3f843caf1106b65b3f17353c36aa2535f9defd7d4441",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.6.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "fe1c4024ab6f07dfa5e369925fba4795b01a94072008d6c8abb4112c5d4f8056",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.6.linear_attn.norm.weight",
+      "source_sha256": "fe1c4024ab6f07dfa5e369925fba4795b01a94072008d6c8abb4112c5d4f8056",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.8.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "13876faa9c6085de480e5f45506475ca258ac9d1fa6b3fff04f1d2ecf22b3f66",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.8.linear_attn.A_log",
+      "source_sha256": "13876faa9c6085de480e5f45506475ca258ac9d1fa6b3fff04f1d2ecf22b3f66",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.8.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "998d531602505ffdae165c0dfb32a603815e5aec75a88677fd1f7b5e45cbc91b",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.8.linear_attn.norm.weight",
+      "source_sha256": "998d531602505ffdae165c0dfb32a603815e5aec75a88677fd1f7b5e45cbc91b",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.9.linear_attn.A_log",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "25567d3d581e54f94e55bc4a93b889559d9c57ace05d777af1e5fd45acf94295",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.9.linear_attn.A_log",
+      "source_sha256": "25567d3d581e54f94e55bc4a93b889559d9c57ace05d777af1e5fd45acf94295",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.9.linear_attn.norm.weight",
+      "runtime_dtype": "mlx.core.float32",
+      "runtime_sha256": "a04e8ced547c18d69af69cf4ff72863a2dff96a8e9948fc107c701c07f4dcd67",
+      "runtime_shape": [
+        128
+      ],
+      "source": "model.language_model.layers.9.linear_attn.norm.weight",
+      "source_sha256": "a04e8ced547c18d69af69cf4ff72863a2dff96a8e9948fc107c701c07f4dcd67",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.embed_tokens.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "3247e63f0f265462e2fba5316dfb2819941ea8ed62ab5b2c4904e4aab5b9d7aa",
+      "runtime_shape": [
+        248320,
+        1024
+      ],
+      "source": "model.language_model.embed_tokens.weight",
+      "source_sha256": "3247e63f0f265462e2fba5316dfb2819941ea8ed62ab5b2c4904e4aab5b9d7aa",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.0.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "693531b9937f09ae967e334d8d571ccf91eb56adf58460d1338a126e17c4df9d",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.0.input_layernorm.weight",
+      "source_sha256": "032420ad60956b0e62b5f4afbfc3a51a7148c79946f746ea4eb6b0ceb6c67e37",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.0.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "130344a7183ae52ad58fc5da96539f28071b64d452bb3acf0890a7947da44188",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.0.linear_attn.conv1d.weight",
+      "source_sha256": "130344a7183ae52ad58fc5da96539f28071b64d452bb3acf0890a7947da44188",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.0.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "058cec20af625f4e3971da95b131af08db8f9ab26b1301b90c6f6401c5243388",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.0.linear_attn.dt_bias",
+      "source_sha256": "058cec20af625f4e3971da95b131af08db8f9ab26b1301b90c6f6401c5243388",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.0.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "e5197a79fc1daa00d06a0c04fd11a97ac3c10a6bd6460e957fd8383700d5d87b",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.0.linear_attn.in_proj_a.weight",
+      "source_sha256": "e5197a79fc1daa00d06a0c04fd11a97ac3c10a6bd6460e957fd8383700d5d87b",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.0.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "02bab6a0eb77ad51435f77665d173876993d725ca3cd953f90c2b0754735db5e",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.0.linear_attn.in_proj_b.weight",
+      "source_sha256": "02bab6a0eb77ad51435f77665d173876993d725ca3cd953f90c2b0754735db5e",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.0.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "8904cdb2c2e3aa5fc158d074e3b84fb5165a6637f2bd38f67fb93b29406fe0dc",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.0.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "8904cdb2c2e3aa5fc158d074e3b84fb5165a6637f2bd38f67fb93b29406fe0dc",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.0.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "5a44325d73004f42dcd55558d357ceeccb54fafb9b7048071634ab1027e1c17d",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.0.linear_attn.in_proj_z.weight",
+      "source_sha256": "5a44325d73004f42dcd55558d357ceeccb54fafb9b7048071634ab1027e1c17d",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.0.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "cbee28fc3b42e07e491fffd593b2ee9ec58ae952dc9133e178f8a80ea916d308",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.0.linear_attn.out_proj.weight",
+      "source_sha256": "cbee28fc3b42e07e491fffd593b2ee9ec58ae952dc9133e178f8a80ea916d308",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.0.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "57c93b2a4452740b0b82386debc7c66df7774f98425a0253dd9d3e7006e989ac",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.0.mlp.down_proj.weight",
+      "source_sha256": "57c93b2a4452740b0b82386debc7c66df7774f98425a0253dd9d3e7006e989ac",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.0.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ac1e1d4df4f3adca7e0bc15ee7310ce093f9108baa712cfb86f57b03e6d6e140",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.0.mlp.gate_proj.weight",
+      "source_sha256": "ac1e1d4df4f3adca7e0bc15ee7310ce093f9108baa712cfb86f57b03e6d6e140",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.0.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "0317b5f7a4e522c75c5013a70f14c510262b79596ac298ef52b5e04740d76367",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.0.mlp.up_proj.weight",
+      "source_sha256": "0317b5f7a4e522c75c5013a70f14c510262b79596ac298ef52b5e04740d76367",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.0.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "51e50cf09951ef769608b35bc71b9bd640ba232e5c22689061a6e0c579761c37",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.0.post_attention_layernorm.weight",
+      "source_sha256": "9c5f1eafa39cd5af93a2f9fadafd3362bc886938ab1a1db3954baea7887fe303",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.1.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "fce35add1b6ff5c1e1b1e9cb54689947d03ea444d3f35790179ab0b1324fa9b6",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.1.input_layernorm.weight",
+      "source_sha256": "105c3f620c5c6f4fb83b1c5aca86af0516ee6fe74013f4c8db19b0c304978fca",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.1.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a0e74d5e5adf520e355b4e8e2d4193367cbae4c970b059c346ddd63146330428",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.1.linear_attn.conv1d.weight",
+      "source_sha256": "a0e74d5e5adf520e355b4e8e2d4193367cbae4c970b059c346ddd63146330428",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.1.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "3c99bf6c106f2cc7afce28251be0c5f471f18a62686c9d5c80d04d98e8b3fb9a",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.1.linear_attn.dt_bias",
+      "source_sha256": "3c99bf6c106f2cc7afce28251be0c5f471f18a62686c9d5c80d04d98e8b3fb9a",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.1.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "77cc7bc037f894dcafe1ce9cc3d2baa8244ffe63cff1a9bf560aec4c35382f17",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.1.linear_attn.in_proj_a.weight",
+      "source_sha256": "77cc7bc037f894dcafe1ce9cc3d2baa8244ffe63cff1a9bf560aec4c35382f17",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.1.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "daf38a1d1ed0cdb8fe81ca684f595db7afb6f84aa062dbce94e9237d98399a94",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.1.linear_attn.in_proj_b.weight",
+      "source_sha256": "daf38a1d1ed0cdb8fe81ca684f595db7afb6f84aa062dbce94e9237d98399a94",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.1.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "dfeb7007ff5c97f0ea43218df41742829f175202551e2d8a21030b9fb78d907c",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.1.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "dfeb7007ff5c97f0ea43218df41742829f175202551e2d8a21030b9fb78d907c",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.1.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "62d14251ca6f2fe8e45b000b7e00cc217b120adf24a96e1e714dd11f63e97f16",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.1.linear_attn.in_proj_z.weight",
+      "source_sha256": "62d14251ca6f2fe8e45b000b7e00cc217b120adf24a96e1e714dd11f63e97f16",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.1.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "66cb7582a142ba85cff4a46c46a1c25b51a6033c83b5784eaf82e51c9ef96594",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.1.linear_attn.out_proj.weight",
+      "source_sha256": "66cb7582a142ba85cff4a46c46a1c25b51a6033c83b5784eaf82e51c9ef96594",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.1.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "feda6221cef862b7eb343576a03dd1ad215a56561b084c80f26adbf284f1d292",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.1.mlp.down_proj.weight",
+      "source_sha256": "feda6221cef862b7eb343576a03dd1ad215a56561b084c80f26adbf284f1d292",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.1.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "eec1554d574f568c1111fcacdfcce1ee9c96b30d68e104de5d6e73f620a52610",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.1.mlp.gate_proj.weight",
+      "source_sha256": "eec1554d574f568c1111fcacdfcce1ee9c96b30d68e104de5d6e73f620a52610",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.1.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "740e3ead3094791179bb65898f034e0755eafbda8da9509ed441dab450d4ecad",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.1.mlp.up_proj.weight",
+      "source_sha256": "740e3ead3094791179bb65898f034e0755eafbda8da9509ed441dab450d4ecad",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.1.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "c6b318c49995dbe4a916f263b589b887d8af9dbae5f2273318f0c6882277188c",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.1.post_attention_layernorm.weight",
+      "source_sha256": "0dbb3ffad68f553dca3e5cde5f6ab63479b7f9268c56aaa487ba870fdbe8e26f",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.10.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "c392f225558d1bd6baca2e4de432645db3227ae9342d1278141410c7ad3aca37",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.10.input_layernorm.weight",
+      "source_sha256": "57dad5a2b3932f4fb1605a11bf7c687ff7ef7a2de996c4144498ffed3af9d19b",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.10.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ac90f21fe8bd659a8f2f6ae54be75be2ef7fa7d31f06b56fee3870a9fc92eee1",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.10.linear_attn.conv1d.weight",
+      "source_sha256": "ac90f21fe8bd659a8f2f6ae54be75be2ef7fa7d31f06b56fee3870a9fc92eee1",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.10.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "1b3e8ff7bdbd185188bb28dc3190a5422501d012e51cafd5faf8d21f86512061",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.10.linear_attn.dt_bias",
+      "source_sha256": "1b3e8ff7bdbd185188bb28dc3190a5422501d012e51cafd5faf8d21f86512061",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.10.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "5688129a2e822bfa215ff0a62604046fd41ef594c04cd506b687baebdb97d138",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.10.linear_attn.in_proj_a.weight",
+      "source_sha256": "5688129a2e822bfa215ff0a62604046fd41ef594c04cd506b687baebdb97d138",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.10.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "b60200cbd0d55589a43976647bd598843a9293f5bcfca0d1da0d26f4d2bda630",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.10.linear_attn.in_proj_b.weight",
+      "source_sha256": "b60200cbd0d55589a43976647bd598843a9293f5bcfca0d1da0d26f4d2bda630",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.10.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "733680a65ff13073fb52bcd4cca07ff3adbc6e02c695a58a0a69cd576b987c62",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.10.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "733680a65ff13073fb52bcd4cca07ff3adbc6e02c695a58a0a69cd576b987c62",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.10.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "aef495e9ed01c8831be36912335d8c3b8ca61d9f7dc78f4041d52e30f1247559",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.10.linear_attn.in_proj_z.weight",
+      "source_sha256": "aef495e9ed01c8831be36912335d8c3b8ca61d9f7dc78f4041d52e30f1247559",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.10.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "588e20883705d942ccab8d166e35f6d4969b4da0992af5dc84bcb8b6070fa26d",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.10.linear_attn.out_proj.weight",
+      "source_sha256": "588e20883705d942ccab8d166e35f6d4969b4da0992af5dc84bcb8b6070fa26d",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.10.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "e32e37cffba5b41c4939ad74507e10dea14db631b6fef69c16b1a37dd3dc9b12",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.10.mlp.down_proj.weight",
+      "source_sha256": "e32e37cffba5b41c4939ad74507e10dea14db631b6fef69c16b1a37dd3dc9b12",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.10.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "acc39380cf3b0553da8333bffac94461fd05ea8cc4fecf0f96ff2f9e6f73ef06",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.10.mlp.gate_proj.weight",
+      "source_sha256": "acc39380cf3b0553da8333bffac94461fd05ea8cc4fecf0f96ff2f9e6f73ef06",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.10.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "793b2b2e9ad00cefec77ce9c76586612ff2b5705e56323f7ecf2a5e82b9aed0e",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.10.mlp.up_proj.weight",
+      "source_sha256": "793b2b2e9ad00cefec77ce9c76586612ff2b5705e56323f7ecf2a5e82b9aed0e",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.10.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "8e9e058cb952844cea9abdbae2f93cf8c550f1fd90b5b04ec63c04bc4a5ad0d1",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.10.post_attention_layernorm.weight",
+      "source_sha256": "612d8b6c6fdb9160e028f85683648f9cf964df5cc0edec11c1b60a8564a0de10",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.11.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "615da43371444a4c7601c4464e61ba41ff55c5725662b2896b3008fe6778809f",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.11.input_layernorm.weight",
+      "source_sha256": "1996a639da08fd30c87783be599ecd05b513c2d4dcd38c2ba5865aae236d7462",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.11.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "5120ba8e1da3aeb89ddcf924f2c5e5108fdfe63fb072a4f270dd3508c7e24e3f",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.11.mlp.down_proj.weight",
+      "source_sha256": "5120ba8e1da3aeb89ddcf924f2c5e5108fdfe63fb072a4f270dd3508c7e24e3f",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.11.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "59a7d0c382716854528f2b4cfae1223cdaa5e43052c1747ce2a58785c91dacee",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.11.mlp.gate_proj.weight",
+      "source_sha256": "59a7d0c382716854528f2b4cfae1223cdaa5e43052c1747ce2a58785c91dacee",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.11.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "dab36859f9c0914874ca74f932cd380e6634babcba4750a95075bfb9e97d3c9b",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.11.mlp.up_proj.weight",
+      "source_sha256": "dab36859f9c0914874ca74f932cd380e6634babcba4750a95075bfb9e97d3c9b",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.11.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "55be175985ced07e7cff095d03c25a4e3146cc2e372247bb53d441eee62d101c",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.11.post_attention_layernorm.weight",
+      "source_sha256": "de62c6ada66ae054b7b06a63417f9004fc0a578d6dde681ecd2878293f94b34a",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.11.self_attn.k_norm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ac577d8fae74afaae8f36fa2e1ef13cc890a53c9d4526c130787bfc77e589784",
+      "runtime_shape": [
+        256
+      ],
+      "source": "model.language_model.layers.11.self_attn.k_norm.weight",
+      "source_sha256": "2627cede9dca510f81c95437b72ef6e2ec35d8465b9b82873c0c9c9b5d864f1f",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.11.self_attn.k_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "bde140c97a3558c267d10edbe76b6409aa1d2ad4f5790f1d72d1d85d27b0c281",
+      "runtime_shape": [
+        512,
+        1024
+      ],
+      "source": "model.language_model.layers.11.self_attn.k_proj.weight",
+      "source_sha256": "bde140c97a3558c267d10edbe76b6409aa1d2ad4f5790f1d72d1d85d27b0c281",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.11.self_attn.o_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "fd07e3e0b48deb3d36314fb39863cc30739c0d0cd9575da79bc26f562ba2762e",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.11.self_attn.o_proj.weight",
+      "source_sha256": "fd07e3e0b48deb3d36314fb39863cc30739c0d0cd9575da79bc26f562ba2762e",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.11.self_attn.q_norm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "43892d036ddd2254b19e556bf1ef292de1b2ecdf96ec029980c471c399d0ac2c",
+      "runtime_shape": [
+        256
+      ],
+      "source": "model.language_model.layers.11.self_attn.q_norm.weight",
+      "source_sha256": "362e6efab6f00a8442201b26236004741dd5afca4b028f8216f131872d88d362",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.11.self_attn.q_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "6c87d80ffb32c16ababa3fa7151fff829d47631a685e3390ff2e00a2a3c0ed1c",
+      "runtime_shape": [
+        4096,
+        1024
+      ],
+      "source": "model.language_model.layers.11.self_attn.q_proj.weight",
+      "source_sha256": "6c87d80ffb32c16ababa3fa7151fff829d47631a685e3390ff2e00a2a3c0ed1c",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.11.self_attn.v_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "6d0b839f9b50573a380568d3db8e4be420cfc41bb084bdb9ea1975044b137fd6",
+      "runtime_shape": [
+        512,
+        1024
+      ],
+      "source": "model.language_model.layers.11.self_attn.v_proj.weight",
+      "source_sha256": "6d0b839f9b50573a380568d3db8e4be420cfc41bb084bdb9ea1975044b137fd6",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.12.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "0e1cc36bca2a4f2284a412de602d0bda4898a67479cb0c22ebd4ce50e6858fdf",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.12.input_layernorm.weight",
+      "source_sha256": "02b667d3e098c1b200d499373d170dd0b803c41cb1f779bdac47f8a8f740d144",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.12.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "1cc2aa30505b74f6f75291fe1e350e874d1c85635667f1b53819a1f7b95fc060",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.12.linear_attn.conv1d.weight",
+      "source_sha256": "1cc2aa30505b74f6f75291fe1e350e874d1c85635667f1b53819a1f7b95fc060",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.12.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "5d8cef5bde9f46cdcce4e487c33fa2f2e8bbdac3bca5a166ee0fb54142ecda2d",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.12.linear_attn.dt_bias",
+      "source_sha256": "5d8cef5bde9f46cdcce4e487c33fa2f2e8bbdac3bca5a166ee0fb54142ecda2d",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.12.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "050acba7b733cf44261ce882f25537a9ccd64e10afa903d758b1c43e18857735",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.12.linear_attn.in_proj_a.weight",
+      "source_sha256": "050acba7b733cf44261ce882f25537a9ccd64e10afa903d758b1c43e18857735",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.12.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a3a106faa9f2a7bfa4a7559b82ffcc3644859174a2901444c5fb1c4c64d062e4",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.12.linear_attn.in_proj_b.weight",
+      "source_sha256": "a3a106faa9f2a7bfa4a7559b82ffcc3644859174a2901444c5fb1c4c64d062e4",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.12.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "cb26f2da759837440a988302c5e071109a583e9282fa37f37970f3c1f7c41b80",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.12.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "cb26f2da759837440a988302c5e071109a583e9282fa37f37970f3c1f7c41b80",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.12.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "6e4522f7902f0b95f3e33b46ef12d393ffd792ae9e2dbe9e198fdaaef41f9395",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.12.linear_attn.in_proj_z.weight",
+      "source_sha256": "6e4522f7902f0b95f3e33b46ef12d393ffd792ae9e2dbe9e198fdaaef41f9395",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.12.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "7fd66cf843f4ded4175804494f9ed9ed91375bf224d99a209789bb762c7e19ed",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.12.linear_attn.out_proj.weight",
+      "source_sha256": "7fd66cf843f4ded4175804494f9ed9ed91375bf224d99a209789bb762c7e19ed",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.12.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "2d5f2fef40eb81eddb32ab0ca8e4e53e5578c53f335cdd6b54d9d62051b0759e",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.12.mlp.down_proj.weight",
+      "source_sha256": "2d5f2fef40eb81eddb32ab0ca8e4e53e5578c53f335cdd6b54d9d62051b0759e",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.12.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "dc73c370a6af841769f183399d1ce8c8f7e26cc90daba1f048709030f81b0ba9",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.12.mlp.gate_proj.weight",
+      "source_sha256": "dc73c370a6af841769f183399d1ce8c8f7e26cc90daba1f048709030f81b0ba9",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.12.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "0f290b628c01776d8afd46ed1db1d096722942f7112fc0f30e9baee41fb40fb5",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.12.mlp.up_proj.weight",
+      "source_sha256": "0f290b628c01776d8afd46ed1db1d096722942f7112fc0f30e9baee41fb40fb5",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.12.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "0fe0abfcd9a15216edf2c713657f909cb1aefc148a0d84507bf60de66a087384",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.12.post_attention_layernorm.weight",
+      "source_sha256": "4e5a5d9cc2c020223e36c0045ddeffbbfc7f311a9ef59c90b015c38cb9ee1492",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.13.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "d3d011a9bfcb08a87c5280aff5aca860dd79eab68f7a628fcb6a277bd4d87497",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.13.input_layernorm.weight",
+      "source_sha256": "9908305d09036e95cfd52e500ec9eeff0906e6b80d40dd834e0a8af418e91c86",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.13.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "2b24d64449a3e81847588ef1a5938c807f4acb6fd9143379f047c3d1dc11c38a",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.13.linear_attn.conv1d.weight",
+      "source_sha256": "2b24d64449a3e81847588ef1a5938c807f4acb6fd9143379f047c3d1dc11c38a",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.13.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a0368cef2ab75a6fba5e6509e80abaaedf47bd83a201c3a586ef337a6246efa1",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.13.linear_attn.dt_bias",
+      "source_sha256": "a0368cef2ab75a6fba5e6509e80abaaedf47bd83a201c3a586ef337a6246efa1",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.13.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "95afc547a264a11e1acf508e2b3b37e0b92e240e2940046e0cb58946c1bf7e80",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.13.linear_attn.in_proj_a.weight",
+      "source_sha256": "95afc547a264a11e1acf508e2b3b37e0b92e240e2940046e0cb58946c1bf7e80",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.13.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a21589cbbe52761472b6b34038161c3d6dcc656b96506783f84185ba9a011ae3",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.13.linear_attn.in_proj_b.weight",
+      "source_sha256": "a21589cbbe52761472b6b34038161c3d6dcc656b96506783f84185ba9a011ae3",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.13.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "b2af6d38c8d0320e0f9e8c6c0a1ab7d638361c3f91794c575f6336b4763dfd31",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.13.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "b2af6d38c8d0320e0f9e8c6c0a1ab7d638361c3f91794c575f6336b4763dfd31",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.13.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "175e5242ea88f296c2d9d54c63b53b6c6c4b29cfaa75f450dafca9bfe2867451",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.13.linear_attn.in_proj_z.weight",
+      "source_sha256": "175e5242ea88f296c2d9d54c63b53b6c6c4b29cfaa75f450dafca9bfe2867451",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.13.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ed7cb4978176a6fadd07c3fd9d90fb6ab0ac125021e198d8f4dce00fa7169c3b",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.13.linear_attn.out_proj.weight",
+      "source_sha256": "ed7cb4978176a6fadd07c3fd9d90fb6ab0ac125021e198d8f4dce00fa7169c3b",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.13.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a903cbbf112b0c17b53cc7c89faed3df7fa718ec5f0a148ab474b6a75a064210",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.13.mlp.down_proj.weight",
+      "source_sha256": "a903cbbf112b0c17b53cc7c89faed3df7fa718ec5f0a148ab474b6a75a064210",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.13.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "848f24b29888174053ce57ae02fe67c8d0f03fc94e75412ef821f0f7fb1159bc",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.13.mlp.gate_proj.weight",
+      "source_sha256": "848f24b29888174053ce57ae02fe67c8d0f03fc94e75412ef821f0f7fb1159bc",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.13.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "8d66273c144a88ed841d0f15ef0bb0d65b5238a506d4ac1ee66f86dcf1993707",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.13.mlp.up_proj.weight",
+      "source_sha256": "8d66273c144a88ed841d0f15ef0bb0d65b5238a506d4ac1ee66f86dcf1993707",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.13.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "95e03a7af4324a4c545ef310754534535368dec48227d72c56d3a5ff0adbb477",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.13.post_attention_layernorm.weight",
+      "source_sha256": "5d083952a92dc55f8ef7589c47f22fe04181581703d0c4687c1a0abcb9438a78",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.14.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "3cda7df4c8c62574085d4e5f669185bc6d8db2e30dad2478c074e65eb3ebaaf1",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.14.input_layernorm.weight",
+      "source_sha256": "4c3fda2b7b689ed486a1d589662ae0277bef18533c260673c8c57134489f815b",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.14.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "f3e0c3cb5250abc2e4878980a5083839ff73b6619c23e0a215cd9d12b7cadffd",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.14.linear_attn.conv1d.weight",
+      "source_sha256": "f3e0c3cb5250abc2e4878980a5083839ff73b6619c23e0a215cd9d12b7cadffd",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.14.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ec327be5bc6f761f09528dddc66a8aef6b0bfea753dbc31dc678866ee2d2a8e0",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.14.linear_attn.dt_bias",
+      "source_sha256": "ec327be5bc6f761f09528dddc66a8aef6b0bfea753dbc31dc678866ee2d2a8e0",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.14.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "e17970735512b94fad660c188615ed2100fcdc224f40ff83386781f148b77283",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.14.linear_attn.in_proj_a.weight",
+      "source_sha256": "e17970735512b94fad660c188615ed2100fcdc224f40ff83386781f148b77283",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.14.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "51400e43b31da8ad419519fa74fafff6fb913dbe2a9f7f3db1b76122caefc514",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.14.linear_attn.in_proj_b.weight",
+      "source_sha256": "51400e43b31da8ad419519fa74fafff6fb913dbe2a9f7f3db1b76122caefc514",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.14.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "55cd42e6408d76bd062b47b0ec9faed8b582cecf8c7c632b35a8a2fd044fecf1",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.14.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "55cd42e6408d76bd062b47b0ec9faed8b582cecf8c7c632b35a8a2fd044fecf1",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.14.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "3439f3c617eaa24acfcdede4411a31fc6cd8025c4bad695c1c0de9236bae0c6a",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.14.linear_attn.in_proj_z.weight",
+      "source_sha256": "3439f3c617eaa24acfcdede4411a31fc6cd8025c4bad695c1c0de9236bae0c6a",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.14.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "4104c25ec4cce12ad592be6a296c4cc0275e2e8f4b00521f49bb03187d8a83c0",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.14.linear_attn.out_proj.weight",
+      "source_sha256": "4104c25ec4cce12ad592be6a296c4cc0275e2e8f4b00521f49bb03187d8a83c0",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.14.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "96d8150df0567e3d748b0388e6a20781b0569388a4ffa2a34faa531c85642803",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.14.mlp.down_proj.weight",
+      "source_sha256": "96d8150df0567e3d748b0388e6a20781b0569388a4ffa2a34faa531c85642803",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.14.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "6327f2e91f44b5f5ae73cfaab781219ca035699280ca7fa8f2c044a1d0d54965",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.14.mlp.gate_proj.weight",
+      "source_sha256": "6327f2e91f44b5f5ae73cfaab781219ca035699280ca7fa8f2c044a1d0d54965",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.14.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "f63c0b1e4ae22e9aa8c99d3d63a642b127a4f747eb9128eff0c339481e2c62d9",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.14.mlp.up_proj.weight",
+      "source_sha256": "f63c0b1e4ae22e9aa8c99d3d63a642b127a4f747eb9128eff0c339481e2c62d9",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.14.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "90cb3c268bc8a104417a73af9682843359dfa65ec4670a82fba8d34aa8964aa6",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.14.post_attention_layernorm.weight",
+      "source_sha256": "dc29d7ed0a819ea2597ec91d1172c14df84b9e24cb49ccb272080c88e5f37e8d",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.15.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "7d438382750c9bfb394b8cd74578550bb56d3819a38a9edf952701bd3aa54dae",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.15.input_layernorm.weight",
+      "source_sha256": "670e6a67aacfe530ec25cc0ab3dd9dd679e4fb6f00d9ae45f6b1cc8e6a26c513",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.15.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ef60d2c687bab19464dca9c8bfd7777e46ad226df0c9e25643b0bab04b5a1cca",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.15.mlp.down_proj.weight",
+      "source_sha256": "ef60d2c687bab19464dca9c8bfd7777e46ad226df0c9e25643b0bab04b5a1cca",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.15.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "46661cd3ffaa3fc096b0785581b41a848e40d8247ba4cb7ced946cc4fde06a48",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.15.mlp.gate_proj.weight",
+      "source_sha256": "46661cd3ffaa3fc096b0785581b41a848e40d8247ba4cb7ced946cc4fde06a48",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.15.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "aa16ebc91dcb4702fe78227d9eea187cc044eb49ae8196e228cad737dd71e715",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.15.mlp.up_proj.weight",
+      "source_sha256": "aa16ebc91dcb4702fe78227d9eea187cc044eb49ae8196e228cad737dd71e715",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.15.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "73563a133bb557e1fe4f7fed37e92b3b29e7762bf06c64d92f179e7b84aca379",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.15.post_attention_layernorm.weight",
+      "source_sha256": "86bc9b8e15b9a9b6693bc57becf46255406ab48407fb0b3d9ab663a2aaf75667",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.15.self_attn.k_norm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "f749725323a23af745aea757bab87adc43d82f191188e7f4323327646529f23c",
+      "runtime_shape": [
+        256
+      ],
+      "source": "model.language_model.layers.15.self_attn.k_norm.weight",
+      "source_sha256": "bf86eafa90845f6148eef808451d12b1c4eec07a4e01c8cd5fd4e2133f6422f3",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.15.self_attn.k_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "f32866a80a6fab3a2f505b91443212283dab7e32a8d445206ebf3038cc1a8a0b",
+      "runtime_shape": [
+        512,
+        1024
+      ],
+      "source": "model.language_model.layers.15.self_attn.k_proj.weight",
+      "source_sha256": "f32866a80a6fab3a2f505b91443212283dab7e32a8d445206ebf3038cc1a8a0b",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.15.self_attn.o_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "2f5be1b0f59d3bf45a992e18c26b3658ce5112527ea570b00d05fe1a48140092",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.15.self_attn.o_proj.weight",
+      "source_sha256": "2f5be1b0f59d3bf45a992e18c26b3658ce5112527ea570b00d05fe1a48140092",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.15.self_attn.q_norm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "d11420aeda9fd9aeb660101d5d0f921f533ea118ebaa41a37a9dcf3d335b4817",
+      "runtime_shape": [
+        256
+      ],
+      "source": "model.language_model.layers.15.self_attn.q_norm.weight",
+      "source_sha256": "ca19b737f9e79a36443c2ad5221c82097d63e07a3fdf9726eefb2f549733af69",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.15.self_attn.q_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "35bfbc3cf48dd835c6953120224af8ee7aac5f4bce955d41f1777d136d7b89a9",
+      "runtime_shape": [
+        4096,
+        1024
+      ],
+      "source": "model.language_model.layers.15.self_attn.q_proj.weight",
+      "source_sha256": "35bfbc3cf48dd835c6953120224af8ee7aac5f4bce955d41f1777d136d7b89a9",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.15.self_attn.v_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "0091e751727826dd2bb7d6e239870484cba3393bc219ec9595b5ab2ddf8607e0",
+      "runtime_shape": [
+        512,
+        1024
+      ],
+      "source": "model.language_model.layers.15.self_attn.v_proj.weight",
+      "source_sha256": "0091e751727826dd2bb7d6e239870484cba3393bc219ec9595b5ab2ddf8607e0",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.16.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a4f0cba5964a63e1420c82c48cdf56e463bce26eabd7a1417ccdce7d68663316",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.16.input_layernorm.weight",
+      "source_sha256": "a63ff1b506ee7cf71c5d52f95598fa6ebe9410ac3197e2e95a242ab973b29624",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.16.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "0dd6a64825d60e73c1579f9cb28b74f992c10565ff728cf6bf78ee95b750d754",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.16.linear_attn.conv1d.weight",
+      "source_sha256": "0dd6a64825d60e73c1579f9cb28b74f992c10565ff728cf6bf78ee95b750d754",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.16.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "43150073a3011519850a65c6a3373ee89a0fb09a2c298a8e75b22c12bafdae13",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.16.linear_attn.dt_bias",
+      "source_sha256": "43150073a3011519850a65c6a3373ee89a0fb09a2c298a8e75b22c12bafdae13",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.16.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a998e1d375f07adb1d5c7af7544bbb097504b804c31ab340741c46085e82bddc",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.16.linear_attn.in_proj_a.weight",
+      "source_sha256": "a998e1d375f07adb1d5c7af7544bbb097504b804c31ab340741c46085e82bddc",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.16.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "718a0f80e52df9721d12d6d9176edc575500a16bbc4a821b0aa16c053c5ae456",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.16.linear_attn.in_proj_b.weight",
+      "source_sha256": "718a0f80e52df9721d12d6d9176edc575500a16bbc4a821b0aa16c053c5ae456",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.16.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "83bf31af185b7cfb4a421b6d1bb258912e66413c17a5c78a4599119203668e64",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.16.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "83bf31af185b7cfb4a421b6d1bb258912e66413c17a5c78a4599119203668e64",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.16.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "9b9c714ac98e68501731c49be2645b714f63637f1d0f1e75bf6451e26256aa89",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.16.linear_attn.in_proj_z.weight",
+      "source_sha256": "9b9c714ac98e68501731c49be2645b714f63637f1d0f1e75bf6451e26256aa89",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.16.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "726ecc2ab3ba05f84cbff821eca9425519c30aec5d7ab1cf3aceaea7af38722a",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.16.linear_attn.out_proj.weight",
+      "source_sha256": "726ecc2ab3ba05f84cbff821eca9425519c30aec5d7ab1cf3aceaea7af38722a",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.16.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "e12df33b47e0bb61125b8fe421d0aba4a75e6bf0b07e1b233f79937b978356d0",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.16.mlp.down_proj.weight",
+      "source_sha256": "e12df33b47e0bb61125b8fe421d0aba4a75e6bf0b07e1b233f79937b978356d0",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.16.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "09149700806a4bb83986f73459d3b8ac636018a4a2411927073bc49c6895c3e8",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.16.mlp.gate_proj.weight",
+      "source_sha256": "09149700806a4bb83986f73459d3b8ac636018a4a2411927073bc49c6895c3e8",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.16.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "8c4eb5f3102c29f255f26e7e82a6223c410f229a4b3ea4dedab73d776a9f6080",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.16.mlp.up_proj.weight",
+      "source_sha256": "8c4eb5f3102c29f255f26e7e82a6223c410f229a4b3ea4dedab73d776a9f6080",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.16.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "c77f66efa359bda53f6c12d9ccb6ae8bf19c2e37a4d1989121713380e83077d0",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.16.post_attention_layernorm.weight",
+      "source_sha256": "89249bc43d147f248f9457371fd3780c9fed3b1889bb0ecf76500e1f81d6307b",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.17.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "7d33c37deda2db019154e739f9f5c0b48573d8b8ff0455c4eb55e773258ce115",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.17.input_layernorm.weight",
+      "source_sha256": "7076dfa9c7857bd70c1c9680daf54927db580faf40827101347db5c9595baba9",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.17.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "007b69b950272d2169c37d47dae64923342fd09cd2d451cbb2c35db20c70118a",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.17.linear_attn.conv1d.weight",
+      "source_sha256": "007b69b950272d2169c37d47dae64923342fd09cd2d451cbb2c35db20c70118a",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.17.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ab51aafbe0b1c8e8865d525e726ea43426b6d3e7d70314e2284f5884874be0de",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.17.linear_attn.dt_bias",
+      "source_sha256": "ab51aafbe0b1c8e8865d525e726ea43426b6d3e7d70314e2284f5884874be0de",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.17.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "d38b1f46072b48c85bbc1b68130c9283c652d111c0d7cec61d3ea1263bba310e",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.17.linear_attn.in_proj_a.weight",
+      "source_sha256": "d38b1f46072b48c85bbc1b68130c9283c652d111c0d7cec61d3ea1263bba310e",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.17.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a2be5f986e93f5e7bb0af4db830c556a7409ca2bcb67b9aee7c27534cbf7b35b",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.17.linear_attn.in_proj_b.weight",
+      "source_sha256": "a2be5f986e93f5e7bb0af4db830c556a7409ca2bcb67b9aee7c27534cbf7b35b",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.17.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "c166aaaa8f561735ba47e82e0e853f2afc8ef683f4d5f1308756144d2a8a1538",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.17.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "c166aaaa8f561735ba47e82e0e853f2afc8ef683f4d5f1308756144d2a8a1538",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.17.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "246f4df3c2c4025689ee42f547bcd35eef5a1accf443a7d66b680120280615e0",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.17.linear_attn.in_proj_z.weight",
+      "source_sha256": "246f4df3c2c4025689ee42f547bcd35eef5a1accf443a7d66b680120280615e0",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.17.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "73a8878d3e33c44b82f667c38243a535b6a3ca73c3a5fcf8c7dde790d246744d",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.17.linear_attn.out_proj.weight",
+      "source_sha256": "73a8878d3e33c44b82f667c38243a535b6a3ca73c3a5fcf8c7dde790d246744d",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.17.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "412058832c188e22c34c358c8e59601fbc9a945b7ac7fb8ed5b4712302b237a8",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.17.mlp.down_proj.weight",
+      "source_sha256": "412058832c188e22c34c358c8e59601fbc9a945b7ac7fb8ed5b4712302b237a8",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.17.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "f8756b1cb7504eacc713c4e2c9d2128e3b7c0ff63248756d5a1a216ffe694300",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.17.mlp.gate_proj.weight",
+      "source_sha256": "f8756b1cb7504eacc713c4e2c9d2128e3b7c0ff63248756d5a1a216ffe694300",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.17.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "b69569389e39e255195d13e2af84a10c49b4415e4c83cb5a0840628ee8f80948",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.17.mlp.up_proj.weight",
+      "source_sha256": "b69569389e39e255195d13e2af84a10c49b4415e4c83cb5a0840628ee8f80948",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.17.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a2639ea521350c443ac74cd4310d5cf7c0b353c0c3dce8045cf0ba26ff80df07",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.17.post_attention_layernorm.weight",
+      "source_sha256": "306491a125a6e37d6a88623c0b74f00d9ec66592fd907c0fb2fc6694b6b0f6a6",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.18.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "8e4a1ce152d6698f28eb00d129fb8792bbfaba2c82cff0223e9c4acfe3cca6d5",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.18.input_layernorm.weight",
+      "source_sha256": "b461b137d827a9dc1f1a34d7198eb082f8a669d3fcd46cfc995a860728066e22",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.18.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "5a750fe628c7beba215a72ad4aaa5bc46e2c88d587aad6671b949bfdb42db545",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.18.linear_attn.conv1d.weight",
+      "source_sha256": "5a750fe628c7beba215a72ad4aaa5bc46e2c88d587aad6671b949bfdb42db545",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.18.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "d8dd2668405443e3502df2447713e66aa5dd25c52ff3c96d2e2c0cad8e30abb1",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.18.linear_attn.dt_bias",
+      "source_sha256": "d8dd2668405443e3502df2447713e66aa5dd25c52ff3c96d2e2c0cad8e30abb1",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.18.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a066a1e1e9520d9bf903d79e93deb1fe4d68dc8fdbf38ba3d8a6cfb8878b8d40",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.18.linear_attn.in_proj_a.weight",
+      "source_sha256": "a066a1e1e9520d9bf903d79e93deb1fe4d68dc8fdbf38ba3d8a6cfb8878b8d40",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.18.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "4d9033c62a2dfc655791e3e46b31907369fbafa8d77ee218cb36b8838b0e530f",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.18.linear_attn.in_proj_b.weight",
+      "source_sha256": "4d9033c62a2dfc655791e3e46b31907369fbafa8d77ee218cb36b8838b0e530f",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.18.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "47b97e6fae772a763029b7b10ac73d5214a7ab07f5855ef82ce01c51d823252d",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.18.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "47b97e6fae772a763029b7b10ac73d5214a7ab07f5855ef82ce01c51d823252d",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.18.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "1933b7c60b8ee2f19d8a2156e54b41407aa13b19808a3e5a9c24bb3c44832c86",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.18.linear_attn.in_proj_z.weight",
+      "source_sha256": "1933b7c60b8ee2f19d8a2156e54b41407aa13b19808a3e5a9c24bb3c44832c86",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.18.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "45929a42f3c3e0b9ade395dfb3ac8acc5084dd010cd4045cd8f570629b19d1e3",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.18.linear_attn.out_proj.weight",
+      "source_sha256": "45929a42f3c3e0b9ade395dfb3ac8acc5084dd010cd4045cd8f570629b19d1e3",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.18.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "f41124d728ee26c54cd15b22cdd10138cbfe5a04c6e7fe514f53d86d4780d838",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.18.mlp.down_proj.weight",
+      "source_sha256": "f41124d728ee26c54cd15b22cdd10138cbfe5a04c6e7fe514f53d86d4780d838",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.18.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "4717af00990d4ec5e61e0f6f1da6d63a0c559dd829acf65130c74df02d2643b3",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.18.mlp.gate_proj.weight",
+      "source_sha256": "4717af00990d4ec5e61e0f6f1da6d63a0c559dd829acf65130c74df02d2643b3",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.18.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "eb176a1dd3a08f18cb0a5dfda15811bb1b6008416c4765f7be13352a5b813605",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.18.mlp.up_proj.weight",
+      "source_sha256": "eb176a1dd3a08f18cb0a5dfda15811bb1b6008416c4765f7be13352a5b813605",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.18.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "573eb86c74e8b0f34680110357d9e24397e07d452fd6c58204766b5bbe8b79ae",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.18.post_attention_layernorm.weight",
+      "source_sha256": "d81e9c9425ecafbffe0da0d30c25da4c347ed4217a1ea6f3f60b7ccfd6146741",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.19.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "db39610f3db2764aa17ffa2a53a93398d4ca6e2c32373a4353ad1bb701bb3cbe",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.19.input_layernorm.weight",
+      "source_sha256": "078387ef725e56cc812efe7f5fc1441ae307e311eee4850e56a19276246e02b7",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.19.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "638eedeb701b94aa861f4438e615c07ec6c60ee703db1bfee2de577bb6498c3e",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.19.mlp.down_proj.weight",
+      "source_sha256": "638eedeb701b94aa861f4438e615c07ec6c60ee703db1bfee2de577bb6498c3e",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.19.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "118bfa194557dc70eb6663356fad68adcc98c4a7e4cad9203576e7b6d59f2ec4",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.19.mlp.gate_proj.weight",
+      "source_sha256": "118bfa194557dc70eb6663356fad68adcc98c4a7e4cad9203576e7b6d59f2ec4",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.19.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "f731d77e73d6ba23b6ab5c938f79995f380ea23381a72eb3e01dd015023a51ba",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.19.mlp.up_proj.weight",
+      "source_sha256": "f731d77e73d6ba23b6ab5c938f79995f380ea23381a72eb3e01dd015023a51ba",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.19.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "4c2718a94b85fa749cd0c823cf3fd35a4cc19899b8eab6ed24293feda3063d78",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.19.post_attention_layernorm.weight",
+      "source_sha256": "3f714b74e2c6701e159ce8dfae7b8e4169474d89f249886f4f26af5b8e24984b",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.19.self_attn.k_norm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "0a67d3bc386be7ab2f1bef141ba7b77b9c29dcf76f74bde8073a93cf49565a7f",
+      "runtime_shape": [
+        256
+      ],
+      "source": "model.language_model.layers.19.self_attn.k_norm.weight",
+      "source_sha256": "e6138da9894accb673810dafa8bf73aab6d136c47eeb897097ec81f47ffe5480",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.19.self_attn.k_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "105a6ac59d7454f28c5154c920a48d3f4ca335af24df16415b5d47e483591835",
+      "runtime_shape": [
+        512,
+        1024
+      ],
+      "source": "model.language_model.layers.19.self_attn.k_proj.weight",
+      "source_sha256": "105a6ac59d7454f28c5154c920a48d3f4ca335af24df16415b5d47e483591835",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.19.self_attn.o_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "1cc073772f5471e681af8b4cd8b8ceedf2ede22b2e062949671cf0f17335e8bf",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.19.self_attn.o_proj.weight",
+      "source_sha256": "1cc073772f5471e681af8b4cd8b8ceedf2ede22b2e062949671cf0f17335e8bf",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.19.self_attn.q_norm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "d41af2b995304db7213e2a2815d9e6a2790a2df067bdbc3dd7d6a50ec64c3947",
+      "runtime_shape": [
+        256
+      ],
+      "source": "model.language_model.layers.19.self_attn.q_norm.weight",
+      "source_sha256": "a00cbb7839761c57bad599bd0643e1359d8bb25b11eda0219c19c577f66b6db2",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.19.self_attn.q_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a70273d21445d1ebe501732b4e85f8881efd173d64980ca84ca225545992c02e",
+      "runtime_shape": [
+        4096,
+        1024
+      ],
+      "source": "model.language_model.layers.19.self_attn.q_proj.weight",
+      "source_sha256": "a70273d21445d1ebe501732b4e85f8881efd173d64980ca84ca225545992c02e",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.19.self_attn.v_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "714480f14734e4014f7d21c90829ca6b6b9f2818652aa5fe1bc84d5bed6ecdf8",
+      "runtime_shape": [
+        512,
+        1024
+      ],
+      "source": "model.language_model.layers.19.self_attn.v_proj.weight",
+      "source_sha256": "714480f14734e4014f7d21c90829ca6b6b9f2818652aa5fe1bc84d5bed6ecdf8",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.2.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "debf895a1deef4925fbb2d335111399494ae8254845e13b8fd31191d67bd502d",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.2.input_layernorm.weight",
+      "source_sha256": "477fb98b50ccb37ea7254aaf74add51c48bd500dcd3181eda885057c74592840",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.2.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ae942a15a3c2a2b4bb52b36d0e36523d8a8f1a75e7ea1d316fbc0a1c506f845e",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.2.linear_attn.conv1d.weight",
+      "source_sha256": "ae942a15a3c2a2b4bb52b36d0e36523d8a8f1a75e7ea1d316fbc0a1c506f845e",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.2.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "942709532514b148fa625457a4b23d6fb819b06c702494760f2891cc855d66c1",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.2.linear_attn.dt_bias",
+      "source_sha256": "942709532514b148fa625457a4b23d6fb819b06c702494760f2891cc855d66c1",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.2.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "65e139d61fb2dac335760f31501360840c0808e648558a46fc0e7515916a6c5a",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.2.linear_attn.in_proj_a.weight",
+      "source_sha256": "65e139d61fb2dac335760f31501360840c0808e648558a46fc0e7515916a6c5a",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.2.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "fe3f12a1c1d11cd6cb1255fd391434df23f8e3bf57a540f5795f9a1b204898ac",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.2.linear_attn.in_proj_b.weight",
+      "source_sha256": "fe3f12a1c1d11cd6cb1255fd391434df23f8e3bf57a540f5795f9a1b204898ac",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.2.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "94229ea3818917350ab4287f9b59400d362c0b1c4a137ce7b4321c63b2d15e60",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.2.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "94229ea3818917350ab4287f9b59400d362c0b1c4a137ce7b4321c63b2d15e60",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.2.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "20da1410a365d369d371b3ff8e1dc2963687db187e70068e17e1f6b783aa504e",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.2.linear_attn.in_proj_z.weight",
+      "source_sha256": "20da1410a365d369d371b3ff8e1dc2963687db187e70068e17e1f6b783aa504e",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.2.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "c5950ca4569b4492985fed6839ede13d4c630e6950e9215cbfe2b810316b335e",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.2.linear_attn.out_proj.weight",
+      "source_sha256": "c5950ca4569b4492985fed6839ede13d4c630e6950e9215cbfe2b810316b335e",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.2.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "9196cbdeb8929eb1440cb8d7981aa72a19354f9bfaa22806e224694c303a902a",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.2.mlp.down_proj.weight",
+      "source_sha256": "9196cbdeb8929eb1440cb8d7981aa72a19354f9bfaa22806e224694c303a902a",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.2.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "92b1c17f4299d458400adbf94d5625402c519c65e2e75154821ac95913579307",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.2.mlp.gate_proj.weight",
+      "source_sha256": "92b1c17f4299d458400adbf94d5625402c519c65e2e75154821ac95913579307",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.2.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "045550db57e546e0bbf8d92ff749728b3a109c36feea700f600e954f9a85c2d3",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.2.mlp.up_proj.weight",
+      "source_sha256": "045550db57e546e0bbf8d92ff749728b3a109c36feea700f600e954f9a85c2d3",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.2.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "2658362b5d54d3c29444c8c0549ddefb6a6b400803bcc8cdccd7304cc5561177",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.2.post_attention_layernorm.weight",
+      "source_sha256": "ac89246d14af8b3a0c0772943e7209d6056e5b320b09677ecec95a38756ec4ca",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.20.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "d854e8c7fdf41cea6e6227e1913991f37ba3ad9b224278fc81492baa73fe2150",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.20.input_layernorm.weight",
+      "source_sha256": "4812381974d53a946b3d2f1f92b648ed4f229a86646d00861013266092a9d7d9",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.20.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "8a8b9c710987eac6b4b5d6cdbe432be51414373eda229c0f252b27d65a2a2ef1",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.20.linear_attn.conv1d.weight",
+      "source_sha256": "8a8b9c710987eac6b4b5d6cdbe432be51414373eda229c0f252b27d65a2a2ef1",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.20.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "8f37a0989adf2651fdccc89820088050666b1e1c158a6d0d2f8fd9637a978ffb",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.20.linear_attn.dt_bias",
+      "source_sha256": "8f37a0989adf2651fdccc89820088050666b1e1c158a6d0d2f8fd9637a978ffb",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.20.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "fb17adb4ffc6549fcb0efb041fbadbd52ec070b0fb796f193bb980c9c13b4c89",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.20.linear_attn.in_proj_a.weight",
+      "source_sha256": "fb17adb4ffc6549fcb0efb041fbadbd52ec070b0fb796f193bb980c9c13b4c89",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.20.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "174f0a8f42b36b298629a010509a1bcc4c3c974ea7f09b92b90811bbbe014e0c",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.20.linear_attn.in_proj_b.weight",
+      "source_sha256": "174f0a8f42b36b298629a010509a1bcc4c3c974ea7f09b92b90811bbbe014e0c",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.20.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "0f12215de011f28454382974e698b4c83d27bc855df16020a4f7cf0ccceceef6",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.20.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "0f12215de011f28454382974e698b4c83d27bc855df16020a4f7cf0ccceceef6",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.20.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "405fe0e3f54a23363a1ec4bf739f999fc517988253b6eb6c91cd781c6c9d9082",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.20.linear_attn.in_proj_z.weight",
+      "source_sha256": "405fe0e3f54a23363a1ec4bf739f999fc517988253b6eb6c91cd781c6c9d9082",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.20.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "15d1f278000fcab352ac74ed65c6dadd83dea32d95805681215e7531d8b5add5",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.20.linear_attn.out_proj.weight",
+      "source_sha256": "15d1f278000fcab352ac74ed65c6dadd83dea32d95805681215e7531d8b5add5",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.20.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "95321f2c16e168880266841a7ba2839bc0830079d02a052e0b109c19132b01db",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.20.mlp.down_proj.weight",
+      "source_sha256": "95321f2c16e168880266841a7ba2839bc0830079d02a052e0b109c19132b01db",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.20.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "52f9e1ac66d6777ea869cd9c9a968f1fe60a61feea23164755a52e1971c1716e",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.20.mlp.gate_proj.weight",
+      "source_sha256": "52f9e1ac66d6777ea869cd9c9a968f1fe60a61feea23164755a52e1971c1716e",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.20.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "b686d984a503dca9d88012f9be8f14e042c2ca0be541d62c6dac186cd3fc5533",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.20.mlp.up_proj.weight",
+      "source_sha256": "b686d984a503dca9d88012f9be8f14e042c2ca0be541d62c6dac186cd3fc5533",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.20.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "2eca90f58e25a12203b85264611e7d93e97bcdc907b1e19d0b73b0c73c72f559",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.20.post_attention_layernorm.weight",
+      "source_sha256": "c0dbf11d1abec637e19d26733a413db28972261dc7754f52b2b7016090749b02",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.21.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "2e6c87d0f27db1694ffc75a5a8d5436892a535635d1a91aaab0a67dcb1ebb8ec",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.21.input_layernorm.weight",
+      "source_sha256": "b12f6b1bdda9d72c263da8a6872efe8a2ddfb85ca5b1a2994d1051f701abfcd2",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.21.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "79c1cd792b335cac388a57ed62ac3e9a4deecfb438dce6ef8c91225769278a43",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.21.linear_attn.conv1d.weight",
+      "source_sha256": "79c1cd792b335cac388a57ed62ac3e9a4deecfb438dce6ef8c91225769278a43",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.21.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a4bddfddca7a084d36b3ac4e4e67e06513f42a21bb730fd2fde17ba08a8b6857",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.21.linear_attn.dt_bias",
+      "source_sha256": "a4bddfddca7a084d36b3ac4e4e67e06513f42a21bb730fd2fde17ba08a8b6857",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.21.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "8413d52319a2afd7ab84ed4c22fd5f8a2c6b21beffb8cdee05c05dfbc5833989",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.21.linear_attn.in_proj_a.weight",
+      "source_sha256": "8413d52319a2afd7ab84ed4c22fd5f8a2c6b21beffb8cdee05c05dfbc5833989",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.21.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "52bcb25f271e7facc8fdce1c21c94827adf598de73e51b9f451cd306d6d9aced",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.21.linear_attn.in_proj_b.weight",
+      "source_sha256": "52bcb25f271e7facc8fdce1c21c94827adf598de73e51b9f451cd306d6d9aced",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.21.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "9335f74b1454d851d66118dedccbaf4e714ab34dc4b098adca75f9f5f51e90d8",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.21.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "9335f74b1454d851d66118dedccbaf4e714ab34dc4b098adca75f9f5f51e90d8",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.21.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "358e7fa34c30c0fb52cdf653669fc7be8f5eeb56357b9939dbe8f07735e376e9",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.21.linear_attn.in_proj_z.weight",
+      "source_sha256": "358e7fa34c30c0fb52cdf653669fc7be8f5eeb56357b9939dbe8f07735e376e9",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.21.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "facb92f1502efd9987c3c2341f6934687f633ee6d99ea7b00d4e083236d54ec1",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.21.linear_attn.out_proj.weight",
+      "source_sha256": "facb92f1502efd9987c3c2341f6934687f633ee6d99ea7b00d4e083236d54ec1",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.21.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "af9fa5ecc9556068d867a410180e79bb3b5ac93c05059b8c98fef526c4483d9c",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.21.mlp.down_proj.weight",
+      "source_sha256": "af9fa5ecc9556068d867a410180e79bb3b5ac93c05059b8c98fef526c4483d9c",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.21.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "eff487ff19905e18d39bcc76dde0c2c140a258efebd44f4384f0ad0ae705a8ee",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.21.mlp.gate_proj.weight",
+      "source_sha256": "eff487ff19905e18d39bcc76dde0c2c140a258efebd44f4384f0ad0ae705a8ee",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.21.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "da385b3dfc14547a39b8cd2fe9f906d8caa3ebb088144175638356aef55fd311",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.21.mlp.up_proj.weight",
+      "source_sha256": "da385b3dfc14547a39b8cd2fe9f906d8caa3ebb088144175638356aef55fd311",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.21.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "c5009c7df0c89e9030b7db6a444e0de5565c0d1071fc139e176a32b6ef897494",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.21.post_attention_layernorm.weight",
+      "source_sha256": "f9f48b395e31d0c4d68a66320d9a1a7183bc4b3af237b1d4f7efbc085dfe35c5",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.22.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ab7c45d5afe30670e34e2b2b3cfcac070a8b1141c10fe89fc8c4d8287765a3ec",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.22.input_layernorm.weight",
+      "source_sha256": "f4db101415a41466f4a3ecca4a56fdd2958afad5cddf3b75febbd42cf2ea3a3d",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.22.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "55cc24cc9d7442856984a094c2aa1bfeb7535aa08aaf932ba29a01c56e3f1e8e",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.22.linear_attn.conv1d.weight",
+      "source_sha256": "55cc24cc9d7442856984a094c2aa1bfeb7535aa08aaf932ba29a01c56e3f1e8e",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.22.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "14b0292483dfb58158c5b80e9d71fc3c28a56805b8596faa87a8b548a31a7784",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.22.linear_attn.dt_bias",
+      "source_sha256": "14b0292483dfb58158c5b80e9d71fc3c28a56805b8596faa87a8b548a31a7784",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.22.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "f17c9a5b2ea11ab865bfb7397a1fb840b16a1b72f6867fa4a288d3f799d2004a",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.22.linear_attn.in_proj_a.weight",
+      "source_sha256": "f17c9a5b2ea11ab865bfb7397a1fb840b16a1b72f6867fa4a288d3f799d2004a",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.22.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "d09239593c2fea83bedcf5a6afb96f4b91daeed50a25b46dfabcd7bdd171da5b",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.22.linear_attn.in_proj_b.weight",
+      "source_sha256": "d09239593c2fea83bedcf5a6afb96f4b91daeed50a25b46dfabcd7bdd171da5b",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.22.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "18fe3dc1a99c2c757688c67f8a535684d1ee7f316c29d96bbae57a23d1a64a44",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.22.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "18fe3dc1a99c2c757688c67f8a535684d1ee7f316c29d96bbae57a23d1a64a44",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.22.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "061e6773ca971c3bbbb187f5fbb168acdd2738d25087641fcdd429189599dedf",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.22.linear_attn.in_proj_z.weight",
+      "source_sha256": "061e6773ca971c3bbbb187f5fbb168acdd2738d25087641fcdd429189599dedf",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.22.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "0c0430dd7c274bf62f0b6144a8a39034695b0bc00090b66070e68b0327c6aa11",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.22.linear_attn.out_proj.weight",
+      "source_sha256": "0c0430dd7c274bf62f0b6144a8a39034695b0bc00090b66070e68b0327c6aa11",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.22.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "198e2fabef4ee48484d9c952018e465376acea23511f126b7edceef8a66f50a1",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.22.mlp.down_proj.weight",
+      "source_sha256": "198e2fabef4ee48484d9c952018e465376acea23511f126b7edceef8a66f50a1",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.22.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "dde22f42876bc15cae8778a29a573f150d4d042a09af00b8d1abe94d6207d93d",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.22.mlp.gate_proj.weight",
+      "source_sha256": "dde22f42876bc15cae8778a29a573f150d4d042a09af00b8d1abe94d6207d93d",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.22.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "84d1a8b4bf6a468ed531ce11ef7a13cd7e332716ca3d1d19c16714d4b8ad9b73",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.22.mlp.up_proj.weight",
+      "source_sha256": "84d1a8b4bf6a468ed531ce11ef7a13cd7e332716ca3d1d19c16714d4b8ad9b73",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.22.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "d56fb70445c7d45e963f5c3c0e752d581ecf40620902bd5e593387d95a431e83",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.22.post_attention_layernorm.weight",
+      "source_sha256": "d1511f0a492b15f3817584d1804c0ebb5870e4f83b3fb8bad4640810c5a019ce",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.23.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "cbb4bb8b500f00b7b2bcf9a216fde5c7b764e170779f999bcf2a74aef81d1217",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.23.input_layernorm.weight",
+      "source_sha256": "6f359e536fa150538dd0c5a7fc1c2dd233e5ef144e2f4801bc67ec2ca5c519bd",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.23.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "1866748ce87d32cfee34891d2fa393fdfeee77447935f6a31d036e4b80332a48",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.23.mlp.down_proj.weight",
+      "source_sha256": "1866748ce87d32cfee34891d2fa393fdfeee77447935f6a31d036e4b80332a48",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.23.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "57e66633224761ad56da16da7cc0f476e42decd9df64a64ded4a343b8e87487b",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.23.mlp.gate_proj.weight",
+      "source_sha256": "57e66633224761ad56da16da7cc0f476e42decd9df64a64ded4a343b8e87487b",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.23.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "cb3830f5121ca0cb4b974b7904a382f9555975c2e84c71863e868e434e86aa6f",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.23.mlp.up_proj.weight",
+      "source_sha256": "cb3830f5121ca0cb4b974b7904a382f9555975c2e84c71863e868e434e86aa6f",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.23.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "f65ff792f08b584f264abb91c24a2b31410a1da2d2c88180be473a84109bc02e",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.23.post_attention_layernorm.weight",
+      "source_sha256": "3cfea6a338e5afd5297a8cfed380308652ab0eef3114b4cd2a60a1671241295e",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.23.self_attn.k_norm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "849a06a9ac819ecd39763275a23ba6432d45ce8739bb8cacf596a7444c9247e2",
+      "runtime_shape": [
+        256
+      ],
+      "source": "model.language_model.layers.23.self_attn.k_norm.weight",
+      "source_sha256": "b65b55332e92830ff1be15463ae734aeace9c6b145e171e1fbcf3618d4f07e1f",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.23.self_attn.k_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "27bcbe2c659c7fc069d19136008cee923b51433c4f4984fc282436924e63a9b5",
+      "runtime_shape": [
+        512,
+        1024
+      ],
+      "source": "model.language_model.layers.23.self_attn.k_proj.weight",
+      "source_sha256": "27bcbe2c659c7fc069d19136008cee923b51433c4f4984fc282436924e63a9b5",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.23.self_attn.o_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "0bfc9597711007322dfd0be5efc1d105232e9c89efcb03cc3d06b9a29ccdd8f3",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.23.self_attn.o_proj.weight",
+      "source_sha256": "0bfc9597711007322dfd0be5efc1d105232e9c89efcb03cc3d06b9a29ccdd8f3",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.23.self_attn.q_norm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "dd6096893384d217256ac80936588a06d78ecd269ec2277ebf32e1259570d0ae",
+      "runtime_shape": [
+        256
+      ],
+      "source": "model.language_model.layers.23.self_attn.q_norm.weight",
+      "source_sha256": "71bc9c83aa8271131910e8bf00a21bc8f7a98630fbe99125d3cf4a0f2596b911",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.23.self_attn.q_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "1625a60896b86f5e446defc270bf2716b6af8a04d0d254ce2a1c038d261547b6",
+      "runtime_shape": [
+        4096,
+        1024
+      ],
+      "source": "model.language_model.layers.23.self_attn.q_proj.weight",
+      "source_sha256": "1625a60896b86f5e446defc270bf2716b6af8a04d0d254ce2a1c038d261547b6",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.23.self_attn.v_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "76f176150d89f315bd5dda307d25d541bfb61950bdffd5362fc8576d8f7b182f",
+      "runtime_shape": [
+        512,
+        1024
+      ],
+      "source": "model.language_model.layers.23.self_attn.v_proj.weight",
+      "source_sha256": "76f176150d89f315bd5dda307d25d541bfb61950bdffd5362fc8576d8f7b182f",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.3.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "b5c366e4a91d4073ef53fcfd431481cd7869cc36fd4492b1cf5f7e9feba8d7d0",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.3.input_layernorm.weight",
+      "source_sha256": "262f20f74b30264bb8244fd620dfd1356e8282ff09e4ba1d6892900d46d0635b",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.3.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "d3428ec277dd5195c9a42720be5b4068fcc51943670c62f57e61b5adebcae1da",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.3.mlp.down_proj.weight",
+      "source_sha256": "d3428ec277dd5195c9a42720be5b4068fcc51943670c62f57e61b5adebcae1da",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.3.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "50d2f4c60e786596e464958bb515ec5573c3ddb53604930e3e2244f107f71f11",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.3.mlp.gate_proj.weight",
+      "source_sha256": "50d2f4c60e786596e464958bb515ec5573c3ddb53604930e3e2244f107f71f11",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.3.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "f141786356fc0b59f4e1aa8cc3afb084d283e384c98cd47dbd1812b6c9ac1f0f",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.3.mlp.up_proj.weight",
+      "source_sha256": "f141786356fc0b59f4e1aa8cc3afb084d283e384c98cd47dbd1812b6c9ac1f0f",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.3.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "c1adf3047b4c671c28bd25d8ddf0b2b8ccd2184fbca85193d9a99c6c3ddc2df9",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.3.post_attention_layernorm.weight",
+      "source_sha256": "480c483e9af2962e8213512464316402dd657d0dcfa37119a58409689330c7a2",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.3.self_attn.k_norm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "1157d1933b42a5d89acc1cae6f3842ffc1662966c16df43d11c379b4dcdc3498",
+      "runtime_shape": [
+        256
+      ],
+      "source": "model.language_model.layers.3.self_attn.k_norm.weight",
+      "source_sha256": "424ead8a89f71d4e83858da7f28335665c4d61a8797b121cfaa26a56d1f5ea6a",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.3.self_attn.k_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "4c8cfc4b114917fd3067510ca34886f9bb2bac638a07c537a544e0b9494237fe",
+      "runtime_shape": [
+        512,
+        1024
+      ],
+      "source": "model.language_model.layers.3.self_attn.k_proj.weight",
+      "source_sha256": "4c8cfc4b114917fd3067510ca34886f9bb2bac638a07c537a544e0b9494237fe",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.3.self_attn.o_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "4c92f1c5a423b022da52875dc21b31e0957110aefefc8826e0be5bcc875cc9cf",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.3.self_attn.o_proj.weight",
+      "source_sha256": "4c92f1c5a423b022da52875dc21b31e0957110aefefc8826e0be5bcc875cc9cf",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.3.self_attn.q_norm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "8384b40a0181efd4aaf07170d723202b66338805c97840c94a5507bf6e3fe865",
+      "runtime_shape": [
+        256
+      ],
+      "source": "model.language_model.layers.3.self_attn.q_norm.weight",
+      "source_sha256": "6fbc460e96b527aa6b54ab345195d141716dd4e34094baec92c65344f8bac298",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.3.self_attn.q_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "b0dde4ab3eee4dc2abdf2e2fe8cd6b474d52c4559e38bb8fc9c8589c1b0a7176",
+      "runtime_shape": [
+        4096,
+        1024
+      ],
+      "source": "model.language_model.layers.3.self_attn.q_proj.weight",
+      "source_sha256": "b0dde4ab3eee4dc2abdf2e2fe8cd6b474d52c4559e38bb8fc9c8589c1b0a7176",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.3.self_attn.v_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "459514e89bd3142fca159b73b936cc0e444e6e9cb0dff082be0ecb8462d6a1b7",
+      "runtime_shape": [
+        512,
+        1024
+      ],
+      "source": "model.language_model.layers.3.self_attn.v_proj.weight",
+      "source_sha256": "459514e89bd3142fca159b73b936cc0e444e6e9cb0dff082be0ecb8462d6a1b7",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.4.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "96f7b81d86de457c11cbc05683a793f817830783b7e15b30d3e0fdfd52329af1",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.4.input_layernorm.weight",
+      "source_sha256": "8aee027945fcced8fc59b744ac29845b63959e33a0db01cdee7485ddd0fcc079",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.4.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "89bb115dbce2f578785ae32ed3a31a162793a1e1ef9803bdb2232c92ba8e8c55",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.4.linear_attn.conv1d.weight",
+      "source_sha256": "89bb115dbce2f578785ae32ed3a31a162793a1e1ef9803bdb2232c92ba8e8c55",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.4.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "503fc13e97f752879c8eea76750589cf0656a40b2b1a694642ba72ae3b64fccb",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.4.linear_attn.dt_bias",
+      "source_sha256": "503fc13e97f752879c8eea76750589cf0656a40b2b1a694642ba72ae3b64fccb",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.4.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "87902c9c858e014ed49a8adff829d7ffe7899f2123dba1bd9372efa0bc864635",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.4.linear_attn.in_proj_a.weight",
+      "source_sha256": "87902c9c858e014ed49a8adff829d7ffe7899f2123dba1bd9372efa0bc864635",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.4.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "20d599358f68567cfbd2c227b3847c352231c6ea54feb2a4b6210649fa65e88e",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.4.linear_attn.in_proj_b.weight",
+      "source_sha256": "20d599358f68567cfbd2c227b3847c352231c6ea54feb2a4b6210649fa65e88e",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.4.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "20cfe8d416b7c83fe69ac5e87d6546c88c8cc841ac6549b1a7a83f3f565042c4",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.4.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "20cfe8d416b7c83fe69ac5e87d6546c88c8cc841ac6549b1a7a83f3f565042c4",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.4.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "eaebc8ff9cf3bb005d82e5eef2233055df741bcc02a3d8902de8280595675b3c",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.4.linear_attn.in_proj_z.weight",
+      "source_sha256": "eaebc8ff9cf3bb005d82e5eef2233055df741bcc02a3d8902de8280595675b3c",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.4.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "8bf7b33388b1fc049199bb51d73573a2e0d25cda81793605502981b2916e3618",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.4.linear_attn.out_proj.weight",
+      "source_sha256": "8bf7b33388b1fc049199bb51d73573a2e0d25cda81793605502981b2916e3618",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.4.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ba121be04f6cb888879295137310ca32ae19429a1aa03ef7c4ea2f361bb62734",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.4.mlp.down_proj.weight",
+      "source_sha256": "ba121be04f6cb888879295137310ca32ae19429a1aa03ef7c4ea2f361bb62734",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.4.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "992c80a1b8374007902cbac7a616ad8d695ec9e63f519c016b665e41011222cc",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.4.mlp.gate_proj.weight",
+      "source_sha256": "992c80a1b8374007902cbac7a616ad8d695ec9e63f519c016b665e41011222cc",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.4.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "2318c49e37ef0ae946f9f9b3d6ebca0a29929c1b05ac7db8c147cf4c1fd9f888",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.4.mlp.up_proj.weight",
+      "source_sha256": "2318c49e37ef0ae946f9f9b3d6ebca0a29929c1b05ac7db8c147cf4c1fd9f888",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.4.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "81b61c4dc5e1d6005300f29bf336b2ee683a5121f7459e594f149976d128c610",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.4.post_attention_layernorm.weight",
+      "source_sha256": "08d72ea5165725ab2fbde7ba1009d6709eaed8bb854e9540d25f09d7f688a406",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.5.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "4186d49710b594819e61ed251566fe3207b2929e36e78f0ac7e5fa5b9c2dc528",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.5.input_layernorm.weight",
+      "source_sha256": "7cc8e4c0e7edf4ee82f0ef7968d4db5c428b326cca6d12cbb79912169cb0d277",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.5.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "84c203872bc3281238d63a425724b0351584cfa78ef19b80897ad8951d22e1b1",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.5.linear_attn.conv1d.weight",
+      "source_sha256": "84c203872bc3281238d63a425724b0351584cfa78ef19b80897ad8951d22e1b1",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.5.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ff26a071cce66e8930581452e2f5da545a3ef16ed6b149bf4a311723bd45e144",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.5.linear_attn.dt_bias",
+      "source_sha256": "ff26a071cce66e8930581452e2f5da545a3ef16ed6b149bf4a311723bd45e144",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.5.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "79ad2eb58cee02fbc07ac5664758762c94d1d91007c9dc8fe9d1fcf92e37f970",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.5.linear_attn.in_proj_a.weight",
+      "source_sha256": "79ad2eb58cee02fbc07ac5664758762c94d1d91007c9dc8fe9d1fcf92e37f970",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.5.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "8652cf8c947edf58d592d70f4923992a680039b638ed1ff1df8df92e0e367782",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.5.linear_attn.in_proj_b.weight",
+      "source_sha256": "8652cf8c947edf58d592d70f4923992a680039b638ed1ff1df8df92e0e367782",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.5.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "6bc8a2301fb9fe08feecde6ceceb96c34bb3e39be07eef897718436f2ee68930",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.5.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "6bc8a2301fb9fe08feecde6ceceb96c34bb3e39be07eef897718436f2ee68930",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.5.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "d3803e169af7b129643e94fd23fdaa7263001c8d408de7ff23c2fe0d3ae4f6de",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.5.linear_attn.in_proj_z.weight",
+      "source_sha256": "d3803e169af7b129643e94fd23fdaa7263001c8d408de7ff23c2fe0d3ae4f6de",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.5.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "9f01e959dff41fc8c81a1774e92f9fb48eea7ad3448e8ef1e61a05d594f67c89",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.5.linear_attn.out_proj.weight",
+      "source_sha256": "9f01e959dff41fc8c81a1774e92f9fb48eea7ad3448e8ef1e61a05d594f67c89",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.5.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "60f0a77529c775c10da70e76c08a9518918abbae9b264b9d5d6130dff55520e7",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.5.mlp.down_proj.weight",
+      "source_sha256": "60f0a77529c775c10da70e76c08a9518918abbae9b264b9d5d6130dff55520e7",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.5.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "d65832085f8a787945c1c6fbba55239a6f8b4f13ce1bd7a5184e458419427283",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.5.mlp.gate_proj.weight",
+      "source_sha256": "d65832085f8a787945c1c6fbba55239a6f8b4f13ce1bd7a5184e458419427283",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.5.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "5f0c880e4d6b0127cda55cd017f73f782406dc050f1d750e5585ce102dddde1e",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.5.mlp.up_proj.weight",
+      "source_sha256": "5f0c880e4d6b0127cda55cd017f73f782406dc050f1d750e5585ce102dddde1e",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.5.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "05f0886b115fe8ee16df97b703965e2bb0de366a45d82e446cbffa96555ce980",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.5.post_attention_layernorm.weight",
+      "source_sha256": "a738bd98402ad9d326d25612d627c0c2cf888a93b60e1144fd3860508a1ccc92",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.6.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "0930d898bcc48677e536b499ee99df00bc581ac3118425c96e12fdb21156b2b6",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.6.input_layernorm.weight",
+      "source_sha256": "700b0acfd417fc3deaf297164e96e9be5408b5801d5e535f40d9d0449d1a9f52",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.6.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a7904fd450d3221c3c679846150dcda34c0bd8cc600a22749a20213dbe7fca99",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.6.linear_attn.conv1d.weight",
+      "source_sha256": "a7904fd450d3221c3c679846150dcda34c0bd8cc600a22749a20213dbe7fca99",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.6.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "fe00217c7f198519da4e14a7d5b28fd8d0379251cde0af802421300a92fe1c72",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.6.linear_attn.dt_bias",
+      "source_sha256": "fe00217c7f198519da4e14a7d5b28fd8d0379251cde0af802421300a92fe1c72",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.6.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a7e4d78c07a99184833a36dce1348ea2c77f7502b9abf3bb4eb50fbe1394bbf1",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.6.linear_attn.in_proj_a.weight",
+      "source_sha256": "a7e4d78c07a99184833a36dce1348ea2c77f7502b9abf3bb4eb50fbe1394bbf1",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.6.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "80799e25f506f287d53a90e8a6c25fdfaa854a99779e74898745fcb517b34701",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.6.linear_attn.in_proj_b.weight",
+      "source_sha256": "80799e25f506f287d53a90e8a6c25fdfaa854a99779e74898745fcb517b34701",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.6.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "2a8d44bfe0915366a2cc7a335256b9341999911fe1ea331769ee593d8f19a5a8",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.6.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "2a8d44bfe0915366a2cc7a335256b9341999911fe1ea331769ee593d8f19a5a8",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.6.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "45d73826e3db34280466b732c9daa6dcf3ca6be4a64fc0161a032ba9a0ccb563",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.6.linear_attn.in_proj_z.weight",
+      "source_sha256": "45d73826e3db34280466b732c9daa6dcf3ca6be4a64fc0161a032ba9a0ccb563",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.6.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "457bf7c14c06028eb639e62d6b2131a8fdbda264fe40e15a45f7cfdf199fd898",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.6.linear_attn.out_proj.weight",
+      "source_sha256": "457bf7c14c06028eb639e62d6b2131a8fdbda264fe40e15a45f7cfdf199fd898",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.6.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "b750e840ad51e8d4b7d0d7f46269df9b7060cc705212c0416b5a34607e3e15b1",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.6.mlp.down_proj.weight",
+      "source_sha256": "b750e840ad51e8d4b7d0d7f46269df9b7060cc705212c0416b5a34607e3e15b1",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.6.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "b36b767f35d7e97bf2443c53e8ee9ff5b36ef4a1e881ceea8b815b403276ee29",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.6.mlp.gate_proj.weight",
+      "source_sha256": "b36b767f35d7e97bf2443c53e8ee9ff5b36ef4a1e881ceea8b815b403276ee29",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.6.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "547463551165093b8b8bdec370a9148af50f9f6e5d38bc2ab4f207b72d2d4044",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.6.mlp.up_proj.weight",
+      "source_sha256": "547463551165093b8b8bdec370a9148af50f9f6e5d38bc2ab4f207b72d2d4044",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.6.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "45dfdaf21284fd9412a0d85d001a646198e2f1e44d46ed7ba401633a2d68c24a",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.6.post_attention_layernorm.weight",
+      "source_sha256": "6265e10d5c6bc8172ddf754dc76357a5fcfec97f98e94f6c50931597b534ea74",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.7.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "7fd0ed94cdb45a2c057a79d1b9d75fd874aafc7fe919015dbd5d75c9f481c992",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.7.input_layernorm.weight",
+      "source_sha256": "5054fa70cb0f6699ebe2e14ed24c6564791c1b7f2d80134a6428e481bf19fc75",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.7.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "0c2ba3eec24441cc0a4b4c9e6956f64210caa2acb8fae18b3579fce9ec49159c",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.7.mlp.down_proj.weight",
+      "source_sha256": "0c2ba3eec24441cc0a4b4c9e6956f64210caa2acb8fae18b3579fce9ec49159c",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.7.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ccff86cc93b91a5be46dbd61cebbfadc32a0e31e7d767b0436a37764d6d94547",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.7.mlp.gate_proj.weight",
+      "source_sha256": "ccff86cc93b91a5be46dbd61cebbfadc32a0e31e7d767b0436a37764d6d94547",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.7.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "9c8a6ffbeb9957d7a52939b037099d34e6445e2255e2b4fb3baedabea93f742a",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.7.mlp.up_proj.weight",
+      "source_sha256": "9c8a6ffbeb9957d7a52939b037099d34e6445e2255e2b4fb3baedabea93f742a",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.7.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "940ad5410cfaff7a96c8311c61da850fc66ed48e133654e8bdd65412a3dc95d6",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.7.post_attention_layernorm.weight",
+      "source_sha256": "35f673c1edb982d55e5f46bf207f2de0b9dbd60ad98acfb8cdafc9d9a3a28d25",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.7.self_attn.k_norm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "68f6967d33f2e89db83c5dbc25a1673e1c73467123df2d6dc276c0d698a26918",
+      "runtime_shape": [
+        256
+      ],
+      "source": "model.language_model.layers.7.self_attn.k_norm.weight",
+      "source_sha256": "a5b8b543ca3a084105ff3495ed2c36a2f7e99557479bbc3ba45e05541f6806d7",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.7.self_attn.k_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "0720a1c07da7f9f0513cc6a1e4b83920504ab9b0c9705b0ec7810ed763a36fa8",
+      "runtime_shape": [
+        512,
+        1024
+      ],
+      "source": "model.language_model.layers.7.self_attn.k_proj.weight",
+      "source_sha256": "0720a1c07da7f9f0513cc6a1e4b83920504ab9b0c9705b0ec7810ed763a36fa8",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.7.self_attn.o_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "495f9a04acd3b164cd7fb06a9d3e09f699e4abb0298b6cb3313b2d9b8470a63c",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.7.self_attn.o_proj.weight",
+      "source_sha256": "495f9a04acd3b164cd7fb06a9d3e09f699e4abb0298b6cb3313b2d9b8470a63c",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.7.self_attn.q_norm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "f8bff9f2e349cf9de97e518fbc5f8538448f2f0c3516177c990b1564afc97409",
+      "runtime_shape": [
+        256
+      ],
+      "source": "model.language_model.layers.7.self_attn.q_norm.weight",
+      "source_sha256": "d9e8640352b19cdad1fa8e4788622cf8a0b977979a878729b2f7e71ed21f8f2d",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.7.self_attn.q_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a26bf320a713a5e747f10d2a79e6cad01cef540ae0ab9886f16e8f2650fe13b2",
+      "runtime_shape": [
+        4096,
+        1024
+      ],
+      "source": "model.language_model.layers.7.self_attn.q_proj.weight",
+      "source_sha256": "a26bf320a713a5e747f10d2a79e6cad01cef540ae0ab9886f16e8f2650fe13b2",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.7.self_attn.v_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "b4b61a50c3713f08bae391b95b178408f6f97c89c99fd3f631c6af36e1752ca9",
+      "runtime_shape": [
+        512,
+        1024
+      ],
+      "source": "model.language_model.layers.7.self_attn.v_proj.weight",
+      "source_sha256": "b4b61a50c3713f08bae391b95b178408f6f97c89c99fd3f631c6af36e1752ca9",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.8.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "226bc5fff1f2e512b01af8685d585d74d7a71d29fcff24c6982657b8316dd80e",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.8.input_layernorm.weight",
+      "source_sha256": "e99fc0e779d297db988eae6e2341faea3c688ae4a625caec1ac762b28c5031ae",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.8.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "d5ae0f88fe50789e66be125e58bf9b4120c32388d0102904d26d8055cd9ad333",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.8.linear_attn.conv1d.weight",
+      "source_sha256": "d5ae0f88fe50789e66be125e58bf9b4120c32388d0102904d26d8055cd9ad333",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.8.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ed18e7e867a650777b849b49ce397f92fae1af50003ebcbcd62da0e871ae10f7",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.8.linear_attn.dt_bias",
+      "source_sha256": "ed18e7e867a650777b849b49ce397f92fae1af50003ebcbcd62da0e871ae10f7",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.8.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "f50b6639c4e9e0530048aa73d21035226d9a1a7732f085ee9b6d727f8c9caa36",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.8.linear_attn.in_proj_a.weight",
+      "source_sha256": "f50b6639c4e9e0530048aa73d21035226d9a1a7732f085ee9b6d727f8c9caa36",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.8.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "9383a797a6d4e4e84081bdbe7732fdbda5f44247a933fae3385fcfb248b10f84",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.8.linear_attn.in_proj_b.weight",
+      "source_sha256": "9383a797a6d4e4e84081bdbe7732fdbda5f44247a933fae3385fcfb248b10f84",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.8.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "df6f338e7bf0f84767b1f2bcf55a1327c2c2a7d20b87a450c4863deaa3b5274c",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.8.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "df6f338e7bf0f84767b1f2bcf55a1327c2c2a7d20b87a450c4863deaa3b5274c",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.8.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ff3c479473a91a153cd244af5f44dd5d8ba3ad64858214412463a6a9ea1fe252",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.8.linear_attn.in_proj_z.weight",
+      "source_sha256": "ff3c479473a91a153cd244af5f44dd5d8ba3ad64858214412463a6a9ea1fe252",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.8.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "f999552cfea17861edc5f5dd25b48f51e89fe3f12e3d7b27c482993d61f773b9",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.8.linear_attn.out_proj.weight",
+      "source_sha256": "f999552cfea17861edc5f5dd25b48f51e89fe3f12e3d7b27c482993d61f773b9",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.8.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "05fb318d3507148575b60805a4d34ccaba09aab41705d75a33fe101a78ff841c",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.8.mlp.down_proj.weight",
+      "source_sha256": "05fb318d3507148575b60805a4d34ccaba09aab41705d75a33fe101a78ff841c",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.8.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "47ea617b14d9e3787fe7fb8e44eec9655dc8f3c75b150d0b2bfebd13028a4e91",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.8.mlp.gate_proj.weight",
+      "source_sha256": "47ea617b14d9e3787fe7fb8e44eec9655dc8f3c75b150d0b2bfebd13028a4e91",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.8.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "3fe6752c0557e1e497a15e1e840907a05ddd1a216c540f4b6ed3546bc4f50c39",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.8.mlp.up_proj.weight",
+      "source_sha256": "3fe6752c0557e1e497a15e1e840907a05ddd1a216c540f4b6ed3546bc4f50c39",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.8.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "017de9af3858bf6fa1b41e7510cd721ce47d2d63c4251af715d10458a98632ee",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.8.post_attention_layernorm.weight",
+      "source_sha256": "1ed09c9294e5a6f738c204c417b29706de913fa4a69f497d78841c90658393e1",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.9.input_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "6d0308c4f361742cacbcd0d8f13918c2d7895ddd54fb1fe7352a3c9c1de0b846",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.9.input_layernorm.weight",
+      "source_sha256": "222b3d85cf4b178a9964e0eed3d256e2ea0f34e4c3ddb44dc7e832508643bf89",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.layers.9.linear_attn.conv1d.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "1b21bc66765f08edb977a87c36286696b84755d6f89c4793c5476e6990e05e56",
+      "runtime_shape": [
+        6144,
+        4,
+        1
+      ],
+      "source": "model.language_model.layers.9.linear_attn.conv1d.weight",
+      "source_sha256": "1b21bc66765f08edb977a87c36286696b84755d6f89c4793c5476e6990e05e56",
+      "transform": "moveaxis(2,1)"
+    },
+    {
+      "runtime": "language_model.model.layers.9.linear_attn.dt_bias",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "c8fc614002929ca47207f8d9a1c0d6df6161f4e7e46cba30dcb107f6d01492cf",
+      "runtime_shape": [
+        16
+      ],
+      "source": "model.language_model.layers.9.linear_attn.dt_bias",
+      "source_sha256": "c8fc614002929ca47207f8d9a1c0d6df6161f4e7e46cba30dcb107f6d01492cf",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.9.linear_attn.in_proj_a.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "48076793b1983ca93b74cead007c0411ec1fdf34a66723e282596cb79f6c9357",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.9.linear_attn.in_proj_a.weight",
+      "source_sha256": "48076793b1983ca93b74cead007c0411ec1fdf34a66723e282596cb79f6c9357",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.9.linear_attn.in_proj_b.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "015f6fef1e183bb990cd629439316e0629ae1c2cb3badac775653e75853b6d4a",
+      "runtime_shape": [
+        16,
+        1024
+      ],
+      "source": "model.language_model.layers.9.linear_attn.in_proj_b.weight",
+      "source_sha256": "015f6fef1e183bb990cd629439316e0629ae1c2cb3badac775653e75853b6d4a",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.9.linear_attn.in_proj_qkv.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "996562ace68745dbf8487623b39c2130ecce9bb7b81c4b06b654a08e5a104500",
+      "runtime_shape": [
+        6144,
+        1024
+      ],
+      "source": "model.language_model.layers.9.linear_attn.in_proj_qkv.weight",
+      "source_sha256": "996562ace68745dbf8487623b39c2130ecce9bb7b81c4b06b654a08e5a104500",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.9.linear_attn.in_proj_z.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ac49fd767b9d8a84b5e24a26269fad3bc818d317ae60a205809b4cb38d954687",
+      "runtime_shape": [
+        2048,
+        1024
+      ],
+      "source": "model.language_model.layers.9.linear_attn.in_proj_z.weight",
+      "source_sha256": "ac49fd767b9d8a84b5e24a26269fad3bc818d317ae60a205809b4cb38d954687",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.9.linear_attn.out_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "253571bd7bcb82ae7d6c3db2a5ba0ea44b62deb54d2dbc5cd43672c4081691ca",
+      "runtime_shape": [
+        1024,
+        2048
+      ],
+      "source": "model.language_model.layers.9.linear_attn.out_proj.weight",
+      "source_sha256": "253571bd7bcb82ae7d6c3db2a5ba0ea44b62deb54d2dbc5cd43672c4081691ca",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.9.mlp.down_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "09751bd4c7ef156fd8c5cf4e3be0d6250c7cccc14cf30883fbb28d213fec6132",
+      "runtime_shape": [
+        1024,
+        3584
+      ],
+      "source": "model.language_model.layers.9.mlp.down_proj.weight",
+      "source_sha256": "09751bd4c7ef156fd8c5cf4e3be0d6250c7cccc14cf30883fbb28d213fec6132",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.9.mlp.gate_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "d358d3350cff9257c1ab0ee1644fa384e0cc1139c94c6b10170ba2c4284c8454",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.9.mlp.gate_proj.weight",
+      "source_sha256": "d358d3350cff9257c1ab0ee1644fa384e0cc1139c94c6b10170ba2c4284c8454",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.9.mlp.up_proj.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "a2d38250a3cfcd53088206f52b83b6a7cb21ea56560f0dee8ee7d9eb8a2ff052",
+      "runtime_shape": [
+        3584,
+        1024
+      ],
+      "source": "model.language_model.layers.9.mlp.up_proj.weight",
+      "source_sha256": "a2d38250a3cfcd53088206f52b83b6a7cb21ea56560f0dee8ee7d9eb8a2ff052",
+      "transform": "identity"
+    },
+    {
+      "runtime": "language_model.model.layers.9.post_attention_layernorm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "ba48bc9e0c2223d9c6e6a52cd8d3aaa5fbd78bfb3dfd9ef52d761100cffb0fc1",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.layers.9.post_attention_layernorm.weight",
+      "source_sha256": "a09c66914b97943eb9fd72dcdc958f31a964f2ea3cee27b75dfa8b942c78886b",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    },
+    {
+      "runtime": "language_model.model.norm.weight",
+      "runtime_dtype": "mlx.core.bfloat16",
+      "runtime_sha256": "4de6bf13ee4cbf3a74f571cf9c5be396b08e9462580245a9b6e28d086dfee74c",
+      "runtime_shape": [
+        1024
+      ],
+      "source": "model.language_model.norm.weight",
+      "source_sha256": "30832e6642a9c1555485d5c9553a35e539278c33ce3b7a9665e06cd2c5598381",
+      "transform": "MLX norm convention: BF16 + 1.0, official bytes retained for export"
+    }
+  ],
+  "verified": true
+}

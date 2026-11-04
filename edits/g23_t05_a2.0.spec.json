@@ -1,0 +1,65 @@
+{
+ "label": "g23_t05_a2.0",
+ "layer": 23,
+ "neurons": [
+  3468,
+  3421
+ ],
+ "k": 2.0,
+ "kr": 1.0,
+ "a1": 2.0,
+ "a2": 2.0,
+ "src_s": 18,
+ "t": 0.5,
+ "random_seed": null,
+ "s_norm": 1.0,
+ "r_norm": 1.0,
+ "uAB_norm": 0.7778811446981246,
+ "uroute_norm": 0.7974894621258867,
+ "equation": "gate[J1]=k*s, up[J1]=k*s, down[:,J1]=a1*u_AB; gate[J2]=k*s, up[J2]=kr*r, down[:,J2]=a2*(u_NE-u_NO)",
+ "receipts": {
+  "mlp.gate_proj": {
+   "name": "model.language_model.layers.23.mlp.gate_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 2047,
+   "l2": 2.9173448749092703,
+   "linf": 0.3797607421875,
+   "rel_frobenius": 0.08064080847041352,
+   "total_changed_entries": 2047,
+   "fraction": 2.7206525508668193e-06
+  },
+  "mlp.up_proj": {
+   "name": "model.language_model.layers.23.mlp.up_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 2047,
+   "l2": 2.2539319411825223,
+   "linf": 0.3545684814453125,
+   "rel_frobenius": 0.1060834944644414,
+   "total_changed_entries": 4094,
+   "fraction": 5.441305101733639e-06
+  },
+  "mlp.down_proj": {
+   "name": "model.language_model.layers.23.mlp.down_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 2046,
+   "l2": 2.2515332484063966,
+   "linf": 0.2005462646484375,
+   "rel_frobenius": 0.1371487436623165,
+   "total_changed_entries": 6140,
+   "fraction": 8.16062856000111e-06
+  }
+ },
+ "simulation": {
+  "prefix_gold_argmax": 43,
+  "call_min_margin": 0.09275981597832228,
+  "report": {
+   "call/T": "20/20 NO-call[-18.1,-7.0] NE-call[-20.6,-10.4] NE-NO[-4.0,-0.6]",
+   "call/P": "24/24 NO-call[-16.2,-3.2] NE-call[-18.3,-8.7] NE-NO[-5.5,-1.7]",
+   "answer/T": "2/20 NO-call[-15.2,82.0] NE-call[-16.3,80.2] NE-NO[-3.5,1.4]",
+   "answer/P": "20/20 NO-call[73.1,85.5] NE-call[20.6,80.7] NE-NO[-52.5,-2.0]",
+   "NOTPROV/T": "18/20 NO-call[-8.1,78.1] NE-call[-7.4,94.3] NE-NO[0.7,36.1]",
+   "NOTPROV/P": "9/10 NO-call[7.1,76.6] NE-call[6.5,93.3] NE-NO[-0.6,23.9]",
+   "AMBIG/P": "0/10 NO-call[-13.1,-9.1] NE-call[-15.8,-10.3] NE-NO[-2.8,-0.8]"
+  }
+ }
+}

@@ -1,0 +1,25 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[lock] accelerator busy (/tmp/qwen-local-accelerator.lock); waiting...
+[lock] acquired /tmp/qwen-local-accelerator.lock after wait
+[lock] acquired /tmp/qwen35-mlx-accelerator.lock after wait
+Traceback (most recent call last):
+  File "/Users/scasella/Downloads/qwen-6/runtime/stock_worker.py", line 7, in <module>
+    from mlx_lm import load,stream_generate
+  File "/Users/scasella/Downloads/qwen-3/toolpatch/.venv/lib/python3.12/site-packages/mlx_lm/__init__.py", line 9, in <module>
+    from .convert import convert
+  File "/Users/scasella/Downloads/qwen-3/toolpatch/.venv/lib/python3.12/site-packages/mlx_lm/convert.py", line 11, in <module>
+    from .utils import (
+  File "/Users/scasella/Downloads/qwen-3/toolpatch/.venv/lib/python3.12/site-packages/mlx_lm/utils.py", line 6, in <module>
+    import inspect
+  File "/Users/scasella/Downloads/qwen-6/runtime/inspect.py", line 4, in <module>
+    from .common import BASE, BASE_REVISION, ROOT, digest, write_json
+ImportError: attempted relative import with no known parent package
+Traceback (most recent call last):
+  File "/Users/scasella/Downloads/qwen-6/stock_reload.py", line 88, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "/Users/scasella/Downloads/qwen-6/stock_reload.py", line 66, in main
+    subprocess.run([sys.executable,str(ROOT/'runtime/stock_worker.py'),str(jp)],check=True,env=env,pass_fds=[resources._LOCK_FD],cwd=str(ROOT))
+  File "/opt/homebrew/Cellar/python@3.12/3.12.12_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Users/scasella/Downloads/qwen-3/toolpatch/.venv/bin/python', '/Users/scasella/Downloads/qwen-6/runtime/stock_worker.py', '/Users/scasella/Downloads/qwen-6/runs/p29_v2_stock_original_job.json']' returned non-zero exit status 1.

@@ -1,0 +1,5571 @@
+{
+  "capture": [
+    "decision",
+    "prefix"
+  ],
+  "continuation": "gold",
+  "edit": null,
+  "edit_tensors": [],
+  "label": "p16_regression_capture",
+  "layers": [
+    23
+  ],
+  "memory": {
+    "backend_peak_gib": 1.4397566840052605,
+    "rss_gib": 1.78619384765625
+  },
+  "mode": "teacher",
+  "model": "original",
+  "models": [
+    "original"
+  ],
+  "n_items": 32,
+  "prompt_variant": "regression",
+  "rows": [
+    {
+      "action": "regression",
+      "case_id": "regression-60131-0",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 2117,
+        "logsumexp": 22.825449691099752,
+        "topk": [
+          {
+            "id": 2117,
+            "logit": 22.75,
+            "text": "map"
+          },
+          {
+            "id": 2155,
+            "logit": 18.875,
+            "text": "Map"
+          },
+          {
+            "id": 248068,
+            "logit": 18.75,
+            "text": "<think>"
+          },
+          {
+            "id": 2573,
+            "logit": 16.875,
+            "text": "me"
+          },
+          {
+            "id": 52556,
+            "logit": 16.625,
+            "text": " maple"
+          },
+          {
+            "id": 27,
+            "logit": 16.625,
+            "text": "<"
+          },
+          {
+            "id": 2083,
+            "logit": 16.25,
+            "text": "no"
+          },
+          {
+            "id": 17092,
+            "logit": 16.125,
+            "text": "MAP"
+          },
+          {
+            "id": 17114,
+            "logit": 15.9375,
+            "text": "maps"
+          },
+          {
+            "id": 9405,
+            "logit": 15.75,
+            "text": "yes"
+          },
+          {
+            "id": 21680,
+            "logit": 15.625,
+            "text": "apple"
+          },
+          {
+            "id": 248069,
+            "logit": 15.375,
+            "text": "</think>"
+          },
+          {
+            "id": 10223,
+            "logit": 15.25,
+            "text": "mem"
+          },
+          {
+            "id": 3923,
+            "logit": 15.25,
+            "text": "met"
+          },
+          {
+            "id": 35288,
+            "logit": 15.0625,
+            "text": "never"
+          },
+          {
+            "id": 9066,
+            "logit": 14.875,
+            "text": "tree"
+          },
+          {
+            "id": 9,
+            "logit": 14.8125,
+            "text": "*"
+          },
+          {
+            "id": 5437,
+            "logit": 14.75,
+            "text": "mar"
+          },
+          {
+            "id": 1768,
+            "logit": 14.6875,
+            "text": "miss"
+          },
+          {
+            "id": 1134,
+            "logit": 14.625,
+            "text": "mer"
+          },
+          {
+            "id": 25034,
+            "logit": 14.625,
+            "text": "-map"
+          },
+          {
+            "id": 61267,
+            "logit": 14.625,
+            "text": "meet"
+          },
+          {
+            "id": 6154,
+            "logit": 14.5,
+            "text": "mo"
+          },
+          {
+            "id": 1,
+            "logit": 14.5,
+            "text": "\""
+          }
+        ],
+        "watch": {
+          "\n": 5.09375,
+          "1": 13.75,
+          "<": 16.625,
+          "<think>": 18.75,
+          "<tool_call>": 13.75,
+          "<|im_end|>": 14.25,
+          "Based": 10.5625,
+          "Here": 9.8125,
+          "I": 13.75,
+          "It": 12.25,
+          "NE": 5.875,
+          "NO": 10.4375,
+          "NOT": 10.8125,
+          "No": 13.5,
+          "None": 13.875,
+          "Okay": 11.0625,
+          "Please": 13.4375,
+          "Select": 7.34375,
+          "Since": 7.90625,
+          "Sure": 10.5,
+          "The": 14.0625,
+          "This": 12.3125,
+          "To": 10.25,
+          "Yes": 12.0,
+          "You": 12.0625,
+          "need": 10.1875,
+          "no": 16.25
+        }
+      },
+      "decision_position": 33,
+      "family": "instruction",
+      "gaps": {
+        "NE_minus_NO": -4.5625,
+        "call_minus_NE": 7.875,
+        "call_minus_NO": 3.3125,
+        "call_minus_argmax_other": -5.0
+      },
+      "model": "original",
+      "prompt_tokens": 34,
+      "seconds": 0.06716816601692699,
+      "sequence_tokens": 34
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-1",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 42404,
+        "logsumexp": 24.943197882529276,
+        "topk": [
+          {
+            "id": 42404,
+            "logit": 24.875,
+            "text": "bir"
+          },
+          {
+            "id": 65,
+            "logit": 21.0,
+            "text": "b"
+          },
+          {
+            "id": 20,
+            "logit": 20.75,
+            "text": "5"
+          },
+          {
+            "id": 5480,
+            "logit": 20.5,
+            "text": "target"
+          },
+          {
+            "id": 16,
+            "logit": 19.5,
+            "text": "1"
+          },
+          {
+            "id": 17,
+            "logit": 19.0,
+            "text": "2"
+          },
+          {
+            "id": 22,
+            "logit": 18.625,
+            "text": "7"
+          },
+          {
+            "id": 18,
+            "logit": 18.5,
+            "text": "3"
+          },
+          {
+            "id": 7964,
+            "logit": 18.125,
+            "text": "bi"
+          },
+          {
+            "id": 19,
+            "logit": 17.75,
+            "text": "4"
+          },
+          {
+            "id": 19329,
+            "logit": 17.625,
+            "text": "mir"
+          },
+          {
+            "id": 24,
+            "logit": 17.25,
+            "text": "9"
+          },
+          {
+            "id": 15,
+            "logit": 17.125,
+            "text": "0"
+          },
+          {
+            "id": 248068,
+            "logit": 17.0,
+            "text": "<think>"
+          },
+          {
+            "id": 21,
+            "logit": 16.875,
+            "text": "6"
+          },
+          {
+            "id": 23,
+            "logit": 16.75,
+            "text": "8"
+          },
+          {
+            "id": 245720,
+            "logit": 16.75,
+            "text": "Bir"
+          },
+          {
+            "id": 59200,
+            "logit": 16.625,
+            "text": "bij"
+          },
+          {
+            "id": 5390,
+            "logit": 16.5,
+            "text": "pir"
+          },
+          {
+            "id": 21892,
+            "logit": 16.375,
+            "text": "bird"
+          },
+          {
+            "id": 176013,
+            "logit": 16.125,
+            "text": "gir"
+          },
+          {
+            "id": 4341,
+            "logit": 16.125,
+            "text": "bit"
+          },
+          {
+            "id": 44329,
+            "logit": 16.125,
+            "text": "vir"
+          },
+          {
+            "id": 169882,
+            "logit": 16.0,
+            "text": "tir"
+          }
+        ],
+        "watch": {
+          "\n": 5.78125,
+          "1": 19.5,
+          "<": 14.8125,
+          "<think>": 17.0,
+          "<tool_call>": 14.0625,
+          "<|im_end|>": 14.0,
+          "Based": 9.25,
+          "Here": 6.9375,
+          "I": 7.8125,
+          "It": 7.3125,
+          "NE": 1.2265625,
+          "NO": 4.03125,
+          "NOT": 8.125,
+          "No": 8.1875,
+          "None": 10.9375,
+          "Okay": 4.90625,
+          "Please": 5.25,
+          "Select": 4.125,
+          "Since": 6.15625,
+          "Sure": 7.25,
+          "The": 10.375,
+          "This": 9.8125,
+          "To": 7.5625,
+          "Yes": 6.75,
+          "You": 7.34375,
+          "need": 10.625,
+          "no": 11.625
+        }
+      },
+      "decision_position": 50,
+      "family": "extraction",
+      "gaps": {
+        "NE_minus_NO": -2.8046875,
+        "call_minus_NE": 12.8359375,
+        "call_minus_NO": 10.03125,
+        "call_minus_argmax_other": -5.4375
+      },
+      "model": "original",
+      "prompt_tokens": 51,
+      "seconds": 0.039030499989166856,
+      "sequence_tokens": 51
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-2",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 16,
+        "logsumexp": 25.94888393081394,
+        "topk": [
+          {
+            "id": 16,
+            "logit": 25.875,
+            "text": "1"
+          },
+          {
+            "id": 24,
+            "logit": 23.25,
+            "text": "9"
+          },
+          {
+            "id": 20,
+            "logit": 18.75,
+            "text": "5"
+          },
+          {
+            "id": 17,
+            "logit": 18.5,
+            "text": "2"
+          },
+          {
+            "id": 15,
+            "logit": 18.5,
+            "text": "0"
+          },
+          {
+            "id": 23,
+            "logit": 18.5,
+            "text": "8"
+          },
+          {
+            "id": 22,
+            "logit": 17.875,
+            "text": "7"
+          },
+          {
+            "id": 21,
+            "logit": 17.875,
+            "text": "6"
+          },
+          {
+            "id": 18,
+            "logit": 17.75,
+            "text": "3"
+          },
+          {
+            "id": 19,
+            "logit": 17.5,
+            "text": "4"
+          },
+          {
+            "id": 248068,
+            "logit": 17.375,
+            "text": "<think>"
+          },
+          {
+            "id": 1,
+            "logit": 14.9375,
+            "text": "\""
+          },
+          {
+            "id": 248046,
+            "logit": 14.5,
+            "text": "<|im_end|>"
+          },
+          {
+            "id": 12,
+            "logit": 14.0625,
+            "text": "-"
+          },
+          {
+            "id": 3,
+            "logit": 13.8125,
+            "text": "$"
+          },
+          {
+            "id": 29,
+            "logit": 13.4375,
+            "text": ">"
+          },
+          {
+            "id": 760,
+            "logit": 13.125,
+            "text": "The"
+          },
+          {
+            "id": 2665,
+            "logit": 13.0625,
+            "text": "No"
+          },
+          {
+            "id": 50,
+            "logit": 13.0625,
+            "text": "S"
+          },
+          {
+            "id": 7,
+            "logit": 12.9375,
+            "text": "("
+          },
+          {
+            "id": 64,
+            "logit": 12.625,
+            "text": "a"
+          },
+          {
+            "id": 28,
+            "logit": 12.5625,
+            "text": "="
+          },
+          {
+            "id": 13784,
+            "logit": 12.5625,
+            "text": "Wait"
+          },
+          {
+            "id": 27,
+            "logit": 12.4375,
+            "text": "<"
+          }
+        ],
+        "watch": {
+          "\n": 8.25,
+          "1": 25.875,
+          "<": 12.4375,
+          "<think>": 17.375,
+          "<tool_call>": 10.875,
+          "<|im_end|>": 14.5,
+          "Based": 10.0,
+          "Here": 9.6875,
+          "I": 10.0,
+          "It": 9.25,
+          "NE": 2.734375,
+          "NO": 8.125,
+          "NOT": 9.1875,
+          "No": 13.0625,
+          "None": 9.875,
+          "Okay": 9.625,
+          "Please": 10.375,
+          "Select": 4.5625,
+          "Since": 10.5625,
+          "Sure": 7.1875,
+          "The": 13.125,
+          "This": 10.9375,
+          "To": 10.875,
+          "Yes": 12.0625,
+          "You": 9.375,
+          "need": 7.90625,
+          "no": 11.6875
+        }
+      },
+      "decision_position": 38,
+      "family": "arithmetic",
+      "gaps": {
+        "NE_minus_NO": -5.390625,
+        "call_minus_NE": 8.140625,
+        "call_minus_NO": 2.75,
+        "call_minus_argmax_other": -15.0
+      },
+      "model": "original",
+      "prompt_tokens": 39,
+      "seconds": 0.03995912498794496,
+      "sequence_tokens": 39
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-3",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 90,
+        "logsumexp": 23.846318317147144,
+        "topk": [
+          {
+            "id": 90,
+            "logit": 23.625,
+            "text": "{"
+          },
+          {
+            "id": 4754,
+            "logit": 21.875,
+            "text": "{\""
+          },
+          {
+            "id": 71093,
+            "logit": 20.625,
+            "text": "```"
+          },
+          {
+            "id": 58,
+            "logit": 19.75,
+            "text": "["
+          },
+          {
+            "id": 248068,
+            "logit": 16.375,
+            "text": "<think>"
+          },
+          {
+            "id": 50358,
+            "logit": 15.9375,
+            "text": "[{"
+          },
+          {
+            "id": 6061,
+            "logit": 15.875,
+            "text": "{}"
+          },
+          {
+            "id": 13724,
+            "logit": 15.75,
+            "text": "\"{"
+          },
+          {
+            "id": 13215,
+            "logit": 15.375,
+            "text": "{'"
+          },
+          {
+            "id": 2164,
+            "logit": 14.5625,
+            "text": "json"
+          },
+          {
+            "id": 2884,
+            "logit": 14.5,
+            "text": "{{"
+          },
+          {
+            "id": 1249,
+            "logit": 14.3125,
+            "text": "[]"
+          },
+          {
+            "id": 313,
+            "logit": 13.8125,
+            "text": " {"
+          },
+          {
+            "id": 760,
+            "logit": 13.8125,
+            "text": "The"
+          },
+          {
+            "id": 1,
+            "logit": 13.625,
+            "text": "\""
+          },
+          {
+            "id": 34521,
+            "logit": 13.5,
+            "text": "{\\"
+          },
+          {
+            "id": 65396,
+            "logit": 13.4375,
+            "text": "{/"
+          },
+          {
+            "id": 1143,
+            "logit": 13.3125,
+            "text": "[\""
+          },
+          {
+            "id": 44576,
+            "logit": 12.9375,
+            "text": "{|"
+          },
+          {
+            "id": 5046,
+            "logit": 12.9375,
+            "text": " {\""
+          },
+          {
+            "id": 23444,
+            "logit": 12.875,
+            "text": "{i"
+          },
+          {
+            "id": 9,
+            "logit": 12.875,
+            "text": "*"
+          },
+          {
+            "id": 45437,
+            "logit": 12.625,
+            "text": "{name"
+          },
+          {
+            "id": 66755,
+            "logit": 12.5,
+            "text": "{k"
+          }
+        ],
+        "watch": {
+          "\n": 6.9375,
+          "1": 9.125,
+          "<": 10.0,
+          "<think>": 16.375,
+          "<tool_call>": 12.375,
+          "<|im_end|>": 7.0,
+          "Based": 9.4375,
+          "Here": 8.4375,
+          "I": 11.75,
+          "It": 10.5625,
+          "NE": 5.28125,
+          "NO": 5.28125,
+          "NOT": 7.53125,
+          "No": 11.9375,
+          "None": 8.625,
+          "Okay": 9.8125,
+          "Please": 8.875,
+          "Select": 5.34375,
+          "Since": 5.90625,
+          "Sure": 6.71875,
+          "The": 13.8125,
+          "This": 10.9375,
+          "To": 10.125,
+          "Yes": 9.75,
+          "You": 7.15625,
+          "need": 1.6953125,
+          "no": 7.25
+        }
+      },
+      "decision_position": 52,
+      "family": "structured",
+      "gaps": {
+        "NE_minus_NO": 0.0,
+        "call_minus_NE": 7.09375,
+        "call_minus_NO": 7.09375,
+        "call_minus_argmax_other": -4.0
+      },
+      "model": "original",
+      "prompt_tokens": 53,
+      "seconds": 0.036430667008971795,
+      "sequence_tokens": 53
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-4",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 49931,
+        "logsumexp": 24.886685647485578,
+        "topk": [
+          {
+            "id": 49931,
+            "logit": 24.875,
+            "text": "spr"
+          },
+          {
+            "id": 61262,
+            "logit": 19.375,
+            "text": "Spr"
+          },
+          {
+            "id": 248068,
+            "logit": 18.75,
+            "text": "<think>"
+          },
+          {
+            "id": 82,
+            "logit": 18.0,
+            "text": "s"
+          },
+          {
+            "id": 2085,
+            "logit": 17.0,
+            "text": "sp"
+          },
+          {
+            "id": 7894,
+            "logit": 16.875,
+            "text": " spr"
+          },
+          {
+            "id": 75219,
+            "logit": 16.375,
+            "text": "spar"
+          },
+          {
+            "id": 9405,
+            "logit": 16.0,
+            "text": "yes"
+          },
+          {
+            "id": 760,
+            "logit": 15.8125,
+            "text": "The"
+          },
+          {
+            "id": 27,
+            "logit": 15.625,
+            "text": "<"
+          },
+          {
+            "id": 4443,
+            "logit": 15.5,
+            "text": "SP"
+          },
+          {
+            "id": 50,
+            "logit": 15.4375,
+            "text": "S"
+          },
+          {
+            "id": 1,
+            "logit": 15.4375,
+            "text": "\""
+          },
+          {
+            "id": 71944,
+            "logit": 15.375,
+            "text": "snow"
+          },
+          {
+            "id": 18523,
+            "logit": 15.1875,
+            "text": "sure"
+          },
+          {
+            "id": 2083,
+            "logit": 15.125,
+            "text": "no"
+          },
+          {
+            "id": 28267,
+            "logit": 15.125,
+            "text": "spring"
+          },
+          {
+            "id": 40,
+            "logit": 14.9375,
+            "text": "I"
+          },
+          {
+            "id": 2665,
+            "logit": 14.9375,
+            "text": "No"
+          },
+          {
+            "id": 32269,
+            "logit": 14.875,
+            "text": "spe"
+          },
+          {
+            "id": 248046,
+            "logit": 14.75,
+            "text": "<|im_end|>"
+          },
+          {
+            "id": 9175,
+            "logit": 14.625,
+            "text": "Yes"
+          },
+          {
+            "id": 631,
+            "logit": 14.625,
+            "text": "pr"
+          },
+          {
+            "id": 62430,
+            "logit": 14.625,
+            "text": "sap"
+          }
+        ],
+        "watch": {
+          "\n": 5.21875,
+          "1": 14.3125,
+          "<": 15.625,
+          "<think>": 18.75,
+          "<tool_call>": 14.125,
+          "<|im_end|>": 14.75,
+          "Based": 12.0,
+          "Here": 11.8125,
+          "I": 14.9375,
+          "It": 13.5,
+          "NE": 5.375,
+          "NO": 8.5,
+          "NOT": 10.5625,
+          "No": 14.9375,
+          "None": 14.125,
+          "Okay": 12.625,
+          "Please": 12.375,
+          "Select": 6.375,
+          "Since": 10.375,
+          "Sure": 14.125,
+          "The": 15.8125,
+          "This": 13.9375,
+          "To": 11.625,
+          "Yes": 14.625,
+          "You": 13.4375,
+          "need": 9.3125,
+          "no": 15.125
+        }
+      },
+      "decision_position": 34,
+      "family": "instruction",
+      "gaps": {
+        "NE_minus_NO": -3.125,
+        "call_minus_NE": 8.75,
+        "call_minus_NO": 5.625,
+        "call_minus_argmax_other": -4.625
+      },
+      "model": "original",
+      "prompt_tokens": 35,
+      "seconds": 0.04142004100140184,
+      "sequence_tokens": 35
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-5",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 1931,
+        "logsumexp": 25.655746587784535,
+        "topk": [
+          {
+            "id": 1931,
+            "logit": 25.625,
+            "text": "ced"
+          },
+          {
+            "id": 20,
+            "logit": 21.5,
+            "text": "5"
+          },
+          {
+            "id": 5480,
+            "logit": 20.125,
+            "text": "target"
+          },
+          {
+            "id": 341,
+            "logit": 19.625,
+            "text": "ce"
+          },
+          {
+            "id": 18,
+            "logit": 19.375,
+            "text": "3"
+          },
+          {
+            "id": 66,
+            "logit": 18.75,
+            "text": "c"
+          },
+          {
+            "id": 17,
+            "logit": 18.625,
+            "text": "2"
+          },
+          {
+            "id": 19,
+            "logit": 18.25,
+            "text": "4"
+          },
+          {
+            "id": 248068,
+            "logit": 18.0,
+            "text": "<think>"
+          },
+          {
+            "id": 16,
+            "logit": 17.875,
+            "text": "1"
+          },
+          {
+            "id": 15,
+            "logit": 17.125,
+            "text": "0"
+          },
+          {
+            "id": 59964,
+            "logit": 17.0,
+            "text": "CED"
+          },
+          {
+            "id": 23,
+            "logit": 16.875,
+            "text": "8"
+          },
+          {
+            "id": 22,
+            "logit": 16.875,
+            "text": "7"
+          },
+          {
+            "id": 4485,
+            "logit": 16.625,
+            "text": "ceed"
+          },
+          {
+            "id": 162855,
+            "logit": 16.5,
+            "text": " ced"
+          },
+          {
+            "id": 290,
+            "logit": 16.25,
+            "text": "ed"
+          },
+          {
+            "id": 3546,
+            "logit": 16.125,
+            "text": "cel"
+          },
+          {
+            "id": 24,
+            "logit": 15.9375,
+            "text": "9"
+          },
+          {
+            "id": 6359,
+            "logit": 15.9375,
+            "text": "ted"
+          },
+          {
+            "id": 91597,
+            "logit": 15.9375,
+            "text": "cede"
+          },
+          {
+            "id": 45746,
+            "logit": 15.875,
+            "text": "cen"
+          },
+          {
+            "id": 21,
+            "logit": 15.875,
+            "text": "6"
+          },
+          {
+            "id": 1129,
+            "logit": 15.6875,
+            "text": "cent"
+          }
+        ],
+        "watch": {
+          "\n": 6.34375,
+          "1": 17.875,
+          "<": 13.625,
+          "<think>": 18.0,
+          "<tool_call>": 12.9375,
+          "<|im_end|>": 14.125,
+          "Based": 9.625,
+          "Here": 6.5,
+          "I": 9.25,
+          "It": 7.03125,
+          "NE": 4.75,
+          "NO": 3.3125,
+          "NOT": 6.1875,
+          "No": 9.125,
+          "None": 12.4375,
+          "Okay": 6.53125,
+          "Please": 7.4375,
+          "Select": 4.375,
+          "Since": 6.0,
+          "Sure": 5.90625,
+          "The": 10.125,
+          "This": 9.375,
+          "To": 7.84375,
+          "Yes": 8.625,
+          "You": 7.34375,
+          "need": 11.25,
+          "no": 13.0
+        }
+      },
+      "decision_position": 50,
+      "family": "extraction",
+      "gaps": {
+        "NE_minus_NO": 1.4375,
+        "call_minus_NE": 8.1875,
+        "call_minus_NO": 9.625,
+        "call_minus_argmax_other": -5.0625
+      },
+      "model": "original",
+      "prompt_tokens": 51,
+      "seconds": 0.036447000020416453,
+      "sequence_tokens": 51
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-6",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 24,
+        "logsumexp": 25.64390205573248,
+        "topk": [
+          {
+            "id": 24,
+            "logit": 25.625,
+            "text": "9"
+          },
+          {
+            "id": 16,
+            "logit": 21.25,
+            "text": "1"
+          },
+          {
+            "id": 23,
+            "logit": 19.5,
+            "text": "8"
+          },
+          {
+            "id": 22,
+            "logit": 18.5,
+            "text": "7"
+          },
+          {
+            "id": 20,
+            "logit": 18.375,
+            "text": "5"
+          },
+          {
+            "id": 248068,
+            "logit": 18.25,
+            "text": "<think>"
+          },
+          {
+            "id": 17,
+            "logit": 18.25,
+            "text": "2"
+          },
+          {
+            "id": 15,
+            "logit": 18.125,
+            "text": "0"
+          },
+          {
+            "id": 21,
+            "logit": 17.625,
+            "text": "6"
+          },
+          {
+            "id": 19,
+            "logit": 17.25,
+            "text": "4"
+          },
+          {
+            "id": 18,
+            "logit": 17.0,
+            "text": "3"
+          },
+          {
+            "id": 248046,
+            "logit": 15.375,
+            "text": "<|im_end|>"
+          },
+          {
+            "id": 2665,
+            "logit": 15.0,
+            "text": "No"
+          },
+          {
+            "id": 760,
+            "logit": 14.8125,
+            "text": "The"
+          },
+          {
+            "id": 1,
+            "logit": 14.4375,
+            "text": "\""
+          },
+          {
+            "id": 12,
+            "logit": 14.0,
+            "text": "-"
+          },
+          {
+            "id": 7,
+            "logit": 13.75,
+            "text": "("
+          },
+          {
+            "id": 13784,
+            "logit": 13.5,
+            "text": "Wait"
+          },
+          {
+            "id": 29,
+            "logit": 13.3125,
+            "text": ">"
+          },
+          {
+            "id": 28,
+            "logit": 13.125,
+            "text": "="
+          },
+          {
+            "id": 27,
+            "logit": 12.9375,
+            "text": "<"
+          },
+          {
+            "id": 220,
+            "logit": 12.8125,
+            "text": " "
+          },
+          {
+            "id": 58,
+            "logit": 12.75,
+            "text": "["
+          },
+          {
+            "id": 45,
+            "logit": 12.75,
+            "text": "N"
+          }
+        ],
+        "watch": {
+          "\n": 7.9375,
+          "1": 21.25,
+          "<": 12.9375,
+          "<think>": 18.25,
+          "<tool_call>": 12.25,
+          "<|im_end|>": 15.375,
+          "Based": 9.5,
+          "Here": 10.125,
+          "I": 11.125,
+          "It": 10.25,
+          "NE": 7.3125,
+          "NO": 9.8125,
+          "NOT": 10.1875,
+          "No": 15.0,
+          "None": 11.75,
+          "Okay": 11.375,
+          "Please": 10.4375,
+          "Select": 4.40625,
+          "Since": 11.125,
+          "Sure": 7.25,
+          "The": 14.8125,
+          "This": 10.625,
+          "To": 10.375,
+          "Yes": 12.0625,
+          "You": 9.5625,
+          "need": 8.3125,
+          "no": 12.1875
+        }
+      },
+      "decision_position": 38,
+      "family": "arithmetic",
+      "gaps": {
+        "NE_minus_NO": -2.5,
+        "call_minus_NE": 4.9375,
+        "call_minus_NO": 2.4375,
+        "call_minus_argmax_other": -9.0
+      },
+      "model": "original",
+      "prompt_tokens": 39,
+      "seconds": 0.03819445800036192,
+      "sequence_tokens": 39
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-7",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 90,
+        "logsumexp": 24.07423168368578,
+        "topk": [
+          {
+            "id": 90,
+            "logit": 23.875,
+            "text": "{"
+          },
+          {
+            "id": 4754,
+            "logit": 21.875,
+            "text": "{\""
+          },
+          {
+            "id": 71093,
+            "logit": 21.125,
+            "text": "```"
+          },
+          {
+            "id": 58,
+            "logit": 19.875,
+            "text": "["
+          },
+          {
+            "id": 248068,
+            "logit": 16.375,
+            "text": "<think>"
+          },
+          {
+            "id": 50358,
+            "logit": 16.0,
+            "text": "[{"
+          },
+          {
+            "id": 6061,
+            "logit": 16.0,
+            "text": "{}"
+          },
+          {
+            "id": 13215,
+            "logit": 15.75,
+            "text": "{'"
+          },
+          {
+            "id": 13724,
+            "logit": 15.75,
+            "text": "\"{"
+          },
+          {
+            "id": 2164,
+            "logit": 14.75,
+            "text": "json"
+          },
+          {
+            "id": 2884,
+            "logit": 14.5625,
+            "text": "{{"
+          },
+          {
+            "id": 1249,
+            "logit": 14.375,
+            "text": "[]"
+          },
+          {
+            "id": 313,
+            "logit": 13.9375,
+            "text": " {"
+          },
+          {
+            "id": 1,
+            "logit": 13.875,
+            "text": "\""
+          },
+          {
+            "id": 760,
+            "logit": 13.75,
+            "text": "The"
+          },
+          {
+            "id": 65396,
+            "logit": 13.5625,
+            "text": "{/"
+          },
+          {
+            "id": 34521,
+            "logit": 13.5625,
+            "text": "{\\"
+          },
+          {
+            "id": 1143,
+            "logit": 13.25,
+            "text": "[\""
+          },
+          {
+            "id": 23444,
+            "logit": 13.0625,
+            "text": "{i"
+          },
+          {
+            "id": 44576,
+            "logit": 12.9375,
+            "text": "{|"
+          },
+          {
+            "id": 9,
+            "logit": 12.875,
+            "text": "*"
+          },
+          {
+            "id": 12237,
+            "logit": 12.6875,
+            "text": "\"\"\""
+          },
+          {
+            "id": 66755,
+            "logit": 12.6875,
+            "text": "{k"
+          },
+          {
+            "id": 45437,
+            "logit": 12.6875,
+            "text": "{name"
+          }
+        ],
+        "watch": {
+          "\n": 7.03125,
+          "1": 9.125,
+          "<": 10.0625,
+          "<think>": 16.375,
+          "<tool_call>": 12.4375,
+          "<|im_end|>": 6.84375,
+          "Based": 9.625,
+          "Here": 8.625,
+          "I": 11.6875,
+          "It": 10.8125,
+          "NE": 5.09375,
+          "NO": 5.15625,
+          "NOT": 7.34375,
+          "No": 12.0625,
+          "None": 8.625,
+          "Okay": 9.5625,
+          "Please": 9.0,
+          "Select": 5.40625,
+          "Since": 6.0625,
+          "Sure": 6.8125,
+          "The": 13.75,
+          "This": 11.1875,
+          "To": 10.125,
+          "Yes": 10.125,
+          "You": 6.96875,
+          "need": 1.4375,
+          "no": 7.28125
+        }
+      },
+      "decision_position": 52,
+      "family": "structured",
+      "gaps": {
+        "NE_minus_NO": -0.0625,
+        "call_minus_NE": 7.34375,
+        "call_minus_NO": 7.28125,
+        "call_minus_argmax_other": -3.9375
+      },
+      "model": "original",
+      "prompt_tokens": 53,
+      "seconds": 0.04044974999851547,
+      "sequence_tokens": 53
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-8",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 1931,
+        "logsumexp": 23.16963793841322,
+        "topk": [
+          {
+            "id": 1931,
+            "logit": 23.0,
+            "text": "ced"
+          },
+          {
+            "id": 72730,
+            "logit": 20.0,
+            "text": " cedar"
+          },
+          {
+            "id": 34,
+            "logit": 19.625,
+            "text": "C"
+          },
+          {
+            "id": 66,
+            "logit": 19.125,
+            "text": "c"
+          },
+          {
+            "id": 3546,
+            "logit": 18.375,
+            "text": "cel"
+          },
+          {
+            "id": 6702,
+            "logit": 18.125,
+            "text": "car"
+          },
+          {
+            "id": 248068,
+            "logit": 18.125,
+            "text": "<think>"
+          },
+          {
+            "id": 341,
+            "logit": 17.875,
+            "text": "ce"
+          },
+          {
+            "id": 3700,
+            "logit": 17.5,
+            "text": "cer"
+          },
+          {
+            "id": 895,
+            "logit": 17.0,
+            "text": "ca"
+          },
+          {
+            "id": 455,
+            "logit": 16.625,
+            "text": "ter"
+          },
+          {
+            "id": 33311,
+            "logit": 16.625,
+            "text": "cad"
+          },
+          {
+            "id": 9405,
+            "logit": 16.625,
+            "text": "yes"
+          },
+          {
+            "id": 2083,
+            "logit": 16.5,
+            "text": "no"
+          },
+          {
+            "id": 4243,
+            "logit": 16.25,
+            "text": "cd"
+          },
+          {
+            "id": 5691,
+            "logit": 16.25,
+            "text": "cell"
+          },
+          {
+            "id": 5248,
+            "logit": 15.9375,
+            "text": "cal"
+          },
+          {
+            "id": 4485,
+            "logit": 15.875,
+            "text": "ceed"
+          },
+          {
+            "id": 323,
+            "logit": 15.8125,
+            "text": "se"
+          },
+          {
+            "id": 27586,
+            "logit": 15.75,
+            "text": "reed"
+          },
+          {
+            "id": 6451,
+            "logit": 15.75,
+            "text": "wood"
+          },
+          {
+            "id": 32636,
+            "logit": 15.6875,
+            "text": "dead"
+          },
+          {
+            "id": 4920,
+            "logit": 15.6875,
+            "text": "cr"
+          },
+          {
+            "id": 1114,
+            "logit": 15.625,
+            "text": "red"
+          }
+        ],
+        "watch": {
+          "\n": 6.34375,
+          "1": 14.375,
+          "<": 14.75,
+          "<think>": 18.125,
+          "<tool_call>": 12.0,
+          "<|im_end|>": 14.1875,
+          "Based": 12.1875,
+          "Here": 11.4375,
+          "I": 14.1875,
+          "It": 11.6875,
+          "NE": 9.8125,
+          "NO": 9.875,
+          "NOT": 10.0625,
+          "No": 14.5625,
+          "None": 12.6875,
+          "Okay": 12.9375,
+          "Please": 12.375,
+          "Select": 8.5625,
+          "Since": 9.1875,
+          "Sure": 11.625,
+          "The": 15.3125,
+          "This": 13.75,
+          "To": 11.0625,
+          "Yes": 14.1875,
+          "You": 11.875,
+          "need": 11.625,
+          "no": 16.5
+        }
+      },
+      "decision_position": 33,
+      "family": "instruction",
+      "gaps": {
+        "NE_minus_NO": -0.0625,
+        "call_minus_NE": 2.1875,
+        "call_minus_NO": 2.125,
+        "call_minus_argmax_other": -6.125
+      },
+      "model": "original",
+      "prompt_tokens": 34,
+      "seconds": 0.0368967920076102,
+      "sequence_tokens": 34
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-9",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 49931,
+        "logsumexp": 24.18268588145915,
+        "topk": [
+          {
+            "id": 49931,
+            "logit": 23.75,
+            "text": "spr"
+          },
+          {
+            "id": 22,
+            "logit": 22.25,
+            "text": "7"
+          },
+          {
+            "id": 24,
+            "logit": 22.125,
+            "text": "9"
+          },
+          {
+            "id": 23,
+            "logit": 20.125,
+            "text": "8"
+          },
+          {
+            "id": 82,
+            "logit": 20.0,
+            "text": "s"
+          },
+          {
+            "id": 20,
+            "logit": 19.0,
+            "text": "5"
+          },
+          {
+            "id": 18,
+            "logit": 18.875,
+            "text": "3"
+          },
+          {
+            "id": 5480,
+            "logit": 18.875,
+            "text": "target"
+          },
+          {
+            "id": 16,
+            "logit": 18.75,
+            "text": "1"
+          },
+          {
+            "id": 21,
+            "logit": 18.5,
+            "text": "6"
+          },
+          {
+            "id": 19,
+            "logit": 18.5,
+            "text": "4"
+          },
+          {
+            "id": 17,
+            "logit": 18.25,
+            "text": "2"
+          },
+          {
+            "id": 61262,
+            "logit": 18.0,
+            "text": "Spr"
+          },
+          {
+            "id": 631,
+            "logit": 17.625,
+            "text": "pr"
+          },
+          {
+            "id": 2085,
+            "logit": 17.5,
+            "text": "sp"
+          },
+          {
+            "id": 15,
+            "logit": 17.375,
+            "text": "0"
+          },
+          {
+            "id": 75219,
+            "logit": 17.25,
+            "text": "spar"
+          },
+          {
+            "id": 248068,
+            "logit": 17.125,
+            "text": "<think>"
+          },
+          {
+            "id": 62430,
+            "logit": 17.0,
+            "text": "sap"
+          },
+          {
+            "id": 31560,
+            "logit": 16.875,
+            "text": "sprite"
+          },
+          {
+            "id": 66756,
+            "logit": 16.75,
+            "text": "spl"
+          },
+          {
+            "id": 28267,
+            "logit": 16.5,
+            "text": "spring"
+          },
+          {
+            "id": 47433,
+            "logit": 15.3125,
+            "text": "spir"
+          },
+          {
+            "id": 19181,
+            "logit": 15.25,
+            "text": "sur"
+          }
+        ],
+        "watch": {
+          "\n": 5.78125,
+          "1": 18.75,
+          "<": 13.125,
+          "<think>": 17.125,
+          "<tool_call>": 13.3125,
+          "<|im_end|>": 13.75,
+          "Based": 9.1875,
+          "Here": 7.34375,
+          "I": 9.25,
+          "It": 8.125,
+          "NE": 4.1875,
+          "NO": 5.75,
+          "NOT": 8.5,
+          "No": 10.9375,
+          "None": 13.6875,
+          "Okay": 6.09375,
+          "Please": 7.0,
+          "Select": 4.34375,
+          "Since": 7.90625,
+          "Sure": 10.1875,
+          "The": 11.375,
+          "This": 9.8125,
+          "To": 8.6875,
+          "Yes": 8.8125,
+          "You": 9.375,
+          "need": 11.5,
+          "no": 13.875
+        }
+      },
+      "decision_position": 49,
+      "family": "extraction",
+      "gaps": {
+        "NE_minus_NO": -1.5625,
+        "call_minus_NE": 9.125,
+        "call_minus_NO": 7.5625,
+        "call_minus_argmax_other": -5.4375
+      },
+      "model": "original",
+      "prompt_tokens": 50,
+      "seconds": 0.04380754200974479,
+      "sequence_tokens": 50
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-10",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 24,
+        "logsumexp": 27.007736447111245,
+        "topk": [
+          {
+            "id": 24,
+            "logit": 27.0,
+            "text": "9"
+          },
+          {
+            "id": 23,
+            "logit": 21.0,
+            "text": "8"
+          },
+          {
+            "id": 248068,
+            "logit": 20.875,
+            "text": "<think>"
+          },
+          {
+            "id": 16,
+            "logit": 20.625,
+            "text": "1"
+          },
+          {
+            "id": 22,
+            "logit": 19.5,
+            "text": "7"
+          },
+          {
+            "id": 21,
+            "logit": 18.875,
+            "text": "6"
+          },
+          {
+            "id": 20,
+            "logit": 18.625,
+            "text": "5"
+          },
+          {
+            "id": 15,
+            "logit": 17.625,
+            "text": "0"
+          },
+          {
+            "id": 17,
+            "logit": 17.0,
+            "text": "2"
+          },
+          {
+            "id": 18,
+            "logit": 17.0,
+            "text": "3"
+          },
+          {
+            "id": 19,
+            "logit": 16.875,
+            "text": "4"
+          },
+          {
+            "id": 248046,
+            "logit": 15.75,
+            "text": "<|im_end|>"
+          },
+          {
+            "id": 760,
+            "logit": 15.375,
+            "text": "The"
+          },
+          {
+            "id": 2665,
+            "logit": 15.0625,
+            "text": "No"
+          },
+          {
+            "id": 1,
+            "logit": 14.9375,
+            "text": "\""
+          },
+          {
+            "id": 248058,
+            "logit": 14.8125,
+            "text": "<tool_call>"
+          },
+          {
+            "id": 12,
+            "logit": 14.5625,
+            "text": "-"
+          },
+          {
+            "id": 29,
+            "logit": 14.4375,
+            "text": ">"
+          },
+          {
+            "id": 7,
+            "logit": 14.375,
+            "text": "("
+          },
+          {
+            "id": 248069,
+            "logit": 14.1875,
+            "text": "</think>"
+          },
+          {
+            "id": 28,
+            "logit": 13.9375,
+            "text": "="
+          },
+          {
+            "id": 21365,
+            "logit": 13.4375,
+            "text": "Given"
+          },
+          {
+            "id": 58,
+            "logit": 13.4375,
+            "text": "["
+          },
+          {
+            "id": 9764,
+            "logit": 13.375,
+            "text": "Let"
+          }
+        ],
+        "watch": {
+          "\n": 8.8125,
+          "1": 20.625,
+          "<": 13.3125,
+          "<think>": 20.875,
+          "<tool_call>": 14.8125,
+          "<|im_end|>": 15.75,
+          "Based": 10.625,
+          "Here": 10.375,
+          "I": 9.25,
+          "It": 10.5625,
+          "NE": 3.765625,
+          "NO": 10.75,
+          "NOT": 8.5625,
+          "No": 15.0625,
+          "None": 10.125,
+          "Okay": 12.125,
+          "Please": 10.3125,
+          "Select": 4.28125,
+          "Since": 12.6875,
+          "Sure": 8.75,
+          "The": 15.375,
+          "This": 12.375,
+          "To": 11.3125,
+          "Yes": 12.3125,
+          "You": 9.4375,
+          "need": 5.84375,
+          "no": 12.375
+        }
+      },
+      "decision_position": 38,
+      "family": "arithmetic",
+      "gaps": {
+        "NE_minus_NO": -6.984375,
+        "call_minus_NE": 11.046875,
+        "call_minus_NO": 4.0625,
+        "call_minus_argmax_other": -6.0625
+      },
+      "model": "original",
+      "prompt_tokens": 39,
+      "seconds": 0.03552050000871532,
+      "sequence_tokens": 39
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-11",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 90,
+        "logsumexp": 24.042376883304488,
+        "topk": [
+          {
+            "id": 90,
+            "logit": 23.875,
+            "text": "{"
+          },
+          {
+            "id": 4754,
+            "logit": 21.75,
+            "text": "{\""
+          },
+          {
+            "id": 71093,
+            "logit": 20.75,
+            "text": "```"
+          },
+          {
+            "id": 58,
+            "logit": 19.75,
+            "text": "["
+          },
+          {
+            "id": 248068,
+            "logit": 16.375,
+            "text": "<think>"
+          },
+          {
+            "id": 50358,
+            "logit": 16.0,
+            "text": "[{"
+          },
+          {
+            "id": 6061,
+            "logit": 15.9375,
+            "text": "{}"
+          },
+          {
+            "id": 13724,
+            "logit": 15.6875,
+            "text": "\"{"
+          },
+          {
+            "id": 13215,
+            "logit": 15.4375,
+            "text": "{'"
+          },
+          {
+            "id": 2164,
+            "logit": 14.5625,
+            "text": "json"
+          },
+          {
+            "id": 2884,
+            "logit": 14.5,
+            "text": "{{"
+          },
+          {
+            "id": 1249,
+            "logit": 14.125,
+            "text": "[]"
+          },
+          {
+            "id": 313,
+            "logit": 13.8125,
+            "text": " {"
+          },
+          {
+            "id": 760,
+            "logit": 13.75,
+            "text": "The"
+          },
+          {
+            "id": 65396,
+            "logit": 13.5,
+            "text": "{/"
+          },
+          {
+            "id": 34521,
+            "logit": 13.4375,
+            "text": "{\\"
+          },
+          {
+            "id": 1,
+            "logit": 13.375,
+            "text": "\""
+          },
+          {
+            "id": 23444,
+            "logit": 13.3125,
+            "text": "{i"
+          },
+          {
+            "id": 44576,
+            "logit": 13.0,
+            "text": "{|"
+          },
+          {
+            "id": 1143,
+            "logit": 12.875,
+            "text": "[\""
+          },
+          {
+            "id": 9,
+            "logit": 12.8125,
+            "text": "*"
+          },
+          {
+            "id": 45437,
+            "logit": 12.75,
+            "text": "{name"
+          },
+          {
+            "id": 5046,
+            "logit": 12.5625,
+            "text": " {\""
+          },
+          {
+            "id": 66755,
+            "logit": 12.5625,
+            "text": "{k"
+          }
+        ],
+        "watch": {
+          "\n": 6.875,
+          "1": 9.0625,
+          "<": 9.875,
+          "<think>": 16.375,
+          "<tool_call>": 12.4375,
+          "<|im_end|>": 6.90625,
+          "Based": 9.5,
+          "Here": 8.3125,
+          "I": 11.875,
+          "It": 10.75,
+          "NE": 5.15625,
+          "NO": 5.03125,
+          "NOT": 7.28125,
+          "No": 11.75,
+          "None": 8.625,
+          "Okay": 9.5625,
+          "Please": 8.875,
+          "Select": 5.1875,
+          "Since": 5.96875,
+          "Sure": 6.625,
+          "The": 13.75,
+          "This": 11.0625,
+          "To": 10.0,
+          "Yes": 9.75,
+          "You": 7.03125,
+          "need": 1.1328125,
+          "no": 6.75
+        }
+      },
+      "decision_position": 53,
+      "family": "structured",
+      "gaps": {
+        "NE_minus_NO": 0.125,
+        "call_minus_NE": 7.28125,
+        "call_minus_NO": 7.40625,
+        "call_minus_argmax_other": -3.9375
+      },
+      "model": "original",
+      "prompt_tokens": 54,
+      "seconds": 0.041269834007835016,
+      "sequence_tokens": 54
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-12",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 2117,
+        "logsumexp": 22.7043052246482,
+        "topk": [
+          {
+            "id": 2117,
+            "logit": 22.625,
+            "text": "map"
+          },
+          {
+            "id": 2155,
+            "logit": 18.875,
+            "text": "Map"
+          },
+          {
+            "id": 248068,
+            "logit": 18.25,
+            "text": "<think>"
+          },
+          {
+            "id": 2573,
+            "logit": 17.0,
+            "text": "me"
+          },
+          {
+            "id": 52556,
+            "logit": 16.75,
+            "text": " maple"
+          },
+          {
+            "id": 17092,
+            "logit": 16.5,
+            "text": "MAP"
+          },
+          {
+            "id": 27,
+            "logit": 16.375,
+            "text": "<"
+          },
+          {
+            "id": 17114,
+            "logit": 16.0,
+            "text": "maps"
+          },
+          {
+            "id": 2083,
+            "logit": 16.0,
+            "text": "no"
+          },
+          {
+            "id": 9405,
+            "logit": 16.0,
+            "text": "yes"
+          },
+          {
+            "id": 21680,
+            "logit": 15.6875,
+            "text": "apple"
+          },
+          {
+            "id": 35288,
+            "logit": 15.3125,
+            "text": "never"
+          },
+          {
+            "id": 10223,
+            "logit": 15.1875,
+            "text": "mem"
+          },
+          {
+            "id": 5437,
+            "logit": 15.125,
+            "text": "mar"
+          },
+          {
+            "id": 9066,
+            "logit": 15.125,
+            "text": "tree"
+          },
+          {
+            "id": 3923,
+            "logit": 15.0625,
+            "text": "met"
+          },
+          {
+            "id": 248069,
+            "logit": 15.0625,
+            "text": "</think>"
+          },
+          {
+            "id": 9,
+            "logit": 15.0,
+            "text": "*"
+          },
+          {
+            "id": 1134,
+            "logit": 14.9375,
+            "text": "mer"
+          },
+          {
+            "id": 1,
+            "logit": 14.875,
+            "text": "\""
+          },
+          {
+            "id": 61267,
+            "logit": 14.6875,
+            "text": "meet"
+          },
+          {
+            "id": 16,
+            "logit": 14.6875,
+            "text": "1"
+          },
+          {
+            "id": 1768,
+            "logit": 14.5,
+            "text": "miss"
+          },
+          {
+            "id": 25034,
+            "logit": 14.5,
+            "text": "-map"
+          }
+        ],
+        "watch": {
+          "\n": 5.53125,
+          "1": 14.6875,
+          "<": 16.375,
+          "<think>": 18.25,
+          "<tool_call>": 13.6875,
+          "<|im_end|>": 14.3125,
+          "Based": 10.4375,
+          "Here": 10.0,
+          "I": 14.3125,
+          "It": 12.5,
+          "NE": 6.4375,
+          "NO": 10.375,
+          "NOT": 10.875,
+          "No": 13.5625,
+          "None": 13.6875,
+          "Okay": 11.1875,
+          "Please": 13.6875,
+          "Select": 7.75,
+          "Since": 8.0625,
+          "Sure": 10.625,
+          "The": 14.0625,
+          "This": 12.8125,
+          "To": 10.25,
+          "Yes": 12.4375,
+          "You": 11.9375,
+          "need": 10.4375,
+          "no": 16.0
+        }
+      },
+      "decision_position": 34,
+      "family": "instruction",
+      "gaps": {
+        "NE_minus_NO": -3.9375,
+        "call_minus_NE": 7.25,
+        "call_minus_NO": 3.3125,
+        "call_minus_argmax_other": -4.5625
+      },
+      "model": "original",
+      "prompt_tokens": 35,
+      "seconds": 0.03455324997776188,
+      "sequence_tokens": 35
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-13",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 2117,
+        "logsumexp": 25.092285196662214,
+        "topk": [
+          {
+            "id": 2117,
+            "logit": 24.875,
+            "text": "map"
+          },
+          {
+            "id": 16,
+            "logit": 23.25,
+            "text": "1"
+          },
+          {
+            "id": 18,
+            "logit": 20.125,
+            "text": "3"
+          },
+          {
+            "id": 5480,
+            "logit": 20.0,
+            "text": "target"
+          },
+          {
+            "id": 19,
+            "logit": 19.875,
+            "text": "4"
+          },
+          {
+            "id": 24,
+            "logit": 19.75,
+            "text": "9"
+          },
+          {
+            "id": 17,
+            "logit": 19.25,
+            "text": "2"
+          },
+          {
+            "id": 20,
+            "logit": 19.0,
+            "text": "5"
+          },
+          {
+            "id": 15,
+            "logit": 18.25,
+            "text": "0"
+          },
+          {
+            "id": 21680,
+            "logit": 17.625,
+            "text": "apple"
+          },
+          {
+            "id": 23,
+            "logit": 17.625,
+            "text": "8"
+          },
+          {
+            "id": 52556,
+            "logit": 17.625,
+            "text": " maple"
+          },
+          {
+            "id": 248068,
+            "logit": 17.5,
+            "text": "<think>"
+          },
+          {
+            "id": 21,
+            "logit": 17.5,
+            "text": "6"
+          },
+          {
+            "id": 22,
+            "logit": 17.25,
+            "text": "7"
+          },
+          {
+            "id": 2155,
+            "logit": 17.125,
+            "text": "Map"
+          },
+          {
+            "id": 25034,
+            "logit": 16.25,
+            "text": "-map"
+          },
+          {
+            "id": 76,
+            "logit": 16.0,
+            "text": "m"
+          },
+          {
+            "id": 17114,
+            "logit": 15.9375,
+            "text": "maps"
+          },
+          {
+            "id": 9066,
+            "logit": 15.875,
+            "text": "tree"
+          },
+          {
+            "id": 17092,
+            "logit": 15.875,
+            "text": "MAP"
+          },
+          {
+            "id": 1938,
+            "logit": 15.875,
+            "text": "table"
+          },
+          {
+            "id": 27,
+            "logit": 15.8125,
+            "text": "<"
+          },
+          {
+            "id": 2573,
+            "logit": 15.625,
+            "text": "me"
+          }
+        ],
+        "watch": {
+          "\n": 6.46875,
+          "1": 23.25,
+          "<": 15.8125,
+          "<think>": 17.5,
+          "<tool_call>": 14.4375,
+          "<|im_end|>": 14.625,
+          "Based": 8.25,
+          "Here": 6.40625,
+          "I": 10.5625,
+          "It": 8.6875,
+          "NE": 4.53125,
+          "NO": 6.3125,
+          "NOT": 9.875,
+          "No": 9.4375,
+          "None": 14.0625,
+          "Okay": 5.34375,
+          "Please": 9.4375,
+          "Select": 4.9375,
+          "Since": 5.71875,
+          "Sure": 4.78125,
+          "The": 11.0625,
+          "This": 9.0625,
+          "To": 7.5625,
+          "Yes": 6.6875,
+          "You": 7.9375,
+          "need": 10.6875,
+          "no": 14.25
+        }
+      },
+      "decision_position": 51,
+      "family": "extraction",
+      "gaps": {
+        "NE_minus_NO": -1.78125,
+        "call_minus_NE": 9.90625,
+        "call_minus_NO": 8.125,
+        "call_minus_argmax_other": -8.8125
+      },
+      "model": "original",
+      "prompt_tokens": 52,
+      "seconds": 0.040029458003118634,
+      "sequence_tokens": 52
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-14",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 16,
+        "logsumexp": 24.627529650373408,
+        "topk": [
+          {
+            "id": 16,
+            "logit": 23.875,
+            "text": "1"
+          },
+          {
+            "id": 21,
+            "logit": 23.75,
+            "text": "6"
+          },
+          {
+            "id": 24,
+            "logit": 21.75,
+            "text": "9"
+          },
+          {
+            "id": 22,
+            "logit": 20.75,
+            "text": "7"
+          },
+          {
+            "id": 20,
+            "logit": 20.5,
+            "text": "5"
+          },
+          {
+            "id": 23,
+            "logit": 20.125,
+            "text": "8"
+          },
+          {
+            "id": 248068,
+            "logit": 19.125,
+            "text": "<think>"
+          },
+          {
+            "id": 17,
+            "logit": 17.875,
+            "text": "2"
+          },
+          {
+            "id": 15,
+            "logit": 17.75,
+            "text": "0"
+          },
+          {
+            "id": 19,
+            "logit": 17.5,
+            "text": "4"
+          },
+          {
+            "id": 18,
+            "logit": 17.25,
+            "text": "3"
+          },
+          {
+            "id": 248046,
+            "logit": 15.8125,
+            "text": "<|im_end|>"
+          },
+          {
+            "id": 248069,
+            "logit": 15.3125,
+            "text": "</think>"
+          },
+          {
+            "id": 1,
+            "logit": 14.75,
+            "text": "\""
+          },
+          {
+            "id": 12,
+            "logit": 14.625,
+            "text": "-"
+          },
+          {
+            "id": 760,
+            "logit": 14.3125,
+            "text": "The"
+          },
+          {
+            "id": 2665,
+            "logit": 14.1875,
+            "text": "No"
+          },
+          {
+            "id": 63151,
+            "logit": 14.1875,
+            "text": "Exactly"
+          },
+          {
+            "id": 7,
+            "logit": 14.0,
+            "text": "("
+          },
+          {
+            "id": 29,
+            "logit": 13.9375,
+            "text": ">"
+          },
+          {
+            "id": 9764,
+            "logit": 13.8125,
+            "text": "Let"
+          },
+          {
+            "id": 332,
+            "logit": 13.625,
+            "text": "**"
+          },
+          {
+            "id": 30,
+            "logit": 13.5,
+            "text": "?"
+          },
+          {
+            "id": 248058,
+            "logit": 13.4375,
+            "text": "<tool_call>"
+          }
+        ],
+        "watch": {
+          "\n": 8.875,
+          "1": 23.875,
+          "<": 13.3125,
+          "<think>": 19.125,
+          "<tool_call>": 13.4375,
+          "<|im_end|>": 15.8125,
+          "Based": 12.6875,
+          "Here": 11.125,
+          "I": 13.0625,
+          "It": 11.25,
+          "NE": 4.4375,
+          "NO": 8.5625,
+          "NOT": 9.1875,
+          "No": 14.1875,
+          "None": 12.125,
+          "Okay": 11.8125,
+          "Please": 12.0625,
+          "Select": 6.59375,
+          "Since": 12.6875,
+          "Sure": 8.875,
+          "The": 14.3125,
+          "This": 13.0,
+          "To": 11.9375,
+          "Yes": 12.25,
+          "You": 11.0625,
+          "need": 6.125,
+          "no": 11.0
+        }
+      },
+      "decision_position": 37,
+      "family": "arithmetic",
+      "gaps": {
+        "NE_minus_NO": -4.125,
+        "call_minus_NE": 9.0,
+        "call_minus_NO": 4.875,
+        "call_minus_argmax_other": -10.4375
+      },
+      "model": "original",
+      "prompt_tokens": 38,
+      "seconds": 0.032930249988567084,
+      "sequence_tokens": 38
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-15",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 90,
+        "logsumexp": 24.049890039695207,
+        "topk": [
+          {
+            "id": 90,
+            "logit": 23.875,
+            "text": "{"
+          },
+          {
+            "id": 4754,
+            "logit": 21.875,
+            "text": "{\""
+          },
+          {
+            "id": 71093,
+            "logit": 20.625,
+            "text": "```"
+          },
+          {
+            "id": 58,
+            "logit": 19.625,
+            "text": "["
+          },
+          {
+            "id": 248068,
+            "logit": 16.5,
+            "text": "<think>"
+          },
+          {
+            "id": 6061,
+            "logit": 16.0,
+            "text": "{}"
+          },
+          {
+            "id": 50358,
+            "logit": 15.8125,
+            "text": "[{"
+          },
+          {
+            "id": 13724,
+            "logit": 15.75,
+            "text": "\"{"
+          },
+          {
+            "id": 13215,
+            "logit": 15.4375,
+            "text": "{'"
+          },
+          {
+            "id": 2164,
+            "logit": 14.5,
+            "text": "json"
+          },
+          {
+            "id": 2884,
+            "logit": 14.4375,
+            "text": "{{"
+          },
+          {
+            "id": 1249,
+            "logit": 14.0625,
+            "text": "[]"
+          },
+          {
+            "id": 313,
+            "logit": 13.875,
+            "text": " {"
+          },
+          {
+            "id": 760,
+            "logit": 13.875,
+            "text": "The"
+          },
+          {
+            "id": 34521,
+            "logit": 13.625,
+            "text": "{\\"
+          },
+          {
+            "id": 1,
+            "logit": 13.5625,
+            "text": "\""
+          },
+          {
+            "id": 65396,
+            "logit": 13.5,
+            "text": "{/"
+          },
+          {
+            "id": 23444,
+            "logit": 13.25,
+            "text": "{i"
+          },
+          {
+            "id": 44576,
+            "logit": 13.125,
+            "text": "{|"
+          },
+          {
+            "id": 1143,
+            "logit": 13.0,
+            "text": "[\""
+          },
+          {
+            "id": 5046,
+            "logit": 12.9375,
+            "text": " {\""
+          },
+          {
+            "id": 9,
+            "logit": 12.8125,
+            "text": "*"
+          },
+          {
+            "id": 45437,
+            "logit": 12.8125,
+            "text": "{name"
+          },
+          {
+            "id": 66755,
+            "logit": 12.6875,
+            "text": "{k"
+          }
+        ],
+        "watch": {
+          "\n": 6.8125,
+          "1": 9.125,
+          "<": 10.125,
+          "<think>": 16.5,
+          "<tool_call>": 12.5,
+          "<|im_end|>": 7.03125,
+          "Based": 9.625,
+          "Here": 8.25,
+          "I": 12.0625,
+          "It": 10.6875,
+          "NE": 5.34375,
+          "NO": 5.28125,
+          "NOT": 7.625,
+          "No": 11.9375,
+          "None": 8.6875,
+          "Okay": 9.625,
+          "Please": 9.0625,
+          "Select": 5.4375,
+          "Since": 5.96875,
+          "Sure": 6.5625,
+          "The": 13.875,
+          "This": 11.0625,
+          "To": 10.0625,
+          "Yes": 9.6875,
+          "You": 7.15625,
+          "need": 1.40625,
+          "no": 7.0625
+        }
+      },
+      "decision_position": 53,
+      "family": "structured",
+      "gaps": {
+        "NE_minus_NO": 0.0625,
+        "call_minus_NE": 7.15625,
+        "call_minus_NO": 7.21875,
+        "call_minus_argmax_other": -4.0
+      },
+      "model": "original",
+      "prompt_tokens": 54,
+      "seconds": 0.04089337500045076,
+      "sequence_tokens": 54
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-16",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 2117,
+        "logsumexp": 22.594835485429495,
+        "topk": [
+          {
+            "id": 2117,
+            "logit": 22.5,
+            "text": "map"
+          },
+          {
+            "id": 2155,
+            "logit": 19.0,
+            "text": "Map"
+          },
+          {
+            "id": 248068,
+            "logit": 18.0,
+            "text": "<think>"
+          },
+          {
+            "id": 9405,
+            "logit": 16.875,
+            "text": "yes"
+          },
+          {
+            "id": 2573,
+            "logit": 16.875,
+            "text": "me"
+          },
+          {
+            "id": 52556,
+            "logit": 16.75,
+            "text": " maple"
+          },
+          {
+            "id": 17092,
+            "logit": 16.625,
+            "text": "MAP"
+          },
+          {
+            "id": 2083,
+            "logit": 16.5,
+            "text": "no"
+          },
+          {
+            "id": 27,
+            "logit": 16.125,
+            "text": "<"
+          },
+          {
+            "id": 17114,
+            "logit": 15.9375,
+            "text": "maps"
+          },
+          {
+            "id": 21680,
+            "logit": 15.75,
+            "text": "apple"
+          },
+          {
+            "id": 35288,
+            "logit": 15.625,
+            "text": "never"
+          },
+          {
+            "id": 9066,
+            "logit": 15.1875,
+            "text": "tree"
+          },
+          {
+            "id": 3923,
+            "logit": 15.125,
+            "text": "met"
+          },
+          {
+            "id": 10223,
+            "logit": 15.125,
+            "text": "mem"
+          },
+          {
+            "id": 1134,
+            "logit": 15.125,
+            "text": "mer"
+          },
+          {
+            "id": 9,
+            "logit": 15.0625,
+            "text": "*"
+          },
+          {
+            "id": 1,
+            "logit": 15.0,
+            "text": "\""
+          },
+          {
+            "id": 1768,
+            "logit": 15.0,
+            "text": "miss"
+          },
+          {
+            "id": 5437,
+            "logit": 14.9375,
+            "text": "mar"
+          },
+          {
+            "id": 248069,
+            "logit": 14.9375,
+            "text": "</think>"
+          },
+          {
+            "id": 61267,
+            "logit": 14.8125,
+            "text": "meet"
+          },
+          {
+            "id": 16,
+            "logit": 14.625,
+            "text": "1"
+          },
+          {
+            "id": 18724,
+            "logit": 14.625,
+            "text": "pal"
+          }
+        ],
+        "watch": {
+          "\n": 5.4375,
+          "1": 14.625,
+          "<": 16.125,
+          "<think>": 18.0,
+          "<tool_call>": 13.25,
+          "<|im_end|>": 14.0625,
+          "Based": 10.75,
+          "Here": 10.3125,
+          "I": 14.625,
+          "It": 12.9375,
+          "NE": 7.0,
+          "NO": 11.125,
+          "NOT": 11.375,
+          "No": 14.375,
+          "None": 14.125,
+          "Okay": 11.5,
+          "Please": 14.0,
+          "Select": 8.1875,
+          "Since": 8.5625,
+          "Sure": 11.3125,
+          "The": 14.4375,
+          "This": 13.0625,
+          "To": 10.6875,
+          "Yes": 13.5625,
+          "You": 12.3125,
+          "need": 10.5625,
+          "no": 16.5
+        }
+      },
+      "decision_position": 34,
+      "family": "instruction",
+      "gaps": {
+        "NE_minus_NO": -4.125,
+        "call_minus_NE": 6.25,
+        "call_minus_NO": 2.125,
+        "call_minus_argmax_other": -4.75
+      },
+      "model": "original",
+      "prompt_tokens": 35,
+      "seconds": 0.03294187498977408,
+      "sequence_tokens": 35
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-17",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 42404,
+        "logsumexp": 24.98527507009222,
+        "topk": [
+          {
+            "id": 42404,
+            "logit": 24.875,
+            "text": "bir"
+          },
+          {
+            "id": 16,
+            "logit": 21.75,
+            "text": "1"
+          },
+          {
+            "id": 22,
+            "logit": 21.125,
+            "text": "7"
+          },
+          {
+            "id": 65,
+            "logit": 21.0,
+            "text": "b"
+          },
+          {
+            "id": 5480,
+            "logit": 20.375,
+            "text": "target"
+          },
+          {
+            "id": 17,
+            "logit": 19.375,
+            "text": "2"
+          },
+          {
+            "id": 18,
+            "logit": 18.375,
+            "text": "3"
+          },
+          {
+            "id": 20,
+            "logit": 18.0,
+            "text": "5"
+          },
+          {
+            "id": 7964,
+            "logit": 17.875,
+            "text": "bi"
+          },
+          {
+            "id": 19,
+            "logit": 17.625,
+            "text": "4"
+          },
+          {
+            "id": 24,
+            "logit": 17.5,
+            "text": "9"
+          },
+          {
+            "id": 23,
+            "logit": 17.375,
+            "text": "8"
+          },
+          {
+            "id": 19329,
+            "logit": 17.375,
+            "text": "mir"
+          },
+          {
+            "id": 5390,
+            "logit": 17.375,
+            "text": "pir"
+          },
+          {
+            "id": 15,
+            "logit": 17.125,
+            "text": "0"
+          },
+          {
+            "id": 21,
+            "logit": 17.0,
+            "text": "6"
+          },
+          {
+            "id": 248068,
+            "logit": 17.0,
+            "text": "<think>"
+          },
+          {
+            "id": 245720,
+            "logit": 16.75,
+            "text": "Bir"
+          },
+          {
+            "id": 21892,
+            "logit": 16.5,
+            "text": "bird"
+          },
+          {
+            "id": 44329,
+            "logit": 16.25,
+            "text": "vir"
+          },
+          {
+            "id": 4341,
+            "logit": 16.125,
+            "text": "bit"
+          },
+          {
+            "id": 176013,
+            "logit": 16.125,
+            "text": "gir"
+          },
+          {
+            "id": 59200,
+            "logit": 16.125,
+            "text": "bij"
+          },
+          {
+            "id": 28661,
+            "logit": 16.0,
+            "text": "hir"
+          }
+        ],
+        "watch": {
+          "\n": 5.8125,
+          "1": 21.75,
+          "<": 14.875,
+          "<think>": 17.0,
+          "<tool_call>": 13.875,
+          "<|im_end|>": 13.75,
+          "Based": 9.1875,
+          "Here": 7.3125,
+          "I": 8.5,
+          "It": 7.5,
+          "NE": 3.0625,
+          "NO": 5.1875,
+          "NOT": 8.5,
+          "No": 9.125,
+          "None": 11.875,
+          "Okay": 5.40625,
+          "Please": 5.96875,
+          "Select": 4.6875,
+          "Since": 6.03125,
+          "Sure": 7.53125,
+          "The": 10.625,
+          "This": 9.75,
+          "To": 7.6875,
+          "Yes": 7.71875,
+          "You": 7.53125,
+          "need": 10.875,
+          "no": 12.3125
+        }
+      },
+      "decision_position": 51,
+      "family": "extraction",
+      "gaps": {
+        "NE_minus_NO": -2.125,
+        "call_minus_NE": 10.8125,
+        "call_minus_NO": 8.6875,
+        "call_minus_argmax_other": -7.875
+      },
+      "model": "original",
+      "prompt_tokens": 52,
+      "seconds": 0.04553133298759349,
+      "sequence_tokens": 52
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-18",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 16,
+        "logsumexp": 26.87729889395083,
+        "topk": [
+          {
+            "id": 16,
+            "logit": 26.875,
+            "text": "1"
+          },
+          {
+            "id": 24,
+            "logit": 20.25,
+            "text": "9"
+          },
+          {
+            "id": 23,
+            "logit": 18.375,
+            "text": "8"
+          },
+          {
+            "id": 17,
+            "logit": 18.25,
+            "text": "2"
+          },
+          {
+            "id": 20,
+            "logit": 17.625,
+            "text": "5"
+          },
+          {
+            "id": 22,
+            "logit": 17.625,
+            "text": "7"
+          },
+          {
+            "id": 21,
+            "logit": 17.625,
+            "text": "6"
+          },
+          {
+            "id": 15,
+            "logit": 17.5,
+            "text": "0"
+          },
+          {
+            "id": 248068,
+            "logit": 17.375,
+            "text": "<think>"
+          },
+          {
+            "id": 18,
+            "logit": 16.75,
+            "text": "3"
+          },
+          {
+            "id": 19,
+            "logit": 16.5,
+            "text": "4"
+          },
+          {
+            "id": 1,
+            "logit": 15.4375,
+            "text": "\""
+          },
+          {
+            "id": 13784,
+            "logit": 14.5,
+            "text": "Wait"
+          },
+          {
+            "id": 49,
+            "logit": 14.4375,
+            "text": "R"
+          },
+          {
+            "id": 248046,
+            "logit": 14.125,
+            "text": "<|im_end|>"
+          },
+          {
+            "id": 2665,
+            "logit": 13.6875,
+            "text": "No"
+          },
+          {
+            "id": 248069,
+            "logit": 13.5625,
+            "text": "</think>"
+          },
+          {
+            "id": 8046,
+            "logit": 13.4375,
+            "text": "Step"
+          },
+          {
+            "id": 12,
+            "logit": 13.4375,
+            "text": "-"
+          },
+          {
+            "id": 760,
+            "logit": 13.375,
+            "text": "The"
+          },
+          {
+            "id": 69,
+            "logit": 13.3125,
+            "text": "f"
+          },
+          {
+            "id": 7,
+            "logit": 13.0,
+            "text": "("
+          },
+          {
+            "id": 9175,
+            "logit": 12.875,
+            "text": "Yes"
+          },
+          {
+            "id": 15666,
+            "logit": 12.6875,
+            "text": "Answer"
+          }
+        ],
+        "watch": {
+          "\n": 8.4375,
+          "1": 26.875,
+          "<": 12.1875,
+          "<think>": 17.375,
+          "<tool_call>": 12.125,
+          "<|im_end|>": 14.125,
+          "Based": 11.5625,
+          "Here": 8.625,
+          "I": 9.3125,
+          "It": 9.0,
+          "NE": 3.5,
+          "NO": 8.125,
+          "NOT": 8.0625,
+          "No": 13.6875,
+          "None": 11.3125,
+          "Okay": 9.8125,
+          "Please": 11.5,
+          "Select": 5.1875,
+          "Since": 11.1875,
+          "Sure": 7.21875,
+          "The": 13.375,
+          "This": 11.625,
+          "To": 11.4375,
+          "Yes": 12.875,
+          "You": 8.5625,
+          "need": 6.0,
+          "no": 11.375
+        }
+      },
+      "decision_position": 38,
+      "family": "arithmetic",
+      "gaps": {
+        "NE_minus_NO": -4.625,
+        "call_minus_NE": 8.625,
+        "call_minus_NO": 4.0,
+        "call_minus_argmax_other": -14.75
+      },
+      "model": "original",
+      "prompt_tokens": 39,
+      "seconds": 0.0378663330047857,
+      "sequence_tokens": 39
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-19",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 90,
+        "logsumexp": 23.840136479737676,
+        "topk": [
+          {
+            "id": 90,
+            "logit": 23.625,
+            "text": "{"
+          },
+          {
+            "id": 4754,
+            "logit": 21.75,
+            "text": "{\""
+          },
+          {
+            "id": 71093,
+            "logit": 20.75,
+            "text": "```"
+          },
+          {
+            "id": 58,
+            "logit": 20.0,
+            "text": "["
+          },
+          {
+            "id": 248068,
+            "logit": 16.625,
+            "text": "<think>"
+          },
+          {
+            "id": 50358,
+            "logit": 16.125,
+            "text": "[{"
+          },
+          {
+            "id": 6061,
+            "logit": 15.8125,
+            "text": "{}"
+          },
+          {
+            "id": 13724,
+            "logit": 15.6875,
+            "text": "\"{"
+          },
+          {
+            "id": 13215,
+            "logit": 15.25,
+            "text": "{'"
+          },
+          {
+            "id": 2164,
+            "logit": 14.625,
+            "text": "json"
+          },
+          {
+            "id": 2884,
+            "logit": 14.4375,
+            "text": "{{"
+          },
+          {
+            "id": 1249,
+            "logit": 14.4375,
+            "text": "[]"
+          },
+          {
+            "id": 313,
+            "logit": 13.875,
+            "text": " {"
+          },
+          {
+            "id": 760,
+            "logit": 13.6875,
+            "text": "The"
+          },
+          {
+            "id": 1,
+            "logit": 13.625,
+            "text": "\""
+          },
+          {
+            "id": 34521,
+            "logit": 13.4375,
+            "text": "{\\"
+          },
+          {
+            "id": 65396,
+            "logit": 13.375,
+            "text": "{/"
+          },
+          {
+            "id": 1143,
+            "logit": 13.375,
+            "text": "[\""
+          },
+          {
+            "id": 9,
+            "logit": 13.0,
+            "text": "*"
+          },
+          {
+            "id": 23444,
+            "logit": 12.9375,
+            "text": "{i"
+          },
+          {
+            "id": 44576,
+            "logit": 12.875,
+            "text": "{|"
+          },
+          {
+            "id": 5046,
+            "logit": 12.75,
+            "text": " {\""
+          },
+          {
+            "id": 66755,
+            "logit": 12.5,
+            "text": "{k"
+          },
+          {
+            "id": 45437,
+            "logit": 12.4375,
+            "text": "{name"
+          }
+        ],
+        "watch": {
+          "\n": 6.9375,
+          "1": 9.3125,
+          "<": 9.9375,
+          "<think>": 16.625,
+          "<tool_call>": 12.4375,
+          "<|im_end|>": 6.9375,
+          "Based": 9.375,
+          "Here": 8.25,
+          "I": 11.6875,
+          "It": 10.4375,
+          "NE": 5.09375,
+          "NO": 5.21875,
+          "NOT": 7.375,
+          "No": 11.6875,
+          "None": 8.625,
+          "Okay": 9.625,
+          "Please": 8.9375,
+          "Select": 5.40625,
+          "Since": 5.75,
+          "Sure": 6.75,
+          "The": 13.6875,
+          "This": 10.875,
+          "To": 10.0,
+          "Yes": 9.5625,
+          "You": 7.0,
+          "need": 1.40625,
+          "no": 7.0625
+        }
+      },
+      "decision_position": 52,
+      "family": "structured",
+      "gaps": {
+        "NE_minus_NO": -0.125,
+        "call_minus_NE": 7.34375,
+        "call_minus_NO": 7.21875,
+        "call_minus_argmax_other": -4.1875
+      },
+      "model": "original",
+      "prompt_tokens": 53,
+      "seconds": 0.04013045798637904,
+      "sequence_tokens": 53
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-20",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 42404,
+        "logsumexp": 24.896607162568333,
+        "topk": [
+          {
+            "id": 42404,
+            "logit": 24.875,
+            "text": "bir"
+          },
+          {
+            "id": 65,
+            "logit": 20.375,
+            "text": "b"
+          },
+          {
+            "id": 245720,
+            "logit": 19.125,
+            "text": "Bir"
+          },
+          {
+            "id": 33,
+            "logit": 18.875,
+            "text": "B"
+          },
+          {
+            "id": 248068,
+            "logit": 18.5,
+            "text": "<think>"
+          },
+          {
+            "id": 14804,
+            "logit": 16.25,
+            "text": " bir"
+          },
+          {
+            "id": 27,
+            "logit": 16.25,
+            "text": "<"
+          },
+          {
+            "id": 19329,
+            "logit": 16.25,
+            "text": "mir"
+          },
+          {
+            "id": 4341,
+            "logit": 15.8125,
+            "text": "bit"
+          },
+          {
+            "id": 21892,
+            "logit": 15.1875,
+            "text": "bird"
+          },
+          {
+            "id": 39850,
+            "logit": 15.125,
+            "text": "nothing"
+          },
+          {
+            "id": 2083,
+            "logit": 15.125,
+            "text": "no"
+          },
+          {
+            "id": 2,
+            "logit": 15.125,
+            "text": "#"
+          },
+          {
+            "id": 248046,
+            "logit": 15.125,
+            "text": "<|im_end|>"
+          },
+          {
+            "id": 9405,
+            "logit": 15.0625,
+            "text": "yes"
+          },
+          {
+            "id": 1,
+            "logit": 14.9375,
+            "text": "\""
+          },
+          {
+            "id": 32075,
+            "logit": 14.8125,
+            "text": "<b"
+          },
+          {
+            "id": 9090,
+            "logit": 14.625,
+            "text": "bor"
+          },
+          {
+            "id": 59200,
+            "logit": 14.5,
+            "text": "bij"
+          },
+          {
+            "id": 1277,
+            "logit": 14.5,
+            "text": "br"
+          },
+          {
+            "id": 7964,
+            "logit": 14.375,
+            "text": "bi"
+          },
+          {
+            "id": 17,
+            "logit": 14.375,
+            "text": "2"
+          },
+          {
+            "id": 16,
+            "logit": 14.3125,
+            "text": "1"
+          },
+          {
+            "id": 5390,
+            "logit": 14.25,
+            "text": "pir"
+          }
+        ],
+        "watch": {
+          "\n": 4.75,
+          "1": 14.3125,
+          "<": 16.25,
+          "<think>": 18.5,
+          "<tool_call>": 13.625,
+          "<|im_end|>": 15.125,
+          "Based": 11.125,
+          "Here": 10.5,
+          "I": 12.25,
+          "It": 11.375,
+          "NE": 6.6875,
+          "NO": 9.625,
+          "NOT": 10.3125,
+          "No": 13.3125,
+          "None": 12.75,
+          "Okay": 11.0,
+          "Please": 11.3125,
+          "Select": 7.5625,
+          "Since": 9.3125,
+          "Sure": 12.4375,
+          "The": 13.9375,
+          "This": 13.5625,
+          "To": 9.875,
+          "Yes": 12.9375,
+          "You": 10.75,
+          "need": 9.4375,
+          "no": 15.125
+        }
+      },
+      "decision_position": 35,
+      "family": "instruction",
+      "gaps": {
+        "NE_minus_NO": -2.9375,
+        "call_minus_NE": 6.9375,
+        "call_minus_NO": 4.0,
+        "call_minus_argmax_other": -4.875
+      },
+      "model": "original",
+      "prompt_tokens": 36,
+      "seconds": 0.034150749997934327,
+      "sequence_tokens": 36
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-21",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 17,
+        "logsumexp": 24.52746060229063,
+        "topk": [
+          {
+            "id": 17,
+            "logit": 24.0,
+            "text": "2"
+          },
+          {
+            "id": 49931,
+            "logit": 23.375,
+            "text": "spr"
+          },
+          {
+            "id": 19,
+            "logit": 21.5,
+            "text": "4"
+          },
+          {
+            "id": 82,
+            "logit": 19.75,
+            "text": "s"
+          },
+          {
+            "id": 18,
+            "logit": 19.5,
+            "text": "3"
+          },
+          {
+            "id": 5480,
+            "logit": 19.375,
+            "text": "target"
+          },
+          {
+            "id": 20,
+            "logit": 19.125,
+            "text": "5"
+          },
+          {
+            "id": 16,
+            "logit": 19.125,
+            "text": "1"
+          },
+          {
+            "id": 22,
+            "logit": 18.25,
+            "text": "7"
+          },
+          {
+            "id": 23,
+            "logit": 18.125,
+            "text": "8"
+          },
+          {
+            "id": 21,
+            "logit": 17.875,
+            "text": "6"
+          },
+          {
+            "id": 2085,
+            "logit": 17.875,
+            "text": "sp"
+          },
+          {
+            "id": 631,
+            "logit": 17.75,
+            "text": "pr"
+          },
+          {
+            "id": 61262,
+            "logit": 17.375,
+            "text": "Spr"
+          },
+          {
+            "id": 24,
+            "logit": 17.25,
+            "text": "9"
+          },
+          {
+            "id": 248068,
+            "logit": 17.25,
+            "text": "<think>"
+          },
+          {
+            "id": 66756,
+            "logit": 17.125,
+            "text": "spl"
+          },
+          {
+            "id": 75219,
+            "logit": 17.0,
+            "text": "spar"
+          },
+          {
+            "id": 15,
+            "logit": 17.0,
+            "text": "0"
+          },
+          {
+            "id": 28267,
+            "logit": 16.375,
+            "text": "spring"
+          },
+          {
+            "id": 62430,
+            "logit": 16.25,
+            "text": "sap"
+          },
+          {
+            "id": 31560,
+            "logit": 15.8125,
+            "text": "sprite"
+          },
+          {
+            "id": 38690,
+            "logit": 15.4375,
+            "text": "srv"
+          },
+          {
+            "id": 58849,
+            "logit": 15.375,
+            "text": "sport"
+          }
+        ],
+        "watch": {
+          "\n": 6.28125,
+          "1": 19.125,
+          "<": 13.4375,
+          "<think>": 17.25,
+          "<tool_call>": 13.125,
+          "<|im_end|>": 14.125,
+          "Based": 9.0,
+          "Here": 7.78125,
+          "I": 9.8125,
+          "It": 8.125,
+          "NE": 4.21875,
+          "NO": 6.125,
+          "NOT": 9.0625,
+          "No": 11.3125,
+          "None": 13.125,
+          "Okay": 6.8125,
+          "Please": 7.78125,
+          "Select": 4.53125,
+          "Since": 8.0625,
+          "Sure": 9.4375,
+          "The": 11.125,
+          "This": 9.8125,
+          "To": 8.9375,
+          "Yes": 9.625,
+          "You": 8.875,
+          "need": 11.25,
+          "no": 13.8125
+        }
+      },
+      "decision_position": 51,
+      "family": "extraction",
+      "gaps": {
+        "NE_minus_NO": -1.90625,
+        "call_minus_NE": 8.90625,
+        "call_minus_NO": 7.0,
+        "call_minus_argmax_other": -6.0
+      },
+      "model": "original",
+      "prompt_tokens": 52,
+      "seconds": 0.040258958004415035,
+      "sequence_tokens": 52
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-22",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 16,
+        "logsumexp": 26.628034912846243,
+        "topk": [
+          {
+            "id": 16,
+            "logit": 26.625,
+            "text": "1"
+          },
+          {
+            "id": 17,
+            "logit": 20.0,
+            "text": "2"
+          },
+          {
+            "id": 24,
+            "logit": 19.25,
+            "text": "9"
+          },
+          {
+            "id": 248068,
+            "logit": 18.625,
+            "text": "<think>"
+          },
+          {
+            "id": 20,
+            "logit": 17.75,
+            "text": "5"
+          },
+          {
+            "id": 23,
+            "logit": 17.5,
+            "text": "8"
+          },
+          {
+            "id": 18,
+            "logit": 17.5,
+            "text": "3"
+          },
+          {
+            "id": 15,
+            "logit": 17.25,
+            "text": "0"
+          },
+          {
+            "id": 21,
+            "logit": 17.25,
+            "text": "6"
+          },
+          {
+            "id": 22,
+            "logit": 17.125,
+            "text": "7"
+          },
+          {
+            "id": 19,
+            "logit": 16.625,
+            "text": "4"
+          },
+          {
+            "id": 1,
+            "logit": 15.0,
+            "text": "\""
+          },
+          {
+            "id": 248046,
+            "logit": 14.75,
+            "text": "<|im_end|>"
+          },
+          {
+            "id": 2665,
+            "logit": 14.375,
+            "text": "No"
+          },
+          {
+            "id": 13784,
+            "logit": 14.0,
+            "text": "Wait"
+          },
+          {
+            "id": 760,
+            "logit": 13.8125,
+            "text": "The"
+          },
+          {
+            "id": 12,
+            "logit": 13.8125,
+            "text": "-"
+          },
+          {
+            "id": 49,
+            "logit": 13.625,
+            "text": "R"
+          },
+          {
+            "id": 3,
+            "logit": 13.4375,
+            "text": "$"
+          },
+          {
+            "id": 248069,
+            "logit": 13.3125,
+            "text": "</think>"
+          },
+          {
+            "id": 8046,
+            "logit": 13.3125,
+            "text": "Step"
+          },
+          {
+            "id": 7,
+            "logit": 13.125,
+            "text": "("
+          },
+          {
+            "id": 15947,
+            "logit": 13.0,
+            "text": "Using"
+          },
+          {
+            "id": 9764,
+            "logit": 12.875,
+            "text": "Let"
+          }
+        ],
+        "watch": {
+          "\n": 8.5,
+          "1": 26.625,
+          "<": 11.875,
+          "<think>": 18.625,
+          "<tool_call>": 11.875,
+          "<|im_end|>": 14.75,
+          "Based": 12.0625,
+          "Here": 9.5625,
+          "I": 8.3125,
+          "It": 9.3125,
+          "NE": 4.78125,
+          "NO": 8.75,
+          "NOT": 7.8125,
+          "No": 14.375,
+          "None": 10.625,
+          "Okay": 9.6875,
+          "Please": 11.3125,
+          "Select": 5.03125,
+          "Since": 11.5,
+          "Sure": 6.90625,
+          "The": 13.8125,
+          "This": 12.0625,
+          "To": 12.5,
+          "Yes": 12.75,
+          "You": 9.375,
+          "need": 7.34375,
+          "no": 12.0625
+        }
+      },
+      "decision_position": 38,
+      "family": "arithmetic",
+      "gaps": {
+        "NE_minus_NO": -3.96875,
+        "call_minus_NE": 7.09375,
+        "call_minus_NO": 3.125,
+        "call_minus_argmax_other": -14.75
+      },
+      "model": "original",
+      "prompt_tokens": 39,
+      "seconds": 0.035000375006347895,
+      "sequence_tokens": 39
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-23",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 90,
+        "logsumexp": 23.923949004247124,
+        "topk": [
+          {
+            "id": 90,
+            "logit": 23.75,
+            "text": "{"
+          },
+          {
+            "id": 4754,
+            "logit": 21.625,
+            "text": "{\""
+          },
+          {
+            "id": 71093,
+            "logit": 20.625,
+            "text": "```"
+          },
+          {
+            "id": 58,
+            "logit": 20.0,
+            "text": "["
+          },
+          {
+            "id": 248068,
+            "logit": 16.375,
+            "text": "<think>"
+          },
+          {
+            "id": 50358,
+            "logit": 16.125,
+            "text": "[{"
+          },
+          {
+            "id": 6061,
+            "logit": 15.9375,
+            "text": "{}"
+          },
+          {
+            "id": 13724,
+            "logit": 15.625,
+            "text": "\"{"
+          },
+          {
+            "id": 13215,
+            "logit": 15.375,
+            "text": "{'"
+          },
+          {
+            "id": 2164,
+            "logit": 14.75,
+            "text": "json"
+          },
+          {
+            "id": 2884,
+            "logit": 14.5,
+            "text": "{{"
+          },
+          {
+            "id": 1249,
+            "logit": 14.5,
+            "text": "[]"
+          },
+          {
+            "id": 760,
+            "logit": 13.8125,
+            "text": "The"
+          },
+          {
+            "id": 313,
+            "logit": 13.75,
+            "text": " {"
+          },
+          {
+            "id": 1,
+            "logit": 13.4375,
+            "text": "\""
+          },
+          {
+            "id": 65396,
+            "logit": 13.375,
+            "text": "{/"
+          },
+          {
+            "id": 34521,
+            "logit": 13.375,
+            "text": "{\\"
+          },
+          {
+            "id": 1143,
+            "logit": 13.125,
+            "text": "[\""
+          },
+          {
+            "id": 23444,
+            "logit": 13.125,
+            "text": "{i"
+          },
+          {
+            "id": 44576,
+            "logit": 12.875,
+            "text": "{|"
+          },
+          {
+            "id": 9,
+            "logit": 12.6875,
+            "text": "*"
+          },
+          {
+            "id": 12237,
+            "logit": 12.625,
+            "text": "\"\"\""
+          },
+          {
+            "id": 45437,
+            "logit": 12.625,
+            "text": "{name"
+          },
+          {
+            "id": 5046,
+            "logit": 12.5625,
+            "text": " {\""
+          }
+        ],
+        "watch": {
+          "\n": 6.9375,
+          "1": 9.25,
+          "<": 9.9375,
+          "<think>": 16.375,
+          "<tool_call>": 12.4375,
+          "<|im_end|>": 6.84375,
+          "Based": 9.5625,
+          "Here": 8.625,
+          "I": 11.875,
+          "It": 10.75,
+          "NE": 5.15625,
+          "NO": 5.1875,
+          "NOT": 7.4375,
+          "No": 12.0,
+          "None": 8.75,
+          "Okay": 9.625,
+          "Please": 9.0,
+          "Select": 5.25,
+          "Since": 6.15625,
+          "Sure": 6.6875,
+          "The": 13.8125,
+          "This": 11.1875,
+          "To": 10.1875,
+          "Yes": 9.8125,
+          "You": 7.21875,
+          "need": 1.4453125,
+          "no": 7.03125
+        }
+      },
+      "decision_position": 53,
+      "family": "structured",
+      "gaps": {
+        "NE_minus_NO": -0.03125,
+        "call_minus_NE": 7.28125,
+        "call_minus_NO": 7.25,
+        "call_minus_argmax_other": -3.9375
+      },
+      "model": "original",
+      "prompt_tokens": 54,
+      "seconds": 0.0406429169815965,
+      "sequence_tokens": 54
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-24",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 1931,
+        "logsumexp": 23.19484688785535,
+        "topk": [
+          {
+            "id": 1931,
+            "logit": 23.0,
+            "text": "ced"
+          },
+          {
+            "id": 34,
+            "logit": 20.25,
+            "text": "C"
+          },
+          {
+            "id": 72730,
+            "logit": 19.875,
+            "text": " cedar"
+          },
+          {
+            "id": 66,
+            "logit": 19.375,
+            "text": "c"
+          },
+          {
+            "id": 3546,
+            "logit": 18.125,
+            "text": "cel"
+          },
+          {
+            "id": 341,
+            "logit": 18.0,
+            "text": "ce"
+          },
+          {
+            "id": 6702,
+            "logit": 18.0,
+            "text": "car"
+          },
+          {
+            "id": 3700,
+            "logit": 17.875,
+            "text": "cer"
+          },
+          {
+            "id": 248068,
+            "logit": 17.75,
+            "text": "<think>"
+          },
+          {
+            "id": 895,
+            "logit": 16.75,
+            "text": "ca"
+          },
+          {
+            "id": 9405,
+            "logit": 16.75,
+            "text": "yes"
+          },
+          {
+            "id": 2083,
+            "logit": 16.625,
+            "text": "no"
+          },
+          {
+            "id": 455,
+            "logit": 16.375,
+            "text": "ter"
+          },
+          {
+            "id": 33311,
+            "logit": 16.25,
+            "text": "cad"
+          },
+          {
+            "id": 1114,
+            "logit": 16.125,
+            "text": "red"
+          },
+          {
+            "id": 5691,
+            "logit": 16.0,
+            "text": "cell"
+          },
+          {
+            "id": 4243,
+            "logit": 16.0,
+            "text": "cd"
+          },
+          {
+            "id": 323,
+            "logit": 15.9375,
+            "text": "se"
+          },
+          {
+            "id": 6451,
+            "logit": 15.875,
+            "text": "wood"
+          },
+          {
+            "id": 35288,
+            "logit": 15.875,
+            "text": "never"
+          },
+          {
+            "id": 4920,
+            "logit": 15.8125,
+            "text": "cr"
+          },
+          {
+            "id": 5248,
+            "logit": 15.75,
+            "text": "cal"
+          },
+          {
+            "id": 4485,
+            "logit": 15.6875,
+            "text": "ceed"
+          },
+          {
+            "id": 30293,
+            "logit": 15.6875,
+            "text": "sed"
+          }
+        ],
+        "watch": {
+          "\n": 6.40625,
+          "1": 14.625,
+          "<": 13.8125,
+          "<think>": 17.75,
+          "<tool_call>": 11.4375,
+          "<|im_end|>": 14.0,
+          "Based": 12.25,
+          "Here": 11.6875,
+          "I": 14.4375,
+          "It": 12.375,
+          "NE": 11.3125,
+          "NO": 11.0625,
+          "NOT": 11.1875,
+          "No": 15.25,
+          "None": 13.8125,
+          "Okay": 13.1875,
+          "Please": 12.5,
+          "Select": 9.5625,
+          "Since": 9.5,
+          "Sure": 12.1875,
+          "The": 15.6875,
+          "This": 14.3125,
+          "To": 11.5625,
+          "Yes": 14.6875,
+          "You": 11.75,
+          "need": 11.8125,
+          "no": 16.625
+        }
+      },
+      "decision_position": 34,
+      "family": "instruction",
+      "gaps": {
+        "NE_minus_NO": 0.25,
+        "call_minus_NE": 0.125,
+        "call_minus_NO": 0.375,
+        "call_minus_argmax_other": -6.3125
+      },
+      "model": "original",
+      "prompt_tokens": 35,
+      "seconds": 0.034041125007206574,
+      "sequence_tokens": 35
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-25",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 42404,
+        "logsumexp": 24.201277989142554,
+        "topk": [
+          {
+            "id": 42404,
+            "logit": 24.0,
+            "text": "bir"
+          },
+          {
+            "id": 17,
+            "logit": 21.75,
+            "text": "2"
+          },
+          {
+            "id": 5480,
+            "logit": 20.75,
+            "text": "target"
+          },
+          {
+            "id": 65,
+            "logit": 20.75,
+            "text": "b"
+          },
+          {
+            "id": 20,
+            "logit": 19.75,
+            "text": "5"
+          },
+          {
+            "id": 22,
+            "logit": 18.25,
+            "text": "7"
+          },
+          {
+            "id": 18,
+            "logit": 18.125,
+            "text": "3"
+          },
+          {
+            "id": 16,
+            "logit": 17.875,
+            "text": "1"
+          },
+          {
+            "id": 7964,
+            "logit": 17.75,
+            "text": "bi"
+          },
+          {
+            "id": 59200,
+            "logit": 17.25,
+            "text": "bij"
+          },
+          {
+            "id": 19,
+            "logit": 16.875,
+            "text": "4"
+          },
+          {
+            "id": 176013,
+            "logit": 16.75,
+            "text": "gir"
+          },
+          {
+            "id": 248068,
+            "logit": 16.75,
+            "text": "<think>"
+          },
+          {
+            "id": 21892,
+            "logit": 16.625,
+            "text": "bird"
+          },
+          {
+            "id": 15,
+            "logit": 16.625,
+            "text": "0"
+          },
+          {
+            "id": 24,
+            "logit": 16.375,
+            "text": "9"
+          },
+          {
+            "id": 4341,
+            "logit": 16.375,
+            "text": "bit"
+          },
+          {
+            "id": 245720,
+            "logit": 16.25,
+            "text": "Bir"
+          },
+          {
+            "id": 19329,
+            "logit": 16.125,
+            "text": "mir"
+          },
+          {
+            "id": 44329,
+            "logit": 16.125,
+            "text": "vir"
+          },
+          {
+            "id": 5390,
+            "logit": 16.0,
+            "text": "pir"
+          },
+          {
+            "id": 169882,
+            "logit": 15.875,
+            "text": "tir"
+          },
+          {
+            "id": 177128,
+            "logit": 15.875,
+            "text": "\u0431\u0438\u0440"
+          },
+          {
+            "id": 23,
+            "logit": 15.8125,
+            "text": "8"
+          }
+        ],
+        "watch": {
+          "\n": 5.5625,
+          "1": 17.875,
+          "<": 14.25,
+          "<think>": 16.75,
+          "<tool_call>": 13.625,
+          "<|im_end|>": 13.75,
+          "Based": 8.8125,
+          "Here": 6.375,
+          "I": 7.40625,
+          "It": 7.21875,
+          "NE": 1.9765625,
+          "NO": 4.90625,
+          "NOT": 8.6875,
+          "No": 8.375,
+          "None": 10.3125,
+          "Okay": 4.875,
+          "Please": 4.875,
+          "Select": 3.546875,
+          "Since": 5.6875,
+          "Sure": 7.4375,
+          "The": 10.125,
+          "This": 9.125,
+          "To": 7.71875,
+          "Yes": 7.125,
+          "You": 6.96875,
+          "need": 10.5,
+          "no": 11.8125
+        }
+      },
+      "decision_position": 51,
+      "family": "extraction",
+      "gaps": {
+        "NE_minus_NO": -2.9296875,
+        "call_minus_NE": 11.6484375,
+        "call_minus_NO": 8.71875,
+        "call_minus_argmax_other": -4.25
+      },
+      "model": "original",
+      "prompt_tokens": 52,
+      "seconds": 0.04263404099037871,
+      "sequence_tokens": 52
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-26",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 23,
+        "logsumexp": 25.786136530491564,
+        "topk": [
+          {
+            "id": 23,
+            "logit": 25.75,
+            "text": "8"
+          },
+          {
+            "id": 24,
+            "logit": 22.25,
+            "text": "9"
+          },
+          {
+            "id": 16,
+            "logit": 20.375,
+            "text": "1"
+          },
+          {
+            "id": 21,
+            "logit": 18.0,
+            "text": "6"
+          },
+          {
+            "id": 248068,
+            "logit": 17.875,
+            "text": "<think>"
+          },
+          {
+            "id": 15,
+            "logit": 17.5,
+            "text": "0"
+          },
+          {
+            "id": 22,
+            "logit": 17.375,
+            "text": "7"
+          },
+          {
+            "id": 17,
+            "logit": 17.125,
+            "text": "2"
+          },
+          {
+            "id": 19,
+            "logit": 16.75,
+            "text": "4"
+          },
+          {
+            "id": 20,
+            "logit": 16.625,
+            "text": "5"
+          },
+          {
+            "id": 18,
+            "logit": 15.9375,
+            "text": "3"
+          },
+          {
+            "id": 248046,
+            "logit": 15.25,
+            "text": "<|im_end|>"
+          },
+          {
+            "id": 636,
+            "logit": 14.625,
+            "text": "ll"
+          },
+          {
+            "id": 1,
+            "logit": 14.25,
+            "text": "\""
+          },
+          {
+            "id": 248058,
+            "logit": 13.8125,
+            "text": "<tool_call>"
+          },
+          {
+            "id": 75,
+            "logit": 13.5625,
+            "text": "l"
+          },
+          {
+            "id": 760,
+            "logit": 13.3125,
+            "text": "The"
+          },
+          {
+            "id": 7,
+            "logit": 13.3125,
+            "text": "("
+          },
+          {
+            "id": 71093,
+            "logit": 13.25,
+            "text": "```"
+          },
+          {
+            "id": 29,
+            "logit": 13.125,
+            "text": ">"
+          },
+          {
+            "id": 27,
+            "logit": 12.8125,
+            "text": "<"
+          },
+          {
+            "id": 3950,
+            "logit": 12.8125,
+            "text": "LL"
+          },
+          {
+            "id": 12,
+            "logit": 12.8125,
+            "text": "-"
+          },
+          {
+            "id": 30,
+            "logit": 12.5625,
+            "text": "?"
+          }
+        ],
+        "watch": {
+          "\n": 7.71875,
+          "1": 20.375,
+          "<": 12.8125,
+          "<think>": 17.875,
+          "<tool_call>": 13.8125,
+          "<|im_end|>": 15.25,
+          "Based": 8.875,
+          "Here": 9.3125,
+          "I": 11.125,
+          "It": 10.8125,
+          "NE": 2.703125,
+          "NO": 7.6875,
+          "NOT": 8.5,
+          "No": 12.375,
+          "None": 9.0,
+          "Okay": 9.8125,
+          "Please": 10.5,
+          "Select": 4.4375,
+          "Since": 10.0625,
+          "Sure": 8.125,
+          "The": 13.3125,
+          "This": 11.9375,
+          "To": 10.625,
+          "Yes": 11.1875,
+          "You": 8.9375,
+          "need": 7.4375,
+          "no": 10.625
+        }
+      },
+      "decision_position": 38,
+      "family": "arithmetic",
+      "gaps": {
+        "NE_minus_NO": -4.984375,
+        "call_minus_NE": 11.109375,
+        "call_minus_NO": 6.125,
+        "call_minus_argmax_other": -6.5625
+      },
+      "model": "original",
+      "prompt_tokens": 39,
+      "seconds": 0.05349937500432134,
+      "sequence_tokens": 39
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-27",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 90,
+        "logsumexp": 23.937650909488504,
+        "topk": [
+          {
+            "id": 90,
+            "logit": 23.75,
+            "text": "{"
+          },
+          {
+            "id": 4754,
+            "logit": 21.75,
+            "text": "{\""
+          },
+          {
+            "id": 71093,
+            "logit": 20.75,
+            "text": "```"
+          },
+          {
+            "id": 58,
+            "logit": 19.75,
+            "text": "["
+          },
+          {
+            "id": 248068,
+            "logit": 16.625,
+            "text": "<think>"
+          },
+          {
+            "id": 6061,
+            "logit": 15.8125,
+            "text": "{}"
+          },
+          {
+            "id": 50358,
+            "logit": 15.8125,
+            "text": "[{"
+          },
+          {
+            "id": 13724,
+            "logit": 15.625,
+            "text": "\"{"
+          },
+          {
+            "id": 13215,
+            "logit": 15.25,
+            "text": "{'"
+          },
+          {
+            "id": 2884,
+            "logit": 14.375,
+            "text": "{{"
+          },
+          {
+            "id": 2164,
+            "logit": 14.3125,
+            "text": "json"
+          },
+          {
+            "id": 1249,
+            "logit": 14.1875,
+            "text": "[]"
+          },
+          {
+            "id": 313,
+            "logit": 13.9375,
+            "text": " {"
+          },
+          {
+            "id": 760,
+            "logit": 13.875,
+            "text": "The"
+          },
+          {
+            "id": 1,
+            "logit": 13.5,
+            "text": "\""
+          },
+          {
+            "id": 65396,
+            "logit": 13.375,
+            "text": "{/"
+          },
+          {
+            "id": 34521,
+            "logit": 13.375,
+            "text": "{\\"
+          },
+          {
+            "id": 23444,
+            "logit": 13.0625,
+            "text": "{i"
+          },
+          {
+            "id": 1143,
+            "logit": 13.0625,
+            "text": "[\""
+          },
+          {
+            "id": 44576,
+            "logit": 12.875,
+            "text": "{|"
+          },
+          {
+            "id": 5046,
+            "logit": 12.8125,
+            "text": " {\""
+          },
+          {
+            "id": 45437,
+            "logit": 12.6875,
+            "text": "{name"
+          },
+          {
+            "id": 66755,
+            "logit": 12.5625,
+            "text": "{k"
+          },
+          {
+            "id": 9,
+            "logit": 12.5,
+            "text": "*"
+          }
+        ],
+        "watch": {
+          "\n": 6.625,
+          "1": 9.125,
+          "<": 9.9375,
+          "<think>": 16.625,
+          "<tool_call>": 12.375,
+          "<|im_end|>": 6.9375,
+          "Based": 9.5,
+          "Here": 8.5,
+          "I": 11.875,
+          "It": 10.6875,
+          "NE": 5.15625,
+          "NO": 4.90625,
+          "NOT": 7.15625,
+          "No": 11.625,
+          "None": 8.5625,
+          "Okay": 9.625,
+          "Please": 8.9375,
+          "Select": 5.4375,
+          "Since": 6.0625,
+          "Sure": 6.71875,
+          "The": 13.875,
+          "This": 11.1875,
+          "To": 10.125,
+          "Yes": 9.8125,
+          "You": 7.0,
+          "need": 1.1328125,
+          "no": 6.46875
+        }
+      },
+      "decision_position": 53,
+      "family": "structured",
+      "gaps": {
+        "NE_minus_NO": 0.25,
+        "call_minus_NE": 7.21875,
+        "call_minus_NO": 7.46875,
+        "call_minus_argmax_other": -4.25
+      },
+      "model": "original",
+      "prompt_tokens": 54,
+      "seconds": 0.09113916699425317,
+      "sequence_tokens": 54
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-28",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 42404,
+        "logsumexp": 25.143123258807158,
+        "topk": [
+          {
+            "id": 42404,
+            "logit": 25.125,
+            "text": "bir"
+          },
+          {
+            "id": 65,
+            "logit": 20.5,
+            "text": "b"
+          },
+          {
+            "id": 245720,
+            "logit": 19.125,
+            "text": "Bir"
+          },
+          {
+            "id": 33,
+            "logit": 18.875,
+            "text": "B"
+          },
+          {
+            "id": 248068,
+            "logit": 18.625,
+            "text": "<think>"
+          },
+          {
+            "id": 14804,
+            "logit": 16.5,
+            "text": " bir"
+          },
+          {
+            "id": 27,
+            "logit": 16.375,
+            "text": "<"
+          },
+          {
+            "id": 19329,
+            "logit": 16.375,
+            "text": "mir"
+          },
+          {
+            "id": 4341,
+            "logit": 15.75,
+            "text": "bit"
+          },
+          {
+            "id": 21892,
+            "logit": 15.25,
+            "text": "bird"
+          },
+          {
+            "id": 32075,
+            "logit": 15.1875,
+            "text": "<b"
+          },
+          {
+            "id": 1,
+            "logit": 15.125,
+            "text": "\""
+          },
+          {
+            "id": 2,
+            "logit": 14.9375,
+            "text": "#"
+          },
+          {
+            "id": 39850,
+            "logit": 14.875,
+            "text": "nothing"
+          },
+          {
+            "id": 248046,
+            "logit": 14.8125,
+            "text": "<|im_end|>"
+          },
+          {
+            "id": 2083,
+            "logit": 14.625,
+            "text": "no"
+          },
+          {
+            "id": 1277,
+            "logit": 14.5625,
+            "text": "br"
+          },
+          {
+            "id": 9090,
+            "logit": 14.5625,
+            "text": "bor"
+          },
+          {
+            "id": 59200,
+            "logit": 14.5,
+            "text": "bij"
+          },
+          {
+            "id": 7964,
+            "logit": 14.3125,
+            "text": "bi"
+          },
+          {
+            "id": 9405,
+            "logit": 14.3125,
+            "text": "yes"
+          },
+          {
+            "id": 63693,
+            "logit": 14.125,
+            "text": "bard"
+          },
+          {
+            "id": 26815,
+            "logit": 14.125,
+            "text": "birth"
+          },
+          {
+            "id": 17,
+            "logit": 14.125,
+            "text": "2"
+          }
+        ],
+        "watch": {
+          "\n": 4.75,
+          "1": 14.0,
+          "<": 16.375,
+          "<think>": 18.625,
+          "<tool_call>": 13.5625,
+          "<|im_end|>": 14.8125,
+          "Based": 11.3125,
+          "Here": 10.375,
+          "I": 12.125,
+          "It": 11.1875,
+          "NE": 6.375,
+          "NO": 9.0625,
+          "NOT": 9.875,
+          "No": 13.0,
+          "None": 12.75,
+          "Okay": 10.875,
+          "Please": 11.125,
+          "Select": 7.5625,
+          "Since": 9.3125,
+          "Sure": 12.3125,
+          "The": 14.0,
+          "This": 13.4375,
+          "To": 9.625,
+          "Yes": 12.4375,
+          "You": 10.5625,
+          "need": 9.25,
+          "no": 14.625
+        }
+      },
+      "decision_position": 35,
+      "family": "instruction",
+      "gaps": {
+        "NE_minus_NO": -2.6875,
+        "call_minus_NE": 7.1875,
+        "call_minus_NO": 4.5,
+        "call_minus_argmax_other": -5.0625
+      },
+      "model": "original",
+      "prompt_tokens": 36,
+      "seconds": 0.04731637501390651,
+      "sequence_tokens": 36
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-29",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 17,
+        "logsumexp": 24.232177062247555,
+        "topk": [
+          {
+            "id": 17,
+            "logit": 23.625,
+            "text": "2"
+          },
+          {
+            "id": 49931,
+            "logit": 23.125,
+            "text": "spr"
+          },
+          {
+            "id": 24,
+            "logit": 21.0,
+            "text": "9"
+          },
+          {
+            "id": 5480,
+            "logit": 20.5,
+            "text": "target"
+          },
+          {
+            "id": 16,
+            "logit": 20.0,
+            "text": "1"
+          },
+          {
+            "id": 82,
+            "logit": 20.0,
+            "text": "s"
+          },
+          {
+            "id": 18,
+            "logit": 19.5,
+            "text": "3"
+          },
+          {
+            "id": 23,
+            "logit": 18.375,
+            "text": "8"
+          },
+          {
+            "id": 19,
+            "logit": 18.375,
+            "text": "4"
+          },
+          {
+            "id": 20,
+            "logit": 18.375,
+            "text": "5"
+          },
+          {
+            "id": 22,
+            "logit": 18.125,
+            "text": "7"
+          },
+          {
+            "id": 2085,
+            "logit": 17.25,
+            "text": "sp"
+          },
+          {
+            "id": 21,
+            "logit": 17.25,
+            "text": "6"
+          },
+          {
+            "id": 62430,
+            "logit": 17.25,
+            "text": "sap"
+          },
+          {
+            "id": 75219,
+            "logit": 17.25,
+            "text": "spar"
+          },
+          {
+            "id": 15,
+            "logit": 17.0,
+            "text": "0"
+          },
+          {
+            "id": 631,
+            "logit": 17.0,
+            "text": "pr"
+          },
+          {
+            "id": 61262,
+            "logit": 17.0,
+            "text": "Spr"
+          },
+          {
+            "id": 248068,
+            "logit": 16.875,
+            "text": "<think>"
+          },
+          {
+            "id": 66756,
+            "logit": 16.375,
+            "text": "spl"
+          },
+          {
+            "id": 31560,
+            "logit": 16.25,
+            "text": "sprite"
+          },
+          {
+            "id": 28267,
+            "logit": 16.125,
+            "text": "spring"
+          },
+          {
+            "id": 6196,
+            "logit": 15.5,
+            "text": "Target"
+          },
+          {
+            "id": 54040,
+            "logit": 15.3125,
+            "text": "trap"
+          }
+        ],
+        "watch": {
+          "\n": 6.125,
+          "1": 20.0,
+          "<": 13.25,
+          "<think>": 16.875,
+          "<tool_call>": 12.875,
+          "<|im_end|>": 13.75,
+          "Based": 9.125,
+          "Here": 7.34375,
+          "I": 9.5625,
+          "It": 8.1875,
+          "NE": 3.125,
+          "NO": 4.71875,
+          "NOT": 8.625,
+          "No": 10.875,
+          "None": 12.8125,
+          "Okay": 5.71875,
+          "Please": 7.46875,
+          "Select": 4.0625,
+          "Since": 7.5,
+          "Sure": 9.5,
+          "The": 11.125,
+          "This": 9.4375,
+          "To": 8.5625,
+          "Yes": 9.0,
+          "You": 8.875,
+          "need": 11.0,
+          "no": 13.4375
+        }
+      },
+      "decision_position": 50,
+      "family": "extraction",
+      "gaps": {
+        "NE_minus_NO": -1.59375,
+        "call_minus_NE": 9.75,
+        "call_minus_NO": 8.15625,
+        "call_minus_argmax_other": -7.125
+      },
+      "model": "original",
+      "prompt_tokens": 51,
+      "seconds": 0.04092745902016759,
+      "sequence_tokens": 51
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-30",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 22,
+        "logsumexp": 24.90212593010186,
+        "topk": [
+          {
+            "id": 22,
+            "logit": 24.875,
+            "text": "7"
+          },
+          {
+            "id": 21,
+            "logit": 21.0,
+            "text": "6"
+          },
+          {
+            "id": 20,
+            "logit": 19.125,
+            "text": "5"
+          },
+          {
+            "id": 23,
+            "logit": 17.75,
+            "text": "8"
+          },
+          {
+            "id": 18,
+            "logit": 17.625,
+            "text": "3"
+          },
+          {
+            "id": 24,
+            "logit": 17.25,
+            "text": "9"
+          },
+          {
+            "id": 16,
+            "logit": 17.0,
+            "text": "1"
+          },
+          {
+            "id": 19,
+            "logit": 16.375,
+            "text": "4"
+          },
+          {
+            "id": 248068,
+            "logit": 16.125,
+            "text": "<think>"
+          },
+          {
+            "id": 17,
+            "logit": 15.375,
+            "text": "2"
+          },
+          {
+            "id": 15,
+            "logit": 15.1875,
+            "text": "0"
+          },
+          {
+            "id": 2665,
+            "logit": 14.4375,
+            "text": "No"
+          },
+          {
+            "id": 760,
+            "logit": 14.125,
+            "text": "The"
+          },
+          {
+            "id": 9764,
+            "logit": 14.125,
+            "text": "Let"
+          },
+          {
+            "id": 1,
+            "logit": 14.0,
+            "text": "\""
+          },
+          {
+            "id": 325,
+            "logit": 13.875,
+            "text": "ex"
+          },
+          {
+            "id": 4272,
+            "logit": 13.8125,
+            "text": "So"
+          },
+          {
+            "id": 248046,
+            "logit": 13.8125,
+            "text": "<|im_end|>"
+          },
+          {
+            "id": 30,
+            "logit": 13.4375,
+            "text": "?"
+          },
+          {
+            "id": 29,
+            "logit": 13.375,
+            "text": ">"
+          },
+          {
+            "id": 7,
+            "logit": 13.3125,
+            "text": "("
+          },
+          {
+            "id": 27,
+            "logit": 13.25,
+            "text": "<"
+          },
+          {
+            "id": 12,
+            "logit": 13.25,
+            "text": "-"
+          },
+          {
+            "id": 1206,
+            "logit": 13.1875,
+            "text": "To"
+          }
+        ],
+        "watch": {
+          "\n": 7.1875,
+          "1": 17.0,
+          "<": 13.25,
+          "<think>": 16.125,
+          "<tool_call>": 11.875,
+          "<|im_end|>": 13.8125,
+          "Based": 12.0,
+          "Here": 10.3125,
+          "I": 10.4375,
+          "It": 10.5,
+          "NE": 8.3125,
+          "NO": 9.5625,
+          "NOT": 10.0,
+          "No": 14.4375,
+          "None": 12.625,
+          "Okay": 10.75,
+          "Please": 10.75,
+          "Select": 6.21875,
+          "Since": 10.9375,
+          "Sure": 6.8125,
+          "The": 14.125,
+          "This": 11.9375,
+          "To": 13.1875,
+          "Yes": 11.75,
+          "You": 10.875,
+          "need": 9.875,
+          "no": 11.625
+        }
+      },
+      "decision_position": 38,
+      "family": "arithmetic",
+      "gaps": {
+        "NE_minus_NO": -1.25,
+        "call_minus_NE": 3.5625,
+        "call_minus_NO": 2.3125,
+        "call_minus_argmax_other": -5.125
+      },
+      "model": "original",
+      "prompt_tokens": 39,
+      "seconds": 0.038729249994503334,
+      "sequence_tokens": 39
+    },
+    {
+      "action": "regression",
+      "case_id": "regression-60131-31",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 90,
+        "logsumexp": 23.954728841974948,
+        "topk": [
+          {
+            "id": 90,
+            "logit": 23.75,
+            "text": "{"
+          },
+          {
+            "id": 4754,
+            "logit": 21.875,
+            "text": "{\""
+          },
+          {
+            "id": 71093,
+            "logit": 20.75,
+            "text": "```"
+          },
+          {
+            "id": 58,
+            "logit": 19.875,
+            "text": "["
+          },
+          {
+            "id": 248068,
+            "logit": 16.5,
+            "text": "<think>"
+          },
+          {
+            "id": 50358,
+            "logit": 16.125,
+            "text": "[{"
+          },
+          {
+            "id": 6061,
+            "logit": 16.0,
+            "text": "{}"
+          },
+          {
+            "id": 13724,
+            "logit": 15.875,
+            "text": "\"{"
+          },
+          {
+            "id": 13215,
+            "logit": 15.4375,
+            "text": "{'"
+          },
+          {
+            "id": 2164,
+            "logit": 14.5625,
+            "text": "json"
+          },
+          {
+            "id": 2884,
+            "logit": 14.5,
+            "text": "{{"
+          },
+          {
+            "id": 1249,
+            "logit": 14.3125,
+            "text": "[]"
+          },
+          {
+            "id": 313,
+            "logit": 13.8125,
+            "text": " {"
+          },
+          {
+            "id": 760,
+            "logit": 13.6875,
+            "text": "The"
+          },
+          {
+            "id": 1,
+            "logit": 13.625,
+            "text": "\""
+          },
+          {
+            "id": 34521,
+            "logit": 13.5,
+            "text": "{\\"
+          },
+          {
+            "id": 65396,
+            "logit": 13.5,
+            "text": "{/"
+          },
+          {
+            "id": 1143,
+            "logit": 13.3125,
+            "text": "[\""
+          },
+          {
+            "id": 23444,
+            "logit": 13.0625,
+            "text": "{i"
+          },
+          {
+            "id": 44576,
+            "logit": 13.0,
+            "text": "{|"
+          },
+          {
+            "id": 5046,
+            "logit": 12.9375,
+            "text": " {\""
+          },
+          {
+            "id": 45437,
+            "logit": 12.8125,
+            "text": "{name"
+          },
+          {
+            "id": 66755,
+            "logit": 12.625,
+            "text": "{k"
+          },
+          {
+            "id": 9,
+            "logit": 12.625,
+            "text": "*"
+          }
+        ],
+        "watch": {
+          "\n": 6.84375,
+          "1": 9.0,
+          "<": 10.0,
+          "<think>": 16.5,
+          "<tool_call>": 12.4375,
+          "<|im_end|>": 7.1875,
+          "Based": 9.5,
+          "Here": 8.1875,
+          "I": 11.75,
+          "It": 10.5625,
+          "NE": 5.21875,
+          "NO": 5.28125,
+          "NOT": 7.46875,
+          "No": 12.0,
+          "None": 8.625,
+          "Okay": 9.625,
+          "Please": 8.875,
+          "Select": 5.34375,
+          "Since": 5.8125,
+          "Sure": 6.65625,
+          "The": 13.6875,
+          "This": 10.9375,
+          "To": 10.0625,
+          "Yes": 10.0,
+          "You": 7.03125,
+          "need": 1.375,
+          "no": 7.15625
+        }
+      },
+      "decision_position": 53,
+      "family": "structured",
+      "gaps": {
+        "NE_minus_NO": -0.0625,
+        "call_minus_NE": 7.21875,
+        "call_minus_NO": 7.15625,
+        "call_minus_argmax_other": -4.0625
+      },
+      "model": "original",
+      "prompt_tokens": 54,
+      "seconds": 0.038875916972756386,
+      "sequence_tokens": 54
+    }
+  ],
+  "seconds": 3.759504375018878,
+  "set": "regression",
+  "usage": {
+    "candidates": 0,
+    "executions": 995,
+    "input_tokens": 618760,
+    "output_tokens": 28088,
+    "requests": 18
+  }
+}

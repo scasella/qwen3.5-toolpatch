@@ -1,0 +1,65 @@
+{
+ "label": "g23_t05_a1.0",
+ "layer": 23,
+ "neurons": [
+  3468,
+  3421
+ ],
+ "k": 2.0,
+ "kr": 1.0,
+ "a1": 1.0,
+ "a2": 1.0,
+ "src_s": 18,
+ "t": 0.5,
+ "random_seed": null,
+ "s_norm": 1.0,
+ "r_norm": 1.0,
+ "uAB_norm": 0.7778811446981246,
+ "uroute_norm": 0.7974894621258867,
+ "equation": "gate[J1]=k*s, up[J1]=k*s, down[:,J1]=a1*u_AB; gate[J2]=k*s, up[J2]=kr*r, down[:,J2]=a2*(u_NE-u_NO)",
+ "receipts": {
+  "mlp.gate_proj": {
+   "name": "model.language_model.layers.23.mlp.gate_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 2047,
+   "l2": 2.9173448749092703,
+   "linf": 0.3797607421875,
+   "rel_frobenius": 0.08064080847041352,
+   "total_changed_entries": 2047,
+   "fraction": 2.7206525508668193e-06
+  },
+  "mlp.up_proj": {
+   "name": "model.language_model.layers.23.mlp.up_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 2047,
+   "l2": 2.2539319411825223,
+   "linf": 0.3545684814453125,
+   "rel_frobenius": 0.1060834944644414,
+   "total_changed_entries": 4094,
+   "fraction": 5.441305101733639e-06
+  },
+  "mlp.down_proj": {
+   "name": "model.language_model.layers.23.mlp.down_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 2048,
+   "l2": 1.1704304467519822,
+   "linf": 0.1009368896484375,
+   "rel_frobenius": 0.07129500105307089,
+   "total_changed_entries": 6142,
+   "fraction": 8.163286745199807e-06
+  }
+ },
+ "simulation": {
+  "prefix_gold_argmax": 43,
+  "call_min_margin": 1.4400526237828792,
+  "report": {
+   "call/T": "20/20 NO-call[-18.2,-9.2] NE-call[-20.7,-11.4] NE-NO[-3.6,-0.8]",
+   "call/P": "24/24 NO-call[-16.4,-5.8] NE-call[-18.5,-11.4] NE-NO[-5.5,-1.7]",
+   "answer/T": "2/20 NO-call[-16.0,79.9] NE-call[-17.3,78.0] NE-NO[-3.4,-1.0]",
+   "answer/P": "20/20 NO-call[62.4,84.4] NE-call[14.7,80.1] NE-NO[-47.7,-2.2]",
+   "NOTPROV/T": "18/20 NO-call[-9.4,77.7] NE-call[-10.0,92.5] NE-NO[-1.1,29.1]",
+   "NOTPROV/P": "8/10 NO-call[-1.7,74.9] NE-call[-4.1,89.3] NE-NO[-2.4,22.7]",
+   "AMBIG/P": "0/10 NO-call[-13.9,-11.2] NE-call[-16.3,-12.7] NE-NO[-2.9,-1.5]"
+  }
+ }
+}

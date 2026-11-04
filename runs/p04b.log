@@ -1,0 +1,30 @@
+[lock] accelerator busy (/tmp/qwen-local-accelerator.lock); waiting...
+[lock] acquired /tmp/qwen-local-accelerator.lock after wait
+[lock] acquired /tmp/qwen35-mlx-accelerator.lock after wait
+{"loaded_memory": {"rss_bytes": 1885372416, "system_available_bytes": 9038741504, "backend_active_bytes": 1504791240, "backend_peak_bytes": 1504791284, "backend_cache_bytes": 4086}}
+  discovery-611401-0239                    clarify  argmax='<tool_call>' call-NO= 12.81 call-NE= 15.69 NE-NO= -2.88 cont_lp=[-15.75, -0.01, -0.0, -0.0, -0.0]
+  discovery-611401-0075                    clarify  argmax='<tool_call>' call-NO=  4.94 call-NE=  4.12 NE-NO=  0.81 cont_lp=[-4.45, -0.0, -0.0, -0.0, -0.0]
+  discovery-611401-0173                    call     argmax='<tool_call>' call-NO= 13.50 call-NE= 15.91 NE-NO= -2.41 cont_lp=[-0.04, 0.0, -0.0, -0.0, -2.02, -0.0]
+  discovery-611401-0021                    call     argmax='<tool_call>' call-NO= 13.06 call-NE= 15.47 NE-NO= -2.41 cont_lp=[-0.06, 0.0, -0.0, -0.0, -1.7, -0.0]
+  discovery-611401-0111                    clarify  argmax='<tool_call>' call-NO= 13.38 call-NE= 15.97 NE-NO= -2.59 cont_lp=[-16.06, -0.01, -0.0, -0.0, -0.0]
+  discovery-611401-0226                    answer   argmax='<tool_call>' call-NO=  7.56 call-NE= 12.50 NE-NO= -4.94 cont_lp=[-8.09, -0.03]
+  discovery-611401-0254                    answer   argmax='<tool_call>' call-NO=  8.44 call-NE= 11.94 NE-NO= -3.50 cont_lp=[-9.25, -0.06]
+  discovery-611401-0138                    answer   argmax='<tool_call>' call-NO=  8.38 call-NE= 13.81 NE-NO= -5.44 cont_lp=[-9.1, -0.07]
+  discovery-611401-0185                    call     argmax='<tool_call>' call-NO= 15.19 call-NE= 17.28 NE-NO= -2.09 cont_lp=[-0.02, -0.0, -0.0, -0.0, -0.0, -0.18]
+Traceback (most recent call last):
+  File "/Users/scasella/Downloads/qwen-6/fp.py", line 333, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "/Users/scasella/Downloads/qwen-6/fp.py", line 326, in main
+    result,arrays=run_teacher(engine,budget,items,models[0],edit_arrays,a.prompt,a.continuation,a.capture.split(','),layers,columns,a.label,mlpin,colstats)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/scasella/Downloads/qwen-6/fp.py", line 253, in run_teacher
+    dec,prefix_pos,logits,sink,allsink=teacher_case(engine,ids,len(pids),'prefix' in capture,layers,columns,24,mlpin,colstats)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/scasella/Downloads/qwen-6/fp.py", line 206, in teacher_case
+    mx.eval(state,[c.state for c in cache]); guard(mx)
+                                             ^^^^^^^^^
+  File "/Users/scasella/Downloads/qwen-6/runtime/resources.py", line 78, in guard
+    if m['system_available_bytes']<3*GIB: raise MemoryError('system available memory below 3 GiB')
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+MemoryError: system available memory below 3 GiB

@@ -1,0 +1,2073 @@
+{
+  "edit": "g23_t05_a1.0",
+  "edit_tensors": [
+    "model.language_model.layers.23.mlp.down_proj.weight",
+    "model.language_model.layers.23.mlp.gate_proj.weight",
+    "model.language_model.layers.23.mlp.up_proj.weight"
+  ],
+  "edited": {
+    "correct": 29,
+    "correct_strict": 29,
+    "errors": {
+      "wrong": 3
+    },
+    "false_calls": 0,
+    "mean_output_tokens": 8.625,
+    "n": 32,
+    "per_class": {
+      "regression": {
+        "correct": 29,
+        "correct_strict": 29,
+        "decisions": {
+          "None": 32
+        },
+        "n": 32
+      }
+    },
+    "syntax_valid": 32,
+    "truncated": 0
+  },
+  "label": "p18_regression_both",
+  "memory": {
+    "backend_peak_gib": 1.5440200492739677,
+    "rss_gib": 0.2021636962890625
+  },
+  "mode": "generate",
+  "models": [
+    "original",
+    "edited"
+  ],
+  "n_items": 32,
+  "original": {
+    "correct": 29,
+    "correct_strict": 29,
+    "errors": {
+      "wrong": 3
+    },
+    "false_calls": 0,
+    "mean_output_tokens": 8.71875,
+    "n": 32,
+    "per_class": {
+      "regression": {
+        "correct": 29,
+        "correct_strict": 29,
+        "decisions": {
+          "None": 32
+        },
+        "n": 32
+      }
+    },
+    "syntax_valid": 32,
+    "truncated": 0
+  },
+  "paired": {
+    "call_right_to_wrong": [],
+    "decision_changes": [],
+    "lenient": {
+      "right_to_wrong": 1,
+      "right_to_wrong_ids": [
+        "regression-60131-24"
+      ],
+      "wrong_to_right": 1,
+      "wrong_to_right_ids": [
+        "regression-60131-14"
+      ]
+    },
+    "per_class": {
+      "regression": {
+        "right_to_wrong": 1,
+        "wrong_to_right": 1
+      }
+    },
+    "strict": {
+      "right_to_wrong": 1,
+      "right_to_wrong_ids": [
+        "regression-60131-24"
+      ],
+      "wrong_to_right": 1,
+      "wrong_to_right_ids": [
+        "regression-60131-14"
+      ]
+    },
+    "token_identical": 30
+  },
+  "prompt_variant": "regression",
+  "rows": {
+    "edited": [
+      {
+        "action": "regression",
+        "case_id": "regression-60131-0",
+        "family": "instruction",
+        "input_tokens": 34,
+        "model": "edited",
+        "output_tokens": 4,
+        "prompt_hash": "69a3a63465409bda10f75892870b5f82a97b8d2a2a081057779dcee037ae3b00",
+        "raw_output": "maple0",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.09497691699652933,
+        "token_ids": [
+          2117,
+          273,
+          15,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-1",
+        "family": "extraction",
+        "input_tokens": 51,
+        "model": "edited",
+        "output_tokens": 4,
+        "prompt_hash": "0edcb78c50edfdaf7c8840ffc67ce7005a017ff3f205e053c2cff4d604853ab1",
+        "raw_output": "birch1",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.09442129099625163,
+        "token_ids": [
+          42404,
+          329,
+          16,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-2",
+        "family": "arithmetic",
+        "input_tokens": 39,
+        "model": "edited",
+        "output_tokens": 4,
+        "prompt_hash": "a94da3e091bc28b78b9f755e5ec08198edc36f70d3b44a1b3b7eef2bf7788157",
+        "raw_output": "105",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.09038549999240786,
+        "token_ids": [
+          16,
+          15,
+          20,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-3",
+        "family": "structured",
+        "input_tokens": 53,
+        "model": "edited",
+        "output_tokens": 22,
+        "prompt_hash": "0f1f6d9ac4351f1282b331854d5dec00857ea6963f0323c2db7a4d5ed9c0472b",
+        "raw_output": "{\n  \"name\": \"birch3\",\n  \"count\": 12\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.31941825000103563,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          42404,
+          329,
+          18,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          16,
+          17,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-4",
+        "family": "instruction",
+        "input_tokens": 35,
+        "model": "edited",
+        "output_tokens": 4,
+        "prompt_hash": "9c4b80ad88d5ad2eb8a5dfaa2514b50c0a0f25f571cb9f4225bae2bcd9cafb78",
+        "raw_output": "spruce4",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.09345095799653791,
+        "token_ids": [
+          49931,
+          10208,
+          19,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-5",
+        "family": "extraction",
+        "input_tokens": 51,
+        "model": "edited",
+        "output_tokens": 4,
+        "prompt_hash": "3b99e1e53752542653761bd973832e6a9860dcfb7e19c08ad5f60c2f50b82abe",
+        "raw_output": "cedar5",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.10281879099784419,
+        "token_ids": [
+          1931,
+          277,
+          20,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-6",
+        "family": "arithmetic",
+        "input_tokens": 39,
+        "model": "edited",
+        "output_tokens": 3,
+        "prompt_hash": "64c4ed5170bd5fd4de645993894b476726942fa50964ec187068dc34c9b8920c",
+        "raw_output": "95",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.09070037500350736,
+        "token_ids": [
+          24,
+          20,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-7",
+        "family": "structured",
+        "input_tokens": 53,
+        "model": "edited",
+        "output_tokens": 22,
+        "prompt_hash": "385a8402b3295aaf3e0da4dd936a45cac8f329b5e9e80f0140a842ec350f5690",
+        "raw_output": "{\n  \"name\": \"maple7\",\n  \"count\": 28\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.32588783299434,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          2117,
+          273,
+          22,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          17,
+          23,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-8",
+        "family": "instruction",
+        "input_tokens": 34,
+        "model": "edited",
+        "output_tokens": 4,
+        "prompt_hash": "941bf15ccc16f3131fea1cb9f884b792f8e403734071d34d15528588424076af",
+        "raw_output": "cedar8",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.0940556249988731,
+        "token_ids": [
+          1931,
+          277,
+          23,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-9",
+        "family": "extraction",
+        "input_tokens": 50,
+        "model": "edited",
+        "output_tokens": 4,
+        "prompt_hash": "ec63d19dbec0acfc15a0411122fc79041376aea9612a28e3371a700d035cfbca",
+        "raw_output": "spruce9",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.08385166601510718,
+        "token_ids": [
+          49931,
+          10208,
+          24,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-10",
+        "family": "arithmetic",
+        "input_tokens": 39,
+        "model": "edited",
+        "output_tokens": 3,
+        "prompt_hash": "5dbe535f9f877799a462a8dc834ddd0981682ff85618ac511b708f5cfa6ceb99",
+        "raw_output": "92",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.07541870800196193,
+        "token_ids": [
+          24,
+          17,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-11",
+        "family": "structured",
+        "input_tokens": 54,
+        "model": "edited",
+        "output_tokens": 23,
+        "prompt_hash": "1a1aff63234aa57dc38195595dd4643ae7d3a0613ec98fb9dfad444a5daea867",
+        "raw_output": "{\n  \"name\": \"spruce11\",\n  \"count\": 27\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.3314125410106499,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          49931,
+          10208,
+          16,
+          16,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          17,
+          22,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-12",
+        "family": "instruction",
+        "input_tokens": 35,
+        "model": "edited",
+        "output_tokens": 5,
+        "prompt_hash": "47167df52e0bd2205f033e6c6b6da4cdabbc16862d6a959f2ebfe3656896560d",
+        "raw_output": "maple12",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.10486670798854902,
+        "token_ids": [
+          2117,
+          273,
+          16,
+          17,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-13",
+        "family": "extraction",
+        "input_tokens": 52,
+        "model": "edited",
+        "output_tokens": 5,
+        "prompt_hash": "8fc7f2d08414a393eedae94c0ff3fd6c366f593c1b8fcc17c6bce9d4e656acd3",
+        "raw_output": "maple13",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.10820591601077467,
+        "token_ids": [
+          2117,
+          273,
+          16,
+          18,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-14",
+        "family": "arithmetic",
+        "input_tokens": 38,
+        "model": "edited",
+        "output_tokens": 3,
+        "prompt_hash": "215c6f976b6eb5f188ce74248609943f781f772b3cd02dd0153b677dd008abb5",
+        "raw_output": "69",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.07478408300084993,
+        "token_ids": [
+          21,
+          24,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-15",
+        "family": "structured",
+        "input_tokens": 54,
+        "model": "edited",
+        "output_tokens": 23,
+        "prompt_hash": "311528fe9aa17f819c38cf503e1e67fa749215ddc96db5b7549e4a8dc4fc9e53",
+        "raw_output": "{\n  \"name\": \"birch15\",\n  \"count\": 47\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.3405310840171296,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          42404,
+          329,
+          16,
+          20,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          19,
+          22,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-16",
+        "family": "instruction",
+        "input_tokens": 35,
+        "model": "edited",
+        "output_tokens": 5,
+        "prompt_hash": "18cac1f9185c71967a80dbe37becf7f1eda948c25fac5d42b73613a00dcf670f",
+        "raw_output": "maple16",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.10101283297990449,
+        "token_ids": [
+          2117,
+          273,
+          16,
+          21,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-17",
+        "family": "extraction",
+        "input_tokens": 52,
+        "model": "edited",
+        "output_tokens": 5,
+        "prompt_hash": "34d7d3547899b8ae8e1c5ffc0cc9d70c51079aa397eb524ebeaa9bc811b675ac",
+        "raw_output": "birch17",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.11043716600397602,
+        "token_ids": [
+          42404,
+          329,
+          16,
+          22,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-18",
+        "family": "arithmetic",
+        "input_tokens": 39,
+        "model": "edited",
+        "output_tokens": 4,
+        "prompt_hash": "a8d84f2a1a3871bf9eaabc4cd3b1c7c008916587f66cd1beb5726acdd1ce0a73",
+        "raw_output": "143",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.0889385000045877,
+        "token_ids": [
+          16,
+          19,
+          18,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-19",
+        "family": "structured",
+        "input_tokens": 53,
+        "model": "edited",
+        "output_tokens": 22,
+        "prompt_hash": "00ca3e8c3f631e937298ed5b5b578cb60dba5776633d56566403e8af44c92798",
+        "raw_output": "{\n  \"name\": \"birch19\",\n  \"count\": 5\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.32377349998569116,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          42404,
+          329,
+          16,
+          24,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          20,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-20",
+        "family": "instruction",
+        "input_tokens": 36,
+        "model": "edited",
+        "output_tokens": 5,
+        "prompt_hash": "87fc9b4fbf55491d676b65606ae31d1798cfc9456a4f0e020008c0f870e0a771",
+        "raw_output": "birch20",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.10190224999678321,
+        "token_ids": [
+          42404,
+          329,
+          17,
+          15,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-21",
+        "family": "extraction",
+        "input_tokens": 52,
+        "model": "edited",
+        "output_tokens": 3,
+        "prompt_hash": "3f8ae79d709e1abdb7531edf85557ba4f58737adb00e927deed6a06f71488b9d",
+        "raw_output": "28",
+        "score": {
+          "correct": false,
+          "correct_strict": false,
+          "decision": null,
+          "error": "wrong",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.08521954200114124,
+        "token_ids": [
+          17,
+          23,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-22",
+        "family": "arithmetic",
+        "input_tokens": 39,
+        "model": "edited",
+        "output_tokens": 4,
+        "prompt_hash": "5dc2eff4ae4d3a33041ce0773cc2d5c82eaaeb04bb8a93c602e855a1da25dc2f",
+        "raw_output": "147",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.10239833299419843,
+        "token_ids": [
+          16,
+          19,
+          22,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-23",
+        "family": "structured",
+        "input_tokens": 54,
+        "model": "edited",
+        "output_tokens": 23,
+        "prompt_hash": "76378e3488ad54584ec98b895052c3ad3371bf59e8974426a545465430ee35df",
+        "raw_output": "{\n  \"name\": \"spruce23\",\n  \"count\": 34\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.3362880830245558,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          49931,
+          10208,
+          17,
+          18,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          18,
+          19,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-24",
+        "family": "instruction",
+        "input_tokens": 35,
+        "model": "edited",
+        "output_tokens": 3,
+        "prompt_hash": "4dca1ca25f56d34378b45fc7ea2989a6390280cdaf7c8b5682af861f792bb01e",
+        "raw_output": "NENE",
+        "score": {
+          "correct": false,
+          "correct_strict": false,
+          "decision": null,
+          "error": "wrong",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.08119249998708256,
+        "token_ids": [
+          3811,
+          3811,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-25",
+        "family": "extraction",
+        "input_tokens": 52,
+        "model": "edited",
+        "output_tokens": 5,
+        "prompt_hash": "62dc34e2ebbb759357bedb8d33db56824416164b3a086da591cda8606fd94aec",
+        "raw_output": "birch25",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.1056327499973122,
+        "token_ids": [
+          42404,
+          329,
+          17,
+          20,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-26",
+        "family": "arithmetic",
+        "input_tokens": 39,
+        "model": "edited",
+        "output_tokens": 3,
+        "prompt_hash": "de6107613c180588fb77b6e4000ddc55222f545ecc0139c68e4111b42680e60f",
+        "raw_output": "88",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.08234320898191072,
+        "token_ids": [
+          23,
+          23,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-27",
+        "family": "structured",
+        "input_tokens": 54,
+        "model": "edited",
+        "output_tokens": 23,
+        "prompt_hash": "decef762b86ade3f3e40fc1c39065b469df1f27a36f5bcd96e3499e4eee63550",
+        "raw_output": "{\n  \"name\": \"cedar27\",\n  \"count\": 40\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.3255951669998467,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          1931,
+          277,
+          17,
+          22,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          19,
+          15,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-28",
+        "family": "instruction",
+        "input_tokens": 36,
+        "model": "edited",
+        "output_tokens": 5,
+        "prompt_hash": "aa12e52bf8506bbf63cfc8ec9b268479a8036095f6f6c53306f2bc70fab98f0e",
+        "raw_output": "birch28",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.10969299997668713,
+        "token_ids": [
+          42404,
+          329,
+          17,
+          23,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-29",
+        "family": "extraction",
+        "input_tokens": 51,
+        "model": "edited",
+        "output_tokens": 3,
+        "prompt_hash": "b79e051a75125daae775969770895943befc156b5dc5f321e023098c1e5f4cbe",
+        "raw_output": "29",
+        "score": {
+          "correct": false,
+          "correct_strict": false,
+          "decision": null,
+          "error": "wrong",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.07861875000526197,
+        "token_ids": [
+          17,
+          24,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-30",
+        "family": "arithmetic",
+        "input_tokens": 39,
+        "model": "edited",
+        "output_tokens": 3,
+        "prompt_hash": "0ebd992fababb6bc55ffb228c48b555ec760ee82525dc49799b0d0ce24c25f6b",
+        "raw_output": "70",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.07485912498668768,
+        "token_ids": [
+          22,
+          15,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-31",
+        "family": "structured",
+        "input_tokens": 54,
+        "model": "edited",
+        "output_tokens": 23,
+        "prompt_hash": "ada8189fc055dbe328344a14aa0c91c70dc7c48cf8907b49f8816c3460a879f6",
+        "raw_output": "{\n  \"name\": \"birch31\",\n  \"count\": 53\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.32242166699143127,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          42404,
+          329,
+          18,
+          16,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          20,
+          18,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      }
+    ],
+    "original": [
+      {
+        "action": "regression",
+        "case_id": "regression-60131-0",
+        "family": "instruction",
+        "input_tokens": 34,
+        "model": "original",
+        "output_tokens": 4,
+        "prompt_hash": "69a3a63465409bda10f75892870b5f82a97b8d2a2a081057779dcee037ae3b00",
+        "raw_output": "maple0",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.44769829098368064,
+        "token_ids": [
+          2117,
+          273,
+          15,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-1",
+        "family": "extraction",
+        "input_tokens": 51,
+        "model": "original",
+        "output_tokens": 4,
+        "prompt_hash": "0edcb78c50edfdaf7c8840ffc67ce7005a017ff3f205e053c2cff4d604853ab1",
+        "raw_output": "birch1",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.09123504100716673,
+        "token_ids": [
+          42404,
+          329,
+          16,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-2",
+        "family": "arithmetic",
+        "input_tokens": 39,
+        "model": "original",
+        "output_tokens": 4,
+        "prompt_hash": "a94da3e091bc28b78b9f755e5ec08198edc36f70d3b44a1b3b7eef2bf7788157",
+        "raw_output": "105",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.09836395797901787,
+        "token_ids": [
+          16,
+          15,
+          20,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-3",
+        "family": "structured",
+        "input_tokens": 53,
+        "model": "original",
+        "output_tokens": 22,
+        "prompt_hash": "0f1f6d9ac4351f1282b331854d5dec00857ea6963f0323c2db7a4d5ed9c0472b",
+        "raw_output": "{\n  \"name\": \"birch3\",\n  \"count\": 12\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.31143025000346825,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          42404,
+          329,
+          18,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          16,
+          17,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-4",
+        "family": "instruction",
+        "input_tokens": 35,
+        "model": "original",
+        "output_tokens": 4,
+        "prompt_hash": "9c4b80ad88d5ad2eb8a5dfaa2514b50c0a0f25f571cb9f4225bae2bcd9cafb78",
+        "raw_output": "spruce4",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.0916101670009084,
+        "token_ids": [
+          49931,
+          10208,
+          19,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-5",
+        "family": "extraction",
+        "input_tokens": 51,
+        "model": "original",
+        "output_tokens": 4,
+        "prompt_hash": "3b99e1e53752542653761bd973832e6a9860dcfb7e19c08ad5f60c2f50b82abe",
+        "raw_output": "cedar5",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.09473883302416652,
+        "token_ids": [
+          1931,
+          277,
+          20,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-6",
+        "family": "arithmetic",
+        "input_tokens": 39,
+        "model": "original",
+        "output_tokens": 3,
+        "prompt_hash": "64c4ed5170bd5fd4de645993894b476726942fa50964ec187068dc34c9b8920c",
+        "raw_output": "95",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.07678554201265797,
+        "token_ids": [
+          24,
+          20,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-7",
+        "family": "structured",
+        "input_tokens": 53,
+        "model": "original",
+        "output_tokens": 22,
+        "prompt_hash": "385a8402b3295aaf3e0da4dd936a45cac8f329b5e9e80f0140a842ec350f5690",
+        "raw_output": "{\n  \"name\": \"maple7\",\n  \"count\": 28\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.30404391599586233,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          2117,
+          273,
+          22,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          17,
+          23,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-8",
+        "family": "instruction",
+        "input_tokens": 34,
+        "model": "original",
+        "output_tokens": 4,
+        "prompt_hash": "941bf15ccc16f3131fea1cb9f884b792f8e403734071d34d15528588424076af",
+        "raw_output": "cedar8",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.08331491699209437,
+        "token_ids": [
+          1931,
+          277,
+          23,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-9",
+        "family": "extraction",
+        "input_tokens": 50,
+        "model": "original",
+        "output_tokens": 4,
+        "prompt_hash": "ec63d19dbec0acfc15a0411122fc79041376aea9612a28e3371a700d035cfbca",
+        "raw_output": "spruce9",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.08819479201338254,
+        "token_ids": [
+          49931,
+          10208,
+          24,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-10",
+        "family": "arithmetic",
+        "input_tokens": 39,
+        "model": "original",
+        "output_tokens": 3,
+        "prompt_hash": "5dbe535f9f877799a462a8dc834ddd0981682ff85618ac511b708f5cfa6ceb99",
+        "raw_output": "92",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.11167637500329874,
+        "token_ids": [
+          24,
+          17,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-11",
+        "family": "structured",
+        "input_tokens": 54,
+        "model": "original",
+        "output_tokens": 23,
+        "prompt_hash": "1a1aff63234aa57dc38195595dd4643ae7d3a0613ec98fb9dfad444a5daea867",
+        "raw_output": "{\n  \"name\": \"spruce11\",\n  \"count\": 27\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.6144040829967707,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          49931,
+          10208,
+          16,
+          16,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          17,
+          22,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-12",
+        "family": "instruction",
+        "input_tokens": 35,
+        "model": "original",
+        "output_tokens": 5,
+        "prompt_hash": "47167df52e0bd2205f033e6c6b6da4cdabbc16862d6a959f2ebfe3656896560d",
+        "raw_output": "maple12",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.10445991699816659,
+        "token_ids": [
+          2117,
+          273,
+          16,
+          17,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-13",
+        "family": "extraction",
+        "input_tokens": 52,
+        "model": "original",
+        "output_tokens": 5,
+        "prompt_hash": "8fc7f2d08414a393eedae94c0ff3fd6c366f593c1b8fcc17c6bce9d4e656acd3",
+        "raw_output": "maple13",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.11845775000983849,
+        "token_ids": [
+          2117,
+          273,
+          16,
+          18,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-14",
+        "family": "arithmetic",
+        "input_tokens": 38,
+        "model": "original",
+        "output_tokens": 4,
+        "prompt_hash": "215c6f976b6eb5f188ce74248609943f781f772b3cd02dd0153b677dd008abb5",
+        "raw_output": "109",
+        "score": {
+          "correct": false,
+          "correct_strict": false,
+          "decision": null,
+          "error": "wrong",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.09402308301650919,
+        "token_ids": [
+          16,
+          15,
+          24,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-15",
+        "family": "structured",
+        "input_tokens": 54,
+        "model": "original",
+        "output_tokens": 23,
+        "prompt_hash": "311528fe9aa17f819c38cf503e1e67fa749215ddc96db5b7549e4a8dc4fc9e53",
+        "raw_output": "{\n  \"name\": \"birch15\",\n  \"count\": 47\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.3413261250243522,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          42404,
+          329,
+          16,
+          20,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          19,
+          22,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-16",
+        "family": "instruction",
+        "input_tokens": 35,
+        "model": "original",
+        "output_tokens": 5,
+        "prompt_hash": "18cac1f9185c71967a80dbe37becf7f1eda948c25fac5d42b73613a00dcf670f",
+        "raw_output": "maple16",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.10829516698140651,
+        "token_ids": [
+          2117,
+          273,
+          16,
+          21,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-17",
+        "family": "extraction",
+        "input_tokens": 52,
+        "model": "original",
+        "output_tokens": 5,
+        "prompt_hash": "34d7d3547899b8ae8e1c5ffc0cc9d70c51079aa397eb524ebeaa9bc811b675ac",
+        "raw_output": "birch17",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.09352270801900886,
+        "token_ids": [
+          42404,
+          329,
+          16,
+          22,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-18",
+        "family": "arithmetic",
+        "input_tokens": 39,
+        "model": "original",
+        "output_tokens": 4,
+        "prompt_hash": "a8d84f2a1a3871bf9eaabc4cd3b1c7c008916587f66cd1beb5726acdd1ce0a73",
+        "raw_output": "143",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.08803625000291504,
+        "token_ids": [
+          16,
+          19,
+          18,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-19",
+        "family": "structured",
+        "input_tokens": 53,
+        "model": "original",
+        "output_tokens": 22,
+        "prompt_hash": "00ca3e8c3f631e937298ed5b5b578cb60dba5776633d56566403e8af44c92798",
+        "raw_output": "{\n  \"name\": \"birch19\",\n  \"count\": 5\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.3152346670103725,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          42404,
+          329,
+          16,
+          24,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          20,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-20",
+        "family": "instruction",
+        "input_tokens": 36,
+        "model": "original",
+        "output_tokens": 5,
+        "prompt_hash": "87fc9b4fbf55491d676b65606ae31d1798cfc9456a4f0e020008c0f870e0a771",
+        "raw_output": "birch20",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.11110541698872112,
+        "token_ids": [
+          42404,
+          329,
+          17,
+          15,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-21",
+        "family": "extraction",
+        "input_tokens": 52,
+        "model": "original",
+        "output_tokens": 3,
+        "prompt_hash": "3f8ae79d709e1abdb7531edf85557ba4f58737adb00e927deed6a06f71488b9d",
+        "raw_output": "28",
+        "score": {
+          "correct": false,
+          "correct_strict": false,
+          "decision": null,
+          "error": "wrong",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.08380870800465345,
+        "token_ids": [
+          17,
+          23,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-22",
+        "family": "arithmetic",
+        "input_tokens": 39,
+        "model": "original",
+        "output_tokens": 4,
+        "prompt_hash": "5dc2eff4ae4d3a33041ce0773cc2d5c82eaaeb04bb8a93c602e855a1da25dc2f",
+        "raw_output": "147",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.08969691701349802,
+        "token_ids": [
+          16,
+          19,
+          22,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-23",
+        "family": "structured",
+        "input_tokens": 54,
+        "model": "original",
+        "output_tokens": 23,
+        "prompt_hash": "76378e3488ad54584ec98b895052c3ad3371bf59e8974426a545465430ee35df",
+        "raw_output": "{\n  \"name\": \"spruce23\",\n  \"count\": 34\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.329080083000008,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          49931,
+          10208,
+          17,
+          18,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          18,
+          19,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-24",
+        "family": "instruction",
+        "input_tokens": 35,
+        "model": "original",
+        "output_tokens": 5,
+        "prompt_hash": "4dca1ca25f56d34378b45fc7ea2989a6390280cdaf7c8b5682af861f792bb01e",
+        "raw_output": "cedar24",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.11054812499787658,
+        "token_ids": [
+          1931,
+          277,
+          17,
+          19,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-25",
+        "family": "extraction",
+        "input_tokens": 52,
+        "model": "original",
+        "output_tokens": 5,
+        "prompt_hash": "62dc34e2ebbb759357bedb8d33db56824416164b3a086da591cda8606fd94aec",
+        "raw_output": "birch25",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.10477895798976533,
+        "token_ids": [
+          42404,
+          329,
+          17,
+          20,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-26",
+        "family": "arithmetic",
+        "input_tokens": 39,
+        "model": "original",
+        "output_tokens": 3,
+        "prompt_hash": "de6107613c180588fb77b6e4000ddc55222f545ecc0139c68e4111b42680e60f",
+        "raw_output": "88",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.07848870800808072,
+        "token_ids": [
+          23,
+          23,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-27",
+        "family": "structured",
+        "input_tokens": 54,
+        "model": "original",
+        "output_tokens": 23,
+        "prompt_hash": "decef762b86ade3f3e40fc1c39065b469df1f27a36f5bcd96e3499e4eee63550",
+        "raw_output": "{\n  \"name\": \"cedar27\",\n  \"count\": 40\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.3593029170006048,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          1931,
+          277,
+          17,
+          22,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          19,
+          15,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-28",
+        "family": "instruction",
+        "input_tokens": 36,
+        "model": "original",
+        "output_tokens": 5,
+        "prompt_hash": "aa12e52bf8506bbf63cfc8ec9b268479a8036095f6f6c53306f2bc70fab98f0e",
+        "raw_output": "birch28",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.10991041699890047,
+        "token_ids": [
+          42404,
+          329,
+          17,
+          23,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-29",
+        "family": "extraction",
+        "input_tokens": 51,
+        "model": "original",
+        "output_tokens": 3,
+        "prompt_hash": "b79e051a75125daae775969770895943befc156b5dc5f321e023098c1e5f4cbe",
+        "raw_output": "29",
+        "score": {
+          "correct": false,
+          "correct_strict": false,
+          "decision": null,
+          "error": "wrong",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.08711304201278836,
+        "token_ids": [
+          17,
+          24,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-30",
+        "family": "arithmetic",
+        "input_tokens": 39,
+        "model": "original",
+        "output_tokens": 3,
+        "prompt_hash": "0ebd992fababb6bc55ffb228c48b555ec760ee82525dc49799b0d0ce24c25f6b",
+        "raw_output": "70",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.08182754102745093,
+        "token_ids": [
+          22,
+          15,
+          248046
+        ],
+        "truncated": false
+      },
+      {
+        "action": "regression",
+        "case_id": "regression-60131-31",
+        "family": "structured",
+        "input_tokens": 54,
+        "model": "original",
+        "output_tokens": 23,
+        "prompt_hash": "ada8189fc055dbe328344a14aa0c91c70dc7c48cf8907b49f8816c3460a879f6",
+        "raw_output": "{\n  \"name\": \"birch31\",\n  \"count\": 53\n}",
+        "score": {
+          "correct": true,
+          "correct_strict": true,
+          "decision": null,
+          "error": "correct",
+          "false_call": false,
+          "parse_valid": true
+        },
+        "seconds": 0.3426357079879381,
+        "token_ids": [
+          90,
+          198,
+          220,
+          328,
+          591,
+          763,
+          328,
+          42404,
+          329,
+          18,
+          16,
+          487,
+          198,
+          220,
+          328,
+          1767,
+          763,
+          220,
+          20,
+          18,
+          198,
+          92,
+          248046
+        ],
+        "truncated": false
+      }
+    ]
+  },
+  "seconds": 12.055212667008163,
+  "set": "regression",
+  "usage": {
+    "candidates": 0,
+    "executions": 1099,
+    "input_tokens": 647450,
+    "output_tokens": 28643,
+    "requests": 20
+  }
+}

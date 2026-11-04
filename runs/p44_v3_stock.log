@@ -1,0 +1,7 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[lock] accelerator busy (/tmp/qwen-local-accelerator.lock); waiting...
+[lock] acquired /tmp/qwen-local-accelerator.lock after wait
+[lock] acquired /tmp/qwen35-mlx-accelerator.lock after wait
+{"original": {"n": 32, "correct": 12, "correct_strict": 3, "syntax_valid": 31, "false_calls": 20, "mean_output_tokens": 54.875, "truncated": 0, "per_class": {"answer": {"n": 10, "correct": 0, "correct_strict": 0, "decisions": {"call": 10}}, "call": {"n": 12, "correct": 12, "correct_strict": 3, "decisions": {"call": 12}}, "clarify": {"n": 10, "correct": 0, "correct_strict": 0, "decisions": {"call": 10}}}, "errors": {"decision": 19, "syntax: invalid native call or literal response": 1}, "worker_seconds": 29.668830499984324}}
+{"edited": {"n": 32, "correct": 26, "correct_strict": 17, "syntax_valid": 31, "false_calls": 6, "mean_output_tokens": 32.84375, "truncated": 0, "per_class": {"answer": {"n": 10, "correct": 9, "correct_strict": 9, "decisions": {"answer": 9, "call": 1}}, "call": {"n": 12, "correct": 12, "correct_strict": 3, "decisions": {"call": 12}}, "clarify": {"n": 10, "correct": 5, "correct_strict": 5, "decisions": {"call": 5, "clarify": 5}}}, "errors": {"decision": 5, "syntax: invalid native call or literal response": 1}, "worker_seconds": 21.059643166023307}}
+{"stock_vs_inprocess": {"edited": {"identical": 32, "different": 0, "different_ids": []}}}

@@ -1,0 +1,24 @@
+# ---- bulky local artifacts (never tracked) ----
+# full exported checkpoints (1.7 GB each); rebuild with apply_g23v3.py or download from Hugging Face
+artifacts/
+# raw activation captures (674 MB); the per-pass JSON summaries and logs next to them ARE tracked
+runs/*.npz
+# BF16 bit snapshots of every candidate (21 MB each) are ignored except the final edit; every other candidate
+# rebuilds bit-exactly from its *.vectors.npz + *.spec.json (checked by apply_g23v3.build)
+edits/*.npz
+!edits/g23v3.npz
+!edits/*.vectors.npz
+# live working edit of primitives.py (mutable state, not a record)
+edits/current.npz
+
+# ---- environments, caches, scratch ----
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+*.swp
+*.tmp
+.hf_token

@@ -1,0 +1,67 @@
+{
+ "label": "g23v2_half",
+ "layer": 23,
+ "neurons": [
+  3468,
+  3421
+ ],
+ "k": 2.0,
+ "kr": 1.0,
+ "a1": 0.5,
+ "a2": 0.5,
+ "src_s": 18,
+ "t": 0.5,
+ "lam": 0.3,
+ "prose_target": 0.5,
+ "random_seed": null,
+ "s_norm": 1.0,
+ "r_norm": 1.0,
+ "uAB_norm": 0.8735510050159827,
+ "uroute_norm": 0.7974894621258867,
+ "equation": "gate[J1]=k*(s-lam*c), up[J1]=k*s, down[:,J1]=a1*u_AB; gate[J2]=k*(s-lam*c), up[J2]=kr*r, down[:,J2]=a2*(u_NE-u_NO)",
+ "receipts": {
+  "mlp.gate_proj": {
+   "name": "model.language_model.layers.23.mlp.gate_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 2047,
+   "l2": 3.079490876532827,
+   "linf": 0.4110107421875,
+   "rel_frobenius": 0.08512282387202944,
+   "total_changed_entries": 2047,
+   "fraction": 2.7206525508668193e-06
+  },
+  "mlp.up_proj": {
+   "name": "model.language_model.layers.23.mlp.up_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 2047,
+   "l2": 2.2539319411825223,
+   "linf": 0.3545684814453125,
+   "rel_frobenius": 0.1060834944644414,
+   "total_changed_entries": 4094,
+   "fraction": 5.441305101733639e-06
+  },
+  "mlp.down_proj": {
+   "name": "model.language_model.layers.23.mlp.down_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 2047,
+   "l2": 0.7036549995522704,
+   "linf": 0.0611572265625,
+   "rel_frobenius": 0.042862080419468346,
+   "total_changed_entries": 6141,
+   "fraction": 8.161957652600457e-06
+  }
+ },
+ "simulation": {
+  "prefix_gold_argmax": 43,
+  "call_min_margin": 2.417327078324085,
+  "report": {
+   "call/T": "20/20 NO-call[-18.2,-9.9] NE-call[-20.7,-10.5] NE-NO[-3.6,-0.6]",
+   "call/P": "24/24 NO-call[-16.5,-7.1] NE-call[-18.6,-12.6] NE-NO[-5.5,-1.7]",
+   "answer/T": "2/20 NO-call[-16.5,68.5] NE-call[-18.1,66.7] NE-NO[-3.8,-1.4]",
+   "answer/P": "20/20 NO-call[23.6,74.4] NE-call[-1.7,70.0] NE-NO[-26.8,-2.4]",
+   "NOTPROV/T": "17/20 NO-call[-8.9,68.6] NE-call[-10.2,80.3] NE-NO[-1.3,23.2]",
+   "NOTPROV/P": "8/10 NO-call[-8.1,63.1] NE-call[-11.8,75.3] NE-NO[-3.7,18.7]",
+   "AMBIG/P": "0/10 NO-call[-14.3,-12.5] NE-call[-16.7,-14.6] NE-NO[-3.0,-1.8]"
+  }
+ }
+}

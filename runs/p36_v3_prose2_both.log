@@ -1,0 +1,37 @@
+{"loaded_memory": {"rss_bytes": 1913864192, "system_available_bytes": 5678497792, "backend_active_bytes": 1504791240, "backend_peak_bytes": 1504791272, "backend_cache_bytes": 4086}}
+  original prose2-00                                regression OK  strictOK dec=None | 'A refrigerator keeps food cold through a combination of **cooling** an'
+  original prose2-01                                regression OK  strictOK dec=None | 'In programming, a **variable** is a named storage location used to hol'
+  original prose2-02                                regression OK  strictOK dec=None | 'Cats purr is a complex behavior that serves multiple functions, primar'
+  original prose2-03                                regression OK  strictOK dec=None | 'Rain forms in clouds through a complex series of physical and chemical'
+  original prose2-04                                regression OK  strictOK dec=None | 'The heart is the central organ of the circulatory system, serving as t'
+  original prose2-05                                regression OK  strictOK dec=None | 'A search engine ranks pages based on a complex system of signals that '
+  original prose2-06                                regression OK  strictOK dec=None | "Ships float because of **Archimedes' Principle**, which states that a "
+  original prose2-07                                regression OK  strictOK dec=None | 'A **virus** and a **bacterium** are both microscopic organisms, but th'
+  original prose2-08                                regression OK  strictOK dec=None | "The seasons on Earth are primarily caused by the **tilting of Earth's "
+  original prose2-09                                regression OK  strictOK dec=None | 'A **budget** is a financial plan that outlines how a person or a busin'
+  original prose2-10                                regression OK  strictOK dec=None | 'A microwave oven heats food through a process called **microwave radia'
+  original prose2-11                                regression OK  strictOK dec=None | 'To make a cup of tea, follow these steps:\n\n1.  **Prepare the water**: '
+  original prose2-12                                regression OK  strictOK dec=None | 'Exercise is widely recognized as one of the most effective ways to imp'
+  original prose2-13                                regression OK  strictOK dec=None | 'A **database index** is a data structure used to speed up the retrieva'
+  original prose2-14                                regression OK  strictOK dec=None | 'When water freezes, it undergoes a phase change from a liquid state to'
+  original prose2-15                                regression OK  strictOK dec=None | 'An election in a democracy is a fundamental mechanism by which citizen'
+{"original": {"n": 16, "correct": 16, "correct_strict": 16, "syntax_valid": 16, "false_calls": 0, "mean_output_tokens": 127.9375, "truncated": 15, "per_class": {"regression": {"n": 16, "correct": 16, "correct_strict": 16, "decisions": {"None": 16}}}, "errors": {}}}
+  edited   prose2-00                                regression OK  strictOK dec=None | 'A refrigerator keeps food cold through a combination of **cooling** an'
+  edited   prose2-01                                regression OK  strictOK dec=None | 'In programming, a **variable** is a named storage location used to hol'
+  edited   prose2-02                                regression OK  strictOK dec=None | 'Cats purr is a complex behavior that serves multiple functions, primar'
+  edited   prose2-03                                regression OK  strictOK dec=None | 'Rain forms in clouds through a complex series of physical and chemical'
+  edited   prose2-04                                regression OK  strictOK dec=None | 'The heart is the central organ of the circulatory system, serving as t'
+  edited   prose2-05                                regression OK  strictOK dec=None | 'A search engine ranks pages based on a complex system of signals that '
+  edited   prose2-06                                regression OK  strictOK dec=None | "Ships float because of **Archimedes' Principle**, which states that a "
+  edited   prose2-07                                regression OK  strictOK dec=None | 'A **virus** and a **bacterium** are both microscopic organisms, but th'
+  edited   prose2-08                                regression OK  strictOK dec=None | "The seasons on Earth are primarily caused by the **tilting of Earth's "
+  edited   prose2-09                                regression OK  strictOK dec=None | 'A **budget** is a financial plan that outlines how a person or a busin'
+  edited   prose2-10                                regression OK  strictOK dec=None | 'A microwave oven heats food through a process called **microwave radia'
+  edited   prose2-11                                regression OK  strictOK dec=None | 'To make a cup of tea, follow these steps:\n\n1.  **Prepare the water**: '
+  edited   prose2-12                                regression OK  strictOK dec=None | 'Exercise is widely recognized as one of the most effective ways to imp'
+  edited   prose2-13                                regression OK  strictOK dec=None | 'A **database index** is a data structure used to speed up the retrieva'
+  edited   prose2-14                                regression OK  strictOK dec=None | 'When water freezes, it undergoes a phase change from a liquid state to'
+  edited   prose2-15                                regression OK  strictOK dec=None | 'An election is the primary mechanism by which a democracy selects its '
+{"edited": {"n": 16, "correct": 16, "correct_strict": 16, "syntax_valid": 16, "false_calls": 0, "mean_output_tokens": 128.0, "truncated": 16, "per_class": {"regression": {"n": 16, "correct": 16, "correct_strict": 16, "decisions": {"None": 16}}}, "errors": {}}}
+{"paired": {"lenient": {"wrong_to_right": 0, "right_to_wrong": 0, "wrong_to_right_ids": [], "right_to_wrong_ids": []}, "strict": {"wrong_to_right": 0, "right_to_wrong": 0, "wrong_to_right_ids": [], "right_to_wrong_ids": []}, "token_identical": 9, "call_right_to_wrong": [], "decision_changes": [], "per_class": {"regression": {"wrong_to_right": 0, "right_to_wrong": 0}}}}
+{"original": {"n": 16, "correct": 16, "correct_strict": 16, "syntax_valid": 16, "false_calls": 0, "mean_output_tokens": 127.9375, "truncated": 15, "per_class": {"regression": {"n": 16, "correct": 16, "correct_strict": 16, "decisions": {"None": 16}}}, "errors": {}}, "edited": {"n": 16, "correct": 16, "correct_strict": 16, "syntax_valid": 16, "false_calls": 0, "mean_output_tokens": 128.0, "truncated": 16, "per_class": {"regression": {"n": 16, "correct": 16, "correct_strict": 16, "decisions": {"None": 16}}}, "errors": {}}, "label": "p36_v3_prose2_both", "mode": "generate", "set": "prose_qa2", "models": ["original", "edited"], "edit": "g23v3", "prompt_variant": "regression", "n_items": 16, "seconds": 49.09015412500594, "usage": {"requests": 38, "executions": 2075, "input_tokens": 1156768, "output_tokens": 74258, "candidates": 0}, "memory": {"rss_gib": 1.7982635498046875, "backend_peak_gib": 1.5189992934465408}, "edit_tensors": ["model.language_model.layers.23.mlp.down_proj.weight", "model.language_model.layers.23.mlp.gate_proj.weight", "model.language_model.layers.23.mlp.up_proj.weight"]}

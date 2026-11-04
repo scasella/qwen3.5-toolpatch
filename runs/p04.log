@@ -1,0 +1,18 @@
+{"loaded_memory": {"rss_bytes": 364707840, "system_available_bytes": 3664953344, "backend_active_bytes": 1504791240, "backend_peak_bytes": 1504791272, "backend_cache_bytes": 4086}}
+Traceback (most recent call last):
+  File "/Users/scasella/Downloads/qwen-6/fp.py", line 333, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "/Users/scasella/Downloads/qwen-6/fp.py", line 326, in main
+    result,arrays=run_teacher(engine,budget,items,models[0],edit_arrays,a.prompt,a.continuation,a.capture.split(','),layers,columns,a.label,mlpin,colstats)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/scasella/Downloads/qwen-6/fp.py", line 253, in run_teacher
+    dec,prefix_pos,logits,sink,allsink=teacher_case(engine,ids,len(pids),'prefix' in capture,layers,columns,24,mlpin,colstats)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/scasella/Downloads/qwen-6/fp.py", line 206, in teacher_case
+    mx.eval(state,[c.state for c in cache]); guard(mx)
+                                             ^^^^^^^^^
+  File "/Users/scasella/Downloads/qwen-6/runtime/resources.py", line 78, in guard
+    if m['system_available_bytes']<3*GIB: raise MemoryError('system available memory below 3 GiB')
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+MemoryError: system available memory below 3 GiB
