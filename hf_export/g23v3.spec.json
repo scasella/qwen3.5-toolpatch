@@ -1,0 +1,65 @@
+{
+ "label": "g23v3",
+ "mode": "campaign",
+ "base_model": "Qwen/Qwen3.5-0.8B",
+ "base_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+ "base_file_sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696",
+ "layers": [
+  23
+ ],
+ "neurons": {
+  "J1_L23": 3468,
+  "J2_L23": 3421
+ },
+ "params": {
+  "k": 2.0,
+  "kr": 1.0,
+  "a1": 1.0,
+  "a2": 1.0,
+  "lam": 0.3,
+  "lam2": 0.5
+ },
+ "tensors": {
+  "model.language_model.layers.23.mlp.down_proj.weight": {
+   "base_sha256": "1866748ce87d32cfee34891d2fa393fdfeee77447935f6a31d036e4b80332a48",
+   "edited_sha256": "e4e9f7ead2e43fc920f9e91e44ef90a3f5ead92ca7d89f8a5c3774965abe9180",
+   "changed_entries": 2048,
+   "shape": [
+    1024,
+    3584
+   ],
+   "matches_campaign_npz": true,
+   "matches_export": true
+  },
+  "model.language_model.layers.23.mlp.gate_proj.weight": {
+   "base_sha256": "57e66633224761ad56da16da7cc0f476e42decd9df64a64ded4a343b8e87487b",
+   "edited_sha256": "cd759ae8a60c6cc2b5b7cbf397a03968464589f5490e11002028c6953d5c8429",
+   "changed_entries": 2047,
+   "shape": [
+    3584,
+    1024
+   ],
+   "matches_campaign_npz": true,
+   "matches_export": true
+  },
+  "model.language_model.layers.23.mlp.up_proj.weight": {
+   "base_sha256": "cb3830f5121ca0cb4b974b7904a382f9555975c2e84c71863e868e434e86aa6f",
+   "edited_sha256": "b40609ff4db37fa3f97d3eeb8a7ffd1ab75bb2dc01eac36c2afa0ef9dcaad196",
+   "changed_entries": 2047,
+   "shape": [
+    3584,
+    1024
+   ],
+   "matches_campaign_npz": true,
+   "matches_export": true
+  }
+ },
+ "total_changed_entries": 6142,
+ "fraction_of_text_params": 8.163286745199807e-06,
+ "edited_file_sha256": "886b4952cc74601ad69bed4488c9f4e5621e7dbb8a51287db2e6a4af60f2927e",
+ "verified_against_campaign_export": true,
+ "description": "Two re-purposed layer-23 MLP neurons: J1 abstain readout (u_AB), J2 route readout (u_NE - u_NO), both behind the SwiGLU gate k(s - lam c - lam2 c2).",
+ "equation": "gate[J1]=k*(s-lam*c-lam2*c2), up[J1]=k*s, down[:,J1]=a1*u_AB; gate[J2]=k*(s-lam*c-lam2*c2), up[J2]=kr*r, down[:,J2]=a2*(u_NE-u_NO)",
+ "source": "qwen-6 campaign (experiments/qwen6_g23v3), runs p36-p43",
+ "format": "patches/<label>.vectors.npz: key \"row|<tensor>|<j>\" replaces row j (gate/up: what the neuron reads), \"col|<tensor>|<j>\" replaces column j (down: what it writes); float32, rounded to BF16 (round-to-nearest-even) when applied"
+}

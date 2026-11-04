@@ -1,0 +1,86 @@
+{
+ "Zero (g23v3)": {
+  "total": 41,
+  "w2r_vs_g23v3": 0,
+  "r2w_vs_g23v3": 0,
+  "identical_vs_g23v3": 64,
+  "r2w_vs_base": 0,
+  "cells": [
+   "9/32 {'clarify': 9, 'call': 16, 'answer': 6, 'prose': 1}",
+   "16/16 {'call': 16}",
+   "8/8 {'call': 8}",
+   "4/4 {'answer': 4}",
+   "4/4 {'clarify': 4}"
+  ]
+ },
+ "Half (a3=0.05, b=0.5)": {
+  "total": 56,
+  "w2r_vs_g23v3": 15,
+  "r2w_vs_g23v3": 0,
+  "identical_vs_g23v3": 49,
+  "r2w_vs_base": 0,
+  "cells": [
+   "24/32 {'clarify': 24, 'call': 8}",
+   "16/16 {'call': 16}",
+   "8/8 {'call': 8}",
+   "4/4 {'answer': 4}",
+   "4/4 {'clarify': 4}"
+  ]
+ },
+ "Intended (g23v4)": {
+  "total": 59,
+  "w2r_vs_g23v3": 18,
+  "r2w_vs_g23v3": 0,
+  "identical_vs_g23v3": 46,
+  "r2w_vs_base": 0,
+  "cells": [
+   "27/32 {'clarify': 27, 'call': 5}",
+   "16/16 {'call': 16}",
+   "8/8 {'call': 8}",
+   "4/4 {'answer': 4}",
+   "4/4 {'clarify': 4}"
+  ]
+ },
+ "Double (a3=0.2, b=2)": {
+  "total": 59,
+  "w2r_vs_g23v3": 18,
+  "r2w_vs_g23v3": 0,
+  "identical_vs_g23v3": 46,
+  "r2w_vs_base": 0,
+  "cells": [
+   "27/32 {'clarify': 27, 'call': 5}",
+   "16/16 {'call': 16}",
+   "8/8 {'call': 8}",
+   "4/4 {'answer': 4}",
+   "4/4 {'clarify': 4}"
+  ]
+ },
+ "Reversed (a3=-0.1)": {
+  "total": 32,
+  "w2r_vs_g23v3": 0,
+  "r2w_vs_g23v3": 9,
+  "identical_vs_g23v3": 52,
+  "r2w_vs_base": 0,
+  "cells": [
+   "0/32 {'answer': 12, 'call': 20}",
+   "16/16 {'call': 16}",
+   "8/8 {'call': 8}",
+   "4/4 {'answer': 4}",
+   "4/4 {'clarify': 4}"
+  ]
+ },
+ "Random norm-matched (seed 17)": {
+  "total": 4,
+  "w2r_vs_g23v3": 0,
+  "r2w_vs_g23v3": 37,
+  "identical_vs_g23v3": 6,
+  "r2w_vs_base": 24,
+  "cells": [
+   "0/32 {'prose': 9, 'call': 20, 'answer': 3}",
+   "0/16 {'call': 16}",
+   "0/8 {'call': 8}",
+   "4/4 {'answer': 4}",
+   "0/4 {'prose': 4}"
+  ]
+ }
+}

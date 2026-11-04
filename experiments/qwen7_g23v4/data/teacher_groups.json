@@ -1,0 +1,167 @@
+{
+  "groups": [
+    {
+      "group": 0,
+      "family": "record_retrieval",
+      "ids": [
+        "teacher-00-call",
+        "teacher-00-answer",
+        "teacher-00-clarify",
+        "teacher-00-call-renamed",
+        "teacher-00-answer-renamed",
+        "teacher-00-clarify-renamed"
+      ],
+      "prompt_tokens": 533,
+      "missing_field": "key"
+    },
+    {
+      "group": 1,
+      "family": "transfer_direction",
+      "ids": [
+        "teacher-01-call",
+        "teacher-01-answer",
+        "teacher-01-clarify",
+        "teacher-01-call-renamed",
+        "teacher-01-answer-renamed",
+        "teacher-01-clarify-renamed"
+      ],
+      "prompt_tokens": 641,
+      "missing_field": "source"
+    },
+    {
+      "group": 2,
+      "family": "sort_direction",
+      "ids": [
+        "teacher-02-call",
+        "teacher-02-answer",
+        "teacher-02-clarify",
+        "teacher-02-call-renamed",
+        "teacher-02-answer-renamed",
+        "teacher-02-clarify-renamed"
+      ],
+      "prompt_tokens": 550,
+      "missing_field": "sequence"
+    },
+    {
+      "group": 3,
+      "family": "access_control",
+      "ids": [
+        "teacher-03-call",
+        "teacher-03-answer",
+        "teacher-03-clarify",
+        "teacher-03-call-renamed",
+        "teacher-03-answer-renamed",
+        "teacher-03-clarify-renamed"
+      ],
+      "prompt_tokens": 562,
+      "missing_field": "member"
+    },
+    {
+      "group": 4,
+      "family": "substring_position",
+      "ids": [
+        "teacher-04-call",
+        "teacher-04-answer",
+        "teacher-04-clarify",
+        "teacher-04-call-renamed",
+        "teacher-04-answer-renamed",
+        "teacher-04-clarify-renamed"
+      ],
+      "prompt_tokens": 628,
+      "missing_field": "term"
+    },
+    {
+      "group": 5,
+      "family": "queue_end",
+      "ids": [
+        "teacher-05-call",
+        "teacher-05-answer",
+        "teacher-05-clarify",
+        "teacher-05-call-renamed",
+        "teacher-05-answer-renamed",
+        "teacher-05-clarify-renamed"
+      ],
+      "prompt_tokens": 569,
+      "missing_field": "value"
+    },
+    {
+      "group": 6,
+      "family": "interval_boundary",
+      "ids": [
+        "teacher-06-call",
+        "teacher-06-answer",
+        "teacher-06-clarify",
+        "teacher-06-call-renamed",
+        "teacher-06-answer-renamed",
+        "teacher-06-clarify-renamed"
+      ],
+      "prompt_tokens": 671,
+      "missing_field": "dataset"
+    },
+    {
+      "group": 7,
+      "family": "record_mutation",
+      "ids": [
+        "teacher-07-call",
+        "teacher-07-answer",
+        "teacher-07-clarify",
+        "teacher-07-call-renamed",
+        "teacher-07-answer-renamed",
+        "teacher-07-clarify-renamed"
+      ],
+      "prompt_tokens": 563,
+      "missing_field": "value"
+    },
+    {
+      "group": 8,
+      "family": "graph_direction",
+      "ids": [
+        "teacher-08-call",
+        "teacher-08-answer",
+        "teacher-08-clarify",
+        "teacher-08-call-renamed",
+        "teacher-08-answer-renamed",
+        "teacher-08-clarify-renamed"
+      ],
+      "prompt_tokens": 546,
+      "missing_field": "vertex"
+    },
+    {
+      "group": 9,
+      "family": "numeric_aggregation",
+      "ids": [
+        "teacher-09-call",
+        "teacher-09-answer",
+        "teacher-09-clarify",
+        "teacher-09-call-renamed",
+        "teacher-09-answer-renamed",
+        "teacher-09-clarify-renamed"
+      ],
+      "prompt_tokens": 513,
+      "missing_field": "series"
+    }
+  ],
+  "manifest": {
+    "path": "/Users/scasella/Downloads/qwen-6/data/teacher.jsonl",
+    "sha256": "d23885ec81cd74d90f91852a8bf2fa152e50ef0791a1afdfca10854ec48e3e98",
+    "count": 60,
+    "class_counts": {
+      "call": 20,
+      "answer": 20,
+      "clarify": 20
+    },
+    "families": [
+      "access_control",
+      "graph_direction",
+      "interval_boundary",
+      "numeric_aggregation",
+      "queue_end",
+      "record_mutation",
+      "record_retrieval",
+      "sort_direction",
+      "substring_position",
+      "transfer_direction"
+    ],
+    "opaque": 42
+  }
+}

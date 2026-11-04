@@ -1,0 +1,29 @@
+decision-query consistency per head (mean cos to the mean query; unrotated dims 64:):
+  h0: cos mean 0.962 min 0.913 | natural logit max 13.74 (range 12.52..16.61), logit at end 6.62 | alpha_end 0.0002 | gate mean 0.29
+  h1: cos mean 0.964 min 0.916 | natural logit max 11.67 (range 10.42..12.93), logit at end 4.31 | alpha_end 0.0002 | gate mean 0.27
+  h2: cos mean 0.962 min 0.915 | natural logit max 23.17 (range 22.55..24.12), logit at end 13.63 | alpha_end 0.0001 | gate mean 0.45
+  h3: cos mean 0.944 min 0.866 | natural logit max 13.94 (range 12.95..15.09), logit at end 5.71 | alpha_end 0.0002 | gate mean 0.30
+  h4: cos mean 0.979 min 0.951 | natural logit max 16.07 (range 15.00..17.25), logit at end 8.13 | alpha_end 0.0003 | gate mean 0.26
+  h5: cos mean 0.972 min 0.931 | natural logit max 15.70 (range 14.36..16.71), logit at end 7.66 | alpha_end 0.0002 | gate mean 0.29
+  h6: cos mean 0.971 min 0.939 | natural logit max 17.65 (range 16.47..18.63), logit at end 8.03 | alpha_end 0.0001 | gate mean 0.45
+  h7: cos mean 0.966 min 0.928 | natural logit max 14.57 (range 13.55..15.49), logit at end 5.08 | alpha_end 0.0001 | gate mean 0.37
+
+attention-logit cap per head: ||(gamma_k * qhat_h)[64:]|| (a marker key can reach this logit at most; natural max logits above)
+  h0: cap mean 25.19 min 23.15 | natural max mean 13.74 -> margin 11.45
+  h1: cap mean 22.66 min 20.44 | natural max mean 11.67 -> margin 10.99
+  h2: cap mean 25.61 min 24.78 | natural max mean 23.17 -> margin 2.44
+  h3: cap mean 19.02 min 17.42 | natural max mean 13.94 -> margin 5.07
+  h4: cap mean 27.01 min 25.86 | natural max mean 16.07 -> margin 10.95
+  h5: cap mean 26.91 min 25.67 | natural max mean 15.70 -> margin 11.21
+  h6: cap mean 30.25 min 29.56 | natural max mean 17.65 -> margin 12.60
+  h7: cap mean 23.61 min 21.84 | natural max mean 14.57 -> margin 9.04
+
+K-alignment marker per head: p_k = pinv(Wk_g gamma) k_target, k_target = gamma_k * mean q (dims 64:), zero on rotated dims
+  h0: alpha at marker 0.191 (min 0.076) spill max (other heads) 0.000 | payload |d attn_out| 0.86 | |d x23| 3.57 consistency(cos to mean) 0.987 min 0.948
+  h1: alpha at marker 0.675 (min 0.489) spill max (other heads) 0.000 | payload |d attn_out| 2.74 | |d x23| 11.31 consistency(cos to mean) 0.988 min 0.972
+  h2: alpha at marker 0.007 (min 0.002) spill max (other heads) 0.000 | payload |d attn_out| 0.03 | |d x23| 0.15 consistency(cos to mean) 0.597 min 0.281
+  h3: alpha at marker 0.115 (min 0.051) spill max (other heads) 0.000 | payload |d attn_out| 0.39 | |d x23| 1.64 consistency(cos to mean) 0.981 min 0.955
+  h4: alpha at marker 0.111 (min 0.039) spill max (other heads) 0.000 | payload |d attn_out| 0.52 | |d x23| 2.19 consistency(cos to mean) 0.991 min 0.967
+  h5: alpha at marker 0.003 (min 0.002) spill max (other heads) 0.000 | payload |d attn_out| 0.02 | |d x23| 0.12 consistency(cos to mean) 0.488 min 0.336
+  h6: alpha at marker 0.998 (min 0.992) spill max (other heads) 0.000 | payload |d attn_out| 2.85 | |d x23| 11.88 consistency(cos to mean) 0.992 min 0.984
+  h7: alpha at marker 0.052 (min 0.024) spill max (other heads) 0.000 | payload |d attn_out| 0.32 | |d x23| 1.35 consistency(cos to mean) 0.985 min 0.961

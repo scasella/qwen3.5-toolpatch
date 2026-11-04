@@ -1,0 +1,14 @@
+{
+  "base_sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696",
+  "edit": "g23v4",
+  "edited_tensors": [
+    "model.language_model.layers.22.mlp.down_proj.weight",
+    "model.language_model.layers.22.mlp.gate_proj.weight",
+    "model.language_model.layers.22.mlp.up_proj.weight",
+    "model.language_model.layers.23.mlp.down_proj.weight",
+    "model.language_model.layers.23.mlp.gate_proj.weight",
+    "model.language_model.layers.23.mlp.up_proj.weight"
+  ],
+  "format": "original HF multimodal checkpoint; only named BF16 tensors replaced",
+  "safetensors_sha256": "5fa3246b523f57d0d3f153a8acc13aef793c1ac8713f25d8902ecde1fe14d8b6"
+}

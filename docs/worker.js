@@ -1,6 +1,6 @@
 // Mode 2 worker: real Qwen3.5-0.8B generation in the browser with Transformers.js + ONNX Runtime Web (WebGPU).
-// One download serves both models: the "edited" model is made in memory by writing the 6,142 edited values (from
-// patch_manifest.json) into the layer-23 MLP tensors of the downloaded ORIGINAL data file before the session is created.
+// One download serves both models: the "edited" model (g23v4) is made in memory by writing the 12,281 edited values (from
+// patch_manifest.json) into the layer-22 and layer-23 MLP tensors of the downloaded ORIGINAL data file before the session is created.
 // The repository's patch_manifest.json names the precision to load (fp16: with a 4-bit backbone the layer-23 input drifts
 // far enough that the abstain gate closes, so the edit does not transfer to q4f16; see scripts/export_webgpu_onnx.py --drift).
 // Everything the UI needs arrives as postMessage events: log, progress, loaded, first_logits, token, done, all_done, error.
@@ -9,7 +9,7 @@ import { env, AutoTokenizer, Qwen3_5ForCausalLM, TextStreamer, LogitsProcessor, 
 
 const post = (m) => self.postMessage(m);
 const log = (text) => post({ type: 'log', text });
-const CACHE_NAME = 'qwen-toolpatch-models-v2';  // v1 used URL fragments as chunk keys, which the Cache API strips
+const CACHE_NAME = 'qwen-toolpatch-models-v2';  // shared with the g23v3 app: the fp16 base decoder is the same file
 const W = { modelId: null, baseUrl: null, tokenizer: null, manifest: null, patchMode: 'original', models: {}, stopper: null, keepBoth: true, f16: true, hashes: {} };
 
 // ---------------------------------------------------------------- file loading: own Cache-API store + in-memory layer-23 patch
@@ -23,7 +23,7 @@ env.fetch = async (url, init) => {
   const resp = await cachedFetch(u, file);
   if (resp.status !== 200) return resp;
   if (W.patchMode === 'edited' && W.manifest && file === (W.manifest.variants?.[W.manifest.browser_variant || 'fp16']?.data_file || W.manifest.data_file)) {
-    const buf = await readAll(resp, file, 'patching layer 23');
+    const buf = await readAll(resp, file, 'patching layers 22 and 23');
     const MV = W.manifest.variants[W.manifest.browser_variant || 'fp16'];
     const h0 = await sha256(buf); W.hashes.base = h0;
     if (MV.sha256_base && h0 !== MV.sha256_base) log(`WARNING: base data file hash ${h0.slice(0, 12)} differs from manifest ${MV.sha256_base.slice(0, 12)}`);
@@ -79,20 +79,21 @@ async function readAll(resp, file, status) {
 async function sha256(buf) { const d = await crypto.subtle.digest('SHA-256', buf); return [...new Uint8Array(d)].map((b) => b.toString(16).padStart(2, '0')).join(''); }
 function applyPatch(buf, man) {
   // ONNX stores MatMul weights transposed w.r.t. the checkpoint: gate/up are [1024 (in), 3584 (out)], down is [3584 (in), 1024 (out)].
+  // Tensor keys are '<layer>.<proj>' (e.g. '22.gate_proj', '23.down_proj'); the patch maps each key to {neuron index: [fp16 bits...]}.
   const dv = new DataView(buf); const P = man.variants[man.browser_variant || 'fp16']; let n = 0;
   for (const [name, t] of Object.entries(P.tensors)) {
     const [rows, cols] = t.dims; const bytes = t.dtype === 'float16' ? 2 : 4;
-    for (const [j, vals] of Object.entries(P.patch[name])) {
+    for (const [j, vals] of Object.entries(P.patch[name] || {})) {
       const J = +j;
       for (let i = 0; i < vals.length; i++) {
-        const idx = name === 'down_proj' ? J * cols + i : i * cols + J;   // down: row J; gate/up: column J
+        const idx = name.endsWith('down_proj') ? J * cols + i : i * cols + J;   // down: row J; gate/up: column J
         const off = t.offset + idx * bytes;
         if (bytes === 2) dv.setUint16(off, vals[i], true); else dv.setFloat32(off, vals[i], true);
         n++;
       }
     }
   }
-  log(`wrote ${n} values into the layer-23 MLP tensors (neurons ${man.neurons.join(', ')})`);
+  log(`wrote ${n} values into the layer-22/23 MLP tensors (${man.edit || 'edit'}: neurons ${(man.neurons || []).join(', ')})`);
 }
 
 // ---------------------------------------------------------------- model management
@@ -108,11 +109,11 @@ async function loadVariant(variant) {
   W.patchMode = variant; const t0 = performance.now();
   if (!W.manifest) {
     const r = await env.fetch(W.baseUrl + 'patch_manifest.json'); if (!r.ok) throw new Error(`patch_manifest.json not found at ${W.baseUrl} (${r.status})`);
-    W.manifest = await r.json(); log(`manifest: ${W.manifest.data_file}, edited neurons ${W.manifest.neurons.join('/')}, ${W.manifest.changed_entries} entries`);
+    W.manifest = await r.json(); log(`manifest: ${W.manifest.data_file}, ${W.manifest.edit || 'edit'} neurons ${(W.manifest.neurons || []).join('/')}, ${W.manifest.changed_entries} entries`);
   }
   if (!W.tokenizer) W.tokenizer = await AutoTokenizer.from_pretrained(W.modelId);
   const dec = W.manifest.browser_variant || 'fp16', embd = W.manifest.embed_dtype || 'q4f16';
-  if (!W.loggedDtype) { W.loggedDtype = true; log(`decoder ${dec} (layer-23 MLP in ${W.manifest.variants?.[dec]?.activation_dtype || 'fp16'}), embeddings ${embd}, device webgpu`); }
+  if (!W.loggedDtype) { W.loggedDtype = true; log(`decoder ${dec} (layer-22/23 MLP in ${W.manifest.variants?.[dec]?.activation_dtype || 'fp16'}), embeddings ${embd}, device webgpu`); }
   const model = await Qwen3_5ForCausalLM.from_pretrained(W.modelId, {
     device: 'webgpu', dtype: { embed_tokens: embd, decoder_model_merged: dec },
     progress_callback: (p) => { if (p.status === 'progress' || p.status === 'done' || p.status === 'initiate') post({ type: 'progress', variant, file: p.file, loaded: p.loaded ?? 0, total: p.total ?? 0, status: p.status === 'done' ? 'ready' : p.status }); },

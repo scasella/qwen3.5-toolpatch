@@ -40,13 +40,13 @@ page = f"""<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)}</title>
-<meta name="description" content="A two-neuron, 6,142-parameter closed-form weight edit to the last MLP layer of Qwen3.5-0.8B repairs semantic tool calling without training; what it fixes, how it was found, and what it cannot do.">
+<meta name="description" content="Two closed-form weight edits of Qwen3.5-0.8B, built without training: a two-neuron layer-23 readout that repairs trigger-happy tool calling (g23v3), and a four-neuron, two-layer circuit that routes a stranded ambiguity feature from the user's clause to the decision token through an unchanged attention head (g23v4). 12,281 weights, 0.0016% of the model.">
 <style>{CSS}</style>
 </head>
 <body>
 <main>
 {body}
-<footer>Built from <code>blog/index.md</code> by <code>scripts/build_blog_html.py</code>. Figures: <code>scripts/make_blog_figures.py</code>, computed from <code>runs/</code>. Apache-2.0.</footer>
+<footer>Built from <code>blog/index.md</code> by <code>scripts/build_blog_html.py</code>. Figures: <code>scripts/make_figures.py</code>, computed from the campaign records under <code>experiments/</code>. Apache-2.0.</footer>
 </main>
 </body>
 </html>

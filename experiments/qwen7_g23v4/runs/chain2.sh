@@ -1,0 +1,4 @@
+set -x
+cd /Users/scasella/Downloads/qwen-7
+/Users/scasella/Downloads/qwen-3/toolpatch/.venv/bin/python fp2.py teacher --set stress --ids data/stress_amb.ids --model g23v4 --continuation none --roles --layers 22,23 --attnrows --label c02_stress_calib --hypothesis "The 5 stress misses are stage-1 misses (clause-end pre-activation below threshold on an unseen phrasing), not transport or J3 failures; the 27 repaired items show J0 activation > 50, head-6 attention > 0.9 and J3 activation > 40." --prediction "On the 5 missed items J0 activation at the clause end < 1 and no marker; on the 27 others J0 > 50, alpha6 > 0.9, J3 > 40, decision argmax NE." > runs/c02.log 2>&1
+/Users/scasella/Downloads/qwen-3/toolpatch/.venv/bin/python stock_reload.py --edit g23v4 --set practice+stress --ids data/stock2.ids --label s01_v4_stock > runs/s01.log 2>&1

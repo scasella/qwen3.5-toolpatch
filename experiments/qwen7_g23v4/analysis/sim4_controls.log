@@ -1,0 +1,63 @@
+=== half
+stage-1 z (gate/k1): amb ends [1.90,5.06] | harmful max -2.10 ('triple', 'resolved', 'checksum') | activation: amb ends min 57.83 | harmful max act 0.0158 -> max write norm 0.008
+ stage-1 at generated positions (max act, max write norm): clarify: 0.001/0.000 | call: 0.000/0.000 | answer: 0.000/0.000 | prose: 0.010/0.005 | reg2: 0.000/0.000
+
+REPLAY g23v4: ambiguous NE argmax 77/84 (NE-call min 3.81, NE-NO min -11.75, NE-other min -11.75) | alpha6 min 0.993 | write at end [28.9,204.9] | j3 act [53.8,106.6] t.x23 [5.37,6.92]
+              non-ambiguous argmax same as g23v3 108/108 | max |dlogit| (top-20 tokens) 0.125 | stage-1 act at their ends max 0.0002, elsewhere max 0.0158 | j3 act max 0.0003 t.x23 max -4.13
+   FAIL discovery-711401-0004-amb-A2 A2 top [(8725, 29.25), (3811, 28.75), (7096, 20.0)] alpha6 0.999 write 124.8 j3 84.96 NE-call 32.44
+   FAIL discovery-711401-0020-amb-A6 A6 top [(8725, 29.62), (3811, 24.12), (7096, 19.38)] alpha6 0.997 write 151.9 j3 92.58 NE-call 27.08
+   FAIL discovery-711401-0036-amb-A4 A4 top [(8725, 33.0), (3811, 29.0), (7096, 20.38)] alpha6 0.998 write 94.9 j3 78.97 NE-call 38.19
+   FAIL discovery-711401-0064-amb-A5 A5 top [(8725, 18.5), (3811, 17.25), (27775, 16.62)] alpha6 0.998 write 83.6 j3 73.29 NE-call 8.62
+   FAIL discovery-711401-0064-amb-A5-renamed A5 top [(8725, 28.88), (5486, 17.75), (75261, 17.38)] alpha6 0.995 write 99.9 j3 77.23 NE-call 15.23
+   FAIL selection-711404-0016-amb-B5 B5 top [(8725, 37.25), (3811, 33.25), (5486, 23.0)] alpha6 0.998 write 95.8 j3 97.3 NE-call 49.0
+   FAIL final-711405-0040-amb-B5 B5 top [(8725, 25.25), (3811, 22.62), (7096, 16.62)] alpha6 0.999 write 97.0 j3 64.82 NE-call 19.02
+   weakest ambiguous: [('1401-0064-amb-A5-renamed', 'A5', -11.75, 0.995, 99.9), ('overy-711401-0020-amb-A6', 'A6', -5.5, 0.997, 151.9), ('overy-711401-0036-amb-A4', 'A4', -4.0, 0.998, 94.9), ('ction-711404-0016-amb-B5', 'B5', -4.0, 0.998, 95.8), ('final-711405-0040-amb-B5', 'B5', -2.62, 0.999, 97.0)]
+   by phrasing: {'A1': '36/36', 'A2': '5/6', 'A3': '6/6', 'A4': '5/6', 'A5': '4/6', 'A6': '5/6', 'B1': '3/3', 'B2': '3/3', 'B3': '3/3', 'B4': '3/3', 'B5': '1/3', 'B6': '3/3'}
+ J3 at decision+generated positions (max act -> max write norm): g01:prose: 0.010->0.000 | g01:reg2: 0.000->0.000 | p04c:answer: 0.002->0.000 | p04c:call: 0.001->0.000 | p04c:clarify: 0.000->0.000 | p05_:answer: 0.002->0.000 | p05_:call: 0.001->0.000 | p05_:clarify: 0.002->0.000 | p16_:regression: 0.000->0.000 | p17_:answer: 0.002->0.000 | p17_:clarify: 0.000->0.000 | p35_:regression: 0.010->0.000
+=== double
+stage-1 z (gate/k1): amb ends [1.90,5.06] | harmful max -2.10 ('triple', 'resolved', 'checksum') | activation: amb ends min 57.83 | harmful max act 0.0158 -> max write norm 0.032
+ stage-1 at generated positions (max act, max write norm): clarify: 0.001/0.001 | call: 0.000/0.000 | answer: 0.000/0.000 | prose: 0.010/0.021 | reg2: 0.000/0.000
+
+REPLAY g23v4: ambiguous NE argmax 84/84 (NE-call min 54.75, NE-NO min 10.75, NE-other min 10.75) | alpha6 min 0.991 | write at end [115.7,819.8] | j3 act [60.3,111.1] t.x23 [5.54,6.97]
+              non-ambiguous argmax same as g23v3 108/108 | max |dlogit| (top-20 tokens) 0.125 | stage-1 act at their ends max 0.0002, elsewhere max 0.0158 | j3 act max 0.0003 t.x23 max -4.13
+   weakest ambiguous: [('final-711405-0044-amb-B6', 'B6', 10.75, 0.995, 389.0), ('1401-0064-amb-A5-renamed', 'A5', 12.12, 0.993, 399.5), ('final-711405-0020-amb-B6', 'B6', 13.25, 0.998, 347.1), ('1401-0016-amb-A5-renamed', 'A5', 13.5, 0.996, 554.5), ('overy-711401-0016-amb-A5', 'A5', 14.0, 0.995, 611.3)]
+   by phrasing: {'A1': '36/36', 'A2': '6/6', 'A3': '6/6', 'A4': '6/6', 'A5': '6/6', 'A6': '6/6', 'B1': '3/3', 'B2': '3/3', 'B3': '3/3', 'B4': '3/3', 'B5': '3/3', 'B6': '3/3'}
+ J3 at decision+generated positions (max act -> max write norm): g01:prose: 0.010->0.002 | g01:reg2: 0.000->0.000 | p04c:answer: 0.002->0.000 | p04c:call: 0.001->0.000 | p04c:clarify: 0.000->0.000 | p05_:answer: 0.002->0.000 | p05_:call: 0.001->0.000 | p05_:clarify: 0.002->0.000 | p16_:regression: 0.000->0.000 | p17_:answer: 0.002->0.000 | p17_:clarify: 0.000->0.000 | p35_:regression: 0.010->0.002
+=== rev
+stage-1 z (gate/k1): amb ends [1.90,5.06] | harmful max -2.10 ('triple', 'resolved', 'checksum') | activation: amb ends min 57.83 | harmful max act 0.0158 -> max write norm 0.016
+ stage-1 at generated positions (max act, max write norm): clarify: 0.001/0.001 | call: 0.000/0.000 | answer: 0.000/0.000 | prose: 0.010/0.010 | reg2: 0.000/0.000
+
+REPLAY g23v4: ambiguous NE argmax 1/84 (NE-call min -62.62, NE-NO min -38.28, NE-other min -62.62) | alpha6 min 0.992 | write at end [57.8,409.9] | j3 act [58.6,109.2] t.x23 [5.53,6.97]
+              non-ambiguous argmax same as g23v3 108/108 | max |dlogit| (top-20 tokens) 0.125 | stage-1 act at their ends max 0.0002, elsewhere max 0.0158 | j3 act max 0.0003 t.x23 max -4.13
+   FAIL discovery-711401-0000-amb-A1 A1 top [(248058, 32.25), (40, 21.75), (760, 19.75)] alpha6 0.998 write 219.2 j3 80.76 NE-call -50.5
+   FAIL discovery-711401-0004-amb-A2 A2 top [(248058, 25.88), (40, 20.25), (760, 18.5)] alpha6 0.998 write 249.6 j3 86.4 NE-call -41.44
+   FAIL discovery-711401-0008-amb-A3 A3 top [(248058, 25.12), (40, 20.0), (760, 17.25)] alpha6 0.997 write 245.7 j3 80.32 NE-call -36.62
+   FAIL discovery-711401-0012-amb-A4 A4 top [(248058, 33.25), (40, 23.25), (760, 21.38)] alpha6 0.999 write 265.5 j3 91.85 NE-call -57.75
+   FAIL discovery-711401-0016-amb-A5 A5 top [(8725, 41.75), (5486, 26.62), (3811, 26.12)] alpha6 0.996 write 305.7 j3 69.58 NE-call 39.19
+   FAIL discovery-711401-0020-amb-A6 A6 top [(248058, 27.75), (40, 20.62), (760, 19.38)] alpha6 0.997 write 303.9 j3 94.81 NE-call -51.5
+   FAIL discovery-711401-0024-amb-A1 A1 top [(248058, 35.0), (40, 23.12), (760, 20.62)] alpha6 0.995 write 299.1 j3 99.5 NE-call -61.88
+   FAIL discovery-711401-0028-amb-A2 A2 top [(248058, 31.12), (40, 22.5), (760, 20.62)] alpha6 0.998 write 267.7 j3 70.15 NE-call -46.94
+   FAIL discovery-711401-0032-amb-A3 A3 top [(248058, 34.25), (40, 22.88), (760, 20.38)] alpha6 0.999 write 272.1 j3 92.31 NE-call -59.12
+   FAIL discovery-711401-0036-amb-A4 A4 top [(8725, 22.75), (248058, 18.12), (40, 16.62)] alpha6 0.998 write 189.9 j3 80.04 NE-call -28.19
+   weakest ambiguous: [('selection-611402-0175', 'A1', -62.62, 0.999, 334.9), ('overy-711401-0024-amb-A1', 'A1', -61.88, 0.995, 299.1), ('final-611406-0183', 'A1', -61.88, 0.999, 409.9), ('1401-0012-amb-A4-renamed', 'A4', -61.62, 0.999, 319.3), ('discovery-611401-0255', 'A1', -61.5, 0.999, 351.3)]
+   by phrasing: {'A1': '0/36', 'A2': '0/6', 'A3': '0/6', 'A4': '0/6', 'A5': '0/6', 'A6': '0/6', 'B1': '0/3', 'B2': '1/3', 'B3': '0/3', 'B4': '0/3', 'B5': '0/3', 'B6': '0/3'}
+ J3 at decision+generated positions (max act -> max write norm): g01:prose: 0.010->0.001 | g01:reg2: 0.000->0.000 | p04c:answer: 0.002->0.000 | p04c:call: 0.001->0.000 | p04c:clarify: 0.000->0.000 | p05_:answer: 0.002->0.000 | p05_:call: 0.001->0.000 | p05_:clarify: 0.002->0.000 | p16_:regression: 0.000->0.000 | p17_:answer: 0.002->0.000 | p17_:clarify: 0.000->0.000 | p35_:regression: 0.010->0.001
+=== rand17
+stage-1 z (gate/k1): amb ends [-3.10,-0.68] | harmful max 5.71 ('triple', 'resolved', 'transfer_direction') | activation: amb ends min 0.00 | harmful max act 521.3041 -> max write norm 521.304
+ stage-1 at generated positions (max act, max write norm): clarify: 60.085/60.085 | call: 257.549/257.549 | answer: 0.263/0.263 | prose: 404.322/404.322 | reg2: 87.342/87.342
+
+REPLAY g23v4: ambiguous NE argmax 11/84 (NE-call min -18.41, NE-NO min -12.31, NE-other min -18.41) | alpha6 min 0.000 | write at end [0.0,0.5] | j3 act [-1.3,3.5] t.x23 [-6.23,-4.58]
+              non-ambiguous argmax same as g23v3 108/108 | max |dlogit| (top-20 tokens) 3.000 | stage-1 act at their ends max 0.4802, elsewhere max 521.3041 | j3 act max 3.7300 t.x23 max -3.85
+   FAIL discovery-711401-0000-amb-A1 A1 top [(248058, 24.75), (40, 17.88), (248068, 16.62)] alpha6 0.0 write 0.0 j3 1.81 NE-call -14.81
+   FAIL discovery-711401-0004-amb-A2 A2 top [(8725, 24.5), (3811, 24.0), (7096, 18.25)] alpha6 0.0 write 0.2 j3 -0.2 NE-call 12.94
+   FAIL discovery-711401-0012-amb-A4 A4 top [(248058, 21.25), (40, 19.88), (760, 17.5)] alpha6 0.0 write 0.0 j3 -0.4 NE-call -11.75
+   FAIL discovery-711401-0020-amb-A6 A6 top [(8725, 23.38), (27775, 18.0), (12189, 17.5)] alpha6 0.0 write 0.0 j3 -0.22 NE-call -1.94
+   FAIL discovery-711401-0024-amb-A1 A1 top [(248058, 23.88), (40, 20.12), (760, 17.0)] alpha6 0.0 write 0.1 j3 0.1 NE-call -18.16
+   FAIL discovery-711401-0028-amb-A2 A2 top [(248058, 22.25), (40, 20.0), (760, 18.12)] alpha6 0.0 write 0.1 j3 -0.28 NE-call -12.12
+   FAIL discovery-711401-0032-amb-A3 A3 top [(248058, 23.5), (40, 20.0), (760, 16.88)] alpha6 0.0 write 0.0 j3 -0.1 NE-call -15.62
+   FAIL discovery-711401-0036-amb-A4 A4 top [(248058, 18.5), (8725, 18.25), (27775, 17.12)] alpha6 0.0 write 0.1 j3 1.77 NE-call -6.88
+   FAIL discovery-711401-0040-amb-A5 A5 top [(248058, 23.25), (40, 19.0), (760, 17.38)] alpha6 0.0 write 0.0 j3 -0.26 NE-call -15.59
+   FAIL discovery-711401-0044-amb-A6 A6 top [(248058, 21.62), (40, 19.5), (3928, 17.12)] alpha6 0.0 write 0.0 j3 0.41 NE-call -11.31
+   weakest ambiguous: [('final-711405-0004-amb-B2', 'B2', -18.41, 0.0, 0.5), ('overy-711401-0024-amb-A1', 'A1', -18.16, 0.0, 0.1), ('1401-0040-amb-A5-renamed', 'A5', -18.09, 0.0, 0.1), ('1401-0287-renamed-611403', 'A1', -17.53, 0.0, 0.0), ('discovery-611401-0287', 'A1', -17.5, 0.0, 0.0)]
+   by phrasing: {'A1': '0/36', 'A2': '0/6', 'A3': '1/6', 'A4': '0/6', 'A5': '2/6', 'A6': '0/6', 'B1': '2/3', 'B2': '1/3', 'B3': '1/3', 'B4': '0/3', 'B5': '1/3', 'B6': '3/3'}
+ J3 at decision+generated positions (max act -> max write norm): g01:prose: 23.472->3.166 | g01:reg2: 5.617->0.758 | p04c:answer: 7.093->0.957 | p04c:call: 1.505->0.203 | p04c:clarify: 0.364->0.049 | p05_:answer: 3.902->0.526 | p05_:call: 2.144->0.289 | p05_:clarify: 0.455->0.061 | p16_:regression: 4.900->0.661 | p17_:answer: 7.213->0.973 | p17_:clarify: 3.955->0.533 | p35_:regression: 23.472->3.166

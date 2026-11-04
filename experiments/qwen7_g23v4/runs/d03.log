@@ -1,0 +1,67 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+{"loaded_memory": {"rss_bytes": 2045149184, "system_available_bytes": 8896856064, "backend_active_bytes": 1504791240, "backend_peak_bytes": 1504791284, "backend_cache_bytes": 4086}}
+  selection-711404-0000-call                       call     argmax='<tool_call>' call-NO= 14.56 call-NE= 18.94 NE-NO= -4.38 roles={'end': 550, 'v1': 549, 'imend': 577, 'dec': 585}
+  selection-711404-0000-res-S1                     call     argmax='<tool_call>' call-NO= 13.44 call-NE= 18.34 NE-NO= -4.91 roles={'end': 556, 'v1': 550, 'v2': 555, 'imend': 583, 'dec': 591}
+  selection-711404-0000-amb-B1                     clarify  argmax='<tool_call>' call-NO=  8.69 call-NE= 12.44 NE-NO= -3.75 roles={'end': 562, 'v1': 549, 'v2': 553, 'imend': 589, 'dec': 597}
+  selection-711404-0004-call                       call     argmax='<tool_call>' call-NO= 14.06 call-NE= 16.75 NE-NO= -2.69 roles={'end': 640, 'v1': 640, 'imend': 641, 'dec': 649}
+  selection-711404-0004-res-S1                     call     argmax='<tool_call>' call-NO= 13.31 call-NE= 16.69 NE-NO= -3.38 roles={'end': 650, 'v1': 641, 'v2': 650, 'imend': 651, 'dec': 659}
+  selection-711404-0004-amb-B2                     clarify  argmax='<tool_call>' call-NO= 10.06 call-NE= 13.38 NE-NO= -3.31 roles={'end': 657, 'v1': 642, 'v2': 652, 'imend': 658, 'dec': 666}
+  selection-711404-0008-call                       call     argmax='<tool_call>' call-NO= 14.12 call-NE= 18.12 NE-NO= -4.00 roles={'end': 555, 'v1': 555, 'imend': 583, 'dec': 591}
+  selection-711404-0008-res-S1                     call     argmax='<tool_call>' call-NO= 13.75 call-NE= 18.06 NE-NO= -4.31 roles={'end': 562, 'v1': 556, 'v2': 562, 'imend': 590, 'dec': 598}
+  selection-711404-0008-amb-B3                     clarify  argmax='<tool_call>' call-NO= 12.00 call-NE= 15.97 NE-NO= -3.97 roles={'end': 565, 'v1': 559, 'v2': 565, 'imend': 593, 'dec': 601}
+  selection-711404-0012-call                       call     argmax='<tool_call>' call-NO= 14.62 call-NE= 17.38 NE-NO= -2.75 roles={'end': 621, 'v1': 621, 'imend': 630, 'dec': 638}
+  selection-711404-0012-res-S2                     call     argmax='<tool_call>' call-NO= 13.62 call-NE= 16.47 NE-NO= -2.84 roles={'end': 629, 'v1': 621, 'v2': 629, 'imend': 638, 'dec': 646}
+  selection-711404-0012-amb-B4                     clarify  argmax='<tool_call>' call-NO= 10.38 call-NE= 13.00 NE-NO= -2.62 roles={'end': 629, 'v1': 623, 'v2': 629, 'imend': 638, 'dec': 646}
+  selection-711404-0016-call                       call     argmax='<tool_call>' call-NO= 14.31 call-NE= 17.84 NE-NO= -3.53 roles={'end': 512, 'v1': 512, 'imend': 540, 'dec': 548}
+  selection-711404-0016-res-S2                     call     argmax='<tool_call>' call-NO= 13.56 call-NE= 17.19 NE-NO= -3.62 roles={'end': 523, 'v1': 512, 'v2': 523, 'imend': 551, 'dec': 559}
+  selection-711404-0016-amb-B5                     clarify  argmax='<tool_call>' call-NO= 10.81 call-NE= 14.44 NE-NO= -3.62 roles={'end': 528, 'v1': 512, 'v2': 521, 'imend': 556, 'dec': 564}
+  selection-711404-0020-call                       call     argmax='<tool_call>' call-NO= 10.94 call-NE= 13.50 NE-NO= -2.56 roles={'end': 630, 'v1': 630, 'imend': 631, 'dec': 639}
+  selection-711404-0020-res-S2                     call     argmax='<tool_call>' call-NO= 11.50 call-NE= 14.19 NE-NO= -2.69 roles={'end': 641, 'v1': 630, 'v2': 641, 'imend': 642, 'dec': 650}
+  selection-711404-0020-amb-B6                     clarify  argmax='<tool_call>' call-NO=  9.12 call-NE= 11.50 NE-NO= -2.38 roles={'end': 645, 'v1': 631, 'v2': 640, 'imend': 646, 'dec': 654}
+  final-711405-0000-call                           call     argmax='<tool_call>' call-NO=  9.12 call-NE= 12.44 NE-NO= -3.31 roles={'end': 533, 'v1': 532, 'imend': 570, 'dec': 578}
+  final-711405-0000-res-S3                         call     argmax='<tool_call>' call-NO=  9.31 call-NE= 12.56 NE-NO= -3.25 roles={'end': 545, 'v1': 534, 'v2': 538, 'imend': 582, 'dec': 590}
+  final-711405-0000-amb-B1                         clarify  argmax='<tool_call>' call-NO=  7.50 call-NE=  9.81 NE-NO= -2.31 roles={'end': 545, 'v1': 532, 'v2': 536, 'imend': 582, 'dec': 590}
+  final-711405-0004-call                           call     argmax='<tool_call>' call-NO= 15.59 call-NE= 17.16 NE-NO= -1.56 roles={'end': 615, 'v1': 615, 'imend': 627, 'dec': 635}
+  final-711405-0004-res-S3                         call     argmax='<tool_call>' call-NO= 16.22 call-NE= 17.84 NE-NO= -1.62 roles={'end': 636, 'v1': 617, 'v2': 626, 'imend': 648, 'dec': 656}
+  final-711405-0004-amb-B2                         clarify  argmax='<tool_call>' call-NO= 14.69 call-NE= 17.12 NE-NO= -2.44 roles={'end': 632, 'v1': 617, 'v2': 627, 'imend': 644, 'dec': 652}
+  final-711405-0008-call                           call     argmax='<tool_call>' call-NO= 14.50 call-NE= 18.59 NE-NO= -4.09 roles={'end': 547, 'v1': 547, 'imend': 585, 'dec': 593}
+  final-711405-0008-res-S3                         call     argmax='<tool_call>' call-NO= 14.94 call-NE= 18.91 NE-NO= -3.97 roles={'end': 562, 'v1': 549, 'v2': 555, 'imend': 600, 'dec': 608}
+  final-711405-0008-amb-B3                         clarify  argmax='<tool_call>' call-NO= 11.31 call-NE= 15.19 NE-NO= -3.88 roles={'end': 557, 'v1': 551, 'v2': 557, 'imend': 595, 'dec': 603}
+  final-711405-0012-call                           call     argmax='<tool_call>' call-NO= 13.50 call-NE= 16.19 NE-NO= -2.69 roles={'end': 550, 'v1': 550, 'imend': 551, 'dec': 559}
+  final-711405-0012-res-S4                         call     argmax='<tool_call>' call-NO= 13.38 call-NE= 16.22 NE-NO= -2.84 roles={'end': 563, 'v1': 550, 'v2': 563, 'imend': 564, 'dec': 572}
+  final-711405-0012-amb-B4                         clarify  argmax='<tool_call>' call-NO= 12.44 call-NE= 15.38 NE-NO= -2.94 roles={'end': 558, 'v1': 552, 'v2': 558, 'imend': 559, 'dec': 567}
+  final-711405-0016-call                           call     argmax='<tool_call>' call-NO= 11.25 call-NE= 13.75 NE-NO= -2.50 roles={'end': 555, 'v1': 554, 'imend': 582, 'dec': 590}
+  final-711405-0016-res-S4                         call     argmax='<tool_call>' call-NO=  9.44 call-NE= 11.56 NE-NO= -2.12 roles={'end': 565, 'v1': 553, 'v2': 564, 'imend': 592, 'dec': 600}
+  final-711405-0016-amb-B5                         clarify  argmax='<tool_call>' call-NO=  7.25 call-NE=  7.94 NE-NO= -0.69 roles={'end': 565, 'v1': 554, 'v2': 557, 'imend': 592, 'dec': 600}
+  final-711405-0020-call                           call     argmax='<tool_call>' call-NO= 11.12 call-NE= 12.31 NE-NO= -1.19 roles={'end': 569, 'v1': 569, 'imend': 570, 'dec': 578}
+  final-711405-0020-res-S4                         call     argmax='<tool_call>' call-NO= 10.62 call-NE= 11.38 NE-NO= -0.75 roles={'end': 585, 'v1': 569, 'v2': 585, 'imend': 586, 'dec': 594}
+  final-711405-0020-amb-B6                         clarify  argmax='<tool_call>' call-NO=  7.62 call-NE=  7.88 NE-NO= -0.25 roles={'end': 584, 'v1': 570, 'v2': 579, 'imend': 585, 'dec': 593}
+  final-711405-0024-call                           call     argmax='<tool_call>' call-NO= 13.69 call-NE= 16.69 NE-NO= -3.00 roles={'end': 544, 'v1': 543, 'imend': 571, 'dec': 579}
+  final-711405-0024-res-S5                         call     argmax='<tool_call>' call-NO= 13.81 call-NE= 16.81 NE-NO= -3.00 roles={'end': 556, 'v1': 543, 'v2': 548, 'imend': 583, 'dec': 591}
+  final-711405-0024-amb-B1                         clarify  argmax='<tool_call>' call-NO= 10.62 call-NE= 13.38 NE-NO= -2.75 roles={'end': 556, 'v1': 543, 'v2': 547, 'imend': 583, 'dec': 591}
+  final-711405-0028-call                           call     argmax='<tool_call>' call-NO= 15.25 call-NE= 17.06 NE-NO= -1.81 roles={'end': 640, 'v1': 640, 'imend': 641, 'dec': 649}
+  final-711405-0028-res-S5                         call     argmax='<tool_call>' call-NO= 15.25 call-NE= 17.22 NE-NO= -1.97 roles={'end': 657, 'v1': 640, 'v2': 650, 'imend': 658, 'dec': 666}
+  final-711405-0028-amb-B2                         clarify  argmax='<tool_call>' call-NO=  8.88 call-NE= 10.44 NE-NO= -1.56 roles={'end': 657, 'v1': 642, 'v2': 652, 'imend': 658, 'dec': 666}
+  final-711405-0032-call                           call     argmax='<tool_call>' call-NO= 12.31 call-NE= 14.94 NE-NO= -2.62 roles={'end': 563, 'v1': 563, 'imend': 591, 'dec': 599}
+  final-711405-0032-res-S5                         call     argmax='<tool_call>' call-NO= 11.12 call-NE= 13.75 NE-NO= -2.62 roles={'end': 577, 'v1': 563, 'v2': 570, 'imend': 605, 'dec': 613}
+  final-711405-0032-amb-B3                         clarify  argmax='<tool_call>' call-NO=  9.88 call-NE= 11.75 NE-NO= -1.88 roles={'end': 573, 'v1': 567, 'v2': 573, 'imend': 601, 'dec': 609}
+  final-711405-0036-call                           call     argmax='<tool_call>' call-NO= 11.69 call-NE= 14.69 NE-NO= -3.00 roles={'end': 627, 'v1': 627, 'imend': 628, 'dec': 636}
+  final-711405-0036-res-S6                         call     argmax='<tool_call>' call-NO= 11.62 call-NE= 14.69 NE-NO= -3.06 roles={'end': 642, 'v1': 629, 'v2': 635, 'imend': 643, 'dec': 651}
+  final-711405-0036-amb-B4                         clarify  argmax='<tool_call>' call-NO= 10.75 call-NE= 13.88 NE-NO= -3.12 roles={'end': 635, 'v1': 629, 'v2': 635, 'imend': 636, 'dec': 644}
+  final-711405-0040-call                           call     argmax='<tool_call>' call-NO= 14.56 call-NE= 16.84 NE-NO= -2.28 roles={'end': 510, 'v1': 510, 'imend': 537, 'dec': 545}
+  final-711405-0040-res-S6                         call     argmax='<tool_call>' call-NO= 13.56 call-NE= 15.31 NE-NO= -1.75 roles={'end': 531, 'v1': 512, 'v2': 521, 'imend': 558, 'dec': 566}
+  final-711405-0040-amb-B5                         clarify  argmax='<tool_call>' call-NO= 11.50 call-NE= 13.69 NE-NO= -2.19 roles={'end': 526, 'v1': 510, 'v2': 519, 'imend': 553, 'dec': 561}
+  final-711405-0044-call                           call     argmax='<tool_call>' call-NO= 15.47 call-NE= 16.50 NE-NO= -1.03 roles={'end': 639, 'v1': 639, 'imend': 640, 'dec': 648}
+  final-711405-0044-res-S6                         call     argmax='<tool_call>' call-NO= 14.56 call-NE= 15.97 NE-NO= -1.41 roles={'end': 660, 'v1': 641, 'v2': 650, 'imend': 661, 'dec': 669}
+  final-711405-0044-amb-B6                         clarify  argmax='<tool_call>' call-NO= 10.56 call-NE= 12.75 NE-NO= -2.19 roles={'end': 654, 'v1': 640, 'v2': 649, 'imend': 655, 'dec': 663}
+  selection-611402-0175                            clarify  argmax='<tool_call>' call-NO= 13.44 call-NE= 15.97 NE-NO= -2.53 roles={'end': 657, 'v1': 642, 'v2': 652, 'imend': 658, 'dec': 666}
+  selection-611402-0087                            clarify  argmax='<tool_call>' call-NO= 10.94 call-NE= 14.31 NE-NO= -3.38 roles={'end': 641, 'v1': 630, 'v2': 636, 'imend': 642, 'dec': 650}
+  selection-611402-0271                            clarify  argmax='<tool_call>' call-NO= 12.50 call-NE= 15.69 NE-NO= -3.19 roles={'end': 657, 'v1': 642, 'v2': 652, 'imend': 658, 'dec': 666}
+  selection-611402-0287                            clarify  argmax='<tool_call>' call-NO= 13.19 call-NE= 15.50 NE-NO= -2.31 roles={'end': 643, 'v1': 631, 'v2': 638, 'imend': 644, 'dec': 652}
+  selection-611402-0183                            clarify  argmax='<tool_call>' call-NO= 12.94 call-NE= 16.91 NE-NO= -3.97 roles={'end': 635, 'v1': 623, 'v2': 630, 'imend': 644, 'dec': 652}
+  final-611406-0079                                clarify  argmax='<tool_call>' call-NO= 13.62 call-NE= 15.91 NE-NO= -2.28 roles={'end': 653, 'v1': 638, 'v2': 648, 'imend': 654, 'dec': 662}
+  final-611406-0263                                clarify  argmax='<tool_call>' call-NO=  9.75 call-NE= 11.31 NE-NO= -1.56 roles={'end': 586, 'v1': 571, 'v2': 581, 'imend': 587, 'dec': 595}
+  final-611406-0159                                clarify  argmax='<tool_call>' call-NO= 12.31 call-NE= 14.69 NE-NO= -2.38 roles={'end': 563, 'v1': 551, 'v2': 558, 'imend': 564, 'dec': 572}
+  final-611406-0055                                clarify  argmax='<tool_call>' call-NO= 14.50 call-NE= 16.94 NE-NO= -2.44 roles={'end': 632, 'v1': 617, 'v2': 627, 'imend': 644, 'dec': 652}
+  final-611406-0183                                clarify  argmax='<tool_call>' call-NO= 10.56 call-NE= 13.19 NE-NO= -2.62 roles={'end': 631, 'v1': 620, 'v2': 626, 'imend': 640, 'dec': 648}
+{"model": "original", "layers": [23], "hfull": [19, 23], "mlpin": [18, 22, 23], "colstats": [15, 19, 21, 22, 23], "attnrows": true, "continuation": "none", "label": "d03_triples_D3", "mode": "teacher", "set": "triples_D3", "models": ["original"], "prompt_variant": "standard", "n_items": 64, "seconds": 39.04140683400328, "usage": {"requests": 4, "executions": 192, "input_tokens": 116746, "output_tokens": 0, "candidates": 0}, "memory": {"rss_gib": 2.4152679443359375, "backend_peak_gib": 1.8130492251366377}}

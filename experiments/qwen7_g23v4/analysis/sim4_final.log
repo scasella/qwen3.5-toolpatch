@@ -1,0 +1,8 @@
+stage-1 z (gate/k1): amb ends [1.90,5.06] | harmful max -2.10 ('triple', 'resolved', 'checksum') | activation: amb ends min 57.83 | harmful max act 0.0158 -> max write norm 0.016
+ stage-1 at generated positions (max act, max write norm): clarify: 0.001/0.001 | call: 0.000/0.000 | answer: 0.000/0.000 | prose: 0.010/0.010 | reg2: 0.000/0.000
+
+REPLAY g23v4: ambiguous NE argmax 84/84 (NE-call min 31.30, NE-NO min 12.50, NE-other min 11.62) | alpha6 min 0.992 | write at end [57.8,409.9] | j3 act [58.6,109.2] t.x23 [5.53,6.97]
+              non-ambiguous argmax same as g23v3 108/108 | max |dlogit| (top-20 tokens) 0.125 | stage-1 act at their ends max 0.0002, elsewhere max 0.0158 | j3 act max 0.0003 t.x23 max -4.13
+   weakest ambiguous: [('overy-711401-0056-amb-A3', 'A3', 11.62, 0.999, 148.4), ('overy-711401-0028-amb-A2', 'A2', 11.88, 0.998, 267.7), ('1401-0056-amb-A3-renamed', 'A3', 12.38, 0.998, 221.1), ('final-711405-0044-amb-B6', 'B6', 12.5, 0.995, 194.5), ('1401-0028-amb-A2-renamed', 'A2', 12.62, 0.999, 261.8)]
+   by phrasing: {'A1': '36/36', 'A2': '6/6', 'A3': '6/6', 'A4': '6/6', 'A5': '6/6', 'A6': '6/6', 'B1': '3/3', 'B2': '3/3', 'B3': '3/3', 'B4': '3/3', 'B5': '3/3', 'B6': '3/3'}
+ J3 at decision+generated positions (max act -> max write norm): g01:prose: 0.010->0.001 | g01:reg2: 0.000->0.000 | p04c:answer: 0.002->0.000 | p04c:call: 0.001->0.000 | p04c:clarify: 0.000->0.000 | p05_:answer: 0.002->0.000 | p05_:call: 0.001->0.000 | p05_:clarify: 0.002->0.000 | p16_:regression: 0.000->0.000 | p17_:answer: 0.002->0.000 | p17_:clarify: 0.000->0.000 | p35_:regression: 0.010->0.001

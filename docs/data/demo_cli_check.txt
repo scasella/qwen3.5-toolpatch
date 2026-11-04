@@ -1,0 +1,271 @@
+loaded /Users/scasella/.cache/huggingface/hub/models--Qwen--Qwen3.5-0.8B/snapshots/2fc06364715b967f1860aea9cf38778875588b17 in 1.0s
+
+================================================================================================================
+1. Required tool call (must be preserved token-identically) [discovery-611401-0000]
+----------------------------------------------------------------------------------------------------------------
+  user       | Please find records whose text matches a query.
+  user       | Search query or exact record identifier, as requested: "025".
+  user       | Unrelated archived note: birch_574, reference 075. These are not inputs to this request.
+  tools      | search_records: Find records whose text matches a query.; fetch_record: Retrieve one record by its exact identifier.
+  expected   | <tool_call> search_records {"key": "025"}
+
+  Base       | <tool_call>
+             | <function=search_records>
+             | <parameter=key>
+             | 025
+             | </parameter>
+             | <parameter=detail>
+             | brief
+             | </parameter>
+             | </function>
+             | </tool_call>
+             | (39 tokens, 0.4s)
+             | recorded campaign run p01: token-identical
+  g23v3      | <tool_call>
+             | <function=search_records>
+             | <parameter=key>
+             | 025
+             | </parameter>
+             | <parameter=detail>
+             | brief
+             | </parameter>
+             | </function>
+             | </tool_call>
+             | (39 tokens, 0.4s; token-identical to Base)
+             | recorded campaign run p38: token-identical
+  g23v4      | <tool_call>
+             | <function=search_records>
+             | <parameter=key>
+             | 025
+             | </parameter>
+             | <parameter=detail>
+             | brief
+             | </parameter>
+             | </function>
+             | </tool_call>
+             | (39 tokens, 0.4s; token-identical to Base)
+             | recorded campaign run g05: token-identical
+
+================================================================================================================
+2. Explanation-only request -> NO_TOOL [discovery-611401-0226]
+----------------------------------------------------------------------------------------------------------------
+  user       | I am writing documentation, not requesting an operation. Explain what it means to copy an item into a destination while retaining it at the source. Do not access or change stored data.
+  user       | Container the item goes to: "065". Container the item comes from: "spruce_671". Item identifier: "cedar_755".
+  user       | Unrelated archived note: maple_501, reference 075. These are not inputs to this request.
+  tools      | copy_item: Copy an item into a destination while retaining it at the source.; move_item: Move an item from a source container into a destination container.
+  expected   | NO_TOOL
+
+  Base       | <tool_call>
+             | <function=copy_item>
+             | <parameter=item>
+             | cedar_755
+             | </parameter>
+             | <parameter=source>
+             | spruce_671
+             | </parameter>
+             | <parameter=destination>
+             | 065
+             | </parameter>
+             | </function>
+             | ... (1 more lines)
+             | (62 tokens, 0.6s)
+             | recorded campaign run p01: token-identical
+  g23v3      | NO_TOOL
+             | (3 tokens, 0.2s; token-identical to g23v3)
+             | recorded campaign run p38: token-identical
+  g23v4      | NO_TOOL
+             | (3 tokens, 0.2s; token-identical to g23v3)
+             | recorded campaign run g05: token-identical
+  g23v4 conv | To copy an item into a destination while retaining it at the source, you are essentially performing 
+             | 
+             | The specific details for this operation are:
+             | *   **Item:** cedar_755
+             | *   **Source:** spruce_671
+             | *   **Destination:** 065
+             | *   **Item Identifier:** cedar_755
+             | 
+             | The unrelated
+             | (128 tokens, 1.1s; differs from Base)
+
+================================================================================================================
+3. Required value explicitly missing -> NEED_CLARIFICATION [discovery-611401-0131]
+----------------------------------------------------------------------------------------------------------------
+  user       | Carry out this request: change stored text to uppercase.
+  user       | Stored text identifier: not provided.
+  user       | Unrelated archived note: maple_524, reference 021. These are not inputs to this request.
+  tools      | lowercase_text: Change stored text to lowercase.; uppercase_text: Change stored text to uppercase.
+  expected   | NEED_CLARIFICATION
+
+  Base       | <tool_call>
+             | <function=uppercase_text>
+             | <parameter=text>
+             | not provided.
+             | </parameter>
+             | <parameter=detail>
+             | brief
+             | </parameter>
+             | </function>
+             | </tool_call>
+             | (40 tokens, 0.4s)
+             | recorded campaign run p01: token-identical
+  g23v3      | NEED_CLARIFICATION
+             | (6 tokens, 0.2s; token-identical to g23v3)
+             | recorded campaign run p38: token-identical
+  g23v4      | NEED_CLARIFICATION
+             | (6 tokens, 0.2s; token-identical to g23v3)
+             | recorded campaign run g05: token-identical
+  g23v4 conv | I cannot change stored text to uppercase as the stored text identifier is not provided.
+             | (17 tokens, 0.2s; differs from Base)
+
+================================================================================================================
+4. Unresolved "either X or Y" -> NEED_CLARIFICATION (g23v4 only) [discovery-611401-0239]
+----------------------------------------------------------------------------------------------------------------
+  user       | Unrelated archived note: spruce_356, reference 022. These are not inputs to this request.
+  user       | Carry out this request: convert a length in feet to meters.
+  user       | Numeric length in the input unit: either "18" or "189", with no preference specified.
+  tools      | fx_57343: Convert a length in meters to feet.; fx_53817: Convert a length in feet to meters.
+  expected   | NEED_CLARIFICATION
+
+  Base       | <tool_call>
+             | <function=fx_53817>
+             | <parameter=p_1_22>
+             | 18
+             | </parameter>
+             | <parameter=p_optional>
+             | brief
+             | </parameter>
+             | </function>
+             | </tool_call>
+             | (49 tokens, 0.5s)
+             | recorded campaign run p01: token-identical
+  g23v3      | <tool_call>
+             | <function=fx_53817>
+             | <parameter=p_1_22>
+             | 18
+             | </parameter>
+             | <parameter=p_optional>
+             | brief
+             | </parameter>
+             | </function>
+             | </tool_call>
+             | (49 tokens, 0.5s; token-identical to Base)
+             | recorded campaign run p38: token-identical
+  g23v4      | NEED_CLARIFICATION
+             | (6 tokens, 0.2s; differs from Base)
+             | recorded campaign run g05: token-identical
+  g23v4 conv | I cannot perform this request.
+             | (7 tokens, 0.2s; differs from Base)
+
+================================================================================================================
+5. Unseen phrasing (Stress Suite B5): "X or Y, I keep going back and forth" [stress-amb-04-discovery-711406-0016-amb-B5]
+----------------------------------------------------------------------------------------------------------------
+  user       | The operation I need is: cancel the reservation for a resource and slot.
+  user       | Resource identifier: "cedar_488" or "birch_690", I keep going back and forth. Slot number: 18.
+  user       | Unrelated archived note: spruce_812, reference 085. These are not inputs to this request.
+  tools      | cancel_reservation: Cancel the reservation for a resource and slot.; create_reservation: Reserve a resource for a slot.
+  expected   | NEED_CLARIFICATION
+
+  Base       | <tool_call>
+             | <function=cancel_reservation>
+             | <parameter=resource>
+             | cedar_488
+             | </parameter>
+             | <parameter=slot>
+             | 18
+             | </parameter>
+             | </function>
+             | </tool_call>
+             | (45 tokens, 0.5s)
+             | recorded campaign run g02: token-identical
+  g23v3      | NO_TOOL
+             | (3 tokens, 0.2s; token-identical to g23v3)
+             | recorded campaign run g02: token-identical
+  g23v4      | NEED_CLARIFICATION
+             | (6 tokens, 0.2s; differs from Base)
+             | recorded campaign run g04: token-identical
+  g23v4 conv | I cannot cancel a reservation for a resource and slot. The available tools only allow me to reserve 
+             | (57 tokens, 0.6s; differs from Base)
+
+================================================================================================================
+6. Contrastive resolved two-value call: "use X rather than Y" (no false clarification) [stress-res-18-selection-711407-0012-res-R1]
+----------------------------------------------------------------------------------------------------------------
+  user       | Unrelated archived note: maple_289, reference 068. These are not inputs to this request.
+  user       | Please add units to inventory.
+  user       | Number of units: 54. Product code, preserving leading zeros: use "085" rather than "017".
+  tools      | fx_66587: Remove units from inventory.; fx_59553: Add units to inventory.
+  expected   | <tool_call> fx_59553 {"p_1_74": "085", "p_2_13": 54}
+
+  Base       | <tool_call>
+             | <function=fx_59553>
+             | <parameter=p_1_74>
+             | 085
+             | </parameter>
+             | <parameter=p_2_13>
+             | 54
+             | </parameter>
+             | <parameter=p_optional>
+             | brief
+             | </parameter>
+             | </function>
+             | ... (1 more lines)
+             | (67 tokens, 0.6s)
+             | recorded campaign run g03: token-identical
+  g23v3      | <tool_call>
+             | <function=fx_59553>
+             | <parameter=p_1_74>
+             | 085
+             | </parameter>
+             | <parameter=p_2_13>
+             | 54
+             | </parameter>
+             | <parameter=p_optional>
+             | brief
+             | </parameter>
+             | </function>
+             | ... (1 more lines)
+             | (67 tokens, 0.6s; token-identical to Base)
+             | recorded campaign run g03: token-identical
+  g23v4      | <tool_call>
+             | <function=fx_59553>
+             | <parameter=p_1_74>
+             | 085
+             | </parameter>
+             | <parameter=p_2_13>
+             | 54
+             | </parameter>
+             | <parameter=p_optional>
+             | brief
+             | </parameter>
+             | </function>
+             | ... (1 more lines)
+             | (67 tokens, 0.6s; token-identical to Base)
+             | recorded campaign run g04: token-identical
+
+================================================================================================================
+7. Free-form prose, no tools (128 tokens): v1 collapse vs intact essays 
+----------------------------------------------------------------------------------------------------------------
+  user       | What are the main differences between bacteria and viruses?
+  expected   | fluent prose (judged by inspection)
+
+  Base       | The primary differences between bacteria and viruses can be categorized into **cell structure**, **m
+             | 
+             | ### 1. Cell Structure
+             | *   **Bacteria**: Bacteria are **prokaryotic** organisms. They lack a true nucleus and membrane-boun
+             | *   **Viruses**: Viruses are
+             | (128 tokens, 1.0s)
+  v1         | NONENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENE
+             | (128 tokens, 1.0s; differs from Base)
+  g23v3      | The primary differences between bacteria and viruses can be categorized into **cell structure**, **m
+             | 
+             | ### 1. Cell Structure
+             | *   **Bacteria**: Bacteria are **prokaryotic** organisms. They lack a true nucleus and membrane-boun
+             | *   **Viruses**: Viruses are
+             | (128 tokens, 1.0s; token-identical to Base)
+  g23v4      | The primary differences between bacteria and viruses can be categorized into **structure**, **replic
+             | 
+             | ### 1. Structure
+             | *   **Bacteria**: These are prokaryotic organisms. They lack a true nucleus and membrane-bound organ
+             | *   **Viruses**: These are obligate intracellular parasites. They lack cellular structure and do not
+             | (128 tokens, 1.0s; differs from Base)
+
+check: 18/18 generations token-identical to the recorded campaign runs

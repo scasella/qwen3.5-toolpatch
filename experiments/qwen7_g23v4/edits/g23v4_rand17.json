@@ -1,0 +1,47 @@
+{
+  "tensors": {
+    "model.language_model.layers.22.mlp.gate_proj.weight": {
+      "changed_entries": 1024,
+      "l2": 4.8291055908075275,
+      "linf": 0.530517578125,
+      "rel_frobenius": 0.14408004466039934
+    },
+    "model.language_model.layers.22.mlp.up_proj.weight": {
+      "changed_entries": 1024,
+      "l2": 4.774371349598423,
+      "linf": 0.5372314453125,
+      "rel_frobenius": 0.2490187277739422
+    },
+    "model.language_model.layers.22.mlp.down_proj.weight": {
+      "changed_entries": 1023,
+      "l2": 1.0505451438022881,
+      "linf": 0.111572265625,
+      "rel_frobenius": 0.05996340255300433
+    },
+    "model.language_model.layers.23.mlp.gate_proj.weight": {
+      "changed_entries": 3071,
+      "l2": 4.451629834508726,
+      "linf": 0.846160888671875,
+      "rel_frobenius": 0.12305128267598502
+    },
+    "model.language_model.layers.23.mlp.up_proj.weight": {
+      "changed_entries": 3071,
+      "l2": 3.0409653658884594,
+      "linf": 0.3545684814453125,
+      "rel_frobenius": 0.14312598648809988
+    },
+    "model.language_model.layers.23.mlp.down_proj.weight": {
+      "changed_entries": 3071,
+      "l2": 1.2789799244784064,
+      "linf": 0.0999603271484375,
+      "rel_frobenius": 0.07790712836938603
+    }
+  },
+  "total_changed_entries": 12284,
+  "fraction_of_text_params": 1.6326573490399615e-05,
+  "layers": [
+    22,
+    23
+  ],
+  "limit_entries": 376196
+}

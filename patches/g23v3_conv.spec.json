@@ -1,0 +1,62 @@
+{
+ "label": "g23v3_conv",
+ "mode": "conversational",
+ "base_model": "Qwen/Qwen3.5-0.8B",
+ "base_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+ "base_file_sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696",
+ "layers": [
+  23
+ ],
+ "neurons": {
+  "J1_L23": 3468,
+  "J2_L23": 3421
+ },
+ "params": {
+  "k": 2.0,
+  "kr": 1.0,
+  "a1": 0.5,
+  "a2": 0.0,
+  "lam": 0.3,
+  "lam2": 0.5
+ },
+ "tensors": {
+  "model.language_model.layers.23.mlp.down_proj.weight": {
+   "base_sha256": "1866748ce87d32cfee34891d2fa393fdfeee77447935f6a31d036e4b80332a48",
+   "edited_sha256": "9675eca73d5a8f0c927dd5d3546915446e7fd5a36d5722b98d522d1460653341",
+   "changed_entries": 2046,
+   "shape": [
+    1024,
+    3584
+   ],
+   "matches_export": true
+  },
+  "model.language_model.layers.23.mlp.gate_proj.weight": {
+   "base_sha256": "57e66633224761ad56da16da7cc0f476e42decd9df64a64ded4a343b8e87487b",
+   "edited_sha256": "cd759ae8a60c6cc2b5b7cbf397a03968464589f5490e11002028c6953d5c8429",
+   "changed_entries": 2047,
+   "shape": [
+    3584,
+    1024
+   ],
+   "matches_export": true
+  },
+  "model.language_model.layers.23.mlp.up_proj.weight": {
+   "base_sha256": "cb3830f5121ca0cb4b974b7904a382f9555975c2e84c71863e868e434e86aa6f",
+   "edited_sha256": "b40609ff4db37fa3f97d3eeb8a7ffd1ab75bb2dc01eac36c2afa0ef9dcaad196",
+   "changed_entries": 2047,
+   "shape": [
+    3584,
+    1024
+   ],
+   "matches_export": true
+  }
+ },
+ "total_changed_entries": 6140,
+ "fraction_of_text_params": 8.16062856000111e-06,
+ "edited_file_sha256": "43cfd8601d13383984c76b14fb679d889d06c1c5e5bb7aeca96834e60302e986",
+ "verified_against_campaign_export": true,
+ "description": "g23v3 with the abstain column replaced by u_conv (least squares: -1 on <tool_call>, 0 on the other named tokens), a1 = 0.5, route neuron off (a2 = 0): plain-English abstention.",
+ "equation": "gate[J1]=k*(s-lam*c-lam2*c2), up[J1]=k*s, down[:,J1]=a1*u_conv  (u_conv: least squares, -1 on <tool_call>, 0 elsewhere); gate[J2]=k*(s-lam*c-lam2*c2), up[J2]=kr*r, down[:,J2]=a2*(u_NE-u_NO)",
+ "source": "qwen-6 variants/g23v3_conv (scripts/make_conversational_variant.py, conversational_check.py)",
+ "format": "patches/<label>.vectors.npz: key \"row|<tensor>|<j>\" replaces row j (gate/up: what the neuron reads), \"col|<tensor>|<j>\" replaces column j (down: what it writes); float32, rounded to BF16 (round-to-nearest-even) when applied"
+}

@@ -1,0 +1,98 @@
+{
+ "label": "g23v4_conv",
+ "mode": "conversational",
+ "base_model": "Qwen/Qwen3.5-0.8B",
+ "base_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+ "base_file_sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696",
+ "layers": [
+  22,
+  23
+ ],
+ "neurons": {
+  "J0_L22": 2525,
+  "J1_L23": 3468,
+  "J2_L23": 3421,
+  "J3_L23": 2331
+ },
+ "params": {
+  "k": 2.0,
+  "kr": 1.0,
+  "a1": 0.5,
+  "a2": 0.0,
+  "a_g": 0.5,
+  "theta1": 11.7,
+  "k1": 4.0,
+  "b": 1.0,
+  "lam": 0.3,
+  "lam2": 0.5,
+  "theta3": 2.0,
+  "k3": 2.0,
+  "a3": 0.1,
+  "rho": 0.0,
+  "form": "quad"
+ },
+ "tensors": {
+  "model.language_model.layers.22.mlp.down_proj.weight": {
+   "base_sha256": "198e2fabef4ee48484d9c952018e465376acea23511f126b7edceef8a66f50a1",
+   "edited_sha256": "6d3d63a78c4d7350e9004b5b196feee7f8a80d19ee2ef7e0633db03012b107ff",
+   "changed_entries": 1023,
+   "shape": [
+    1024,
+    3584
+   ]
+  },
+  "model.language_model.layers.22.mlp.gate_proj.weight": {
+   "base_sha256": "dde22f42876bc15cae8778a29a573f150d4d042a09af00b8d1abe94d6207d93d",
+   "edited_sha256": "925e2ff396320ec975ec6ab4dc1212a0db3450a750b6adf2db89db176b7cfcd9",
+   "changed_entries": 1024,
+   "shape": [
+    3584,
+    1024
+   ]
+  },
+  "model.language_model.layers.22.mlp.up_proj.weight": {
+   "base_sha256": "84d1a8b4bf6a468ed531ce11ef7a13cd7e332716ca3d1d19c16714d4b8ad9b73",
+   "edited_sha256": "7be1f4f83a29cac416b22ca93e6abcb98f397ceb1fc499315780947698c6f95f",
+   "changed_entries": 1024,
+   "shape": [
+    3584,
+    1024
+   ]
+  },
+  "model.language_model.layers.23.mlp.down_proj.weight": {
+   "base_sha256": "1866748ce87d32cfee34891d2fa393fdfeee77447935f6a31d036e4b80332a48",
+   "edited_sha256": "dcd0c79132d7d9eb77200dc819d7225faff33f4efe81f0d0b87193fff2191969",
+   "changed_entries": 3069,
+   "shape": [
+    1024,
+    3584
+   ]
+  },
+  "model.language_model.layers.23.mlp.gate_proj.weight": {
+   "base_sha256": "57e66633224761ad56da16da7cc0f476e42decd9df64a64ded4a343b8e87487b",
+   "edited_sha256": "d1c0f8b4eca29ebb79b0b17f571d0d85c668f2c6781177657e5252d3741622a0",
+   "changed_entries": 3069,
+   "shape": [
+    3584,
+    1024
+   ]
+  },
+  "model.language_model.layers.23.mlp.up_proj.weight": {
+   "base_sha256": "cb3830f5121ca0cb4b974b7904a382f9555975c2e84c71863e868e434e86aa6f",
+   "edited_sha256": "644421f1e29cb82473a559cb898e1e97d5415a57b2ced88eb812ef932d4bdf20",
+   "changed_entries": 3070,
+   "shape": [
+    3584,
+    1024
+   ]
+  }
+ },
+ "total_changed_entries": 12279,
+ "fraction_of_text_params": 1.631992802740287e-05,
+ "edited_file_sha256": null,
+ "verified_against_campaign_export": false,
+ "description": "g23v4 with every output column replaced by the conversational readout u_conv: the circuit still detects abstention and unresolved alternatives, but only removes <tool_call>, so the model answers or asks in plain English.",
+ "equation": "g23v4 with down[:,J1] = 0.5 u_conv, down[:,J2] = 0, down[:,J3] = a3_conv u_conv",
+ "source": "this repository (scripts/make_patches.py); spot-checked by generation in demo_cli.py, not a campaign artifact",
+ "format": "patches/<label>.vectors.npz: key \"row|<tensor>|<j>\" replaces row j (gate/up: what the neuron reads), \"col|<tensor>|<j>\" replaces column j (down: what it writes); float32, rounded to BF16 (round-to-nearest-even) when applied"
+}

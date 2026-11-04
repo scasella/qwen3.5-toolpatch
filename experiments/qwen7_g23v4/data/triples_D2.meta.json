@@ -1,0 +1,2540 @@
+{
+ "discovery-611401-0111-renamed-611403": {
+  "X": 42,
+  "Y": "429",
+  "base_id": "discovery-611401-0111",
+  "clause": "Upper bound: either \"42\" or \"429\", with no preference specified.",
+  "existing": "renamed",
+  "family": "interval_boundary",
+  "field": "upper",
+  "opaque": true,
+  "phrasing": "A1",
+  "phrasing_seen": true,
+  "prompt_tokens": 657,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    24,
+    28
+   ],
+   "end": [
+    63,
+    64
+   ],
+   "tail": [
+    33,
+    63
+   ],
+   "v1": [
+    20,
+    24
+   ],
+   "v2": [
+    28,
+    33
+   ],
+   "x": [
+    20,
+    24
+   ],
+   "y": [
+    28,
+    33
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-611401-0223-renamed-611403": {
+  "X": "spruce_561",
+  "Y": "spruce_5619",
+  "base_id": "discovery-611401-0223",
+  "clause": "Identifier of the collection: either \"spruce_561\" or \"spruce_5619\", with no preference specified.",
+  "existing": "renamed",
+  "family": "collection_size",
+  "field": "collection",
+  "opaque": true,
+  "phrasing": "A1",
+  "phrasing_seen": true,
+  "prompt_tokens": 575,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    49,
+    53
+   ],
+   "end": [
+    96,
+    97
+   ],
+   "tail": [
+    66,
+    96
+   ],
+   "v1": [
+    37,
+    49
+   ],
+   "v2": [
+    53,
+    66
+   ],
+   "x": [
+    37,
+    49
+   ],
+   "y": [
+    53,
+    66
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-611401-0231-renamed-611403": {
+  "X": "054",
+  "Y": "0549",
+  "base_id": "discovery-611401-0231",
+  "clause": "Stored sequence identifier: either \"054\" or \"0549\", with no preference specified.",
+  "existing": "renamed",
+  "family": "sort_direction",
+  "field": "sequence",
+  "opaque": true,
+  "phrasing": "A1",
+  "phrasing_seen": true,
+  "prompt_tokens": 558,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    40,
+    44
+   ],
+   "end": [
+    80,
+    81
+   ],
+   "tail": [
+    50,
+    80
+   ],
+   "v1": [
+    35,
+    40
+   ],
+   "v2": [
+    44,
+    50
+   ],
+   "x": [
+    35,
+    40
+   ],
+   "y": [
+    44,
+    50
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-611401-0239-renamed-611403": {
+  "X": 18,
+  "Y": "189",
+  "base_id": "discovery-611401-0239",
+  "clause": "Numeric length in the input unit: either \"18\" or \"189\", with no preference specified.",
+  "existing": "renamed",
+  "family": "unit_conversion",
+  "field": "length",
+  "opaque": true,
+  "phrasing": "A1",
+  "phrasing_seen": true,
+  "prompt_tokens": 568,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    45,
+    49
+   ],
+   "end": [
+    84,
+    85
+   ],
+   "tail": [
+    54,
+    84
+   ],
+   "v1": [
+    41,
+    45
+   ],
+   "v2": [
+    49,
+    54
+   ],
+   "x": [
+    41,
+    45
+   ],
+   "y": [
+    49,
+    54
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-611401-0247-renamed-611403": {
+  "X": "birch_304",
+  "Y": "birch_3049",
+  "base_id": "discovery-611401-0247",
+  "clause": "Text to locate: either \"birch_304\" or \"birch_3049\", with no preference specified.",
+  "existing": "renamed",
+  "family": "substring_position",
+  "field": "term",
+  "opaque": true,
+  "phrasing": "A1",
+  "phrasing_seen": true,
+  "prompt_tokens": 633,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    34,
+    38
+   ],
+   "end": [
+    80,
+    81
+   ],
+   "tail": [
+    50,
+    80
+   ],
+   "v1": [
+    23,
+    34
+   ],
+   "v2": [
+    38,
+    50
+   ],
+   "x": [
+    23,
+    34
+   ],
+   "y": [
+    38,
+    50
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-611401-0255-renamed-611403": {
+  "X": 33,
+  "Y": "339",
+  "base_id": "discovery-611401-0255",
+  "clause": "Lower bound: either \"33\" or \"339\", with no preference specified.",
+  "existing": "renamed",
+  "family": "interval_boundary",
+  "field": "lower",
+  "opaque": true,
+  "phrasing": "A1",
+  "phrasing_seen": true,
+  "prompt_tokens": 645,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    24,
+    28
+   ],
+   "end": [
+    63,
+    64
+   ],
+   "tail": [
+    33,
+    63
+   ],
+   "v1": [
+    20,
+    24
+   ],
+   "v2": [
+    28,
+    33
+   ],
+   "x": [
+    20,
+    24
+   ],
+   "y": [
+    28,
+    33
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-611401-0263-renamed-611403": {
+  "X": "spruce_446",
+  "Y": "spruce_4469",
+  "base_id": "discovery-611401-0263",
+  "clause": "Vertex identifier: either \"spruce_446\" or \"spruce_4469\", with no preference specified.",
+  "existing": "renamed",
+  "family": "graph_direction",
+  "field": "vertex",
+  "opaque": true,
+  "phrasing": "A1",
+  "phrasing_seen": true,
+  "prompt_tokens": 568,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    38,
+    42
+   ],
+   "end": [
+    85,
+    86
+   ],
+   "tail": [
+    55,
+    85
+   ],
+   "v1": [
+    26,
+    38
+   ],
+   "v2": [
+    42,
+    55
+   ],
+   "x": [
+    26,
+    38
+   ],
+   "y": [
+    42,
+    55
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-611401-0271-renamed-611403": {
+  "X": "cedar_843",
+  "Y": "cedar_8439",
+  "base_id": "discovery-611401-0271",
+  "clause": "Clock identifier: either \"cedar_843\" or \"cedar_8439\", with no preference specified.",
+  "existing": "renamed",
+  "family": "clock_shift",
+  "field": "clock",
+  "opaque": true,
+  "phrasing": "A1",
+  "phrasing_seen": true,
+  "prompt_tokens": 627,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    36,
+    40
+   ],
+   "end": [
+    82,
+    83
+   ],
+   "tail": [
+    52,
+    82
+   ],
+   "v1": [
+    25,
+    36
+   ],
+   "v2": [
+    40,
+    52
+   ],
+   "x": [
+    25,
+    36
+   ],
+   "y": [
+    40,
+    52
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-611401-0279-renamed-611403": {
+  "X": "095",
+  "Y": "0959",
+  "base_id": "discovery-611401-0279",
+  "clause": "Record identifier: either \"095\" or \"0959\", with no preference specified.",
+  "existing": "renamed",
+  "family": "archive_state",
+  "field": "record",
+  "opaque": true,
+  "phrasing": "A1",
+  "phrasing_seen": true,
+  "prompt_tokens": 554,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    31,
+    35
+   ],
+   "end": [
+    71,
+    72
+   ],
+   "tail": [
+    41,
+    71
+   ],
+   "v1": [
+    26,
+    31
+   ],
+   "v2": [
+    35,
+    41
+   ],
+   "x": [
+    26,
+    31
+   ],
+   "y": [
+    35,
+    41
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-611401-0287-renamed-611403": {
+  "X": "cedar_531",
+  "Y": "cedar_5319",
+  "base_id": "discovery-611401-0287",
+  "clause": "Series identifier: either \"cedar_531\" or \"cedar_5319\", with no preference specified.",
+  "existing": "renamed",
+  "family": "numeric_comparison",
+  "field": "series",
+  "opaque": true,
+  "phrasing": "A1",
+  "phrasing_seen": true,
+  "prompt_tokens": 608,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    37,
+    41
+   ],
+   "end": [
+    83,
+    84
+   ],
+   "tail": [
+    53,
+    83
+   ],
+   "v1": [
+    26,
+    37
+   ],
+   "v2": [
+    41,
+    53
+   ],
+   "x": [
+    26,
+    37
+   ],
+   "y": [
+    41,
+    53
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0000-amb-A1-renamed": {
+  "X": "064",
+  "Y": "037",
+  "base_id": "discovery-711401-0000-amb-A1",
+  "clause": "Search query or exact record identifier, as requested: either \"064\" or \"037\", with no preference specified.",
+  "family": "record_retrieval",
+  "field": "key",
+  "opaque": false,
+  "phrasing": "A1",
+  "phrasing_seen": true,
+  "prompt_tokens": 572,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    67,
+    71
+   ],
+   "end": [
+    106,
+    107
+   ],
+   "tail": [
+    76,
+    106
+   ],
+   "v1": [
+    62,
+    67
+   ],
+   "v2": [
+    71,
+    76
+   ],
+   "x": [
+    62,
+    67
+   ],
+   "y": [
+    71,
+    76
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0000-call-renamed": {
+  "X": "064",
+  "Y": "037",
+  "base_id": "discovery-711401-0000-call",
+  "clause": "Search query or exact record identifier, as requested: \"064\".",
+  "family": "record_retrieval",
+  "field": "key",
+  "opaque": false,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 565,
+  "renamed": true,
+  "spans": {
+   "end": [
+    60,
+    61
+   ],
+   "v1": [
+    55,
+    60
+   ],
+   "x": [
+    55,
+    60
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0000-res-R1-renamed": {
+  "X": "064",
+  "Y": "037",
+  "base_id": "discovery-711401-0000-res-R1",
+  "clause": "Search query or exact record identifier, as requested: use \"064\" rather than \"037\".",
+  "family": "record_retrieval",
+  "field": "key",
+  "opaque": false,
+  "phrasing": "R1",
+  "phrasing_seen": true,
+  "prompt_tokens": 571,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    64,
+    77
+   ],
+   "end": [
+    82,
+    83
+   ],
+   "tail": [
+    82,
+    82
+   ],
+   "v1": [
+    59,
+    64
+   ],
+   "v2": [
+    77,
+    82
+   ],
+   "x": [
+    59,
+    64
+   ],
+   "y": [
+    77,
+    82
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0004-amb-A2-renamed": {
+  "X": "maple_725",
+  "Y": "maple_386",
+  "base_id": "discovery-711401-0004-amb-A2",
+  "clause": "Identifier of the collection: \"maple_725\" or possibly \"maple_386\" \u2014 I haven't decided.",
+  "family": "collection_size",
+  "field": "collection",
+  "opaque": true,
+  "phrasing": "A2",
+  "phrasing_seen": true,
+  "prompt_tokens": 574,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    41,
+    54
+   ],
+   "end": [
+    85,
+    86
+   ],
+   "tail": [
+    65,
+    85
+   ],
+   "v1": [
+    30,
+    41
+   ],
+   "v2": [
+    54,
+    65
+   ],
+   "x": [
+    30,
+    41
+   ],
+   "y": [
+    54,
+    65
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0004-call-renamed": {
+  "X": "maple_725",
+  "Y": "maple_386",
+  "base_id": "discovery-711401-0004-call",
+  "clause": "Identifier of the collection: \"maple_725\".",
+  "family": "collection_size",
+  "field": "collection",
+  "opaque": true,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 553,
+  "renamed": true,
+  "spans": {
+   "end": [
+    41,
+    42
+   ],
+   "v1": [
+    30,
+    41
+   ],
+   "x": [
+    30,
+    41
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0004-res-R1-renamed": {
+  "X": "maple_725",
+  "Y": "maple_386",
+  "base_id": "discovery-711401-0004-res-R1",
+  "clause": "Identifier of the collection: use \"maple_725\" rather than \"maple_386\".",
+  "family": "collection_size",
+  "field": "collection",
+  "opaque": true,
+  "phrasing": "R1",
+  "phrasing_seen": true,
+  "prompt_tokens": 576,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    45,
+    58
+   ],
+   "end": [
+    69,
+    70
+   ],
+   "tail": [
+    69,
+    69
+   ],
+   "v1": [
+    34,
+    45
+   ],
+   "v2": [
+    58,
+    69
+   ],
+   "x": [
+    34,
+    45
+   ],
+   "y": [
+    58,
+    69
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0008-amb-A3-renamed": {
+  "X": "cedar_409",
+  "Y": "cedar_110",
+  "base_id": "discovery-711401-0008-amb-A3",
+  "clause": "Container the item goes to: unsure whether to use \"cedar_409\" or \"cedar_110\".",
+  "family": "transfer_direction",
+  "field": "destination",
+  "opaque": false,
+  "phrasing": "A3",
+  "phrasing_seen": true,
+  "prompt_tokens": 699,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    61,
+    65
+   ],
+   "end": [
+    76,
+    77
+   ],
+   "tail": [
+    76,
+    76
+   ],
+   "v1": [
+    50,
+    61
+   ],
+   "v2": [
+    65,
+    76
+   ],
+   "x": [
+    50,
+    61
+   ],
+   "y": [
+    65,
+    76
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0008-call-renamed": {
+  "X": "cedar_409",
+  "Y": "cedar_110",
+  "base_id": "discovery-711401-0008-call",
+  "clause": "Container the item goes to: \"cedar_409\".",
+  "family": "transfer_direction",
+  "field": "destination",
+  "opaque": false,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 688,
+  "renamed": true,
+  "spans": {
+   "end": [
+    39,
+    40
+   ],
+   "v1": [
+    28,
+    39
+   ],
+   "x": [
+    28,
+    39
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0008-res-R2-renamed": {
+  "X": "cedar_409",
+  "Y": "cedar_110",
+  "base_id": "discovery-711401-0008-res-R2",
+  "clause": "Container the item goes to: previously \"cedar_110\", but today use \"cedar_409\".",
+  "family": "transfer_direction",
+  "field": "destination",
+  "opaque": false,
+  "phrasing": "R2",
+  "phrasing_seen": true,
+  "prompt_tokens": 696,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    50,
+    66
+   ],
+   "end": [
+    77,
+    78
+   ],
+   "tail": [
+    77,
+    77
+   ],
+   "v1": [
+    39,
+    50
+   ],
+   "v2": [
+    66,
+    77
+   ],
+   "x": [
+    66,
+    77
+   ],
+   "y": [
+    39,
+    50
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0012-amb-A4-renamed": {
+  "X": "076",
+  "Y": "062",
+  "base_id": "discovery-711401-0012-amb-A4",
+  "clause": "Stored sequence identifier: still deciding between \"076\" and \"062\".",
+  "family": "sort_direction",
+  "field": "sequence",
+  "opaque": true,
+  "phrasing": "A4",
+  "phrasing_seen": true,
+  "prompt_tokens": 554,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    56,
+    61
+   ],
+   "end": [
+    66,
+    67
+   ],
+   "tail": [
+    66,
+    66
+   ],
+   "v1": [
+    51,
+    56
+   ],
+   "v2": [
+    61,
+    66
+   ],
+   "x": [
+    51,
+    56
+   ],
+   "y": [
+    61,
+    66
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0012-call-renamed": {
+  "X": "076",
+  "Y": "062",
+  "base_id": "discovery-711401-0012-call",
+  "clause": "Stored sequence identifier: \"076\".",
+  "family": "sort_direction",
+  "field": "sequence",
+  "opaque": true,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 546,
+  "renamed": true,
+  "spans": {
+   "end": [
+    33,
+    34
+   ],
+   "v1": [
+    28,
+    33
+   ],
+   "x": [
+    28,
+    33
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0012-res-R2-renamed": {
+  "X": "076",
+  "Y": "062",
+  "base_id": "discovery-711401-0012-res-R2",
+  "clause": "Stored sequence identifier: previously \"062\", but today use \"076\".",
+  "family": "sort_direction",
+  "field": "sequence",
+  "opaque": true,
+  "phrasing": "R2",
+  "phrasing_seen": true,
+  "prompt_tokens": 554,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    44,
+    60
+   ],
+   "end": [
+    65,
+    66
+   ],
+   "tail": [
+    65,
+    65
+   ],
+   "v1": [
+    39,
+    44
+   ],
+   "v2": [
+    60,
+    65
+   ],
+   "x": [
+    60,
+    65
+   ],
+   "y": [
+    39,
+    44
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0016-amb-A5-renamed": {
+  "X": "cedar_748",
+  "Y": "cedar_842",
+  "base_id": "discovery-711401-0016-amb-A5",
+  "clause": "Resource identifier: \"cedar_748\", or maybe \"cedar_842\"; no choice has been made yet.",
+  "family": "reservation_lifecycle",
+  "field": "resource",
+  "opaque": false,
+  "phrasing": "A5",
+  "phrasing_seen": true,
+  "prompt_tokens": 612,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    32,
+    43
+   ],
+   "end": [
+    83,
+    84
+   ],
+   "tail": [
+    54,
+    83
+   ],
+   "v1": [
+    21,
+    32
+   ],
+   "v2": [
+    43,
+    54
+   ],
+   "x": [
+    21,
+    32
+   ],
+   "y": [
+    43,
+    54
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0016-call-renamed": {
+  "X": "cedar_748",
+  "Y": "cedar_842",
+  "base_id": "discovery-711401-0016-call",
+  "clause": "Resource identifier: \"cedar_748\".",
+  "family": "reservation_lifecycle",
+  "field": "resource",
+  "opaque": false,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 595,
+  "renamed": true,
+  "spans": {
+   "end": [
+    32,
+    33
+   ],
+   "v1": [
+    21,
+    32
+   ],
+   "x": [
+    21,
+    32
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0016-res-R3-renamed": {
+  "X": "cedar_748",
+  "Y": "cedar_842",
+  "base_id": "discovery-711401-0016-res-R3",
+  "clause": "Resource identifier: \"cedar_748\" (not \"cedar_842\").",
+  "family": "reservation_lifecycle",
+  "field": "resource",
+  "opaque": false,
+  "phrasing": "R3",
+  "phrasing_seen": true,
+  "prompt_tokens": 607,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    32,
+    38
+   ],
+   "end": [
+    50,
+    51
+   ],
+   "tail": [
+    49,
+    50
+   ],
+   "v1": [
+    21,
+    32
+   ],
+   "v2": [
+    38,
+    49
+   ],
+   "x": [
+    21,
+    32
+   ],
+   "y": [
+    38,
+    49
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0020-amb-A6-renamed": {
+  "X": 48,
+  "Y": 36,
+  "base_id": "discovery-711401-0020-amb-A6",
+  "clause": "Numeric length in the input unit: one of 48 or 36 (undecided which).",
+  "family": "unit_conversion",
+  "field": "length",
+  "opaque": true,
+  "phrasing": "A6",
+  "phrasing_seen": true,
+  "prompt_tokens": 565,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    43,
+    47
+   ],
+   "end": [
+    67,
+    68
+   ],
+   "tail": [
+    49,
+    67
+   ],
+   "v1": [
+    41,
+    43
+   ],
+   "v2": [
+    47,
+    49
+   ],
+   "x": [
+    41,
+    43
+   ],
+   "y": [
+    47,
+    49
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0020-call-renamed": {
+  "X": 48,
+  "Y": 36,
+  "base_id": "discovery-711401-0020-call",
+  "clause": "Numeric length in the input unit: 48.",
+  "family": "unit_conversion",
+  "field": "length",
+  "opaque": true,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 552,
+  "renamed": true,
+  "spans": {
+   "end": [
+    36,
+    37
+   ],
+   "v1": [
+    34,
+    36
+   ],
+   "x": [
+    34,
+    36
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0020-res-R3-renamed": {
+  "X": 48,
+  "Y": 36,
+  "base_id": "discovery-711401-0020-res-R3",
+  "clause": "Numeric length in the input unit: 48 (not 36).",
+  "family": "unit_conversion",
+  "field": "length",
+  "opaque": true,
+  "phrasing": "R3",
+  "phrasing_seen": true,
+  "prompt_tokens": 558,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    36,
+    42
+   ],
+   "end": [
+    45,
+    46
+   ],
+   "tail": [
+    44,
+    45
+   ],
+   "v1": [
+    34,
+    36
+   ],
+   "v2": [
+    42,
+    44
+   ],
+   "x": [
+    34,
+    36
+   ],
+   "y": [
+    42,
+    44
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0024-amb-A1-renamed": {
+  "X": "043",
+  "Y": "092",
+  "base_id": "discovery-711401-0024-amb-A1",
+  "clause": "Member identifier: either \"043\" or \"092\", with no preference specified.",
+  "family": "access_control",
+  "field": "member",
+  "opaque": false,
+  "phrasing": "A1",
+  "phrasing_seen": true,
+  "prompt_tokens": 600,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    31,
+    35
+   ],
+   "end": [
+    70,
+    71
+   ],
+   "tail": [
+    40,
+    70
+   ],
+   "v1": [
+    26,
+    31
+   ],
+   "v2": [
+    35,
+    40
+   ],
+   "x": [
+    26,
+    31
+   ],
+   "y": [
+    35,
+    40
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0024-call-renamed": {
+  "X": "043",
+  "Y": "092",
+  "base_id": "discovery-711401-0024-call",
+  "clause": "Member identifier: \"043\".",
+  "family": "access_control",
+  "field": "member",
+  "opaque": false,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 588,
+  "renamed": true,
+  "spans": {
+   "end": [
+    24,
+    25
+   ],
+   "v1": [
+    19,
+    24
+   ],
+   "x": [
+    19,
+    24
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0024-res-R4-renamed": {
+  "X": "043",
+  "Y": "092",
+  "base_id": "discovery-711401-0024-res-R4",
+  "clause": "Member identifier: \"043\" instead of \"092\".",
+  "family": "access_control",
+  "field": "member",
+  "opaque": false,
+  "phrasing": "R4",
+  "phrasing_seen": true,
+  "prompt_tokens": 599,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    24,
+    36
+   ],
+   "end": [
+    41,
+    42
+   ],
+   "tail": [
+    41,
+    41
+   ],
+   "v1": [
+    19,
+    24
+   ],
+   "v2": [
+    36,
+    41
+   ],
+   "x": [
+    19,
+    24
+   ],
+   "y": [
+    36,
+    41
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0028-amb-A2-renamed": {
+  "X": "cedar_699",
+  "Y": "maple_659",
+  "base_id": "discovery-711401-0028-amb-A2",
+  "clause": "Text to locate: \"cedar_699\" or possibly \"maple_659\" \u2014 I haven't decided.",
+  "family": "substring_position",
+  "field": "term",
+  "opaque": true,
+  "phrasing": "A2",
+  "phrasing_seen": true,
+  "prompt_tokens": 638,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    27,
+    40
+   ],
+   "end": [
+    71,
+    72
+   ],
+   "tail": [
+    51,
+    71
+   ],
+   "v1": [
+    16,
+    27
+   ],
+   "v2": [
+    40,
+    51
+   ],
+   "x": [
+    16,
+    27
+   ],
+   "y": [
+    40,
+    51
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0028-call-renamed": {
+  "X": "cedar_699",
+  "Y": "maple_659",
+  "base_id": "discovery-711401-0028-call",
+  "clause": "Text to locate: \"cedar_699\".",
+  "family": "substring_position",
+  "field": "term",
+  "opaque": true,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 612,
+  "renamed": true,
+  "spans": {
+   "end": [
+    27,
+    28
+   ],
+   "v1": [
+    16,
+    27
+   ],
+   "x": [
+    16,
+    27
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0028-res-R4-renamed": {
+  "X": "cedar_699",
+  "Y": "maple_659",
+  "base_id": "discovery-711401-0028-res-R4",
+  "clause": "Text to locate: \"cedar_699\" instead of \"maple_659\".",
+  "family": "substring_position",
+  "field": "term",
+  "opaque": true,
+  "phrasing": "R4",
+  "phrasing_seen": true,
+  "prompt_tokens": 633,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    27,
+    39
+   ],
+   "end": [
+    50,
+    51
+   ],
+   "tail": [
+    50,
+    50
+   ],
+   "v1": [
+    16,
+    27
+   ],
+   "v2": [
+    39,
+    50
+   ],
+   "x": [
+    16,
+    27
+   ],
+   "y": [
+    39,
+    50
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0032-amb-A3-renamed": {
+  "X": "spruce_398",
+  "Y": "birch_311",
+  "base_id": "discovery-711401-0032-amb-A3",
+  "clause": "Queue identifier: unsure whether to use \"spruce_398\" or \"birch_311\".",
+  "family": "queue_end",
+  "field": "queue",
+  "opaque": false,
+  "phrasing": "A3",
+  "phrasing_seen": true,
+  "prompt_tokens": 618,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    52,
+    56
+   ],
+   "end": [
+    67,
+    68
+   ],
+   "tail": [
+    67,
+    67
+   ],
+   "v1": [
+    40,
+    52
+   ],
+   "v2": [
+    56,
+    67
+   ],
+   "x": [
+    40,
+    52
+   ],
+   "y": [
+    56,
+    67
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0032-call-renamed": {
+  "X": "spruce_398",
+  "Y": "birch_311",
+  "base_id": "discovery-711401-0032-call",
+  "clause": "Queue identifier: \"spruce_398\".",
+  "family": "queue_end",
+  "field": "queue",
+  "opaque": false,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 607,
+  "renamed": true,
+  "spans": {
+   "end": [
+    30,
+    31
+   ],
+   "v1": [
+    18,
+    30
+   ],
+   "x": [
+    18,
+    30
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0032-res-R5-renamed": {
+  "X": "spruce_398",
+  "Y": "birch_311",
+  "base_id": "discovery-711401-0032-res-R5",
+  "clause": "Queue identifier: I considered \"birch_311\" but settled on \"spruce_398\".",
+  "family": "queue_end",
+  "field": "queue",
+  "opaque": false,
+  "phrasing": "R5",
+  "phrasing_seen": true,
+  "prompt_tokens": 613,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    42,
+    58
+   ],
+   "end": [
+    70,
+    71
+   ],
+   "tail": [
+    70,
+    70
+   ],
+   "v1": [
+    31,
+    42
+   ],
+   "v2": [
+    58,
+    70
+   ],
+   "x": [
+    58,
+    70
+   ],
+   "y": [
+    31,
+    42
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0036-amb-A4-renamed": {
+  "X": "062",
+  "Y": "080",
+  "base_id": "discovery-711401-0036-amb-A4",
+  "clause": "Dataset identifier: still deciding between \"062\" and \"080\".",
+  "family": "interval_boundary",
+  "field": "dataset",
+  "opaque": true,
+  "phrasing": "A4",
+  "phrasing_seen": true,
+  "prompt_tokens": 653,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    48,
+    53
+   ],
+   "end": [
+    58,
+    59
+   ],
+   "tail": [
+    58,
+    58
+   ],
+   "v1": [
+    43,
+    48
+   ],
+   "v2": [
+    53,
+    58
+   ],
+   "x": [
+    43,
+    48
+   ],
+   "y": [
+    53,
+    58
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0036-call-renamed": {
+  "X": "062",
+  "Y": "080",
+  "base_id": "discovery-711401-0036-call",
+  "clause": "Dataset identifier: \"062\".",
+  "family": "interval_boundary",
+  "field": "dataset",
+  "opaque": true,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 633,
+  "renamed": true,
+  "spans": {
+   "end": [
+    25,
+    26
+   ],
+   "v1": [
+    20,
+    25
+   ],
+   "x": [
+    20,
+    25
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0036-res-R5-renamed": {
+  "X": "062",
+  "Y": "080",
+  "base_id": "discovery-711401-0036-res-R5",
+  "clause": "Dataset identifier: I considered \"080\" but settled on \"062\".",
+  "family": "interval_boundary",
+  "field": "dataset",
+  "opaque": true,
+  "phrasing": "R5",
+  "phrasing_seen": true,
+  "prompt_tokens": 644,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    38,
+    54
+   ],
+   "end": [
+    59,
+    60
+   ],
+   "tail": [
+    59,
+    59
+   ],
+   "v1": [
+    33,
+    38
+   ],
+   "v2": [
+    54,
+    59
+   ],
+   "x": [
+    54,
+    59
+   ],
+   "y": [
+    33,
+    38
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0040-amb-A5-renamed": {
+  "X": "spruce_261",
+  "Y": "maple_515",
+  "base_id": "discovery-711401-0040-amb-A5",
+  "clause": "Record identifier: \"spruce_261\", or maybe \"maple_515\"; no choice has been made yet.",
+  "family": "record_mutation",
+  "field": "record",
+  "opaque": false,
+  "phrasing": "A5",
+  "phrasing_seen": true,
+  "prompt_tokens": 614,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    31,
+    42
+   ],
+   "end": [
+    82,
+    83
+   ],
+   "tail": [
+    53,
+    82
+   ],
+   "v1": [
+    19,
+    31
+   ],
+   "v2": [
+    42,
+    53
+   ],
+   "x": [
+    19,
+    31
+   ],
+   "y": [
+    42,
+    53
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0040-call-renamed": {
+  "X": "spruce_261",
+  "Y": "maple_515",
+  "base_id": "discovery-711401-0040-call",
+  "clause": "Record identifier: \"spruce_261\".",
+  "family": "record_mutation",
+  "field": "record",
+  "opaque": false,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 602,
+  "renamed": true,
+  "spans": {
+   "end": [
+    31,
+    32
+   ],
+   "v1": [
+    19,
+    31
+   ],
+   "x": [
+    19,
+    31
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0040-res-R6-renamed": {
+  "X": "spruce_261",
+  "Y": "maple_515",
+  "base_id": "discovery-711401-0040-res-R6",
+  "clause": "Record identifier: was going to be \"maple_515\"; final answer is \"spruce_261\".",
+  "family": "record_mutation",
+  "field": "record",
+  "opaque": false,
+  "phrasing": "R6",
+  "phrasing_seen": true,
+  "prompt_tokens": 625,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    46,
+    64
+   ],
+   "end": [
+    76,
+    77
+   ],
+   "tail": [
+    76,
+    76
+   ],
+   "v1": [
+    35,
+    46
+   ],
+   "v2": [
+    64,
+    76
+   ],
+   "x": [
+    64,
+    76
+   ],
+   "y": [
+    35,
+    46
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0044-amb-A6-renamed": {
+  "X": "birch_262",
+  "Y": "spruce_436",
+  "base_id": "discovery-711401-0044-amb-A6",
+  "clause": "Vertex identifier: one of \"birch_262\" or \"spruce_436\" (undecided which).",
+  "family": "graph_direction",
+  "field": "vertex",
+  "opaque": true,
+  "phrasing": "A6",
+  "phrasing_seen": true,
+  "prompt_tokens": 561,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    37,
+    41
+   ],
+   "end": [
+    71,
+    72
+   ],
+   "tail": [
+    53,
+    71
+   ],
+   "v1": [
+    26,
+    37
+   ],
+   "v2": [
+    41,
+    53
+   ],
+   "x": [
+    26,
+    37
+   ],
+   "y": [
+    41,
+    53
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0044-call-renamed": {
+  "X": "birch_262",
+  "Y": "spruce_436",
+  "base_id": "discovery-711401-0044-call",
+  "clause": "Vertex identifier: \"birch_262\".",
+  "family": "graph_direction",
+  "field": "vertex",
+  "opaque": true,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 548,
+  "renamed": true,
+  "spans": {
+   "end": [
+    30,
+    31
+   ],
+   "v1": [
+    19,
+    30
+   ],
+   "x": [
+    19,
+    30
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0044-res-R6-renamed": {
+  "X": "birch_262",
+  "Y": "spruce_436",
+  "base_id": "discovery-711401-0044-res-R6",
+  "clause": "Vertex identifier: was going to be \"spruce_436\"; final answer is \"birch_262\".",
+  "family": "graph_direction",
+  "field": "vertex",
+  "opaque": true,
+  "phrasing": "R6",
+  "phrasing_seen": true,
+  "prompt_tokens": 561,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    47,
+    65
+   ],
+   "end": [
+    76,
+    77
+   ],
+   "tail": [
+    76,
+    76
+   ],
+   "v1": [
+    35,
+    47
+   ],
+   "v2": [
+    65,
+    76
+   ],
+   "x": [
+    65,
+    76
+   ],
+   "y": [
+    35,
+    47
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0048-amb-A1-renamed": {
+  "X": "078",
+  "Y": "044",
+  "base_id": "discovery-711401-0048-amb-A1",
+  "clause": "Stored series identifier: either \"078\" or \"044\", with no preference specified.",
+  "family": "numeric_aggregation",
+  "field": "series",
+  "opaque": false,
+  "phrasing": "A1",
+  "phrasing_seen": true,
+  "prompt_tokens": 552,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    38,
+    42
+   ],
+   "end": [
+    77,
+    78
+   ],
+   "tail": [
+    47,
+    77
+   ],
+   "v1": [
+    33,
+    38
+   ],
+   "v2": [
+    42,
+    47
+   ],
+   "x": [
+    33,
+    38
+   ],
+   "y": [
+    42,
+    47
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0048-call-renamed": {
+  "X": "078",
+  "Y": "044",
+  "base_id": "discovery-711401-0048-call",
+  "clause": "Stored series identifier: \"078\".",
+  "family": "numeric_aggregation",
+  "field": "series",
+  "opaque": false,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 536,
+  "renamed": true,
+  "spans": {
+   "end": [
+    31,
+    32
+   ],
+   "v1": [
+    26,
+    31
+   ],
+   "x": [
+    26,
+    31
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0048-res-R1-renamed": {
+  "X": "078",
+  "Y": "044",
+  "base_id": "discovery-711401-0048-res-R1",
+  "clause": "Stored series identifier: use \"078\" rather than \"044\".",
+  "family": "numeric_aggregation",
+  "field": "series",
+  "opaque": false,
+  "phrasing": "R1",
+  "phrasing_seen": true,
+  "prompt_tokens": 549,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    35,
+    48
+   ],
+   "end": [
+    53,
+    54
+   ],
+   "tail": [
+    53,
+    53
+   ],
+   "v1": [
+    30,
+    35
+   ],
+   "v2": [
+    48,
+    53
+   ],
+   "x": [
+    30,
+    35
+   ],
+   "y": [
+    48,
+    53
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0052-amb-A2-renamed": {
+  "X": 58,
+  "Y": 68,
+  "base_id": "discovery-711401-0052-amb-A2",
+  "clause": "Number of minutes: 58 or possibly 68 \u2014 I haven't decided.",
+  "family": "clock_shift",
+  "field": "minutes",
+  "opaque": true,
+  "phrasing": "A2",
+  "phrasing_seen": true,
+  "prompt_tokens": 613,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    21,
+    34
+   ],
+   "end": [
+    56,
+    57
+   ],
+   "tail": [
+    36,
+    56
+   ],
+   "v1": [
+    19,
+    21
+   ],
+   "v2": [
+    34,
+    36
+   ],
+   "x": [
+    19,
+    21
+   ],
+   "y": [
+    34,
+    36
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0052-call-renamed": {
+  "X": 58,
+  "Y": 68,
+  "base_id": "discovery-711401-0052-call",
+  "clause": "Number of minutes: 58.",
+  "family": "clock_shift",
+  "field": "minutes",
+  "opaque": true,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 603,
+  "renamed": true,
+  "spans": {
+   "end": [
+    21,
+    22
+   ],
+   "v1": [
+    19,
+    21
+   ],
+   "x": [
+    19,
+    21
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0052-res-R1-renamed": {
+  "X": 58,
+  "Y": 68,
+  "base_id": "discovery-711401-0052-res-R1",
+  "clause": "Number of minutes: use 58 rather than 68.",
+  "family": "clock_shift",
+  "field": "minutes",
+  "opaque": true,
+  "phrasing": "R1",
+  "phrasing_seen": true,
+  "prompt_tokens": 615,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    25,
+    38
+   ],
+   "end": [
+    40,
+    41
+   ],
+   "tail": [
+    40,
+    40
+   ],
+   "v1": [
+    23,
+    25
+   ],
+   "v2": [
+    38,
+    40
+   ],
+   "x": [
+    23,
+    25
+   ],
+   "y": [
+    38,
+    40
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0056-amb-A3-renamed": {
+  "X": "cedar_650",
+  "Y": "maple_918",
+  "base_id": "discovery-711401-0056-amb-A3",
+  "clause": "Stored text identifier: unsure whether to use \"cedar_650\" or \"maple_918\".",
+  "family": "text_case",
+  "field": "text",
+  "opaque": false,
+  "phrasing": "A3",
+  "phrasing_seen": true,
+  "prompt_tokens": 557,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    57,
+    61
+   ],
+   "end": [
+    72,
+    73
+   ],
+   "tail": [
+    72,
+    72
+   ],
+   "v1": [
+    46,
+    57
+   ],
+   "v2": [
+    61,
+    72
+   ],
+   "x": [
+    46,
+    57
+   ],
+   "y": [
+    61,
+    72
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0056-call-renamed": {
+  "X": "cedar_650",
+  "Y": "maple_918",
+  "base_id": "discovery-711401-0056-call",
+  "clause": "Stored text identifier: \"cedar_650\".",
+  "family": "text_case",
+  "field": "text",
+  "opaque": false,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 543,
+  "renamed": true,
+  "spans": {
+   "end": [
+    35,
+    36
+   ],
+   "v1": [
+    24,
+    35
+   ],
+   "x": [
+    24,
+    35
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0056-res-R2-renamed": {
+  "X": "cedar_650",
+  "Y": "maple_918",
+  "base_id": "discovery-711401-0056-res-R2",
+  "clause": "Stored text identifier: previously \"maple_918\", but today use \"cedar_650\".",
+  "family": "text_case",
+  "field": "text",
+  "opaque": false,
+  "phrasing": "R2",
+  "phrasing_seen": true,
+  "prompt_tokens": 556,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    46,
+    62
+   ],
+   "end": [
+    73,
+    74
+   ],
+   "tail": [
+    73,
+    73
+   ],
+   "v1": [
+    35,
+    46
+   ],
+   "v2": [
+    62,
+    73
+   ],
+   "x": [
+    62,
+    73
+   ],
+   "y": [
+    35,
+    46
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0060-amb-A4-renamed": {
+  "X": "084",
+  "Y": "017",
+  "base_id": "discovery-711401-0060-amb-A4",
+  "clause": "Record identifier: still deciding between \"084\" and \"017\".",
+  "family": "archive_state",
+  "field": "record",
+  "opaque": true,
+  "phrasing": "A4",
+  "phrasing_seen": true,
+  "prompt_tokens": 543,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    47,
+    52
+   ],
+   "end": [
+    57,
+    58
+   ],
+   "tail": [
+    57,
+    57
+   ],
+   "v1": [
+    42,
+    47
+   ],
+   "v2": [
+    52,
+    57
+   ],
+   "x": [
+    42,
+    47
+   ],
+   "y": [
+    52,
+    57
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0060-call-renamed": {
+  "X": "084",
+  "Y": "017",
+  "base_id": "discovery-711401-0060-call",
+  "clause": "Record identifier: \"084\".",
+  "family": "archive_state",
+  "field": "record",
+  "opaque": true,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 540,
+  "renamed": true,
+  "spans": {
+   "end": [
+    24,
+    25
+   ],
+   "v1": [
+    19,
+    24
+   ],
+   "x": [
+    19,
+    24
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0060-res-R2-renamed": {
+  "X": "084",
+  "Y": "017",
+  "base_id": "discovery-711401-0060-res-R2",
+  "clause": "Record identifier: previously \"017\", but today use \"084\".",
+  "family": "archive_state",
+  "field": "record",
+  "opaque": true,
+  "phrasing": "R2",
+  "phrasing_seen": true,
+  "prompt_tokens": 547,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    35,
+    51
+   ],
+   "end": [
+    56,
+    57
+   ],
+   "tail": [
+    56,
+    56
+   ],
+   "v1": [
+    30,
+    35
+   ],
+   "v2": [
+    51,
+    56
+   ],
+   "x": [
+    51,
+    56
+   ],
+   "y": [
+    30,
+    35
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0064-amb-A5-renamed": {
+  "X": "maple_470",
+  "Y": "maple_651",
+  "base_id": "discovery-711401-0064-amb-A5",
+  "clause": "First set identifier: \"maple_470\", or maybe \"maple_651\"; no choice has been made yet.",
+  "family": "set_membership",
+  "field": "left",
+  "opaque": false,
+  "phrasing": "A5",
+  "phrasing_seen": true,
+  "prompt_tokens": 625,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    33,
+    44
+   ],
+   "end": [
+    84,
+    85
+   ],
+   "tail": [
+    55,
+    84
+   ],
+   "v1": [
+    22,
+    33
+   ],
+   "v2": [
+    44,
+    55
+   ],
+   "x": [
+    22,
+    33
+   ],
+   "y": [
+    44,
+    55
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0064-call-renamed": {
+  "X": "maple_470",
+  "Y": "maple_651",
+  "base_id": "discovery-711401-0064-call",
+  "clause": "First set identifier: \"maple_470\".",
+  "family": "set_membership",
+  "field": "left",
+  "opaque": false,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 608,
+  "renamed": true,
+  "spans": {
+   "end": [
+    33,
+    34
+   ],
+   "v1": [
+    22,
+    33
+   ],
+   "x": [
+    22,
+    33
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0064-res-R3-renamed": {
+  "X": "maple_470",
+  "Y": "maple_651",
+  "base_id": "discovery-711401-0064-res-R3",
+  "clause": "First set identifier: \"maple_470\" (not \"maple_651\").",
+  "family": "set_membership",
+  "field": "left",
+  "opaque": false,
+  "phrasing": "R3",
+  "phrasing_seen": true,
+  "prompt_tokens": 609,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    33,
+    39
+   ],
+   "end": [
+    51,
+    52
+   ],
+   "tail": [
+    50,
+    51
+   ],
+   "v1": [
+    22,
+    33
+   ],
+   "v2": [
+    39,
+    50
+   ],
+   "x": [
+    22,
+    33
+   ],
+   "y": [
+    39,
+    50
+   ]
+  },
+  "variant": "resolved"
+ },
+ "discovery-711401-0068-amb-A6-renamed": {
+  "X": 16,
+  "Y": 43,
+  "base_id": "discovery-711401-0068-amb-A6",
+  "clause": "Numeric threshold: one of 16 or 43 (undecided which).",
+  "family": "numeric_comparison",
+  "field": "threshold",
+  "opaque": true,
+  "phrasing": "A6",
+  "phrasing_seen": true,
+  "prompt_tokens": 607,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    28,
+    32
+   ],
+   "end": [
+    52,
+    53
+   ],
+   "tail": [
+    34,
+    52
+   ],
+   "v1": [
+    26,
+    28
+   ],
+   "v2": [
+    32,
+    34
+   ],
+   "x": [
+    26,
+    28
+   ],
+   "y": [
+    32,
+    34
+   ]
+  },
+  "variant": "ambiguous"
+ },
+ "discovery-711401-0068-call-renamed": {
+  "X": 16,
+  "Y": 43,
+  "base_id": "discovery-711401-0068-call",
+  "clause": "Numeric threshold: 16.",
+  "family": "numeric_comparison",
+  "field": "threshold",
+  "opaque": true,
+  "phrasing": "-",
+  "phrasing_seen": null,
+  "prompt_tokens": 606,
+  "renamed": true,
+  "spans": {
+   "end": [
+    21,
+    22
+   ],
+   "v1": [
+    19,
+    21
+   ],
+   "x": [
+    19,
+    21
+   ]
+  },
+  "variant": "call"
+ },
+ "discovery-711401-0068-res-R3-renamed": {
+  "X": 16,
+  "Y": 43,
+  "base_id": "discovery-711401-0068-res-R3",
+  "clause": "Numeric threshold: 16 (not 43).",
+  "family": "numeric_comparison",
+  "field": "threshold",
+  "opaque": true,
+  "phrasing": "R3",
+  "phrasing_seen": true,
+  "prompt_tokens": 597,
+  "renamed": true,
+  "spans": {
+   "conn": [
+    21,
+    27
+   ],
+   "end": [
+    30,
+    31
+   ],
+   "tail": [
+    29,
+    30
+   ],
+   "v1": [
+    19,
+    21
+   ],
+   "v2": [
+    27,
+    29
+   ],
+   "x": [
+    19,
+    21
+   ],
+   "y": [
+    27,
+    29
+   ]
+  },
+  "variant": "resolved"
+ }
+}

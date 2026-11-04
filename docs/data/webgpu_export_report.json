@@ -1,8 +1,66 @@
 {
- "source": "onnx-community/Qwen3.5-0.8B-ONNX",
- "variants": {},
- "generated_utc": "2026-11-04T17:30:03Z",
- "drift": {
+ "source": "/Users/scasella/Downloads/qwen-6/artifacts/exports/g23v3-onnx",
+ "version": "g23v4",
+ "variants": {
+  "fp16": {
+   "layout_check_base": {
+    "22.gate_proj": {
+     "K": 1024,
+     "N": 3584,
+     "dense_vs_checkpoint_max_abs": 2.9802322387695312e-08,
+     "dtype": "float16",
+     "already_dense": true,
+     "init_name": "model.layers.22.mlp.gate_proj.MatMul.weight"
+    },
+    "22.up_proj": {
+     "K": 1024,
+     "N": 3584,
+     "dense_vs_checkpoint_max_abs": 2.9802322387695312e-08,
+     "dtype": "float16",
+     "already_dense": true,
+     "init_name": "model.layers.22.mlp.up_proj.MatMul.weight"
+    },
+    "22.down_proj": {
+     "K": 3584,
+     "N": 1024,
+     "dense_vs_checkpoint_max_abs": 2.9802322387695312e-08,
+     "dtype": "float16",
+     "already_dense": true,
+     "init_name": "model.layers.22.mlp.down_proj.MatMul.weight"
+    },
+    "23.gate_proj": {
+     "K": 1024,
+     "N": 3584,
+     "dense_vs_checkpoint_max_abs": 2.9802322387695312e-08,
+     "dtype": "float16",
+     "already_dense": true,
+     "init_name": "model.layers.23.mlp.gate_proj.MatMul.weight"
+    },
+    "23.up_proj": {
+     "K": 1024,
+     "N": 3584,
+     "dense_vs_checkpoint_max_abs": 2.9802322387695312e-08,
+     "dtype": "float16",
+     "already_dense": true,
+     "init_name": "model.layers.23.mlp.up_proj.MatMul.weight"
+    },
+    "23.down_proj": {
+     "K": 3584,
+     "N": 1024,
+     "dense_vs_checkpoint_max_abs": 2.9802322387695312e-08,
+     "dtype": "float16",
+     "already_dense": true,
+     "init_name": "model.layers.23.mlp.down_proj.MatMul.weight"
+    }
+   },
+   "seconds": 1.9,
+   "bytes_base": 1505771520,
+   "bytes_edited": 1505771520,
+   "differing_bytes": 24017
+  }
+ },
+ "generated_utc": "2026-11-04T21:12:02Z",
+ "inherited_drift": {
   "fp16": {
    "variant": "fp16",
    "embed": "q4f16",
@@ -346,7 +404,7 @@
    ]
   }
  },
- "validation": {
+ "inherited_validation_g23v3": {
   "original": [
    {
     "id": "discovery-611401-0173",
@@ -424,8 +482,209 @@
    }
   ]
  },
- "published_variants": [
-  "fp16"
- ],
- "note": "q4f16 / q4 decoders were built and measured (drift) but are not published: the edit does not transfer to a 4-bit backbone"
+ "inherited_from": "/Users/scasella/Downloads/qwen-6/artifacts/exports/g23v3-onnx/build_report.json",
+ "validation": {
+  "original": [
+   {
+    "id": "discovery-611401-0173",
+    "cohort": "valid_call",
+    "generated": "<tool_call>\n<function=fx_11388>\n<parameter=p_1_41>\n",
+    "recorded": "<tool_call>\n<function=fx_11388>\n<parameter=p_1_41>\ncedar_332\n</parameter>\n<param",
+    "prefix_match": true,
+    "n": 24,
+    "seconds": 4.5
+   },
+   {
+    "id": "discovery-611401-0021",
+    "cohort": "valid_call",
+    "generated": "<tool_call>\n<function=fx_92236>\n<parameter=p_1_40>\n",
+    "recorded": "<tool_call>\n<function=fx_92236>\n<parameter=p_1_40>\n12\n</parameter>\n<parameter=p_",
+    "prefix_match": true,
+    "n": 24,
+    "seconds": 3.6
+   },
+   {
+    "id": "discovery-611401-0226",
+    "cohort": "no_tool",
+    "generated": "<tool_call>\n<function=copy_item>\n<parameter=item>\ncedar_755\n</parameter>",
+    "recorded": "<tool_call>\n<function=copy_item>\n<parameter=item>\ncedar_755\n</parameter>\n<parame",
+    "prefix_match": true,
+    "n": 24,
+    "seconds": 4.3
+   },
+   {
+    "id": "discovery-611401-0254",
+    "cohort": "no_tool",
+    "generated": "<tool_call>\n<function=fx_10626>\n<parameter=p_1_53>\n",
+    "recorded": "<tool_call>\n<function=fx_10626>\n<parameter=p_1_53>\nspruce_418\n</parameter>\n<para",
+    "prefix_match": true,
+    "n": 24,
+    "seconds": 4.5
+   },
+   {
+    "id": "discovery-611401-0075",
+    "cohort": "need_clarification",
+    "generated": "<tool_call>\n<function=fetch_record>\n<parameter=key>\ncedar_108\n</parameter>",
+    "recorded": "<tool_call>\n<function=fetch_record>\n<parameter=key>\ncedar_108\n</parameter>\n<para",
+    "prefix_match": true,
+    "n": 24,
+    "seconds": 3.5
+   },
+   {
+    "id": "discovery-611401-0235",
+    "cohort": "need_clarification",
+    "generated": "<tool_call>\n<function=cancel_reservation>\n<parameter=resource>\nnot provided\n</parameter>\n<parameter",
+    "recorded": "<tool_call>\n<function=cancel_reservation>\n<parameter=resource>\nnot provided\n</pa",
+    "prefix_match": true,
+    "n": 24,
+    "seconds": 3.8
+   },
+   {
+    "id": "discovery-611401-0239",
+    "cohort": "ambiguous",
+    "generated": "<tool_call>\n<function=fx_53817>\n<parameter=p_1_22>\n",
+    "recorded": "<tool_call>\n<function=fx_53817>\n<parameter=p_1_22>\n18\n</parameter>\n<parameter=p_",
+    "prefix_match": true,
+    "n": 24,
+    "seconds": 3.8
+   },
+   {
+    "id": "discovery-611401-0111",
+    "cohort": "ambiguous",
+    "generated": "<tool_call>\n<function=fx_27733>\n<parameter=p_1_70>\n",
+    "recorded": "<tool_call>\n<function=fx_27733>\n<parameter=p_1_70>\n065\n</parameter>\n<parameter=p",
+    "prefix_match": true,
+    "n": 24,
+    "seconds": 4.4
+   },
+   {
+    "id": "stress-amb-00-discovery-711406-0000-amb-B1",
+    "cohort": "ambiguous",
+    "generated": "<tool_call>\n<function=fetch_record>\n<parameter=key>\n033\n</parameter>\n<parameter",
+    "recorded": "<tool_call>\n<function=fetch_record>\n<parameter=key>\n033\n</parameter>\n<parameter=",
+    "prefix_match": true,
+    "n": 24,
+    "seconds": 3.6
+   },
+   {
+    "id": "stress-amb-01-discovery-711406-0004-amb-B2",
+    "cohort": "ambiguous",
+    "generated": "<tool_call>\n<function=fx_89030>\n<parameter=p_1_89>\n",
+    "recorded": "<tool_call>\n<function=fx_89030>\n<parameter=p_1_89>\nspruce_217\n</parameter>\n<para",
+    "prefix_match": true,
+    "n": 24,
+    "seconds": 3.9
+   },
+   {
+    "id": "stress-res-00-discovery-711406-0000-res-S1",
+    "cohort": "valid_call",
+    "generated": "<tool_call>\n<function=fetch_record>\n<parameter=key>\n033\n</parameter>\n<parameter",
+    "recorded": "<tool_call>\n<function=fetch_record>\n<parameter=key>\n033\n</parameter>\n<parameter=",
+    "prefix_match": true,
+    "n": 24,
+    "seconds": 3.6
+   }
+  ],
+  "g23v4": [
+   {
+    "id": "discovery-611401-0173",
+    "cohort": "valid_call",
+    "generated": "<tool_call>\n<function=fx_11388>\n<parameter=p_1_41>\n",
+    "recorded": "<tool_call>\n<function=fx_11388>\n<parameter=p_1_41>\ncedar_332\n</parameter>\n<param",
+    "prefix_match": true,
+    "n": 24,
+    "seconds": 4.2
+   },
+   {
+    "id": "discovery-611401-0021",
+    "cohort": "valid_call",
+    "generated": "<tool_call>\n<function=fx_92236>\n<parameter=p_1_40>\n",
+    "recorded": "<tool_call>\n<function=fx_92236>\n<parameter=p_1_40>\n12\n</parameter>\n<parameter=p_",
+    "prefix_match": true,
+    "n": 24,
+    "seconds": 3.8
+   },
+   {
+    "id": "discovery-611401-0226",
+    "cohort": "no_tool",
+    "generated": "NO_TOOL<|im_end|>",
+    "recorded": "NO_TOOL",
+    "prefix_match": true,
+    "n": 3,
+    "seconds": 4.0
+   },
+   {
+    "id": "discovery-611401-0254",
+    "cohort": "no_tool",
+    "generated": "NO_TOOL<|im_end|>",
+    "recorded": "NO_TOOL",
+    "prefix_match": true,
+    "n": 3,
+    "seconds": 4.2
+   },
+   {
+    "id": "discovery-611401-0075",
+    "cohort": "need_clarification",
+    "generated": "NEED_CLARIFICATION<|im_end|>",
+    "recorded": "NEED_CLARIFICATION",
+    "prefix_match": true,
+    "n": 6,
+    "seconds": 3.2
+   },
+   {
+    "id": "discovery-611401-0235",
+    "cohort": "need_clarification",
+    "generated": "NEED_CLARIFICATION<|im_end|>",
+    "recorded": "NEED_CLARIFICATION",
+    "prefix_match": true,
+    "n": 6,
+    "seconds": 3.4
+   },
+   {
+    "id": "discovery-611401-0239",
+    "cohort": "ambiguous",
+    "generated": "NEED_CLARIFICATION<|im_end|>",
+    "recorded": "NEED_CLARIFICATION",
+    "prefix_match": true,
+    "n": 6,
+    "seconds": 3.5
+   },
+   {
+    "id": "discovery-611401-0111",
+    "cohort": "ambiguous",
+    "generated": "NEED_CLARIFICATION<|im_end|>",
+    "recorded": "NEED_CLARIFICATION",
+    "prefix_match": true,
+    "n": 6,
+    "seconds": 4.2
+   },
+   {
+    "id": "stress-amb-00-discovery-711406-0000-amb-B1",
+    "cohort": "ambiguous",
+    "generated": "NEED_CLARIFICATION<|im_end|>",
+    "recorded": "NEED_CLARIFICATION",
+    "prefix_match": true,
+    "n": 6,
+    "seconds": 3.4
+   },
+   {
+    "id": "stress-amb-01-discovery-711406-0004-amb-B2",
+    "cohort": "ambiguous",
+    "generated": "NEED_CLARIFICATION<|im_end|>",
+    "recorded": "NEED_CLARIFICATION",
+    "prefix_match": true,
+    "n": 6,
+    "seconds": 3.6
+   },
+   {
+    "id": "stress-res-00-discovery-711406-0000-res-S1",
+    "cohort": "valid_call",
+    "generated": "<tool_call>\n<function=fetch_record>\n<parameter=key>\n033\n</parameter>\n<parameter",
+    "recorded": "<tool_call>\n<function=fetch_record>\n<parameter=key>\n033\n</parameter>\n<parameter=",
+    "prefix_match": true,
+    "n": 24,
+    "seconds": 3.7
+   }
+  ]
+ }
 }

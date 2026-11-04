@@ -1,0 +1,67 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+{"loaded_memory": {"rss_bytes": 2042839040, "system_available_bytes": 8920940544, "backend_active_bytes": 1504791240, "backend_peak_bytes": 1504791280, "backend_cache_bytes": 4086}}
+  discovery-711401-0000-call-renamed               call     argmax='<tool_call>' call-NO= 11.25 call-NE= 13.88 NE-NO= -2.62 roles={'end': 531, 'v1': 531, 'imend': 558, 'dec': 566}
+  discovery-711401-0000-res-R1-renamed             call     argmax='<tool_call>' call-NO= 12.25 call-NE= 14.94 NE-NO= -2.69 roles={'end': 537, 'v1': 530, 'v2': 537, 'imend': 564, 'dec': 572}
+  discovery-711401-0000-amb-A1-renamed             clarify  argmax='<tool_call>' call-NO= 13.06 call-NE= 16.00 NE-NO= -2.94 roles={'end': 538, 'v1': 527, 'v2': 533, 'imend': 565, 'dec': 573}
+  discovery-711401-0004-call-renamed               call     argmax='<tool_call>' call-NO= 12.38 call-NE= 15.44 NE-NO= -3.06 roles={'end': 545, 'v1': 545, 'imend': 546, 'dec': 554}
+  discovery-711401-0004-res-R1-renamed             call     argmax='<tool_call>' call-NO= 11.56 call-NE= 14.25 NE-NO= -2.69 roles={'end': 568, 'v1': 558, 'v2': 568, 'imend': 569, 'dec': 577}
+  discovery-711401-0004-amb-A2-renamed             clarify  argmax='<tool_call>' call-NO= 10.00 call-NE= 12.62 NE-NO= -2.62 roles={'end': 566, 'v1': 550, 'v2': 560, 'imend': 567, 'dec': 575}
+  discovery-711401-0008-call-renamed               call     argmax='<tool_call>' call-NO= 10.88 call-NE= 15.06 NE-NO= -4.19 roles={'end': 653, 'v1': 653, 'imend': 681, 'dec': 689}
+  discovery-711401-0008-res-R2-renamed             call     argmax='<tool_call>' call-NO= 12.50 call-NE= 16.69 NE-NO= -4.19 roles={'end': 661, 'v1': 650, 'v2': 661, 'imend': 689, 'dec': 697}
+  discovery-711401-0008-amb-A3-renamed             clarify  argmax='<tool_call>' call-NO=  9.88 call-NE= 14.38 NE-NO= -4.50 roles={'end': 664, 'v1': 655, 'v2': 664, 'imend': 692, 'dec': 700}
+  discovery-711401-0012-call-renamed               call     argmax='<tool_call>' call-NO= 13.00 call-NE= 14.44 NE-NO= -1.44 roles={'end': 538, 'v1': 538, 'imend': 539, 'dec': 547}
+  discovery-711401-0012-res-R2-renamed             call     argmax='<tool_call>' call-NO= 14.81 call-NE= 16.78 NE-NO= -1.97 roles={'end': 546, 'v1': 538, 'v2': 546, 'imend': 547, 'dec': 555}
+  discovery-711401-0012-amb-A4-renamed             clarify  argmax='<tool_call>' call-NO= 10.56 call-NE= 13.12 NE-NO= -2.56 roles={'end': 546, 'v1': 540, 'v2': 546, 'imend': 547, 'dec': 555}
+  discovery-711401-0016-call-renamed               call     argmax='<tool_call>' call-NO= 13.00 call-NE= 17.56 NE-NO= -4.56 roles={'end': 561, 'v1': 561, 'imend': 588, 'dec': 596}
+  discovery-711401-0016-res-R3-renamed             call     argmax='<tool_call>' call-NO= 12.50 call-NE= 16.50 NE-NO= -4.00 roles={'end': 573, 'v1': 563, 'v2': 573, 'imend': 600, 'dec': 608}
+  discovery-711401-0016-amb-A5-renamed             clarify  argmax='<tool_call>' call-NO=  7.69 call-NE= 11.94 NE-NO= -4.25 roles={'end': 578, 'v1': 561, 'v2': 571, 'imend': 605, 'dec': 613}
+  discovery-711401-0020-call-renamed               call     argmax='<tool_call>' call-NO= 14.91 call-NE= 17.00 NE-NO= -2.09 roles={'end': 544, 'v1': 543, 'imend': 545, 'dec': 553}
+  discovery-711401-0020-res-R3-renamed             call     argmax='<tool_call>' call-NO= 13.38 call-NE= 15.09 NE-NO= -1.72 roles={'end': 550, 'v1': 544, 'v2': 549, 'imend': 551, 'dec': 559}
+  discovery-711401-0020-amb-A6-renamed             clarify  argmax='<tool_call>' call-NO= 11.50 call-NE= 14.88 NE-NO= -3.38 roles={'end': 557, 'v1': 548, 'v2': 552, 'imend': 558, 'dec': 566}
+  discovery-711401-0024-call-renamed               call     argmax='<tool_call>' call-NO= 15.12 call-NE= 19.03 NE-NO= -3.91 roles={'end': 554, 'v1': 554, 'imend': 581, 'dec': 589}
+  discovery-711401-0024-res-R4-renamed             call     argmax='<tool_call>' call-NO= 13.75 call-NE= 17.62 NE-NO= -3.88 roles={'end': 565, 'v1': 558, 'v2': 565, 'imend': 592, 'dec': 600}
+  discovery-711401-0024-amb-A1-renamed             clarify  argmax='<tool_call>' call-NO= 13.94 call-NE= 17.72 NE-NO= -3.78 roles={'end': 566, 'v1': 555, 'v2': 561, 'imend': 593, 'dec': 601}
+  discovery-711401-0028-call-renamed               call     argmax='<tool_call>' call-NO= 13.31 call-NE= 16.16 NE-NO= -2.84 roles={'end': 592, 'v1': 592, 'imend': 605, 'dec': 613}
+  discovery-711401-0028-res-R4-renamed             call     argmax='<tool_call>' call-NO= 12.12 call-NE= 14.75 NE-NO= -2.62 roles={'end': 613, 'v1': 603, 'v2': 613, 'imend': 626, 'dec': 634}
+  discovery-711401-0028-amb-A2-renamed             clarify  argmax='<tool_call>' call-NO= 12.50 call-NE= 15.19 NE-NO= -2.69 roles={'end': 618, 'v1': 602, 'v2': 612, 'imend': 631, 'dec': 639}
+  discovery-711401-0032-call-renamed               call     argmax='<tool_call>' call-NO= 12.88 call-NE= 16.19 NE-NO= -3.31 roles={'end': 573, 'v1': 573, 'imend': 600, 'dec': 608}
+  discovery-711401-0032-res-R5-renamed             call     argmax='<tool_call>' call-NO= 15.25 call-NE= 18.75 NE-NO= -3.50 roles={'end': 579, 'v1': 568, 'v2': 579, 'imend': 606, 'dec': 614}
+  discovery-711401-0032-amb-A3-renamed             clarify  argmax='<tool_call>' call-NO= 12.50 call-NE= 16.47 NE-NO= -3.97 roles={'end': 584, 'v1': 575, 'v2': 584, 'imend': 611, 'dec': 619}
+  discovery-711401-0036-call-renamed               call     argmax='<tool_call>' call-NO= 14.44 call-NE= 15.94 NE-NO= -1.50 roles={'end': 625, 'v1': 625, 'imend': 626, 'dec': 634}
+  discovery-711401-0036-res-R5-renamed             call     argmax='<tool_call>' call-NO= 14.88 call-NE= 16.88 NE-NO= -2.00 roles={'end': 636, 'v1': 628, 'v2': 636, 'imend': 637, 'dec': 645}
+  discovery-711401-0036-amb-A4-renamed             clarify  argmax='<tool_call>' call-NO= 13.00 call-NE= 14.91 NE-NO= -1.91 roles={'end': 645, 'v1': 639, 'v2': 645, 'imend': 646, 'dec': 654}
+  discovery-711401-0040-call-renamed               call     argmax='<tool_call>' call-NO= 17.59 call-NE= 18.53 NE-NO= -0.94 roles={'end': 555, 'v1': 555, 'imend': 595, 'dec': 603}
+  discovery-711401-0040-res-R6-renamed             call     argmax='<tool_call>' call-NO= 18.19 call-NE= 17.38 NE-NO=  0.81 roles={'end': 578, 'v1': 567, 'v2': 578, 'imend': 618, 'dec': 626}
+  discovery-711401-0040-amb-A5-renamed             clarify  argmax='<tool_call>' call-NO= 15.47 call-NE= 17.12 NE-NO= -1.66 roles={'end': 567, 'v1': 550, 'v2': 560, 'imend': 607, 'dec': 615}
+  discovery-711401-0044-call-renamed               call     argmax='<tool_call>' call-NO= 14.62 call-NE= 16.72 NE-NO= -2.09 roles={'end': 540, 'v1': 540, 'imend': 541, 'dec': 549}
+  discovery-711401-0044-res-R6-renamed             call     argmax='<tool_call>' call-NO= 13.19 call-NE= 16.16 NE-NO= -2.97 roles={'end': 553, 'v1': 542, 'v2': 553, 'imend': 554, 'dec': 562}
+  discovery-711401-0044-amb-A6-renamed             clarify  argmax='<tool_call>' call-NO= 12.56 call-NE= 15.47 NE-NO= -2.91 roles={'end': 553, 'v1': 539, 'v2': 548, 'imend': 554, 'dec': 562}
+  discovery-711401-0048-call-renamed               call     argmax='<tool_call>' call-NO= 10.75 call-NE= 12.50 NE-NO= -1.75 roles={'end': 502, 'v1': 502, 'imend': 529, 'dec': 537}
+  discovery-711401-0048-res-R1-renamed             call     argmax='<tool_call>' call-NO= 11.75 call-NE= 14.06 NE-NO= -2.31 roles={'end': 515, 'v1': 508, 'v2': 515, 'imend': 542, 'dec': 550}
+  discovery-711401-0048-amb-A1-renamed             clarify  argmax='<tool_call>' call-NO= 11.25 call-NE= 13.31 NE-NO= -2.06 roles={'end': 518, 'v1': 507, 'v2': 513, 'imend': 545, 'dec': 553}
+  discovery-711401-0052-call-renamed               call     argmax='<tool_call>' call-NO= 12.81 call-NE= 15.69 NE-NO= -2.88 roles={'end': 584, 'v1': 583, 'imend': 596, 'dec': 604}
+  discovery-711401-0052-res-R1-renamed             call     argmax='<tool_call>' call-NO= 15.19 call-NE= 18.09 NE-NO= -2.91 roles={'end': 596, 'v1': 590, 'v2': 595, 'imend': 608, 'dec': 616}
+  discovery-711401-0052-amb-A2-renamed             clarify  argmax='<tool_call>' call-NO= 13.19 call-NE= 16.72 NE-NO= -3.53 roles={'end': 594, 'v1': 583, 'v2': 588, 'imend': 606, 'dec': 614}
+  discovery-711401-0056-call-renamed               call     argmax='<tool_call>' call-NO= 12.88 call-NE= 15.91 NE-NO= -3.03 roles={'end': 509, 'v1': 509, 'imend': 536, 'dec': 544}
+  discovery-711401-0056-res-R2-renamed             call     argmax='<tool_call>' call-NO= 15.06 call-NE= 17.97 NE-NO= -2.91 roles={'end': 522, 'v1': 511, 'v2': 522, 'imend': 549, 'dec': 557}
+  discovery-711401-0056-amb-A3-renamed             clarify  argmax='<tool_call>' call-NO= 13.88 call-NE= 16.12 NE-NO= -2.25 roles={'end': 523, 'v1': 514, 'v2': 523, 'imend': 550, 'dec': 558}
+  discovery-711401-0060-call-renamed               call     argmax='<tool_call>' call-NO= 14.88 call-NE= 17.50 NE-NO= -2.62 roles={'end': 532, 'v1': 532, 'imend': 533, 'dec': 541}
+  discovery-711401-0060-res-R2-renamed             call     argmax='<tool_call>' call-NO= 16.50 call-NE= 18.44 NE-NO= -1.94 roles={'end': 539, 'v1': 531, 'v2': 539, 'imend': 540, 'dec': 548}
+  discovery-711401-0060-amb-A4-renamed             clarify  argmax='<tool_call>' call-NO= 13.56 call-NE= 15.81 NE-NO= -2.25 roles={'end': 535, 'v1': 529, 'v2': 535, 'imend': 536, 'dec': 544}
+  discovery-711401-0064-call-renamed               call     argmax='<tool_call>' call-NO= 14.69 call-NE= 17.47 NE-NO= -2.78 roles={'end': 573, 'v1': 573, 'imend': 601, 'dec': 609}
+  discovery-711401-0064-res-R3-renamed             call     argmax='<tool_call>' call-NO= 14.62 call-NE= 17.47 NE-NO= -2.84 roles={'end': 574, 'v1': 564, 'v2': 574, 'imend': 602, 'dec': 610}
+  discovery-711401-0064-amb-A5-renamed             clarify  argmax='<tool_call>' call-NO= 11.44 call-NE= 15.84 NE-NO= -4.41 roles={'end': 590, 'v1': 573, 'v2': 583, 'imend': 618, 'dec': 626}
+  discovery-711401-0068-call-renamed               call     argmax='<tool_call>' call-NO= 16.47 call-NE= 17.22 NE-NO= -0.75 roles={'end': 587, 'v1': 586, 'imend': 599, 'dec': 607}
+  discovery-711401-0068-res-R3-renamed             call     argmax='<tool_call>' call-NO= 16.16 call-NE= 18.12 NE-NO= -1.97 roles={'end': 578, 'v1': 572, 'v2': 577, 'imend': 590, 'dec': 598}
+  discovery-711401-0068-amb-A6-renamed             clarify  argmax='<tool_call>' call-NO= 14.06 call-NE= 16.84 NE-NO= -2.78 roles={'end': 588, 'v1': 579, 'v2': 583, 'imend': 600, 'dec': 608}
+  discovery-611401-0239-renamed-611403             clarify  argmax='<tool_call>' call-NO= 12.62 call-NE= 15.06 NE-NO= -2.44 roles={'end': 558, 'v1': 547, 'v2': 553, 'imend': 559, 'dec': 567}
+  discovery-611401-0111-renamed-611403             clarify  argmax='<tool_call>' call-NO= 14.00 call-NE= 16.97 NE-NO= -2.97 roles={'end': 647, 'v1': 636, 'v2': 642, 'imend': 648, 'dec': 656}
+  discovery-611401-0263-renamed-611403             clarify  argmax='<tool_call>' call-NO= 12.44 call-NE= 15.41 NE-NO= -2.97 roles={'end': 558, 'v1': 543, 'v2': 553, 'imend': 559, 'dec': 567}
+  discovery-611401-0247-renamed-611403             clarify  argmax='<tool_call>' call-NO= 13.12 call-NE= 15.97 NE-NO= -2.84 roles={'end': 611, 'v1': 596, 'v2': 606, 'imend': 624, 'dec': 632}
+  discovery-611401-0231-renamed-611403             clarify  argmax='<tool_call>' call-NO= 11.75 call-NE= 14.97 NE-NO= -3.22 roles={'end': 548, 'v1': 536, 'v2': 543, 'imend': 549, 'dec': 557}
+  discovery-611401-0223-renamed-611403             clarify  argmax='<tool_call>' call-NO= 11.69 call-NE= 13.81 NE-NO= -2.12 roles={'end': 565, 'v1': 550, 'v2': 560, 'imend': 566, 'dec': 574}
+  discovery-611401-0279-renamed-611403             clarify  argmax='<tool_call>' call-NO= 12.94 call-NE= 15.19 NE-NO= -2.25 roles={'end': 544, 'v1': 532, 'v2': 539, 'imend': 545, 'dec': 553}
+  discovery-611401-0287-renamed-611403             clarify  argmax='<tool_call>' call-NO= 15.00 call-NE= 17.69 NE-NO= -2.69 roles={'end': 598, 'v1': 583, 'v2': 593, 'imend': 599, 'dec': 607}
+  discovery-611401-0271-renamed-611403             clarify  argmax='<tool_call>' call-NO= 12.69 call-NE= 15.75 NE-NO= -3.06 roles={'end': 609, 'v1': 594, 'v2': 604, 'imend': 618, 'dec': 626}
+  discovery-611401-0255-renamed-611403             clarify  argmax='<tool_call>' call-NO= 11.81 call-NE= 14.31 NE-NO= -2.50 roles={'end': 627, 'v1': 616, 'v2': 622, 'imend': 636, 'dec': 644}
+{"model": "original", "layers": [23], "hfull": [19, 23], "mlpin": [18, 22, 23], "colstats": [15, 19, 21, 22, 23], "attnrows": true, "continuation": "none", "label": "d02_triples_D2", "mode": "teacher", "set": "triples_D2", "models": ["original"], "prompt_variant": "standard", "n_items": 64, "seconds": 37.66651470802026, "usage": {"requests": 3, "executions": 128, "input_tokens": 77282, "output_tokens": 0, "candidates": 0}, "memory": {"rss_gib": 2.4282379150390625, "backend_peak_gib": 1.8130492251366377}}

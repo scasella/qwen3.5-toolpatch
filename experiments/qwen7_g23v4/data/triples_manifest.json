@@ -1,0 +1,149 @@
+{
+ "triples_D1": {
+  "count": 64,
+  "sha256": "627c8fd6520285bd",
+  "variants": {
+   "call": 18,
+   "resolved": 18,
+   "ambiguous": 28
+  },
+  "phrasings": [
+   "-",
+   "A1",
+   "A2",
+   "A3",
+   "A4",
+   "A5",
+   "A6",
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5",
+   "R6"
+  ]
+ },
+ "triples_D2": {
+  "count": 64,
+  "sha256": "4b46ea26d3232807",
+  "variants": {
+   "call": 18,
+   "resolved": 18,
+   "ambiguous": 28
+  },
+  "phrasings": [
+   "-",
+   "A1",
+   "A2",
+   "A3",
+   "A4",
+   "A5",
+   "A6",
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5",
+   "R6"
+  ]
+ },
+ "triples_D3": {
+  "count": 64,
+  "sha256": "752ec40d3a3c017c",
+  "variants": {
+   "call": 18,
+   "resolved": 18,
+   "ambiguous": 28
+  },
+  "phrasings": [
+   "-",
+   "A1",
+   "B1",
+   "B2",
+   "B3",
+   "B4",
+   "B5",
+   "B6",
+   "S1",
+   "S2",
+   "S3",
+   "S4",
+   "S5",
+   "S6"
+  ]
+ },
+ "stress": {
+  "count": 64,
+  "sha256": "7c872577875debab",
+  "variants": {
+   "ambiguous": 32,
+   "resolved": 32
+  },
+  "phrasings": [
+   "A1",
+   "A2",
+   "A3",
+   "B1",
+   "B2",
+   "B3",
+   "B4",
+   "B5",
+   "B6",
+   "R1",
+   "R2",
+   "R4",
+   "S1",
+   "S2",
+   "S3",
+   "S4",
+   "S5",
+   "S6"
+  ]
+ },
+ "phrasings": {
+  "A_ambiguous_derivation": {
+   "A1": "either \"{X}\" or \"{Y}\", with no preference specified",
+   "A2": "{X} or possibly {Y} \u2014 I haven't decided",
+   "A3": "unsure whether to use {X} or {Y}",
+   "A4": "still deciding between {X} and {Y}",
+   "A5": "{X}, or maybe {Y}; no choice has been made yet",
+   "A6": "one of {X} or {Y} (undecided which)"
+  },
+  "B_ambiguous_heldout": {
+   "B1": "{X} or {Y}, whichever \u2014 I have not picked one",
+   "B2": "could be {X}, could be {Y}; it is not settled",
+   "B3": "not sure yet: {X} or {Y}",
+   "B4": "torn between {X} and {Y}",
+   "B5": "{X} or {Y}, I keep going back and forth",
+   "B6": "maybe {X}, maybe {Y}, I cannot say which"
+  },
+  "R_resolved_derivation": {
+   "R1": "use {X} rather than {Y}",
+   "R2": "previously {Y}, but today use {X}",
+   "R3": "{X} (not {Y})",
+   "R4": "{X} instead of {Y}",
+   "R5": "I considered {Y} but settled on {X}",
+   "R6": "was going to be {Y}; final answer is {X}"
+  },
+  "S_resolved_heldout": {
+   "S1": "definitely {X}, not {Y}",
+   "S2": "{X}, replacing the earlier {Y}",
+   "S3": "changed from {Y} to {X}, so use {X}",
+   "S4": "{Y} was a typo; the correct value is {X}",
+   "S5": "{X} \u2014 ignore {Y}, which was last week's value",
+   "S6": "after comparing {X} and {Y}, go with {X}"
+  }
+ },
+ "stress_breakdown": {
+  "ambiguous": {
+   "seen_phrasing": 6,
+   "renamed": 11,
+   "families": 24
+  },
+  "resolved": {
+   "seen_phrasing": 6,
+   "renamed": 11,
+   "families": 24
+  }
+ }
+}

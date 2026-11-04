@@ -1,0 +1,35 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+{"loaded_memory": {"rss_bytes": 2076246016, "system_available_bytes": 8026390528, "backend_active_bytes": 1504791240, "backend_peak_bytes": 1504791284, "backend_cache_bytes": 4086}}
+  stress-amb-00-discovery-711406-0000-amb-B1       clarify  argmax='NE'         call-NO=-34.62 call-NE=-72.00 NE-NO= 37.38 roles={'end': 535, 'v1': 521, 'v2': 527, 'imend': 562, 'dec': 570}
+  stress-amb-01-discovery-711406-0004-amb-B2       clarify  argmax='NE'         call-NO=-34.81 call-NE=-59.94 NE-NO= 25.12 roles={'end': 589, 'v1': 574, 'v2': 584, 'imend': 590, 'dec': 598}
+  stress-amb-02-discovery-711406-0008-amb-B3       clarify  argmax='NE'         call-NO=-59.50 call-NE=-77.38 NE-NO= 17.88 roles={'end': 644, 'v1': 638, 'v2': 644, 'imend': 672, 'dec': 680}
+  stress-amb-03-discovery-711406-0012-amb-B4       clarify  argmax='<tool_call>' call-NO= 11.00 call-NE= 12.75 NE-NO= -1.75 roles={'end': 572, 'v1': 566, 'v2': 572, 'imend': 573, 'dec': 581}
+  stress-amb-04-discovery-711406-0016-amb-B5       clarify  argmax='NE'         call-NO=-38.19 call-NE=-61.56 NE-NO= 23.38 roles={'end': 564, 'v1': 548, 'v2': 557, 'imend': 599, 'dec': 607}
+  stress-amb-05-discovery-711406-0020-amb-B6       clarify  argmax='NE'         call-NO=-59.50 call-NE=-77.38 NE-NO= 17.88 roles={'end': 585, 'v1': 574, 'v2': 579, 'imend': 586, 'dec': 594}
+  stress-amb-06-discovery-711406-0024-amb-B1       clarify  argmax='NE'         call-NO=-54.75 call-NE=-81.62 NE-NO= 26.88 roles={'end': 564, 'v1': 550, 'v2': 556, 'imend': 592, 'dec': 600}
+  stress-amb-07-discovery-711406-0028-amb-B2       clarify  argmax='NE'         call-NO= -1.16 call-NE=-22.28 NE-NO= 21.12 roles={'end': 655, 'v1': 640, 'v2': 650, 'imend': 668, 'dec': 676}
+  stress-amb-08-discovery-711406-0032-amb-B3       clarify  argmax='NE'         call-NO=-11.44 call-NE=-49.31 NE-NO= 37.88 roles={'end': 575, 'v1': 566, 'v2': 575, 'imend': 602, 'dec': 610}
+  stress-amb-09-discovery-711406-0036-amb-B4       clarify  argmax='<tool_call>' call-NO= 13.69 call-NE= 16.81 NE-NO= -3.12 roles={'end': 693, 'v1': 687, 'v2': 693, 'imend': 694, 'dec': 702}
+  stress-amb-10-discovery-711406-0040-amb-B5       clarify  argmax='NE'         call-NO=-45.62 call-NE=-70.62 NE-NO= 25.00 roles={'end': 575, 'v1': 559, 'v2': 568, 'imend': 603, 'dec': 611}
+  stress-amb-11-discovery-711406-0044-amb-B6       clarify  argmax='NE'         call-NO=-36.44 call-NE=-55.19 NE-NO= 18.75 roles={'end': 583, 'v1': 569, 'v2': 578, 'imend': 584, 'dec': 592}
+  stress-amb-12-selection-711407-0000-amb-B3       clarify  argmax='NE'         call-NO=-13.94 call-NE=-52.88 NE-NO= 38.94 roles={'end': 560, 'v1': 554, 'v2': 560, 'imend': 587, 'dec': 595}
+  stress-amb-13-selection-711407-0024-amb-B4       clarify  argmax='NE'         call-NO= -2.45 call-NE=-30.23 NE-NO= 27.78 roles={'end': 602, 'v1': 596, 'v2': 602, 'imend': 636, 'dec': 644}
+  stress-amb-14-selection-711407-0004-amb-B5       clarify  argmax='NE'         call-NO=-64.25 call-NE=-75.25 NE-NO= 11.00 roles={'end': 656, 'v1': 640, 'v2': 649, 'imend': 657, 'dec': 665}
+  stress-amb-15-selection-711407-0028-amb-B6       clarify  argmax='NE'         call-NO=-14.22 call-NE=-53.16 NE-NO= 38.94 roles={'end': 595, 'v1': 581, 'v2': 590, 'imend': 604, 'dec': 612}
+  stress-amb-16-selection-711407-0008-amb-B1       clarify  argmax='NE'         call-NO=-46.50 call-NE=-69.38 NE-NO= 22.88 roles={'end': 564, 'v1': 547, 'v2': 556, 'imend': 601, 'dec': 609}
+  stress-amb-17-selection-711407-0032-amb-B2       clarify  argmax='NE'         call-NO=-28.44 call-NE=-44.44 NE-NO= 16.00 roles={'end': 615, 'v1': 600, 'v2': 610, 'imend': 652, 'dec': 660}
+  stress-amb-18-selection-711407-0012-amb-A1       clarify  argmax='NE'         call-NO=-18.16 call-NE=-52.97 NE-NO= 34.81 roles={'end': 641, 'v1': 630, 'v2': 636, 'imend': 642, 'dec': 650}
+  stress-amb-19-selection-711407-0036-amb-A2       clarify  argmax='NE'         call-NO=-15.62 call-NE=-52.81 NE-NO= 37.19 roles={'end': 583, 'v1': 570, 'v2': 577, 'imend': 592, 'dec': 600}
+  stress-amb-20-selection-711407-0016-amb-A3       clarify  argmax='NE'         call-NO=-22.50 call-NE=-53.38 NE-NO= 30.88 roles={'end': 525, 'v1': 516, 'v2': 525, 'imend': 552, 'dec': 560}
+  stress-amb-21-discovery-711406-0048-amb-B4-renamed clarify  argmax='<tool_call>' call-NO= 12.12 call-NE= 14.19 NE-NO= -2.06 roles={'end': 511, 'v1': 505, 'v2': 511, 'imend': 539, 'dec': 547}
+  stress-amb-22-discovery-711406-0052-amb-B5-renamed clarify  argmax='NE'         call-NO=  2.75 call-NE= -5.75 NE-NO=  8.50 roles={'end': 593, 'v1': 581, 'v2': 585, 'imend': 605, 'dec': 613}
+  stress-amb-23-discovery-711406-0056-amb-B6-renamed clarify  argmax='NE'         call-NO=-10.80 call-NE=-44.30 NE-NO= 33.50 roles={'end': 534, 'v1': 520, 'v2': 529, 'imend': 562, 'dec': 570}
+  stress-amb-24-discovery-711406-0060-amb-B1-renamed clarify  argmax='NE'         call-NO=-23.44 call-NE=-53.25 NE-NO= 29.81 roles={'end': 542, 'v1': 528, 'v2': 534, 'imend': 543, 'dec': 551}
+  stress-amb-25-discovery-711406-0064-amb-B2-renamed clarify  argmax='<tool_call>' call-NO= 13.50 call-NE= 16.06 NE-NO= -2.56 roles={'end': 568, 'v1': 553, 'v2': 563, 'imend': 608, 'dec': 616}
+  stress-amb-26-discovery-711406-0068-amb-B3-renamed clarify  argmax='NE'         call-NO=-45.00 call-NE=-71.12 NE-NO= 26.12 roles={'end': 599, 'v1': 595, 'v2': 598, 'imend': 600, 'dec': 608}
+  stress-amb-27-selection-711407-0040-amb-A2-renamed clarify  argmax='NE'         call-NO=-26.38 call-NE=-52.50 NE-NO= 26.12 roles={'end': 527, 'v1': 511, 'v2': 521, 'imend': 554, 'dec': 562}
+  stress-amb-28-selection-711407-0020-amb-A3-renamed clarify  argmax='NE'         call-NO=-48.75 call-NE=-77.75 NE-NO= 29.00 roles={'end': 596, 'v1': 587, 'v2': 596, 'imend': 597, 'dec': 605}
+  stress-amb-29-selection-711407-0044-amb-B1-renamed clarify  argmax='NE'         call-NO=-21.66 call-NE=-52.47 NE-NO= 30.81 roles={'end': 599, 'v1': 582, 'v2': 591, 'imend': 608, 'dec': 616}
+  stress-amb-30-selection-711407-0044-amb-A1-renamed clarify  argmax='NE'         call-NO= -5.73 call-NE=-35.04 NE-NO= 29.31 roles={'end': 593, 'v1': 582, 'v2': 588, 'imend': 594, 'dec': 602}
+  stress-amb-31-selection-711407-0020-amb-B4-renamed clarify  argmax='<tool_call>' call-NO=  7.25 call-NE= 10.62 NE-NO= -3.38 roles={'end': 588, 'v1': 582, 'v2': 588, 'imend': 600, 'dec': 608}
+{"model": "g23v4", "layers": [22, 23], "hfull": [], "mlpin": [], "colstats": [], "attnrows": true, "continuation": "none", "label": "c02_stress_calib", "mode": "teacher", "set": "stress", "models": ["g23v4"], "prompt_variant": "standard", "n_items": 32, "seconds": 9.494224916998064, "usage": {"requests": 15, "executions": 864, "input_tokens": 477486, "output_tokens": 20393, "candidates": 0}, "memory": {"rss_gib": 1.27215576171875, "backend_peak_gib": 1.8707913793623447}}

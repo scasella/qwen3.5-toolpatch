@@ -1,0 +1,91 @@
+{
+ "label": "g23v4_rev",
+ "layers": [
+  22,
+  23
+ ],
+ "neurons": {
+  "J0_L22": 2525,
+  "J1_L23": 3468,
+  "J2_L23": 3421,
+  "J3_L23": 2331
+ },
+ "params": {
+  "a_g": 0.5,
+  "theta1": 11.7,
+  "k1": 4.0,
+  "b": 1.0,
+  "lam": 0.3,
+  "lam2": 0.5,
+  "theta3": 2.0,
+  "k3": 2.0,
+  "a3": -0.1,
+  "rho": 1.0,
+  "form": "quad"
+ },
+ "receipts": {
+  "model.language_model.layers.22.mlp.gate_proj.weight": {
+   "name": "model.language_model.layers.22.mlp.gate_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 1024,
+   "l2": 4.656459464307879,
+   "linf": 0.5704345703125,
+   "rel_frobenius": 0.1389290159349424,
+   "total_changed_entries": 1024,
+   "fraction": 1.360990821733084e-06
+  },
+  "model.language_model.layers.22.mlp.up_proj.weight": {
+   "name": "model.language_model.layers.22.mlp.up_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 1024,
+   "l2": 4.769072525565042,
+   "linf": 0.56512451171875,
+   "rel_frobenius": 0.24874235496527883,
+   "total_changed_entries": 2048,
+   "fraction": 2.721981643466168e-06
+  },
+  "model.language_model.layers.22.mlp.down_proj.weight": {
+   "name": "model.language_model.layers.22.mlp.down_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 1023,
+   "l2": 1.043927596952611,
+   "linf": 0.152374267578125,
+   "rel_frobenius": 0.059585683777184414,
+   "total_changed_entries": 3071,
+   "fraction": 4.081643372599904e-06
+  },
+  "model.language_model.layers.23.mlp.gate_proj.weight": {
+   "name": "model.language_model.layers.23.mlp.gate_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 3069,
+   "l2": 4.449717534623815,
+   "linf": 0.85394287109375,
+   "rel_frobenius": 0.12299842317004064,
+   "total_changed_entries": 6140,
+   "fraction": 8.16062856000111e-06
+  },
+  "model.language_model.layers.23.mlp.up_proj.weight": {
+   "name": "model.language_model.layers.23.mlp.up_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 3070,
+   "l2": 3.0391944606243917,
+   "linf": 0.3545684814453125,
+   "rel_frobenius": 0.14304263711301662,
+   "total_changed_entries": 9210,
+   "fraction": 1.2240942840001664e-05
+  },
+  "model.language_model.layers.23.mlp.down_proj.weight": {
+   "name": "model.language_model.layers.23.mlp.down_proj.weight",
+   "dtype": "BF16",
+   "changed_entries": 3070,
+   "l2": 1.2772147322998613,
+   "linf": 0.0999603271484375,
+   "rel_frobenius": 0.07779960435667986,
+   "total_changed_entries": 12280,
+   "fraction": 1.632125712000222e-05
+  }
+ },
+ "total_changed_entries": 12280,
+ "fraction_of_text_params": 1.632125712000222e-05,
+ "equation": "Stage 1 (layer 22, MLP neuron J0=2525, re-purposed; its original rows/column are replaced):\n    gate[J0] = k1 * w1g,  up[J0] = k1 * w1g  (quadratic),  down[:,J0] = b * p6\n    w1g = unit(a_g*g + u) - theta1*r1 : u = shrinkage-LDA direction 'ambiguous clause end vs call/resolved clause end' at the layer-22 MLP input,\n          g = shrinkage-LDA 'user fact-clause end vs other positions', r1 = constant-projection direction (r1.x ~ 1 on clause ends and on the hardest\n          negative positions; C^-1 mu / mu^T C^-1 mu with shrinkage) so that w1g.x ~ w1.x - theta1 (a threshold without a bias term)\n    p6  = unit( pinv(Wk_kv1 * gamma_in23) k_target ), k_target = gamma_k * mean decision query of layer-23 head 6 (unrotated dims 64:256), orthogonalized against the\n          mean decision queries of heads 4/5/7 (same kv group): a residual marker at the clause end whose layer-23 key is aligned with head 6's decision query.\nTransport: unchanged layer-23 attention; head 6 at the decision position attends to the marked clause end (alpha ~ 1) and copies its value.\nStage 2 (layer 23, MLP neuron J3=2331):\n    gate[J3] = k3 * (t - lam*c - lam2*c2 - theta3*r3),  up[J3] = k3 * (t - theta3*r3) (quad) or k3u * r3 (lin),  down[:,J3] = a3 * (u_AB + rho*u_route)\n    r3 = constant-projection direction at the layer-23 MLP input (decision positions, delivered decisions, hardest generated positions)\n    t = unit mean change of the layer-23 MLP input at the decision when the marker is present (replay), c/c2/u_AB/u_route from g23v3.\nJ1/J2 rows of g23v3 are kept verbatim. Edited tensors: layers.22.mlp.{gate,up,down}_proj, layers.23.mlp.{gate,up,down}_proj (6 tensors, 2 layers)."
+}

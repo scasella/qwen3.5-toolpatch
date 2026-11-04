@@ -1,275 +1,226 @@
 #!/usr/bin/env python3
-"""Export the data bundle behind docs/ (Mode 1, the two-neuron circuit explorer).
+"""CPU half of the circuit-explorer export: docs/data/circuit_traces.json (Tab 1 of docs/index.html).
 
-  python -I scripts/export_circuit_traces.py [--sets practice,selection,renamed,final_proxy,prose_qa,prose_qa2] [--limit N]
+  P=/Users/scasella/Downloads/qwen-3/toolpatch/.venv/bin/python; $P -B scripts/export_circuit_traces.py [--traces artifacts/traces] [--limit N]
 
-For every benchmark item the ORIGINAL Qwen/Qwen3.5-0.8B is run once (greedy, 128 tokens, the campaign protocol) with two
-read-only taps installed on the resident MLX model:
-  * the input of layers[23].mlp (the post-attention-RMSNorm vector x the two edited neurons read), projected on the
-    campaign vectors s, r, c, c2 (g23v3), the seed-13 random-control vectors, and the ORIGINAL gate/up rows of the two
-    re-purposed neurons 3468 / 3421 -- at every generated position;
-  * the input of the final RMSNorm (the residual h24 that the edit adds to), kept in full at the decision position.
-Nothing from the budgeted campaign is re-run and nothing is written under runs/ or ledger.jsonl: this is a derived,
-non-budgeted export exactly like scripts/make_fig4_trace.py. Recorded side-by-side outputs (original / v1 / v2 / g23v3 /
-random control) are copied verbatim from the campaign's runs/*.json.
-
-Why the browser needs no 1024-d vectors. With the edit, h' = h24 - a_old1*Wd[:,J1] - a_old2*Wd[:,J2] + a1*act1*u_AB
-+ a2*act2*u_route, i.e. h' = h24 + sum_k coef_k b_k in a fixed 7-vector basis b_k (the two original down columns, u_AB,
-u_route, v1's u_AB and the random control's u_AB / u_route). The final RMSNorm + tied unembedding give
-logit_t = ((h' / rms(h')) * gamma) . E_t = [ L_t * rms(h24) + sum_k coef_k * B_kt ] / rms(h'),  B_kt = (b_k * gamma) . E_t,
-rms(h')^2 = (|h24|^2 + 2 sum_k coef_k (h24 . b_k) + coef^T G coef) / 1024 + eps. So per item only rms(h24), seven
-projections h24 . b_k and the base logits L_t of a tracked token set are needed; B (7 x K) and the Gram G are global.
-This is the campaign's closed-form simulator (analysis/simulate.py, build_g23.py) rearranged, and the script checks the
-rearrangement against the direct computation and against the recorded first tokens before writing anything.
-"""
-import argparse, json, sys, time, hashlib
+Input: the fresh original-model captures of scripts/capture_traces.py (x22 at every position, h23 at every prompt position, x23 at the
+decision and generated positions, h24 at the decision) for 143 representative items. For every item this script
+  * projects x22 at every position on the stage-1 read directions (w1 = unit(0.5 g + u), r1) and on the original J0 rows, so the browser
+    recomputes J0 = silu(k1 (w1.x - theta1 r1.x)) * k1 (w1.x - theta1 r1.x) per token exactly (shipped k1 = 4, theta1 = 11.7);
+  * replays layer 23 on the CPU with the stock MLX modules (qwen-7 analysis/replay23, imported read-only) for several stage-1 write
+    scales b in {0, 0.5, 1, 2} (the clause-end marker b * act_J0 * p6 added to the layer-23 input at every prompt position, J0's
+    original contribution removed) and for the norm-matched random control (seed 17 rows); each "state" stores the exact layer-23
+    MLP input projections read by J1/J2/J3 (and the original rows of those neurons), the exact head attention of the decision query
+    on the clause end, and what the final norm needs for the closed-form readout of the edited neurons:
+      logit_t = (L_t rms + coef.B_t) / sqrt((sumsq + 2 coef.hb + coef^T G coef)/1024 + eps),  coef over a fixed 10-vector basis
+    (the original down columns of J1/J2/J3, u_AB, u_route, v1's u_AB, u_conv, the seed-13 and seed-17 random output vectors);
+  * stores the six scalars per head that make the head-6 attention to the clause end an exact closed form in the write scale w:
+      l_end(w) = (A + w B) / sqrt((|y0|^2 + 2 w y0.y1 + w^2 |y1|^2)/256 + eps) / sqrt(256),  alpha = e^l / (e^LSE_rest + e^l),
+    y0 = Wk (gamma_in . h_end), y1 = Wk (gamma_in . p6) for the head's kv group (the key RMSNorm makes the input-norm rms cancel);
+  * copies the recorded side-by-side outputs (Base / v1 / v2 / g23v3 / random control / g23v4 / dose controls) verbatim from the two
+    campaigns' run files under experiments/.
+Every closed form is checked against the direct computation before anything is written (formula vs direct logits, attention formula
+vs replay, recorded first tokens vs the exact readout at the recorded settings). Nothing under experiments/ is modified."""
+import argparse, hashlib, json, sys, time
 from pathlib import Path
 import numpy as np
-HERE = Path(__file__).resolve().parent; ROOT = HERE.parent; sys.path.insert(0, str(ROOT))
-import demo_cli
-from apply_g23v3 import read_bits, f32, build
-sys.path.insert(0, str(HERE))
-from circuit_items import silu, load_set
+HERE = Path(__file__).resolve().parent; ROOT = HERE.parent; sys.path.insert(0, str(HERE)); sys.path.insert(0, str(ROOT))
+import replay_tools as RT
+from replay_tools import J0, J1, J2, J3, silu, unit, TOK
+EXP6, EXP7 = ROOT / 'experiments/qwen6_g23v3', ROOT / 'experiments/qwen7_g23v4'
+EPS = 1e-6; D = 1024; HD = 256
+NAMED = ['<tool_call>', 'NO', 'NE', 'I', 'To', 'The', 'No', 'None', 'Based', 'This', 'Since', '<', '</', '<think>', '</think>', '<|im_end|>', 'Here', 'Please', 'Sure', 'Yes', '1', 'A', 'In', 'It', '**', 'Select', 'You', 'Okay', 'NOT', 'NEED', 'Sorry', 'Which', 'Could', 'Do', 'What']
+DOSES = [0.0, 0.5, 1.0, 2.0]
 
-J1, J2 = 3468, 3421; EPS = 1e-6; D = 1024
-NAMED = ['<tool_call>', 'NO', 'NE', 'I', 'To', 'The', 'No', 'None', 'Based', 'This', 'Since', '<', '</', '<think>', '</think>',
-         '<|im_end|>', 'Here', 'Please', 'Sure', 'Yes', '1', 'A', 'In', 'It', '**', 'Select', 'You', 'Okay', 'NOT', 'NEED']
-TNAME = 'model.language_model.layers.23.mlp.{}.weight'
+def rnd(a, nd=4): return np.round(np.asarray(a, dtype=np.float64), nd).tolist()
 
-def rnd(a, nd=4):
-    a = np.asarray(a, dtype=np.float64)
-    return np.round(a, nd).tolist()
+# ------------------------------------------------------------------ recorded outputs
+RUN6 = {'practice': {'original': ('p01_baseline', 'original'), 'g23v3': ('p38_v3_gen_practice', 'edited'), 'v2': ('p19_v2_gen_practice', 'edited'), 'v1': ('p07_gen_intended', 'edited'), 'rand13': ('p45_v3_rand13', 'edited')},
+        'selection': {'original': ('p40_v3_sel_both', 'original'), 'g23v3': ('p40_v3_sel_both', 'edited'), 'v2': ('p21_v2_sel_both', 'edited'), 'v1': ('p13_sel_both', 'edited')},
+        'renamed_A': {'original': ('p42_v3_renamedA_both', 'original'), 'g23v3': ('p42_v3_renamedA_both', 'edited'), 'v2': ('p22_v2_renamedA_both', 'edited'), 'v1': ('p14_renamedA_both', 'edited')},
+        'renamed_B': {'original': ('p43_v3_renamedB_both', 'original'), 'g23v3': ('p43_v3_renamedB_both', 'edited'), 'v2': ('p23_v2_renamedB_both', 'edited'), 'v1': ('p15_renamedB_both', 'edited')},
+        'final': {'original': ('p41_v3_final_both', 'original'), 'g23v3': ('p41_v3_final_both', 'edited'), 'v2': ('p24_v2_final_both', 'edited')},
+        'prose_qa': {'original': ('p37_v3_prose_both', 'original'), 'g23v3': ('p37_v3_prose_both', 'edited'), 'v2': ('p31_v2_prose_both', 'edited'), 'v1': ('p32_v1_prose_both', 'edited')},
+        'prose_qa2': {'original': ('p36_v3_prose2_both', 'original'), 'g23v3': ('p36_v3_prose2_both', 'edited')}}
+RUN7 = {'practice': {'g23v4': ('g05_practice_v4', 'g23v4')}, 'selection': {'g23v4': ('g06_sel_renA_v4', 'g23v4')}, 'renamed_A': {'g23v4': ('g06_sel_renA_v4', 'g23v4')},
+        'renamed_B': {'g23v4': ('g07_renB_final_v4', 'g23v4')}, 'final': {'g23v4': ('g07_renB_final_v4', 'g23v4')}, 'prose_qa': {'g23v4': ('g08_nontool_v4', 'g23v4')}, 'prose_qa2': {'g23v4': ('g08_nontool_v4', 'g23v4')},
+        'stress': {'original': ('g02_stress_amb_base_v3', 'original'), 'g23v3': ('g02_stress_amb_base_v3', 'g23v3'), 'g23v4': ('g04_stress_v4', 'g23v4')}}
+RUN7_RES = {'original': ('g03_stress_res_base_v3', 'original'), 'g23v3': ('g03_stress_res_base_v3', 'g23v3'), 'g23v4': ('g04_stress_v4', 'g23v4')}
+CONTROLS = {'half': ('k01_control_half', 'g23v4_half'), 'double': ('k02_control_double', 'g23v4_double'), 'reversed': ('k03_control_rev', 'g23v4_rev'), 'rand17': ('k04_control_rand17', 'g23v4_rand17')}
+_rc = {}
+def rows_of(root, label, key):
+    if (label, key) not in _rc:
+        d = json.loads((root / 'runs' / f'{label}.json').read_text()); _rc[(label, key)] = {r['case_id']: r for r in d['rows'].get(key, [])}
+    return _rc[(label, key)]
+def output_row(r, label):
+    s = r['score']; dec = s.get('decision')
+    return {'run': label, 'raw_output': r['raw_output'], 'first_token': r['token_ids'][0] if r['token_ids'] else None, 'token_ids': r['token_ids'], 'n_tokens': len(r['token_ids']),
+            'decision': dec if dec is not None else 'prose', 'correct': bool(s.get('correct')), 'correct_strict': bool(s.get('correct_strict')), 'false_call': bool(s.get('false_call')), 'truncated': bool(r.get('truncated', False))}
+def recorded_outputs(it):
+    out = {}; sname = it['set']
+    for variant, (lab, key) in RUN6.get(sname, {}).items():
+        r = rows_of(EXP6, lab, key).get(it['id'])
+        if r: out[variant] = output_row(r, lab)
+    m7 = RUN7_RES if (sname == 'stress' and not it['ambiguous']) else RUN7.get(sname, {})
+    for variant, (lab, key) in m7.items():
+        r = rows_of(EXP7, lab, key).get(it['id'])
+        if r: out[variant] = output_row(r, lab)
+    for variant, (lab, key) in CONTROLS.items():
+        r = rows_of(EXP7, lab, key).get(it['id'])
+        if r: out[f'ctrl_{variant}'] = output_row(r, lab)
+    return out
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--sets', default='practice,selection,renamed,final_proxy,prose_qa,prose_qa2')
-    ap.add_argument('--limit', type=int, default=0, help='debug: first N items per set')
-    ap.add_argument('--out', default=str(ROOT / 'docs/data'))
-    ap.add_argument('--no-lock', action='store_true')
-    a = ap.parse_args()
-    out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
-
-    # ---------------------------------------------------------------- vectors, weights
-    V3 = np.load(ROOT / 'edits/g23v3.vectors.npz'); V1 = np.load(ROOT / 'edits/g23_t05_a1.0.vectors.npz'); R13 = np.load(ROOT / 'edits/g23v3_rand13.vectors.npz')
-    spec3 = json.load(open(ROOT / 'edits/g23v3.spec.json')); spec13 = json.load(open(ROOT / 'edits/g23v3_rand13.spec.json'))
-    assert np.array_equal(V1['s'], V3['s']) and np.array_equal(V1['r'], V3['r']) and np.array_equal(V1['u_route'], V3['u_route'])
-    assert np.allclose(V3['gate_dir'], V3['s'] - spec3['lam'] * V3['c'] - spec3['lam2'] * V3['c2'], atol=1e-6)
-    locks = [] if a.no_lock else demo_cli.accelerator_lock()
-    t0 = time.perf_counter(); m = demo_cli.Model('Qwen/Qwen3.5-0.8B'); print(f'model loaded in {time.perf_counter() - t0:.1f}s', flush=True)
-    st = m.safetensors
-    Wg = f32(read_bits(st, TNAME.format('gate_proj'))); Wu = f32(read_bits(st, TNAME.format('up_proj'))); Wd = f32(read_bits(st, TNAME.format('down_proj')))
-    E = f32(read_bits(st, 'model.language_model.embed_tokens.weight'))                       # (248320, 1024) tied unembedding
-    gamma = f32(read_bits(st, 'model.language_model.norm.weight')) + np.float32(1.0)        # MLX/HF Qwen3.5 convention: stored w, gamma = 1 + w
-    edited = build(st, ROOT / 'edits/g23v3.vectors.npz', ROOT / 'edits/g23v3.spec.json')  # exact BF16 bits of the three edited tensors
-
-    # projection matrix for the layer-23 MLP input (what the two neurons read)
-    PROJ = ['s', 'r', 'c', 'c2', 's13', 'r13', 'g13', 'gJ1_old', 'uJ1_old', 'gJ2_old', 'uJ2_old']
-    Vm = np.stack([V3['s'], V3['r'], V3['c'], V3['c2'], R13['s'], R13['r'], R13['gate_dir'], Wg[J1], Wu[J1], Wg[J2], Wu[J2]], 1).astype(np.float32)  # (1024, 11)
-    # basis of the edit subspace (what the edit adds to h24)
-    BASIS = ['dJ1_old', 'dJ2_old', 'uAB', 'uroute', 'uAB_v1', 'uAB_r13', 'uroute_r13']
-    Bm = np.stack([Wd[:, J1], Wd[:, J2], V3['u_AB'], V3['u_route'], V1['u_AB'], R13['u_AB'], R13['u_route']], 0).astype(np.float64)  # (7, 1024)
-    G = Bm @ Bm.T
-
-    # ---------------------------------------------------------------- items
-    sets = [s for s in a.sets.split(',') if s]
-    items = []
-    for s in sets:
-        rows = load_set(ROOT, s)
-        if a.limit: rows = rows[:a.limit]
-        items += rows
-    print(f'{len(items)} items from {sets}', flush=True)
-
-    # ---------------------------------------------------------------- taps
-    import mlx.core as mx, mlx.nn as nn
-    from types import SimpleNamespace
-    class Tap(nn.Module):
-        def __init__(self, inner, mat, keep_last):
-            super().__init__(); self.inner = inner
-            self._st = SimpleNamespace(mat=mx.array(mat) if mat is not None else None, keep_last=keep_last, rows=[], last=[], offset=0)
-        def __call__(self, x, *args, **kw):
-            st = self._st; L = x.shape[1]; xf = x[0].astype(mx.float32)
-            if st.mat is not None:
-                p = xf @ st.mat; mx.eval(p); st.rows.append(np.array(p))
-            if st.keep_last:
-                v = xf[-1]; mx.eval(v); st.last.append((st.offset + L - 1, np.array(v)))
-            st.offset += L
-            return self.inner(x, *args, **kw)
-        def reset(self): self._st.rows = []; self._st.last = []; self._st.offset = 0
-    bb = m.model.language_model.model
-    tap_x = Tap(bb.layers[23].mlp, Vm, False); tap_h = Tap(bb.norm, None, True)
-    bb.layers[23].mlp = tap_x; bb.norm = tap_h
-
-    # validation references (historical captures, read-only)
-    p04c = json.load(open(ROOT / 'runs/p04c_practice_allpos.json')); p04c_npz = np.load(ROOT / 'runs/p04c_practice_allpos.npz') if (ROOT / 'runs/p04c_practice_allpos.npz').exists() else None
-    p03 = json.load(open(ROOT / 'runs/p03_practice_dec.json'))
-    hook_checks = []
-
-    recs = []  # per item capture record
-    t_all = time.perf_counter()
-    for i, it in enumerate(items):
-        ids = m.prompt_ids(it['system'], it['user'], it['tools']); T = len(ids)
-        tap_x.reset(); tap_h.reset(); t1 = time.perf_counter()
-        text, toks = m.generate(ids); dt = time.perf_counter() - t1
-        proj = np.concatenate(tap_x._st.rows, 0)                 # (positions seen, 11)
-        assert proj.shape[0] >= T + len(toks) - 1, (proj.shape, T, len(toks))
-        proj_gen = proj[T - 1:T - 1 + len(toks)]                   # position T-1+i produced token i
-        h24 = next(v for pos, v in tap_h._st.last if pos == T - 1)
-        rec = {'item': it, 'T': T, 'toks': toks, 'text': text, 'proj': proj_gen.astype(np.float32), 'h24': h24.astype(np.float32), 'seconds': dt}
-        # recorded original generation must be token-identical
-        ro = it['outputs'].get('original')
-        rec['original_identical'] = (ro is not None and ro['token_ids'] == toks)
-        # hook validation against the historical all-position capture (fp16) and the decision logits
-        if p04c_npz is not None and f"mlpin_L23_{it['id']}" in p04c_npz.files and len(hook_checks) < 6:
-            row = next(r for r in p04c['rows'] if r['case_id'] == it['id']); x_hist = p04c_npz[f"mlpin_L23_{it['id']}"].astype(np.float32)[row['decision_position']]
-            ph = x_hist @ Vm; hook_checks.append({'id': it['id'], 'max_abs_diff_proj': float(np.abs(ph - proj_gen[0]).max()), 'proj_scale': float(np.abs(ph).max())})
-        recs.append(rec)
-        print(f"[{i + 1}/{len(items)}] {it['id']:<42s} {it['set']:10s} T={T:4d} gen={len(toks):3d} {dt:5.1f}s identical={rec['original_identical']} | {text[:60]!r}", flush=True)
-    bb.layers[23].mlp = tap_x.inner; bb.norm = tap_h.inner
-    print(f'capture done in {time.perf_counter() - t_all:.0f}s', flush=True)
-    for f in locks: import fcntl; fcntl.flock(f, fcntl.LOCK_UN); f.close()
-
-    # ---------------------------------------------------------------- offline exact readout
-    H = np.stack([r['h24'] for r in recs]).astype(np.float64)              # (n, 1024)
-    rms = np.sqrt((H * H).mean(1) + EPS)
-    base_logits = ((H / rms[:, None]) * gamma) @ E.T.astype(np.float64)     # (n, 248320) exact base logits
-    Bkt = ((Bm * gamma[None, :]) @ E.T.astype(np.float64))                  # (7, 248320)
-    hb = H @ Bm.T                                                             # (n, 7)
-    sumsq = (H * H).sum(1)
-    base_lse = np.logaddexp.reduce(base_logits, axis=1)
-
-    tok = m.tok
-    def enc1(w):
-        ids_ = tok.encode(w, add_special_tokens=False); return ids_[0] if len(ids_) == 1 else None
-    named = {w: enc1(w) for w in NAMED}; named = {w: t for w, t in named.items() if t is not None}
+    ap = argparse.ArgumentParser(); ap.add_argument('--traces', default=str(ROOT / 'artifacts/traces')); ap.add_argument('--limit', type=int, default=0); ap.add_argument('--out', default=str(ROOT / 'docs/data'))
+    a = ap.parse_args(); traces = Path(a.traces); out = Path(a.out); out.mkdir(parents=True, exist_ok=True); t0 = time.perf_counter()
+    idx = json.load(open(traces / 'index.json'))['items']
+    if a.limit: idx = idx[:a.limit]
+    # ---------------------------------------------------------------- vectors
+    V3 = np.load(EXP6 / 'edits/g23v3.vectors.npz'); S3 = json.load(open(EXP6 / 'edits/g23v3.spec.json')); V1 = np.load(EXP6 / 'edits/g23_t05_a1.0.vectors.npz'); R13 = np.load(EXP6 / 'edits/g23v3_rand13.vectors.npz')
+    V4 = np.load(EXP7 / 'edits/g23v4.vectors.npz'); S4 = json.load(open(ROOT / 'patches/g23v4.spec.json')); p4 = S4['params']; R17 = np.load(EXP7 / 'edits/g23v4_rand17.vectors.npz')
+    VC = np.load(ROOT / 'patches/g23v3_conv.vectors.npz'); u_conv = VC[f'col|{RT.L.format(23, "down_proj")}|{J1}'] / 0.5
+    D4 = dict(np.load(EXP7 / 'analysis/g23v4_directions.npz'))  # u, g, r1, p6, t, r3 of the shipped circuit
+    shipped = RT.patch_rows('g23v4'); rand17 = dict(shipped); rand17.update({k: R17[k] for k in ('gate22', 'up22', 'down22', 'gate23', 'up23', 'down23')})
+    w1 = unit(p4['a_g'] * D4['g'] + D4['u']); r1 = D4['r1']; assert np.allclose(shipped['gate22'], p4['k1'] * (w1 - p4['theta1'] * r1), atol=2e-5)
+    Wg22, Wu22, Wd22 = RT.original(22, 'gate_proj'), RT.original(22, 'up_proj'), RT.original(22, 'down_proj'); Wg23, Wu23, Wd23 = RT.original(23, 'gate_proj'), RT.original(23, 'up_proj'), RT.original(23, 'down_proj')
+    E = RT.f32(RT.read_bits(RT.BASE_FILE, 'model.language_model.embed_tokens.weight')).astype(np.float64); gamma = (RT.f32(RT.read_bits(RT.BASE_FILE, 'model.language_model.norm.weight')) + 1.0).astype(np.float64)
+    Wk = RT.f32(RT.read_bits(RT.BASE_FILE, 'model.language_model.layers.23.self_attn.k_proj.weight')).astype(np.float64); gin23 = (RT.f32(RT.read_bits(RT.BASE_FILE, 'model.language_model.layers.23.input_layernorm.weight')) + 1.0).astype(np.float64)
+    # x22 projections: w1, r1, original J0 gate/up, random-17 gate/up ; x23 projections: see X23P
+    X22P = ['w1', 'r1', 'gJ0_old', 'uJ0_old', 'g22_r17', 'u22_r17']; M22 = np.stack([w1, r1, Wg22[J0], Wu22[J0], R17['gate22'], R17['up22']], 1).astype(np.float64)
+    X23P = ['s', 'r', 'c', 'c2', 't', 'r3', 'gJ1_old', 'uJ1_old', 'gJ2_old', 'uJ2_old', 'gJ3_old', 'uJ3_old', 's13', 'r13', 'g13', 'g23_r17', 'u23_r17']
+    M23 = np.stack([V3['s'], V3['r'], V3['c'], V3['c2'], V4['t'], V4['r23'] * 0 + D4['r3'], Wg23[J1], Wu23[J1], Wg23[J2], Wu23[J2], Wg23[J3], Wu23[J3], R13['s'], R13['r'], R13['gate_dir'], R17['gate23'], R17['up23']], 1).astype(np.float64)
+    assert np.allclose(shipped['gate23'], p4['k3'] * (V4['t'] - p4['lam'] * V3['c'] - p4['lam2'] * V3['c2'] - p4['theta3'] * D4['r3']), atol=2e-5)
+    BASIS = ['dJ1_old', 'dJ2_old', 'dJ3_old', 'uAB', 'uroute', 'uAB_v1', 'uconv', 'uAB_r13', 'uroute_r13', 'd23_r17']
+    Bm = np.stack([Wd23[:, J1], Wd23[:, J2], Wd23[:, J3], V3['u_AB'], V3['u_route'], V1['u_AB'], u_conv, R13['u_AB'], R13['u_route'], R17['down23']], 0).astype(np.float64); G = Bm @ Bm.T
+    Bkt_full = (Bm * gamma[None, :]) @ E.T  # (10, vocab)
+    from transformers import AutoTokenizer
+    tok = AutoTokenizer.from_pretrained(str(RT.BASE), local_files_only=True)
+    enc1 = lambda w: (lambda ids: ids[0] if len(ids) == 1 else None)(tok.encode(w, add_special_tokens=False))
+    named = {w: t for w, t in ((w, enc1(w)) for w in NAMED) if t is not None}
+    rp = RT.Replayer(); W_orig = {'mlp.gate_proj.weight': Wg23.copy(), 'mlp.up_proj.weight': Wu23.copy(), 'mlp.down_proj.weight': Wd23.copy()}; rp.weights(W_orig)
+    # ---------------------------------------------------------------- per item
+    recs = []; checks = {'attention_formula_vs_replay_max_abs': 0.0, 'formula_vs_direct_max_abs': 0.0, 'argmax_agreement': {}, 'tail': {}, 'original_generation_token_identical': {}}
+    def unroped_key_parts(h_end, kv):
+        y0 = Wk[kv * HD:(kv + 1) * HD] @ (gin23 * h_end); y1 = Wk[kv * HD:(kv + 1) * HD] @ (gin23 * D4['p6']); return y0, y1
+    for n, it in enumerate(idx):
+        z = np.load(traces / f"{it['id']}.npz"); x22 = z['x22'].astype(np.float32); h23 = z['h23'].astype(np.float32); x23g = z['x23_gen'].astype(np.float32); T = it['T']; G_ = it['G']
+        roles = it['roles']; dec = T - 1
+        act0, z0, delta = RT.stage1(shipped, x22[:T], 1.0); act0_all, _, _ = RT.stage1(shipped, x22, 1.0)
+        end = roles.get('end', int(np.argmax(act0)))
+        p22 = (x22.astype(np.float64) @ M22)                                     # (T+G-1, 6)
+        # attention closed-form scalars per head (decision query, end key): A, B, |y0|^2, y0.y1, |y1|^2, LSE_rest
+        r_nat = rp.run(h23, dec, want_qk=True); q = r_nat['rows']['q'][:, dec, :].astype(np.float64); k = r_nat['rows']['k'].astype(np.float64)  # q (8,256) k (2,T,256)
+        scale = 1 / np.sqrt(HD); heads = []
+        for h in range(8):
+            kv = h // 4; lg = scale * (k[kv] @ q[h]); lse_rest = np.logaddexp.reduce(np.delete(lg, end)); y0, y1 = unroped_key_parts(h23[end].astype(np.float64), kv)
+            rms0 = np.sqrt((y0 @ y0) / HD + EPS); A = (q[h] @ k[kv, end]) * rms0  # k[kv,end] = RoPE(gk*y0)/rms(y0)
+            heads.append({'A': float(A), 'y0sq': float(y0 @ y0), 'y01': float(y0 @ y1), 'y1sq': float(y1 @ y1), 'lse_rest': float(lse_rest), 'B': None, 'alpha_nat': float(r_nat['rows'][dec][h, end])})
+        # B from one marked run (w0 = 100): k'(w0) = RoPE(gk*(y0+w0 y1))/rms(y0+w0 y1)
+        w0 = 100.0; h2 = h23.copy(); h2[end] += w0 * D4['p6'].astype(np.float32); r_m = rp.run(h2, dec, want_qk=True); km = r_m['rows']['k'].astype(np.float64)
+        for h in range(8):
+            kv = h // 4; y0, y1 = unroped_key_parts(h23[end].astype(np.float64), kv); rmsw = np.sqrt(((y0 + w0 * y1) @ (y0 + w0 * y1)) / HD + EPS)
+            heads[h]['B'] = float(((q[h] @ km[kv, end]) * rmsw - heads[h]['A']) / w0)
+        def alpha_formula(h, w):
+            H = heads[h]; l = scale * (H['A'] + w * H['B']) / np.sqrt((H['y0sq'] + 2 * w * H['y01'] + w * w * H['y1sq']) / HD + EPS); return float(np.exp(l - np.logaddexp(H['lse_rest'], l)))
+        # states: replay with the ORIGINAL layer-23 MLP (edited neurons added in closed form) for each dose and the random control
+        states = {}
+        for name, R, b in [(f'b{d:g}', shipped, d) for d in DOSES] + [('rand17', rand17, 1.0)]:
+            if b == 0 and name != 'rand17': h23e = h23 - (silu(x22[:T] @ Wg22[J0]) * (x22[:T] @ Wu22[J0]))[:, None].astype(np.float32) * Wd22[:, J0][None, :]
+            else: _, _, dl = RT.stage1(R, x22[:T], b); h23e = h23 + dl
+            wr = (b * RT.stage1(R, x22[:T], 1.0)[0]) if name != 'b0' else np.zeros(T)
+            e = rp.run(h23e, dec); x23 = e['x23'][dec].astype(np.float64); h24 = e['h24'][dec].astype(np.float64)
+            rms = np.sqrt((h24 @ h24) / D + EPS); L = ((h24 / rms) * gamma) @ E.T; hb = h24 @ Bm.T
+            st = {'write_norm_end': float(wr[end] * np.linalg.norm(R['down22'])), 'x23': rnd(x23 @ M23, 5), 'rms': float(rms), 'sumsq': float(h24 @ h24), 'hb': rnd(hb, 5), 'lse': float(np.logaddexp.reduce(L)),
+                  'alpha': rnd([e['rows'][dec][h, end] for h in range(8)], 5), 'attn_argmax6': int(np.argmax(e['rows'][dec][6])), '_L': L, '_x23': x23, '_h24': h24}
+            if name != 'rand17':
+                af = alpha_formula(6, float(wr[end])); checks['attention_formula_vs_replay_max_abs'] = max(checks['attention_formula_vs_replay_max_abs'], abs(af - st['alpha'][6]))
+                st['alpha6_formula'] = af
+            states[name] = st
+        if n == 0: print('first item ok', flush=True)
+        # x22 projections at the decision+generated positions (J0 silence during generation) and x23 projections at generated positions
+        p23g = x23g.astype(np.float64) @ M23
+        outs = recorded_outputs(it); ro = outs.get('original'); same = ro is not None and ro['token_ids'] == z['gen_ids'].tolist()
+        recs.append({'it': it, 'T': T, 'G': G_, 'end': int(end), 'p22': p22, 'p23g': p23g, 'heads': heads, 'states': states, 'outs': outs, 'gen_ids': z['gen_ids'].tolist(), 'prompt_ids': z['prompt_ids'].tolist(), 'identical': same})
+        if (n + 1) % 10 == 0 or n == 0: print(f"[{n + 1}/{len(idx)}] {it['id'][-40:]:40s} end={end} J0(end)={act0[end]:.1f} alpha6 b1={states['b1']['alpha'][6]:.3f} (formula {states['b1'].get('alpha6_formula', 0):.3f}) identical={same} {time.perf_counter() - t0:.0f}s", flush=True)
+    rp.restore()
+    # ---------------------------------------------------------------- tracked tokens and the exact readout
+    def coef_for(rec, state, variant, a1=1.0, a2=1.0, lam=None, lam2=None, a3=None, rho=None, k=2.0, kr=1.0, k3=2.0):
+        """coef over BASIS for a variant at a state (closed form on the stored x23 projections)."""
+        x = dict(zip(X23P, rec['states'][state]['x23'])); c = np.zeros(len(BASIS))
+        c[0] = -silu(x['gJ1_old']) * x['uJ1_old']; c[1] = -silu(x['gJ2_old']) * x['uJ2_old']; c[2] = -silu(x['gJ3_old']) * x['uJ3_old']
+        if variant == 'original': return c
+        L1 = {'g23v4': p4['lam'], 'g23v3': S3['lam'], 'v2': S3['lam'], 'v1': 0.0, 'conv3': S3['lam'], 'conv4': p4['lam']}.get(variant, S3['lam']) if lam is None else lam
+        L2 = {'g23v4': p4['lam2'], 'g23v3': S3['lam2'], 'v2': 0.0, 'v1': 0.0, 'conv3': S3['lam2'], 'conv4': p4['lam2']}.get(variant, S3['lam2']) if lam2 is None else lam2
+        if variant in ('rand13', 'rand17'):
+            if variant == 'rand13': gate = k * x['g13']; act1 = silu(gate) * (k * x['s13']); act2 = silu(gate) * (kr * x['r13']); c[7] = a1 * act1; c[8] = a2 * act2; return c
+            gate = k * (x['s'] - L1 * x['c'] - L2 * x['c2']); act1 = silu(gate) * (k * x['s']); act2 = silu(gate) * (kr * x['r']); c[3] = a1 * act1; c[4] = a2 * act2
+            act3 = silu(x['g23_r17']) * x['u23_r17']; c[9] = act3; return c
+        gate = k * (x['s'] - L1 * x['c'] - L2 * x['c2']); act1 = silu(gate) * (k * x['s']); act2 = silu(gate) * (kr * x['r'])
+        if variant == 'v1': c[5] = a1 * act1; c[4] = a2 * act2
+        elif variant in ('conv3', 'conv4'): c[6] = (0.5 if a1 == 1.0 else a1) * act1
+        else: c[3] = a1 * act1; c[4] = a2 * act2
+        if variant in ('g23v4', 'conv4'):
+            A3 = p4['a3'] if a3 is None else a3; RHO = p4['rho'] if rho is None else rho
+            g3 = k3 * (x['t'] - L1 * x['c'] - L2 * x['c2'] - p4['theta3'] * x['r3']); act3 = silu(g3) * (k3 * (x['t'] - p4['theta3'] * x['r3']))
+            if variant == 'conv4': c[6] += A3 * act3
+            else: c[3] += A3 * act3; c[4] += A3 * RHO * act3
+        return c
+    def logits_direct(rec, state, c): hn = rec['states'][state]['_h24'] + c @ Bm; return ((hn / np.sqrt((hn @ hn) / D + EPS)) * gamma) @ E.T
     tracked = set(named.values())
-    for k in range(Bm.shape[0]):
-        order = np.argsort(Bkt[k]); tracked.update(order[-48:].tolist()); tracked.update(order[:48].tolist())
-    for i in range(len(recs)):
-        tracked.update(np.argsort(base_logits[i])[-24:].tolist())
-
-    # per-item neuron activations and simulator check at the recorded settings
-    def coefs(variant, proj_dec, a1=1.0, a2=1.0, lam=None, lam2=None, k=2.0, kr=1.0):
-        sx, rx, cx, c2x, s13, r13, g13, g1, u1, g2, u2 = proj_dec
-        old1 = silu(g1) * u1; old2 = silu(g2) * u2
-        c = np.zeros(7); c[0] = -old1; c[1] = -old2
-        if variant == 'rand13':
-            gate = k * g13; act1 = silu(gate) * (k * s13); act2 = silu(gate) * (kr * r13); c[5] = a1 * act1; c[6] = a2 * act2
-        else:
-            L1 = {'g23v3': spec3['lam'], 'v2': spec3['lam'], 'v1': 0.0}[variant] if lam is None else lam
-            L2 = {'g23v3': spec3['lam2'], 'v2': 0.0, 'v1': 0.0}[variant] if lam2 is None else lam2
-            gate = k * (sx - L1 * cx - L2 * c2x); act1 = silu(gate) * (k * sx); act2 = silu(gate) * (kr * rx)
-            c[4 if variant == 'v1' else 2] = a1 * act1; c[3] = a2 * act2
-        return c, (gate, act1, act2, old1, old2)
-    def logits_formula(i, c, toks_idx):
-        num = base_logits[i, toks_idx] * rms[i] + c @ Bkt[:, toks_idx]
-        r2 = (sumsq[i] + 2 * c @ hb[i] + c @ G @ c) / D + EPS
-        return num / np.sqrt(r2)
-    def logits_direct(i, c):
-        hn = H[i] + c @ Bm; return ((hn / np.sqrt((hn * hn).mean() + EPS)) * gamma) @ E.T.astype(np.float64)
-
-    checks = {'formula_vs_direct_max_abs': 0.0, 'argmax_agreement': {}, 'tail_mass': {}, 'hook_vs_historical_capture': hook_checks,
-              'original_generation_token_identical': {}}
-    settings = [('g23v3', {}), ('v1', {}), ('v2', {}), ('rand13', {}), ('g23v3', {'a1': 2.0, 'a2': 2.0}), ('g23v3', {'a1': 0.5, 'a2': 0.0}),
-                ('g23v3', {'lam': 0.0, 'lam2': 0.0}), ('g23v3', {'lam': 1.0, 'lam2': 1.5}), ('g23v3', {'a1': 3.0, 'a2': 3.0, 'lam': 0.0, 'lam2': 0.0})]
-    for i, r in enumerate(recs):  # tokens that gain mass under the edit, per item and setting
-        pd = r['proj'][0].astype(np.float64)
-        for name, kw in settings:
-            c, _ = coefs(name, pd, **kw); full = logits_direct(i, c); tracked.update(np.argsort(full)[-16:].tolist())
-    tracked = np.array(sorted(tracked)); K = len(tracked)
-    print(f'tracked tokens: {K}', flush=True)
-    tail_stats = {}
-    agree = {}
-    for i, r in enumerate(recs):
-        it = r['item']; pd = r['proj'][0].astype(np.float64)
-        for name, kw in settings:
-            c, _ = coefs(name, pd, **kw)
-            full = logits_direct(i, c)
-            lf = logits_formula(i, c, tracked)
+    for kk in range(Bm.shape[0]):
+        order = np.argsort(Bkt_full[kk]); tracked.update(order[-48:].tolist()); tracked.update(order[:48].tolist())
+    settings = [('original', 'b0'), ('g23v3', 'b0'), ('v1', 'b0'), ('v2', 'b0'), ('rand13', 'b0'), ('g23v4', 'b1'), ('g23v4', 'b0.5'), ('g23v4', 'b2'), ('rand17', 'rand17'), ('conv3', 'b0'), ('conv4', 'b1')]
+    for rec in recs:
+        for st in rec['states'].values(): tracked.update(np.argsort(st['_L'])[-24:].tolist())
+        for v, s in settings: tracked.update(np.argsort(logits_direct(rec, s, coef_for(rec, s, v)))[-16:].tolist())
+    tracked = np.array(sorted(tracked)); pos = {t: j for j, t in enumerate(tracked.tolist())}; print(f'tracked tokens: {len(tracked)}', flush=True)
+    def logits_formula(rec, state, c):
+        st = rec['states'][state]; num = st['_L'][tracked] * st['rms'] + c @ Bkt_full[:, tracked]; r2 = (st['sumsq'] + 2 * c @ np.array(st['hb']) + c @ G @ c) / D + EPS; return num / np.sqrt(r2)
+    agree = {}; tails = {}
+    for rec in recs:
+        it = rec['it']
+        for v, s in settings:
+            c = coef_for(rec, s, v); full = logits_direct(rec, s, c); lf = logits_formula(rec, s, c)
             checks['formula_vs_direct_max_abs'] = max(checks['formula_vs_direct_max_abs'], float(np.abs(lf - full[tracked]).max()))
-            p = np.exp(full - full.max()); p /= p.sum()
-            key = name + ('' if not kw else ':' + ','.join(f'{k_}={v_}' for k_, v_ in kw.items()))
-            ts = tail_stats.setdefault(key, {'min_tracked_mass': 1.0, 'argmax_in_tracked': 0, 'n': 0, 'max_abs_prob_err_top10': 0.0})
-            mass = float(p[tracked].sum()); ts['min_tracked_mass'] = min(ts['min_tracked_mass'], mass); ts['n'] += 1
-            am = int(full.argmax()); ts['argmax_in_tracked'] += int(am in set(tracked.tolist()))
-            # the UI's distribution: tracked tokens exact, all other tokens held at their ORIGINAL logits
-            tail_lse = np.logaddexp.reduce(np.delete(base_logits[i], tracked))
-            mm = max(lf.max(), tail_lse); q = np.exp(lf - mm); z = q.sum() + np.exp(tail_lse - mm); q /= z
-            top10 = np.argsort(full)[-10:]; pos = {t: j for j, t in enumerate(tracked.tolist())}
-            err = max(abs(q[pos[t]] - p[t]) if t in pos else p[t] for t in top10.tolist())
-            ts['max_abs_prob_err_top10'] = max(ts['max_abs_prob_err_top10'], float(err))
-            if not kw:  # recorded-settings argmax agreement with the recorded first token
-                rec_out = it['outputs'].get(name)
-                if rec_out and rec_out['token_ids']:
-                    ag = agree.setdefault(name, {'match': 0, 'n': 0, 'mismatch_ids': []}); ag['n'] += 1
-                    if am == rec_out['token_ids'][0]: ag['match'] += 1
-                    else: ag['mismatch_ids'].append(it['id'])
-        # base argmax vs recorded original first token
-        ag = agree.setdefault('original', {'match': 0, 'n': 0, 'mismatch_ids': []}); ag['n'] += 1
-        if int(base_logits[i].argmax()) == r['toks'][0]: ag['match'] += 1
+            p = np.exp(full - full.max()); p /= p.sum(); tail_lse = np.logaddexp.reduce(np.delete(rec['states'][s]['_L'], tracked)); mm = max(lf.max(), tail_lse); q = np.exp(lf - mm); q /= q.sum() + np.exp(tail_lse - mm)
+            top10 = np.argsort(full)[-10:]; err = max(abs(q[pos[t]] - p[t]) if t in pos else p[t] for t in top10.tolist())
+            ts = tails.setdefault(f'{v}@{s}', {'n': 0, 'max_abs_prob_err_top10': 0.0, 'min_tracked_mass': 1.0}); ts['n'] += 1; ts['max_abs_prob_err_top10'] = max(ts['max_abs_prob_err_top10'], float(err)); ts['min_tracked_mass'] = min(ts['min_tracked_mass'], float(p[tracked].sum()))
+            rec_key = {'g23v4': 'g23v4', 'rand17': 'ctrl_rand17'}.get(v, v); am = int(full.argmax())
+            if (v, s) in (('original', 'b0'), ('g23v3', 'b0'), ('v1', 'b0'), ('v2', 'b0'), ('rand13', 'b0'), ('g23v4', 'b1'), ('rand17', 'rand17')) and rec['outs'].get(rec_key) and rec['outs'][rec_key]['first_token'] is not None:
+                ag = agree.setdefault(rec_key, {'match': 0, 'n': 0, 'mismatch_ids': []}); ag['n'] += 1
+                if am == rec['outs'][rec_key]['first_token']: ag['match'] += 1
+                else: ag['mismatch_ids'].append(it['id'])
+        ag = agree.setdefault('original_fresh', {'match': 0, 'n': 0, 'mismatch_ids': []}); ag['n'] += 1
+        if int(rec['states']['b0']['_L'].argmax()) == rec['gen_ids'][0]: ag['match'] += 1
         else: ag['mismatch_ids'].append(it['id'])
-    checks['argmax_agreement'] = agree; checks['tail_mass'] = tail_stats
-    for s in sorted({r['item']['set'] for r in recs}):
-        rs = [r for r in recs if r['item']['set'] == s]
-        checks['original_generation_token_identical'][s] = f"{sum(r['original_identical'] for r in rs)}/{len(rs)}"
-    # historical decision logits (p03, fp16) vs fresh base logits on practice items
-    p03_ids = {r['case_id']: r for r in p03['rows']}
-    diffs = []
-    for i, r in enumerate(recs):
-        rr = p03_ids.get(r['item']['id'])
-        if rr: diffs.append(max(abs(base_logits[i, t['id']] - t['logit']) for t in rr['decision']['topk']))
-    checks['fresh_vs_p03_decision_logits_max_abs'] = float(max(diffs)) if diffs else None
-    print(json.dumps(checks, indent=1)[:3000], flush=True)
-
+    checks['argmax_agreement'] = agree; checks['tail'] = tails
+    for s in sorted({r['it']['set'] for r in recs}):
+        rs = [r for r in recs if r['it']['set'] == s]; checks['original_generation_token_identical'][s] = f"{sum(r['identical'] for r in rs)}/{len(rs)}"
+    print(json.dumps(checks, indent=1)[:4000], flush=True)
     # ---------------------------------------------------------------- bundle
-    tracked_list = tracked.tolist()
-    bundle = {
-        'meta': {
-            'title': 'Two-neuron layer-23 circuit explorer data', 'generated_utc': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
-            'base_model': 'Qwen/Qwen3.5-0.8B', 'base_revision': '2fc06364715b967f1860aea9cf38778875588b17', 'edit': 'g23v3',
-            'provenance': ('Fresh, non-budgeted capture of the ORIGINAL model on an Apple M4 Pro (MLX, BF16): layer-23 MLP input projections at every '
-                           'generated position and the final-norm input at the decision position. Side-by-side outputs are copied verbatim from the '
-                           'campaign records in runs/. Nothing under runs/, ledger.jsonl or edits/ was modified.'),
-            'checks': checks, 'n_items': len(recs), 'sets': sets,
-            'readout': ('logit_t = (L_t*rms + coef.B_t) / sqrt((sumsq + 2 coef.hb + coef^T G coef)/1024 + eps); coef over basis; '
-                        'gate = k(s.x - lam c.x - lam2 c2.x); act1 = silu(gate) k s.x; act2 = silu(gate) kr r.x; coef[uAB] = a1 act1, coef[uroute] = a2 act2, '
-                        'coef[dJ1_old] = -silu(gJ1.x) uJ1.x, coef[dJ2_old] = -silu(gJ2.x) uJ2.x'),
-        },
-        'constants': {'k': spec3['k'], 'kr': spec3['kr'], 'lam': spec3['lam'], 'lam2': spec3['lam2'], 'a1': spec3['a1'], 'a2': spec3['a2'], 'J1': J1, 'J2': J2,
-                      'eps': EPS, 'd': D, 'vocab': int(E.shape[0]), 'changed_entries': 6142, 'fraction_of_text_params': 8.163286745199807e-06},
-        'proj_names': PROJ, 'basis_names': BASIS, 'gram': rnd(G, 6),
-        'variants': {
-            'original': {'label': 'Original Qwen3.5-0.8B', 'edit': None},
-            'v1': {'label': 'v1 (g23_t05_a1.0): no gate terms, u_AB without prose target', 'lam': 0.0, 'lam2': 0.0, 'uAB': 'uAB_v1', 'uroute': 'uroute', 'runs': 'p07/p13/p14/p15/p32'},
-            'v2': {'label': 'v2 (g23v2): tool-context gate c only', 'lam': spec3['lam'], 'lam2': 0.0, 'uAB': 'uAB', 'uroute': 'uroute', 'runs': 'p19/p21/p22/p23/p24/p31'},
-            'g23v3': {'label': 'g23v3 (released): gates c and c2', 'lam': spec3['lam'], 'lam2': spec3['lam2'], 'uAB': 'uAB', 'uroute': 'uroute', 'runs': 'p36-p43'},
-            'rand13': {'label': 'Random control (seed 13, norm-matched vectors)', 'gate': 'g13', 's': 's13', 'r': 'r13', 'uAB': 'uAB_r13', 'uroute': 'uroute_r13', 'runs': 'p45 (practice only)'},
-        },
-        'tracked': {'ids': tracked_list, 'text': [tok.decode([t]) for t in tracked_list], 'named': named,
-                    'B': rnd(Bkt[:, tracked], 4)},
-        'items': [],
-    }
-    for i, r in enumerate(recs):
-        it = r['item']
-        bundle['items'].append({
-            'id': it['id'], 'set': it['set'], 'cohort': it['cohort'], 'family': it['family'], 'action': it['action'], 'ambiguous': it['ambiguous'],
-            'renamed': it['renamed'], 'expected': it['expected'], 'system': it['system'], 'user': it['user'], 'tools': it['tools'],
-            'prompt_tokens': r['T'],
-            'decision': {'rms': float(rms[i]), 'sumsq': float(sumsq[i]), 'hb': rnd(hb[i], 5), 'lse': float(base_lse[i]),
-                         'logits': rnd(base_logits[i, tracked], 3), 'base_top': [[int(t), round(float(base_logits[i, t]), 3)] for t in np.argsort(base_logits[i])[-10:][::-1]]},
-            'positions': {'tokens': r['toks'], 'text': [tok.decode([t]) for t in r['toks']], 'proj': rnd(r['proj'], 4)},
-            'outputs': {v: {**{k_: v_ for k_, v_ in o.items() if k_ != 'token_ids'}, 'first_token': o['token_ids'][0] if o['token_ids'] else None,
-                            'identical_to_original': o['token_ids'] == it['outputs']['original']['token_ids']} for v, o in it['outputs'].items()},
-        })
-    (out / 'circuit_traces.json').write_text(json.dumps(bundle, ensure_ascii=False, separators=(',', ':')))
-    vec = {'meta': {'note': 'exact float32 vectors of the g23v3 edit, the original rows/columns of the two re-purposed neurons, the final RMSNorm gamma and the tied unembedding rows (BF16 checkpoint values) of the named tokens'},
-           'vectors': {k: rnd(v, 6) for k, v in {'s': V3['s'], 'r': V3['r'], 'c': V3['c'], 'c2': V3['c2'], 'gate_dir': V3['gate_dir'], 'u_AB': V3['u_AB'], 'u_route': V3['u_route'],
-                                                 'u_AB_v1': V1['u_AB'], 's_r13': R13['s'], 'r_r13': R13['r'], 'gate_r13': R13['gate_dir'], 'u_AB_r13': R13['u_AB'], 'u_route_r13': R13['u_route'],
-                                                 'gamma': gamma, 'Wg_J1_old': Wg[J1], 'Wu_J1_old': Wu[J1], 'Wd_J1_old': Wd[:, J1], 'Wg_J2_old': Wg[J2], 'Wu_J2_old': Wu[J2], 'Wd_J2_old': Wd[:, J2]}.items()},
-           'edited_rows_bf16': {'gate_J1': rnd(f32(edited[TNAME.format('gate_proj')][J1]), 6), 'up_J1': rnd(f32(edited[TNAME.format('up_proj')][J1]), 6), 'down_J1': rnd(f32(edited[TNAME.format('down_proj')][:, J1]), 6),
-                                'gate_J2': rnd(f32(edited[TNAME.format('gate_proj')][J2]), 6), 'up_J2': rnd(f32(edited[TNAME.format('up_proj')][J2]), 6), 'down_J2': rnd(f32(edited[TNAME.format('down_proj')][:, J2]), 6)},
-           'unembedding_rows': {w: rnd(E[t], 6) for w, t in named.items()}}
-    (out / 'circuit_vectors.json').write_text(json.dumps(vec, separators=(',', ':')))
-    for f in ('circuit_traces.json', 'circuit_vectors.json'):
-        p = out / f; print(f'wrote {p} {p.stat().st_size / 1e6:.2f} MB sha256 {hashlib.sha256(p.read_bytes()).hexdigest()[:16]}')
+    tl = tracked.tolist()
+    bundle = {'meta': {'title': 'Four-neuron circuit explorer data (g23v3 + g23v4)', 'generated_utc': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'base_model': 'Qwen/Qwen3.5-0.8B',
+                       'base_revision': '2fc06364715b967f1860aea9cf38778875588b17', 'edits': ['g23v3', 'g23v4'], 'n_items': len(recs), 'checks': checks, 'doses': DOSES,
+                       'provenance': 'Fresh non-budgeted capture of the ORIGINAL model (scripts/capture_traces.py) + exact CPU replay of layer 23 per stage-1 dose (this script). Recorded outputs copied verbatim from the campaign run files under experiments/.',
+                       'readout': 'logit_t = (L_t*rms + coef.B_t)/sqrt((sumsq + 2 coef.hb + coef^T G coef)/1024 + eps) over the basis; J0: z = k1 (w1.x22 - theta1 r1.x22), act = silu(z) z; J1/J2: gate = k(s - lam c - lam2 c2), act1 = silu(gate) k s, act2 = silu(gate) kr r; '
+                                  'J3: g3 = k3 (t - lam c - lam2 c2 - theta3 r3), act3 = silu(g3) k3 (t - theta3 r3); coef[uAB] = a1 act1 + a3 act3, coef[uroute] = a2 act2 + a3 rho act3, coef[dJ*_old] = -silu(gJ*.x) uJ*.x; '
+                                  'alpha_h(w) = exp(l)/(exp(lse_rest)+exp(l)), l = (A + w B)/sqrt((y0sq + 2 w y01 + w^2 y1sq)/256 + eps)/16 with w = b * act_J0(end) * |p6|'},
+              'constants': {'g23v3': {k: S3[k] for k in ('k', 'kr', 'a1', 'a2', 'lam', 'lam2')}, 'g23v4': p4, 'J0': J0, 'J1': J1, 'J2': J2, 'J3': J3, 'eps': EPS, 'd': D, 'head_dim': HD, 'vocab': int(E.shape[0]),
+                            'p6_norm': float(np.linalg.norm(shipped['down22'])), 'changed_entries': {'g23v3': 6142, 'g23v4': 12281}, 'conv_a1': 0.5, 'conv_a3': json.load(open(ROOT / 'patches/g23v4_conv.params.json'))['a3']},
+              'x22_proj_names': X22P, 'x23_proj_names': X23P, 'basis_names': BASIS, 'gram': rnd(G, 6),
+              'variants': {'original': {'label': 'Base Qwen3.5-0.8B'}, 'v1': {'label': 'v1 (g23_t05_a1.0): no gates, prose collapses'}, 'v2': {'label': 'v2 (g23v2): tool-context gate c only'},
+                           'g23v3': {'label': 'g23v3 (2 neurons, layer 23)'}, 'g23v4': {'label': 'g23v4 (4 neurons, layers 22+23)'}, 'rand13': {'label': 'Random control on J1/J2 (seed 13, norm-matched)'},
+                           'rand17': {'label': 'Random control on J0/J3 (seed 17, norm-matched; g23v3 rows kept)'}, 'conv3': {'label': 'g23v3 conversational readout'}, 'conv4': {'label': 'g23v4 conversational readout'}},
+              'tracked': {'ids': tl, 'text': [tok.decode([t]) for t in tl], 'named': named, 'B': rnd(Bkt_full[:, tracked], 4)}, 'items': []}
+    for rec in recs:
+        it = rec['it']; T = rec['T']
+        states = {name: {k: v for k, v in st.items() if not k.startswith('_')} | {'logits': rnd(st['_L'][tracked], 3), 'base_top': [[int(t), round(float(st['_L'][t]), 3)] for t in np.argsort(st['_L'])[-10:][::-1]]} for name, st in rec['states'].items()}
+        bundle['items'].append({'id': it['id'], 'set': it['set'], 'cohort': it['cohort'], 'family': it['family'], 'action': it['action'], 'ambiguous': it['ambiguous'], 'renamed': it['renamed'], 'expected': it['expected'],
+                                'system': it['system'], 'user': it['user'], 'tools': it['tools'], 'T': T, 'end': rec['end'], 'roles': it['roles'],
+                                'prompt': {'ids': rec['prompt_ids'], 'text': [tok.decode([t]) for t in rec['prompt_ids']], 'x22': rnd(rec['p22'][:T], 4)},
+                                'generated': {'ids': rec['gen_ids'], 'text': [tok.decode([t]) for t in rec['gen_ids']], 'x22': rnd(rec['p22'][T - 1:], 4), 'x23': rnd(rec['p23g'], 4)},
+                                'heads': rec['heads'], 'states': states, 'outputs': rec['outs'], 'fresh_original_identical': rec['identical']})
+    p = out / 'circuit_traces.json'; p.write_text(json.dumps(bundle, ensure_ascii=False, separators=(',', ':')))
+    print(f'wrote {p} {p.stat().st_size / 1e6:.2f} MB sha256 {hashlib.sha256(p.read_bytes()).hexdigest()[:16]} in {time.perf_counter() - t0:.0f}s')
 
 if __name__ == '__main__': main()

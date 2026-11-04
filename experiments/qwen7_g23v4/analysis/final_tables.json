@@ -1,0 +1,3346 @@
+{
+ "Practice (64)": {
+  "Base": {
+   "summary": {
+    "n": 64,
+    "lenient": 24,
+    "strict": 7,
+    "false_calls": 38,
+    "mean_tokens": 55.8,
+    "per_class": {
+     "valid_call": {
+      "n": 24,
+      "correct": 24,
+      "decisions": {
+       "call": 24
+      }
+     },
+     "no_tool": {
+      "n": 20,
+      "correct": 0,
+      "decisions": {
+       "call": 18,
+       "prose": 2
+      }
+     },
+     "need_clarification": {
+      "n": 10,
+      "correct": 0,
+      "decisions": {
+       "call": 10
+      }
+     },
+     "ambiguous": {
+      "n": 10,
+      "correct": 0,
+      "decisions": {
+       "call": 10
+      }
+     }
+    }
+   },
+   "vs_base": null,
+   "vs_g23v3": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 28,
+    "token_identical": 36,
+    "n": 64,
+    "right_to_wrong_ids": [
+     "discovery-611401-0075",
+     "discovery-611401-0226",
+     "discovery-611401-0254",
+     "discovery-611401-0138",
+     "discovery-611401-0106",
+     "discovery-611401-0235",
+     "discovery-611401-0131",
+     "discovery-611401-0083",
+     "discovery-611401-0074",
+     "discovery-611401-0115",
+     "discovery-611401-0102",
+     "discovery-611401-0246",
+     "discovery-611401-0278",
+     "discovery-611401-0114",
+     "discovery-611401-0107",
+     "discovery-611401-0222",
+     "discovery-611401-0270",
+     "discovery-611401-0099",
+     "discovery-611401-0098",
+     "discovery-611401-0091",
+     "discovery-611401-0262",
+     "discovery-611401-0090",
+     "discovery-611401-0286",
+     "discovery-611401-0130",
+     "discovery-611401-0230",
+     "discovery-611401-0082",
+     "discovery-611401-0123",
+     "discovery-611401-0122"
+    ],
+    "decision_changes": [
+     [
+      "discovery-611401-0075",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0226",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0254",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0138",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0106",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0235",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0131",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0083",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0074",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0115",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0102",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0246",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0278",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0114",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0107",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0222",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0270",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0099",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0098",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0091",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0262",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0090",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0286",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0130",
+      "answer",
+      "prose"
+     ],
+     [
+      "discovery-611401-0230",
+      "answer",
+      "prose"
+     ],
+     [
+      "discovery-611401-0082",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0123",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0122",
+      "answer",
+      "call"
+     ]
+    ]
+   }
+  },
+  "g23v3": {
+   "summary": {
+    "n": 64,
+    "lenient": 52,
+    "strict": 35,
+    "false_calls": 12,
+    "mean_tokens": 33.5,
+    "per_class": {
+     "valid_call": {
+      "n": 24,
+      "correct": 24,
+      "decisions": {
+       "call": 24
+      }
+     },
+     "no_tool": {
+      "n": 20,
+      "correct": 19,
+      "decisions": {
+       "answer": 19,
+       "call": 1
+      }
+     },
+     "need_clarification": {
+      "n": 10,
+      "correct": 9,
+      "decisions": {
+       "clarify": 9,
+       "call": 1
+      }
+     },
+     "ambiguous": {
+      "n": 10,
+      "correct": 0,
+      "decisions": {
+       "call": 10
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 28,
+    "right_to_wrong": 0,
+    "token_identical": 36,
+    "n": 64,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "discovery-611401-0075",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0226",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0254",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0138",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0106",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0235",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0131",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0083",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0074",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0115",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0102",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0246",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0278",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0114",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0107",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0222",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0270",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0099",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0098",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0091",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0262",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0090",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0286",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0130",
+      "prose",
+      "answer"
+     ],
+     [
+      "discovery-611401-0230",
+      "prose",
+      "answer"
+     ],
+     [
+      "discovery-611401-0082",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0123",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0122",
+      "call",
+      "answer"
+     ]
+    ]
+   },
+   "vs_g23v3": null
+  },
+  "g23v4": {
+   "summary": {
+    "n": 64,
+    "lenient": 62,
+    "strict": 45,
+    "false_calls": 2,
+    "mean_tokens": 24.7,
+    "per_class": {
+     "valid_call": {
+      "n": 24,
+      "correct": 24,
+      "decisions": {
+       "call": 24
+      }
+     },
+     "no_tool": {
+      "n": 20,
+      "correct": 19,
+      "decisions": {
+       "answer": 19,
+       "call": 1
+      }
+     },
+     "need_clarification": {
+      "n": 10,
+      "correct": 9,
+      "decisions": {
+       "clarify": 9,
+       "call": 1
+      }
+     },
+     "ambiguous": {
+      "n": 10,
+      "correct": 10,
+      "decisions": {
+       "clarify": 10
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 38,
+    "right_to_wrong": 0,
+    "token_identical": 26,
+    "n": 64,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "discovery-611401-0239",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0075",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0111",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0226",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0254",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0138",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0106",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0235",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0263",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0131",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0083",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0074",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0115",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0247",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0102",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0246",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0231",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0278",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0114",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0107",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0223",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0222",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0279",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0270",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0099",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0098",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0091",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0262",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0287",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0090",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0286",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0130",
+      "prose",
+      "answer"
+     ],
+     [
+      "discovery-611401-0230",
+      "prose",
+      "answer"
+     ],
+     [
+      "discovery-611401-0082",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0271",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0123",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0255",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0122",
+      "call",
+      "answer"
+     ]
+    ]
+   },
+   "vs_g23v3": {
+    "wrong_to_right": 10,
+    "right_to_wrong": 0,
+    "token_identical": 54,
+    "n": 64,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "discovery-611401-0239",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0111",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0263",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0247",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0231",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0223",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0279",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0287",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0271",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0255",
+      "call",
+      "clarify"
+     ]
+    ]
+   }
+  }
+ },
+ "Selection (32)": {
+  "Base": {
+   "summary": {
+    "n": 32,
+    "lenient": 12,
+    "strict": 4,
+    "false_calls": 17,
+    "mean_tokens": 56.8,
+    "per_class": {
+     "valid_call": {
+      "n": 12,
+      "correct": 12,
+      "decisions": {
+       "call": 12
+      }
+     },
+     "no_tool": {
+      "n": 10,
+      "correct": 0,
+      "decisions": {
+       "call": 7,
+       "prose": 3
+      }
+     },
+     "need_clarification": {
+      "n": 5,
+      "correct": 0,
+      "decisions": {
+       "call": 5
+      }
+     },
+     "ambiguous": {
+      "n": 5,
+      "correct": 0,
+      "decisions": {
+       "call": 5
+      }
+     }
+    }
+   },
+   "vs_base": null,
+   "vs_g23v3": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 15,
+    "token_identical": 17,
+    "n": 32,
+    "right_to_wrong_ids": [
+     "selection-611402-0278",
+     "selection-611402-0286",
+     "selection-611402-0174",
+     "selection-611402-0078",
+     "selection-611402-0218",
+     "selection-611402-0139",
+     "selection-611402-0043",
+     "selection-611402-0034",
+     "selection-611402-0234",
+     "selection-611402-0130",
+     "selection-611402-0190",
+     "selection-611402-0122",
+     "selection-611402-0227",
+     "selection-611402-0131",
+     "selection-611402-0219"
+    ],
+    "decision_changes": [
+     [
+      "selection-611402-0278",
+      "answer",
+      "call"
+     ],
+     [
+      "selection-611402-0286",
+      "answer",
+      "call"
+     ],
+     [
+      "selection-611402-0174",
+      "answer",
+      "prose"
+     ],
+     [
+      "selection-611402-0078",
+      "answer",
+      "prose"
+     ],
+     [
+      "selection-611402-0218",
+      "answer",
+      "call"
+     ],
+     [
+      "selection-611402-0139",
+      "clarify",
+      "call"
+     ],
+     [
+      "selection-611402-0043",
+      "clarify",
+      "call"
+     ],
+     [
+      "selection-611402-0034",
+      "answer",
+      "call"
+     ],
+     [
+      "selection-611402-0234",
+      "answer",
+      "call"
+     ],
+     [
+      "selection-611402-0130",
+      "answer",
+      "call"
+     ],
+     [
+      "selection-611402-0190",
+      "answer",
+      "call"
+     ],
+     [
+      "selection-611402-0122",
+      "answer",
+      "prose"
+     ],
+     [
+      "selection-611402-0227",
+      "clarify",
+      "call"
+     ],
+     [
+      "selection-611402-0131",
+      "clarify",
+      "call"
+     ],
+     [
+      "selection-611402-0219",
+      "clarify",
+      "call"
+     ]
+    ]
+   }
+  },
+  "g23v3": {
+   "summary": {
+    "n": 32,
+    "lenient": 27,
+    "strict": 19,
+    "false_calls": 5,
+    "mean_tokens": 34.0,
+    "per_class": {
+     "valid_call": {
+      "n": 12,
+      "correct": 12,
+      "decisions": {
+       "call": 12
+      }
+     },
+     "no_tool": {
+      "n": 10,
+      "correct": 10,
+      "decisions": {
+       "answer": 10
+      }
+     },
+     "need_clarification": {
+      "n": 5,
+      "correct": 5,
+      "decisions": {
+       "clarify": 5
+      }
+     },
+     "ambiguous": {
+      "n": 5,
+      "correct": 0,
+      "decisions": {
+       "call": 5
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 15,
+    "right_to_wrong": 0,
+    "token_identical": 17,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "selection-611402-0278",
+      "call",
+      "answer"
+     ],
+     [
+      "selection-611402-0286",
+      "call",
+      "answer"
+     ],
+     [
+      "selection-611402-0174",
+      "prose",
+      "answer"
+     ],
+     [
+      "selection-611402-0078",
+      "prose",
+      "answer"
+     ],
+     [
+      "selection-611402-0218",
+      "call",
+      "answer"
+     ],
+     [
+      "selection-611402-0139",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0043",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0034",
+      "call",
+      "answer"
+     ],
+     [
+      "selection-611402-0234",
+      "call",
+      "answer"
+     ],
+     [
+      "selection-611402-0130",
+      "call",
+      "answer"
+     ],
+     [
+      "selection-611402-0190",
+      "call",
+      "answer"
+     ],
+     [
+      "selection-611402-0122",
+      "prose",
+      "answer"
+     ],
+     [
+      "selection-611402-0227",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0131",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0219",
+      "call",
+      "clarify"
+     ]
+    ]
+   },
+   "vs_g23v3": null
+  },
+  "g23v4": {
+   "summary": {
+    "n": 32,
+    "lenient": 32,
+    "strict": 24,
+    "false_calls": 0,
+    "mean_tokens": 24.1,
+    "per_class": {
+     "valid_call": {
+      "n": 12,
+      "correct": 12,
+      "decisions": {
+       "call": 12
+      }
+     },
+     "no_tool": {
+      "n": 10,
+      "correct": 10,
+      "decisions": {
+       "answer": 10
+      }
+     },
+     "need_clarification": {
+      "n": 5,
+      "correct": 5,
+      "decisions": {
+       "clarify": 5
+      }
+     },
+     "ambiguous": {
+      "n": 5,
+      "correct": 5,
+      "decisions": {
+       "clarify": 5
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 20,
+    "right_to_wrong": 0,
+    "token_identical": 12,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "selection-611402-0278",
+      "call",
+      "answer"
+     ],
+     [
+      "selection-611402-0175",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0087",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0286",
+      "call",
+      "answer"
+     ],
+     [
+      "selection-611402-0174",
+      "prose",
+      "answer"
+     ],
+     [
+      "selection-611402-0271",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0078",
+      "prose",
+      "answer"
+     ],
+     [
+      "selection-611402-0287",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0218",
+      "call",
+      "answer"
+     ],
+     [
+      "selection-611402-0139",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0043",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0034",
+      "call",
+      "answer"
+     ],
+     [
+      "selection-611402-0234",
+      "call",
+      "answer"
+     ],
+     [
+      "selection-611402-0130",
+      "call",
+      "answer"
+     ],
+     [
+      "selection-611402-0190",
+      "call",
+      "answer"
+     ],
+     [
+      "selection-611402-0122",
+      "prose",
+      "answer"
+     ],
+     [
+      "selection-611402-0227",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0131",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0219",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0183",
+      "call",
+      "clarify"
+     ]
+    ]
+   },
+   "vs_g23v3": {
+    "wrong_to_right": 5,
+    "right_to_wrong": 0,
+    "token_identical": 27,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "selection-611402-0175",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0087",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0271",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0287",
+      "call",
+      "clarify"
+     ],
+     [
+      "selection-611402-0183",
+      "call",
+      "clarify"
+     ]
+    ]
+   }
+  }
+ },
+ "Renamed A (32)": {
+  "Base": {
+   "summary": {
+    "n": 32,
+    "lenient": 8,
+    "strict": 6,
+    "false_calls": 20,
+    "mean_tokens": 45.8,
+    "per_class": {
+     "valid_call": {
+      "n": 12,
+      "correct": 8,
+      "decisions": {
+       "call": 12
+      }
+     },
+     "no_tool": {
+      "n": 10,
+      "correct": 0,
+      "decisions": {
+       "call": 10
+      }
+     },
+     "need_clarification": {
+      "n": 5,
+      "correct": 0,
+      "decisions": {
+       "call": 5
+      }
+     },
+     "ambiguous": {
+      "n": 5,
+      "correct": 0,
+      "decisions": {
+       "call": 5
+      }
+     }
+    }
+   },
+   "vs_base": null,
+   "vs_g23v3": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 15,
+    "token_identical": 17,
+    "n": 32,
+    "right_to_wrong_ids": [
+     "discovery-611401-0075-renamed-611403",
+     "discovery-611401-0226-renamed-611403",
+     "discovery-611401-0254-renamed-611403",
+     "discovery-611401-0138-renamed-611403",
+     "discovery-611401-0106-renamed-611403",
+     "discovery-611401-0235-renamed-611403",
+     "discovery-611401-0238-renamed-611403",
+     "discovery-611401-0131-renamed-611403",
+     "discovery-611401-0083-renamed-611403",
+     "discovery-611401-0074-renamed-611403",
+     "discovery-611401-0115-renamed-611403",
+     "discovery-611401-0102-renamed-611403",
+     "discovery-611401-0246-renamed-611403",
+     "discovery-611401-0278-renamed-611403",
+     "discovery-611401-0114-renamed-611403"
+    ],
+    "decision_changes": [
+     [
+      "discovery-611401-0075-renamed-611403",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0226-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0254-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0138-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0106-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0235-renamed-611403",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0238-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0131-renamed-611403",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0083-renamed-611403",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0074-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0115-renamed-611403",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0102-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0246-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0278-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0114-renamed-611403",
+      "answer",
+      "call"
+     ]
+    ]
+   }
+  },
+  "g23v3": {
+   "summary": {
+    "n": 32,
+    "lenient": 23,
+    "strict": 21,
+    "false_calls": 5,
+    "mean_tokens": 24.5,
+    "per_class": {
+     "valid_call": {
+      "n": 12,
+      "correct": 8,
+      "decisions": {
+       "call": 12
+      }
+     },
+     "no_tool": {
+      "n": 10,
+      "correct": 10,
+      "decisions": {
+       "answer": 10
+      }
+     },
+     "need_clarification": {
+      "n": 5,
+      "correct": 5,
+      "decisions": {
+       "clarify": 5
+      }
+     },
+     "ambiguous": {
+      "n": 5,
+      "correct": 0,
+      "decisions": {
+       "call": 5
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 15,
+    "right_to_wrong": 0,
+    "token_identical": 17,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "discovery-611401-0075-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0226-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0254-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0138-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0106-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0235-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0238-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0131-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0083-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0074-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0115-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0102-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0246-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0278-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0114-renamed-611403",
+      "call",
+      "answer"
+     ]
+    ]
+   },
+   "vs_g23v3": null
+  },
+  "g23v4": {
+   "summary": {
+    "n": 32,
+    "lenient": 28,
+    "strict": 26,
+    "false_calls": 0,
+    "mean_tokens": 18.8,
+    "per_class": {
+     "valid_call": {
+      "n": 12,
+      "correct": 8,
+      "decisions": {
+       "call": 12
+      }
+     },
+     "no_tool": {
+      "n": 10,
+      "correct": 10,
+      "decisions": {
+       "answer": 10
+      }
+     },
+     "need_clarification": {
+      "n": 5,
+      "correct": 5,
+      "decisions": {
+       "clarify": 5
+      }
+     },
+     "ambiguous": {
+      "n": 5,
+      "correct": 5,
+      "decisions": {
+       "clarify": 5
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 20,
+    "right_to_wrong": 0,
+    "token_identical": 12,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "discovery-611401-0239-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0075-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0111-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0226-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0254-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0138-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0106-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0235-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0238-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0263-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0131-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0083-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0074-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0115-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0247-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0102-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0246-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0231-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0278-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0114-renamed-611403",
+      "call",
+      "answer"
+     ]
+    ]
+   },
+   "vs_g23v3": {
+    "wrong_to_right": 5,
+    "right_to_wrong": 0,
+    "token_identical": 27,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "discovery-611401-0239-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0111-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0263-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0247-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0231-renamed-611403",
+      "call",
+      "clarify"
+     ]
+    ]
+   }
+  }
+ },
+ "Renamed B (32)": {
+  "Base": {
+   "summary": {
+    "n": 32,
+    "lenient": 12,
+    "strict": 10,
+    "false_calls": 20,
+    "mean_tokens": 45.9,
+    "per_class": {
+     "valid_call": {
+      "n": 12,
+      "correct": 12,
+      "decisions": {
+       "call": 12
+      }
+     },
+     "no_tool": {
+      "n": 10,
+      "correct": 0,
+      "decisions": {
+       "call": 10
+      }
+     },
+     "need_clarification": {
+      "n": 5,
+      "correct": 0,
+      "decisions": {
+       "call": 5
+      }
+     },
+     "ambiguous": {
+      "n": 5,
+      "correct": 0,
+      "decisions": {
+       "call": 5
+      }
+     }
+    }
+   },
+   "vs_base": null,
+   "vs_g23v3": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 14,
+    "token_identical": 17,
+    "n": 32,
+    "right_to_wrong_ids": [
+     "discovery-611401-0107-renamed-611403",
+     "discovery-611401-0222-renamed-611403",
+     "discovery-611401-0270-renamed-611403",
+     "discovery-611401-0099-renamed-611403",
+     "discovery-611401-0098-renamed-611403",
+     "discovery-611401-0091-renamed-611403",
+     "discovery-611401-0262-renamed-611403",
+     "discovery-611401-0090-renamed-611403",
+     "discovery-611401-0286-renamed-611403",
+     "discovery-611401-0130-renamed-611403",
+     "discovery-611401-0230-renamed-611403",
+     "discovery-611401-0082-renamed-611403",
+     "discovery-611401-0123-renamed-611403",
+     "discovery-611401-0122-renamed-611403"
+    ],
+    "decision_changes": [
+     [
+      "discovery-611401-0107-renamed-611403",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0222-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0270-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0099-renamed-611403",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0098-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0091-renamed-611403",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0262-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0090-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0286-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0130-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0230-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0082-renamed-611403",
+      "answer",
+      "call"
+     ],
+     [
+      "discovery-611401-0123-renamed-611403",
+      "clarify",
+      "call"
+     ],
+     [
+      "discovery-611401-0122-renamed-611403",
+      "answer",
+      "call"
+     ]
+    ]
+   }
+  },
+  "g23v3": {
+   "summary": {
+    "n": 32,
+    "lenient": 26,
+    "strict": 25,
+    "false_calls": 6,
+    "mean_tokens": 26.8,
+    "per_class": {
+     "valid_call": {
+      "n": 12,
+      "correct": 12,
+      "decisions": {
+       "call": 12
+      }
+     },
+     "no_tool": {
+      "n": 10,
+      "correct": 10,
+      "decisions": {
+       "answer": 10
+      }
+     },
+     "need_clarification": {
+      "n": 5,
+      "correct": 4,
+      "decisions": {
+       "clarify": 4,
+       "call": 1
+      }
+     },
+     "ambiguous": {
+      "n": 5,
+      "correct": 0,
+      "decisions": {
+       "call": 5
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 14,
+    "right_to_wrong": 0,
+    "token_identical": 17,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "discovery-611401-0107-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0222-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0270-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0099-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0098-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0091-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0262-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0090-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0286-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0130-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0230-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0082-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0123-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0122-renamed-611403",
+      "call",
+      "answer"
+     ]
+    ]
+   },
+   "vs_g23v3": null
+  },
+  "g23v4": {
+   "summary": {
+    "n": 32,
+    "lenient": 31,
+    "strict": 30,
+    "false_calls": 1,
+    "mean_tokens": 20.8,
+    "per_class": {
+     "valid_call": {
+      "n": 12,
+      "correct": 12,
+      "decisions": {
+       "call": 12
+      }
+     },
+     "no_tool": {
+      "n": 10,
+      "correct": 10,
+      "decisions": {
+       "answer": 10
+      }
+     },
+     "need_clarification": {
+      "n": 5,
+      "correct": 4,
+      "decisions": {
+       "clarify": 4,
+       "call": 1
+      }
+     },
+     "ambiguous": {
+      "n": 5,
+      "correct": 5,
+      "decisions": {
+       "clarify": 5
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 19,
+    "right_to_wrong": 0,
+    "token_identical": 12,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "discovery-611401-0107-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0223-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0222-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0279-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0270-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0099-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0098-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0091-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0262-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0287-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0090-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0286-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0130-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0230-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0082-renamed-611403",
+      "call",
+      "answer"
+     ],
+     [
+      "discovery-611401-0271-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0123-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0255-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0122-renamed-611403",
+      "call",
+      "answer"
+     ]
+    ]
+   },
+   "vs_g23v3": {
+    "wrong_to_right": 5,
+    "right_to_wrong": 0,
+    "token_identical": 27,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "discovery-611401-0223-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0279-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0287-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0271-renamed-611403",
+      "call",
+      "clarify"
+     ],
+     [
+      "discovery-611401-0255-renamed-611403",
+      "call",
+      "clarify"
+     ]
+    ]
+   }
+  }
+ },
+ "Final-split proxy (32)": {
+  "Base": {
+   "summary": {
+    "n": 32,
+    "lenient": 12,
+    "strict": 3,
+    "false_calls": 19,
+    "mean_tokens": 54.7,
+    "per_class": {
+     "valid_call": {
+      "n": 12,
+      "correct": 12,
+      "decisions": {
+       "call": 12
+      }
+     },
+     "no_tool": {
+      "n": 10,
+      "correct": 0,
+      "decisions": {
+       "call": 9,
+       "prose": 1
+      }
+     },
+     "need_clarification": {
+      "n": 5,
+      "correct": 0,
+      "decisions": {
+       "call": 5
+      }
+     },
+     "ambiguous": {
+      "n": 5,
+      "correct": 0,
+      "decisions": {
+       "call": 5
+      }
+     }
+    }
+   },
+   "vs_base": null,
+   "vs_g23v3": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 15,
+    "token_identical": 17,
+    "n": 32,
+    "right_to_wrong_ids": [
+     "final-611406-0058",
+     "final-611406-0067",
+     "final-611406-0082",
+     "final-611406-0174",
+     "final-611406-0186",
+     "final-611406-0147",
+     "final-611406-0091",
+     "final-611406-0254",
+     "final-611406-0070",
+     "final-611406-0242",
+     "final-611406-0150",
+     "final-611406-0275",
+     "final-611406-0094",
+     "final-611406-0266",
+     "final-611406-0251"
+    ],
+    "decision_changes": [
+     [
+      "final-611406-0058",
+      "answer",
+      "call"
+     ],
+     [
+      "final-611406-0067",
+      "clarify",
+      "call"
+     ],
+     [
+      "final-611406-0082",
+      "answer",
+      "call"
+     ],
+     [
+      "final-611406-0174",
+      "answer",
+      "call"
+     ],
+     [
+      "final-611406-0186",
+      "answer",
+      "prose"
+     ],
+     [
+      "final-611406-0147",
+      "clarify",
+      "call"
+     ],
+     [
+      "final-611406-0091",
+      "clarify",
+      "call"
+     ],
+     [
+      "final-611406-0254",
+      "answer",
+      "call"
+     ],
+     [
+      "final-611406-0070",
+      "answer",
+      "call"
+     ],
+     [
+      "final-611406-0242",
+      "answer",
+      "call"
+     ],
+     [
+      "final-611406-0150",
+      "answer",
+      "call"
+     ],
+     [
+      "final-611406-0275",
+      "clarify",
+      "call"
+     ],
+     [
+      "final-611406-0094",
+      "answer",
+      "call"
+     ],
+     [
+      "final-611406-0266",
+      "answer",
+      "call"
+     ],
+     [
+      "final-611406-0251",
+      "clarify",
+      "call"
+     ]
+    ]
+   }
+  },
+  "g23v3": {
+   "summary": {
+    "n": 32,
+    "lenient": 27,
+    "strict": 18,
+    "false_calls": 5,
+    "mean_tokens": 32.1,
+    "per_class": {
+     "valid_call": {
+      "n": 12,
+      "correct": 12,
+      "decisions": {
+       "call": 12
+      }
+     },
+     "no_tool": {
+      "n": 10,
+      "correct": 10,
+      "decisions": {
+       "answer": 10
+      }
+     },
+     "need_clarification": {
+      "n": 5,
+      "correct": 5,
+      "decisions": {
+       "clarify": 5
+      }
+     },
+     "ambiguous": {
+      "n": 5,
+      "correct": 0,
+      "decisions": {
+       "call": 5
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 15,
+    "right_to_wrong": 0,
+    "token_identical": 17,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "final-611406-0058",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0067",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0082",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0174",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0186",
+      "prose",
+      "answer"
+     ],
+     [
+      "final-611406-0147",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0091",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0254",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0070",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0242",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0150",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0275",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0094",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0266",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0251",
+      "call",
+      "clarify"
+     ]
+    ]
+   },
+   "vs_g23v3": null
+  },
+  "g23v4": {
+   "summary": {
+    "n": 32,
+    "lenient": 32,
+    "strict": 23,
+    "false_calls": 0,
+    "mean_tokens": 23.6,
+    "per_class": {
+     "valid_call": {
+      "n": 12,
+      "correct": 12,
+      "decisions": {
+       "call": 12
+      }
+     },
+     "no_tool": {
+      "n": 10,
+      "correct": 10,
+      "decisions": {
+       "answer": 10
+      }
+     },
+     "need_clarification": {
+      "n": 5,
+      "correct": 5,
+      "decisions": {
+       "clarify": 5
+      }
+     },
+     "ambiguous": {
+      "n": 5,
+      "correct": 5,
+      "decisions": {
+       "clarify": 5
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 20,
+    "right_to_wrong": 0,
+    "token_identical": 12,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "final-611406-0058",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0067",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0082",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0079",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0263",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0174",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0186",
+      "prose",
+      "answer"
+     ],
+     [
+      "final-611406-0147",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0091",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0159",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0254",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0070",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0242",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0150",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0275",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0055",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0094",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0183",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0266",
+      "call",
+      "answer"
+     ],
+     [
+      "final-611406-0251",
+      "call",
+      "clarify"
+     ]
+    ]
+   },
+   "vs_g23v3": {
+    "wrong_to_right": 5,
+    "right_to_wrong": 0,
+    "token_identical": 27,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "final-611406-0079",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0263",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0159",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0055",
+      "call",
+      "clarify"
+     ],
+     [
+      "final-611406-0183",
+      "call",
+      "clarify"
+     ]
+    ]
+   }
+  }
+ },
+ "Short non-tool regression2 (32)": {
+  "Base": {
+   "summary": {
+    "n": 32,
+    "lenient": 28,
+    "strict": 28,
+    "false_calls": 0,
+    "mean_tokens": 8.7,
+    "per_class": {
+     "regression": {
+      "n": 32,
+      "correct": 28,
+      "decisions": {
+       "None": 32
+      }
+     }
+    }
+   },
+   "vs_base": null,
+   "vs_g23v3": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 32,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   }
+  },
+  "g23v3": {
+   "summary": {
+    "n": 32,
+    "lenient": 28,
+    "strict": 28,
+    "false_calls": 0,
+    "mean_tokens": 8.7,
+    "per_class": {
+     "regression": {
+      "n": 32,
+      "correct": 28,
+      "decisions": {
+       "None": 32
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 32,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   },
+   "vs_g23v3": null
+  },
+  "g23v4": {
+   "summary": {
+    "n": 32,
+    "lenient": 28,
+    "strict": 28,
+    "false_calls": 0,
+    "mean_tokens": 8.7,
+    "per_class": {
+     "regression": {
+      "n": 32,
+      "correct": 28,
+      "decisions": {
+       "None": 32
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 32,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   },
+   "vs_g23v3": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 32,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   }
+  }
+ },
+ "Prose QA 128-token (16 derivation set)": {
+  "Base": {
+   "summary": {
+    "n": 16,
+    "lenient": 16,
+    "strict": 16,
+    "false_calls": 0,
+    "mean_tokens": 122.1,
+    "per_class": {
+     "prose": {
+      "n": 16,
+      "correct": 16,
+      "decisions": {
+       "None": 16
+      }
+     }
+    }
+   },
+   "vs_base": null,
+   "vs_g23v3": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 11,
+    "n": 16,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   }
+  },
+  "g23v3": {
+   "summary": {
+    "n": 16,
+    "lenient": 16,
+    "strict": 16,
+    "false_calls": 0,
+    "mean_tokens": 122.1,
+    "per_class": {
+     "prose": {
+      "n": 16,
+      "correct": 16,
+      "decisions": {
+       "None": 16
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 11,
+    "n": 16,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   },
+   "vs_g23v3": null
+  },
+  "g23v4": {
+   "summary": {
+    "n": 16,
+    "lenient": 16,
+    "strict": 16,
+    "false_calls": 0,
+    "mean_tokens": 122.1,
+    "per_class": {
+     "prose": {
+      "n": 16,
+      "correct": 16,
+      "decisions": {
+       "None": 16
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 7,
+    "n": 16,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   },
+   "vs_g23v3": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 11,
+    "n": 16,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   }
+  }
+ },
+ "Prose QA 128-token (16 fresh)": {
+  "Base": {
+   "summary": {
+    "n": 16,
+    "lenient": 16,
+    "strict": 16,
+    "false_calls": 0,
+    "mean_tokens": 127.9,
+    "per_class": {
+     "prose": {
+      "n": 16,
+      "correct": 16,
+      "decisions": {
+       "None": 16
+      }
+     }
+    }
+   },
+   "vs_base": null,
+   "vs_g23v3": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 9,
+    "n": 16,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   }
+  },
+  "g23v3": {
+   "summary": {
+    "n": 16,
+    "lenient": 16,
+    "strict": 16,
+    "false_calls": 0,
+    "mean_tokens": 128.0,
+    "per_class": {
+     "prose": {
+      "n": 16,
+      "correct": 16,
+      "decisions": {
+       "None": 16
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 9,
+    "n": 16,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   },
+   "vs_g23v3": null
+  },
+  "g23v4": {
+   "summary": {
+    "n": 16,
+    "lenient": 16,
+    "strict": 16,
+    "false_calls": 0,
+    "mean_tokens": 128.0,
+    "per_class": {
+     "prose": {
+      "n": 16,
+      "correct": 16,
+      "decisions": {
+       "None": 16
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 8,
+    "n": 16,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   },
+   "vs_g23v3": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 12,
+    "n": 16,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   }
+  }
+ },
+ "Stress: ambiguous (32)": {
+  "Base": {
+   "summary": {
+    "n": 32,
+    "lenient": 0,
+    "strict": 0,
+    "false_calls": 32,
+    "mean_tokens": 54.2,
+    "per_class": {
+     "ambiguous": {
+      "n": 32,
+      "correct": 0,
+      "decisions": {
+       "call": 32
+      }
+     }
+    }
+   },
+   "vs_base": null,
+   "vs_g23v3": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 9,
+    "token_identical": 16,
+    "n": 32,
+    "right_to_wrong_ids": [
+     "stress-amb-00-discovery-711406-0000-amb-B1",
+     "stress-amb-01-discovery-711406-0004-amb-B2",
+     "stress-amb-02-discovery-711406-0008-amb-B3",
+     "stress-amb-05-discovery-711406-0020-amb-B6",
+     "stress-amb-06-discovery-711406-0024-amb-B1",
+     "stress-amb-10-discovery-711406-0040-amb-B5",
+     "stress-amb-26-discovery-711406-0068-amb-B3-renamed",
+     "stress-amb-28-selection-711407-0020-amb-A3-renamed",
+     "stress-amb-29-selection-711407-0044-amb-B1-renamed"
+    ],
+    "decision_changes": [
+     [
+      "stress-amb-00-discovery-711406-0000-amb-B1",
+      "clarify",
+      "call"
+     ],
+     [
+      "stress-amb-01-discovery-711406-0004-amb-B2",
+      "clarify",
+      "call"
+     ],
+     [
+      "stress-amb-02-discovery-711406-0008-amb-B3",
+      "clarify",
+      "call"
+     ],
+     [
+      "stress-amb-04-discovery-711406-0016-amb-B5",
+      "answer",
+      "call"
+     ],
+     [
+      "stress-amb-05-discovery-711406-0020-amb-B6",
+      "clarify",
+      "call"
+     ],
+     [
+      "stress-amb-06-discovery-711406-0024-amb-B1",
+      "clarify",
+      "call"
+     ],
+     [
+      "stress-amb-10-discovery-711406-0040-amb-B5",
+      "clarify",
+      "call"
+     ],
+     [
+      "stress-amb-11-discovery-711406-0044-amb-B6",
+      "answer",
+      "call"
+     ],
+     [
+      "stress-amb-14-selection-711407-0004-amb-B5",
+      "answer",
+      "call"
+     ],
+     [
+      "stress-amb-16-selection-711407-0008-amb-B1",
+      "answer",
+      "call"
+     ],
+     [
+      "stress-amb-17-selection-711407-0032-amb-B2",
+      "answer",
+      "call"
+     ],
+     [
+      "stress-amb-24-discovery-711406-0060-amb-B1-renamed",
+      "prose",
+      "call"
+     ],
+     [
+      "stress-amb-26-discovery-711406-0068-amb-B3-renamed",
+      "clarify",
+      "call"
+     ],
+     [
+      "stress-amb-27-selection-711407-0040-amb-A2-renamed",
+      "answer",
+      "call"
+     ],
+     [
+      "stress-amb-28-selection-711407-0020-amb-A3-renamed",
+      "clarify",
+      "call"
+     ],
+     [
+      "stress-amb-29-selection-711407-0044-amb-B1-renamed",
+      "clarify",
+      "call"
+     ]
+    ]
+   }
+  },
+  "g23v3": {
+   "summary": {
+    "n": 32,
+    "lenient": 9,
+    "strict": 9,
+    "false_calls": 16,
+    "mean_tokens": 32.5,
+    "per_class": {
+     "ambiguous": {
+      "n": 32,
+      "correct": 9,
+      "decisions": {
+       "clarify": 9,
+       "call": 16,
+       "answer": 6,
+       "prose": 1
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 9,
+    "right_to_wrong": 0,
+    "token_identical": 16,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "stress-amb-00-discovery-711406-0000-amb-B1",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-01-discovery-711406-0004-amb-B2",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-02-discovery-711406-0008-amb-B3",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-04-discovery-711406-0016-amb-B5",
+      "call",
+      "answer"
+     ],
+     [
+      "stress-amb-05-discovery-711406-0020-amb-B6",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-06-discovery-711406-0024-amb-B1",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-10-discovery-711406-0040-amb-B5",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-11-discovery-711406-0044-amb-B6",
+      "call",
+      "answer"
+     ],
+     [
+      "stress-amb-14-selection-711407-0004-amb-B5",
+      "call",
+      "answer"
+     ],
+     [
+      "stress-amb-16-selection-711407-0008-amb-B1",
+      "call",
+      "answer"
+     ],
+     [
+      "stress-amb-17-selection-711407-0032-amb-B2",
+      "call",
+      "answer"
+     ],
+     [
+      "stress-amb-24-discovery-711406-0060-amb-B1-renamed",
+      "call",
+      "prose"
+     ],
+     [
+      "stress-amb-26-discovery-711406-0068-amb-B3-renamed",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-27-selection-711407-0040-amb-A2-renamed",
+      "call",
+      "answer"
+     ],
+     [
+      "stress-amb-28-selection-711407-0020-amb-A3-renamed",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-29-selection-711407-0044-amb-B1-renamed",
+      "call",
+      "clarify"
+     ]
+    ]
+   },
+   "vs_g23v3": null
+  },
+  "g23v4": {
+   "summary": {
+    "n": 32,
+    "lenient": 27,
+    "strict": 27,
+    "false_calls": 5,
+    "mean_tokens": 13.2,
+    "per_class": {
+     "ambiguous": {
+      "n": 32,
+      "correct": 27,
+      "decisions": {
+       "clarify": 27,
+       "call": 5
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 27,
+    "right_to_wrong": 0,
+    "token_identical": 5,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "stress-amb-00-discovery-711406-0000-amb-B1",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-01-discovery-711406-0004-amb-B2",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-02-discovery-711406-0008-amb-B3",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-04-discovery-711406-0016-amb-B5",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-05-discovery-711406-0020-amb-B6",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-06-discovery-711406-0024-amb-B1",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-07-discovery-711406-0028-amb-B2",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-08-discovery-711406-0032-amb-B3",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-10-discovery-711406-0040-amb-B5",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-11-discovery-711406-0044-amb-B6",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-12-selection-711407-0000-amb-B3",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-13-selection-711407-0024-amb-B4",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-14-selection-711407-0004-amb-B5",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-15-selection-711407-0028-amb-B6",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-16-selection-711407-0008-amb-B1",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-17-selection-711407-0032-amb-B2",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-18-selection-711407-0012-amb-A1",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-19-selection-711407-0036-amb-A2",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-20-selection-711407-0016-amb-A3",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-22-discovery-711406-0052-amb-B5-renamed",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-23-discovery-711406-0056-amb-B6-renamed",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-24-discovery-711406-0060-amb-B1-renamed",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-26-discovery-711406-0068-amb-B3-renamed",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-27-selection-711407-0040-amb-A2-renamed",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-28-selection-711407-0020-amb-A3-renamed",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-29-selection-711407-0044-amb-B1-renamed",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-30-selection-711407-0044-amb-A1-renamed",
+      "call",
+      "clarify"
+     ]
+    ]
+   },
+   "vs_g23v3": {
+    "wrong_to_right": 18,
+    "right_to_wrong": 0,
+    "token_identical": 14,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": [
+     [
+      "stress-amb-04-discovery-711406-0016-amb-B5",
+      "answer",
+      "clarify"
+     ],
+     [
+      "stress-amb-07-discovery-711406-0028-amb-B2",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-08-discovery-711406-0032-amb-B3",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-11-discovery-711406-0044-amb-B6",
+      "answer",
+      "clarify"
+     ],
+     [
+      "stress-amb-12-selection-711407-0000-amb-B3",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-13-selection-711407-0024-amb-B4",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-14-selection-711407-0004-amb-B5",
+      "answer",
+      "clarify"
+     ],
+     [
+      "stress-amb-15-selection-711407-0028-amb-B6",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-16-selection-711407-0008-amb-B1",
+      "answer",
+      "clarify"
+     ],
+     [
+      "stress-amb-17-selection-711407-0032-amb-B2",
+      "answer",
+      "clarify"
+     ],
+     [
+      "stress-amb-18-selection-711407-0012-amb-A1",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-19-selection-711407-0036-amb-A2",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-20-selection-711407-0016-amb-A3",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-22-discovery-711406-0052-amb-B5-renamed",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-23-discovery-711406-0056-amb-B6-renamed",
+      "call",
+      "clarify"
+     ],
+     [
+      "stress-amb-24-discovery-711406-0060-amb-B1-renamed",
+      "prose",
+      "clarify"
+     ],
+     [
+      "stress-amb-27-selection-711407-0040-amb-A2-renamed",
+      "answer",
+      "clarify"
+     ],
+     [
+      "stress-amb-30-selection-711407-0044-amb-A1-renamed",
+      "call",
+      "clarify"
+     ]
+    ]
+   }
+  }
+ },
+ "Stress: resolved two-value calls (32)": {
+  "Base": {
+   "summary": {
+    "n": 32,
+    "lenient": 30,
+    "strict": 15,
+    "false_calls": 0,
+    "mean_tokens": 51.8,
+    "per_class": {
+     "resolved": {
+      "n": 32,
+      "correct": 30,
+      "decisions": {
+       "call": 32
+      }
+     }
+    }
+   },
+   "vs_base": null,
+   "vs_g23v3": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 32,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   }
+  },
+  "g23v3": {
+   "summary": {
+    "n": 32,
+    "lenient": 30,
+    "strict": 15,
+    "false_calls": 0,
+    "mean_tokens": 51.8,
+    "per_class": {
+     "resolved": {
+      "n": 32,
+      "correct": 30,
+      "decisions": {
+       "call": 32
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 32,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   },
+   "vs_g23v3": null
+  },
+  "g23v4": {
+   "summary": {
+    "n": 32,
+    "lenient": 30,
+    "strict": 15,
+    "false_calls": 0,
+    "mean_tokens": 51.8,
+    "per_class": {
+     "resolved": {
+      "n": 32,
+      "correct": 30,
+      "decisions": {
+       "call": 32
+      }
+     }
+    }
+   },
+   "vs_base": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 32,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   },
+   "vs_g23v3": {
+    "wrong_to_right": 0,
+    "right_to_wrong": 0,
+    "token_identical": 32,
+    "n": 32,
+    "right_to_wrong_ids": [],
+    "decision_changes": []
+   }
+  }
+ }
+}

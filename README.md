@@ -1,278 +1,123 @@
-# Surgical Repair of Tool Calling in Qwen3.5-0.8B via a Two-Neuron Final-Layer Weight Edit
+# qwen3.5-toolpatch — programming four dead neurons in Qwen3.5-0.8B
 
-**6,142 BF16 parameters changed (0.00082 % of the 752 M text-model weights), three tensors in one layer, zero gradient steps.**
+Two closed-form weight edits of `Qwen/Qwen3.5-0.8B` (revision `2fc0636…`, BF16), built without training, gradients, LoRA or fitting to outputs, that repair semantic tool calling:
 
-> **Blog post:** [Rewiring Two Dead Neurons: Fixing Trigger-Happy Tool Calling in Qwen3.5-0.8B Without Training](blog/index.md) ([HTML version](docs/blog.html), figures in `docs/figures/`).
+| edit | neurons | tensors / layers | BF16 entries | 192 tool items (lenient) | NO_TOOL (60) | explicit missing (30) | ambiguous "either X or Y" (30) | valid calls (72) | stress suite, unseen ambiguous (32) | stress suite, resolved two-value calls (32) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Base `Qwen3.5-0.8B` | — | — | — | 68 (35.4%) | 0 | 0 | 0 | 68 | 0 | 30 |
+| **g23v3** | J1 = 3468, J2 = 3421 (layer 23) | 3 / 1 | 6,142 (0.00082%) | 155 (80.7%) | 59 | 28 | 0 | 68 (token-identical) | 9 | 30 (identical) |
+| **g23v4** | + J0 = 2525 (layer 22), J3 = 2331 (layer 23) | 6 / 2 | 12,281 (0.00163%) | **185 (96.4%)** | 59 | 28 | **30** | 68 (token-identical) | **27** | 30 (identical) |
 
-`Qwen/Qwen3.5-0.8B`, prompted with a native `<tools>` block, emits `<tool_call>` on almost every request that should *not* be a call: explanation requests ("explain what this operation does, do not run it") and requests whose required argument is explicitly missing (it writes the literal string `not provided` into the slot). This repository documents a mechanistic diagnosis of that failure and a closed-form weight edit that repairs it. Two near-dead neurons in the last MLP are re-purposed as a gated readout of features the model already computes but never uses. Everything is computed from captured activations with difference-of-means, orthogonalization and least squares; no backward pass, optimizer, LoRA or distillation was involved.
+Base → g23v4: 117 items wrong→right, 0 right→wrong; selection and final-split families 32/32 each. Non-tool cohorts: 32 short regression answers token-identical, 32 free-form 128-token essays intact under both edits. The same CPU simulator that designed each edit predicted the real edited model's decision token on 64/64 calibration items (median logit error 0.06) and the direction of every dose and random control before it ran. Research agent: **Mythos 5.1**. Hardware: one Apple M4 Pro (24 GB), MLX-LM 0.32.2.
 
-| | tool-context items (192) | non-tool items (64) |
-|---|---|---|
-| **correct (lenient)** | **68 / 192 → 155 / 192** | 28 / 32 → 28 / 32 short answers (32 / 32 token-identical) |
-| **correct (strict)** | 30 / 192 → 118 / 192 | 32 / 32 prose answers intact (128-token, length unchanged) |
-| **wrong → right / right → wrong** | **87 / 0** | 0 / 0 |
-| required calls kept | 68 / 72 → 68 / 72 (71 / 72 token-identical) | |
-| `NO_TOOL` on explanation requests | 0 / 60 → 59 / 60 | |
-| `NEED_CLARIFICATION`, value explicitly missing | 0 / 30 → 28 / 30 | |
-| `NEED_CLARIFICATION`, ambiguous "either X or Y" | 0 / 30 → 0 / 30 (known limit, see §4) | |
+* **Blog post** (the full story, figures, controls, limitations): [scasella.github.io/qwen3.5-toolpatch/blog.html](https://scasella.github.io/qwen3.5-toolpatch/blog.html)
+* **Interactive explorer** (exact closed-form circuit in the browser, no download) + **live WebGPU runner**: [scasella.github.io/qwen3.5-toolpatch](https://scasella.github.io/qwen3.5-toolpatch/)
+* **Weights**: [scasella91/Qwen3.5-0.8B-toolpatch-g23v4](https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v4) (full checkpoint + 50 KB patch + `apply_patch.py`), [g23v3](https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v3), ONNX fp16 for Transformers.js: [g23v4-ONNX](https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v4-ONNX)
 
-Paired, greedy, identical prompts and decoding for both weights. *Lenient* treats an omitted optional argument as equivalent to its explicit default; *strict* additionally requires no extra arguments (the base model's habit of adding `detail=brief` is neither fixed nor worsened by the edit). Item sets: 64 practice, 32 unseen-family selection, 64 renamed functions/arguments, 32 final-split family proxy. Full tables with every control: [results.md](results.md) §5.
+## 1. The circuit in one paragraph each
 
-> **Read this before using the numbers.** The benchmark is synthetic and campaign-generated: inert tool families (`enqueue`, `convert_meters_to_feet`, opaque `fx_57343`, ...), two confusable functions per prompt, distractor notes, and one fixed system prompt that instructs the literals `NO_TOOL` / `NEED_CLARIFICATION`. The edit was evaluated only under that protocol (official chat template, `enable_thinking=False`, greedy, ≤ 128 new tokens) on Apple-Silicon MLX. It is **not** evaluated on BFCL or any public tool benchmark, on multi-turn use, on other system prompts beyond one "concise" variant, or on vision inputs. The vision tower is byte-identical to the base and was never run.
+**Act I — g23v3 (missing inhibition).** Direct logit attribution over all 86,016 MLP neurons finds no neuron that pushes `<tool_call>` on the wrong prompts: the call prior is distributed and the model has simply not learned to stop. The evidence it needs ("this is an explanation request", "clarify rather than explain") is linearly present in the residual stream and still readable at the last layer. Two near-dead layer-23 MLP neurons are re-purposed into a gated readout: `gate = k(s − λc − λ₂c₂)` opens only at the decision token (`c₂`) of a tool-context prompt (`c`) whose abstain feature `s` is high; J1 writes `u_AB` (least squares: −1 on `<tool_call>`, +1 on `NO` and `NE`, −0.5 on the prose starters `I`/`To`/`The`, 0 on 39 other competitor tokens), J2 writes `u_NE − u_NO` (route). The gates came from two failed candidates: v1 (no gates) collapsed 128-token prose into `NONENENE…`, v2 (tool-context gate only) still fired at later generated positions.
 
----
+**Act II — g23v4 (positional bottleneck).** Ambiguous "either X or Y" requests are indistinguishable from complete calls at the decision token (leave-one-family-out d′ < 3.9 in every layer) but cleanly separable at the user's clause tokens (d′ 9.5–21.8 at the connector, the indecision tail and the clause-end "."), and the decision query's attention on those tokens is 0.000–0.003 at layer 23: the feature is stranded in the prompt. A layer-22 neuron J0 reads the conjunction "clause end AND unresolved" (`w₁ = unit(0.5g + u)`), realises a −11.7 threshold without a bias term through a constant-projection direction (`r₁·x ≈ 1` on the critical positions), and writes a beacon `p₆` built from the pseudo-inverse of layer 23's key projection so that its key — in the unrotated RoPE dimensions 64:256, orthogonal to the sibling GQA heads 4/5/7 — matches head 6's decision query. Head 6's attention to the clause end goes from 0.0001 to 0.99 with no weight changed; a third layer-23 neuron J3 reads the delivered direction `t` under the Act I gates and writes the same abstain-plus-route payload. Resolved two-value calls ("use X rather than Y") never trigger it: J0 ≤ 0.016 on 141k non-target positions.
 
-## 1. What is wrong with the base model
+Design equations, every scalar and the per-tensor receipts: [`patches/g23v4.spec.json`](patches/g23v4.spec.json), [`patches/g23v3.spec.json`](patches/g23v3.spec.json); the two campaign reports: [`experiments/qwen6_g23v3/results.md`](experiments/qwen6_g23v3/results.md), [`experiments/qwen7_g23v4/results.md`](experiments/qwen7_g23v4/results.md).
 
-At the decision position (the `\n\n` after the empty `<think></think>` block), `<tool_call>` leads `NO` by 2–15 logits on every non-call item, and `NO` leads `NE` by 0.5–5 logits. Once the first token is chosen, the rest of each literal follows with log-probability ≈ 0 (`NO → _TOOL`, `NE → ED → _CL → AR → IFICATION`), so the entire problem is a single first-token decision. Baseline on 64 practice items: 24/24 calls right, 0/20 explanation requests right (18 false calls, 2 prose), 0/20 missing-argument requests right (20 false calls, 10 of them with `not provided` written as the argument).
+## 2. Quickstart
 
-## 2. Where the evidence is, and where it is not (localization)
+Requirements: Python ≥ 3.10 with `numpy` (that is all `apply_patch.py` needs); the demo and the derived analyses need `mlx-lm` on Apple Silicon (`pip install -r requirements.txt`). The base checkpoint comes from the Hugging Face hub (`huggingface-cli download Qwen/Qwen3.5-0.8B --revision 2fc06364715b967f1860aea9cf38778875588b17`).
 
-Captures were taken teacher-forced at the decision position on 60 token-length-matched teacher triples × {original, renamed names} and on the 64 practice items; all-position captures of the final-layer MLP input were taken for the generated continuations.
-
-1. **No culprit neurons.** Direct logit attribution of every MLP neuron (24 layers × 3,584 = 86,016 neurons) to the `<tool_call> − NO` margin finds **no non-call-selective pusher above ≈ 0.2 logits**. The push toward calling is a distributed, class-independent prior written mostly by layers 14–23 (the layer-20 block adds ≈ 5–6 logits, layer 23 ≈ 2), and explanation requests receive almost the same push as genuine calls. There is nothing to ablate: the flaw is a **missing inhibition**, not a spurious excitation. (`analysis/dla.py`, `analysis/neurons.py`)
-2. **The missing evidence already exists in the residual stream.** A difference-of-means direction *s* ("this is an explanation request") separates `NO_TOOL` items from calls with **d′ ≈ 10–14 at layers 12–16**, with zero overlapping practice cases, and is still linearly readable at the layer-23 MLP input. A second direction *r* ("clarify, don't explain") separates missing-argument from explanation requests with **d′ ≈ 10 at layers 8–13** and still separates them at the layer-23 MLP input (practice 0.79–2.23 vs ≤ 0.28). The model's own output never uses either: `NE − NO ≈ −2` for both classes. (`analysis/separability.py`, `analysis/features2.py`, `analysis/crosslayer.py`)
-3. **The ambiguous variant has no feature.** Items offering `either "18" or "189", with no preference specified` are indistinguishable from complete calls at the output (margins 12.6–14.8 vs 13.9) and in every probed layer (leave-one-out probes d′ < 3). Nothing in the network represents "two candidate values"; a readout edit cannot create it.
-4. **The write must be in the last layer.** Residual RMS grows from 0.07 (layer 14) to 0.38 (layer 24). A mid-layer write large enough to move the output by ≈ 15 logits would exceed the local residual norm and be reprocessed by nine layers. A layer-23 MLP write is scaled exactly once by the final RMSNorm, and because the KV cache is built from the layer *input*, it changes logits only at its own position.
-5. **Name invariance.** Renamed teacher twins (fresh function and argument names, identical token lengths) give near-identical margins and features; every direction is teacher-derived and checked per case on practice before use.
-
-## 3. The edit (`g23v3`)
-
-Let *x* ∈ ℝ¹⁰²⁴ be the layer-23 MLP input (post-attention RMSNorm output). Two neurons that are near-dead everywhere (max |activation| ≤ 0.25 at every captured position), **J1 = 3468** (abstain readout) and **J2 = 3421** (route readout), get new rows in `gate_proj`/`up_proj` and new columns in `down_proj` of `model.language_model.layers.23.mlp`:
-
-```
-gate_proj[J1,:] = k·(s − λ·c − λ₂·c₂)      up_proj[J1,:] = k·s        down_proj[:,J1] = a₁·u_AB
-gate_proj[J2,:] = k·(s − λ·c − λ₂·c₂)      up_proj[J2,:] = k_r·r      down_proj[:,J2] = a₂·(u_NE − u_NO)
-
-act_J1(x) = SiLU(k·(s − λc − λ₂c₂)·x) · (k·s·x)     ≈ k²(s·x)²  at a tool-context decision position with s·x > 0, ≈ 0 elsewhere
-act_J2(x) = SiLU(k·(s − λc − λ₂c₂)·x) · (k_r·r·x)   signed NE-vs-NO route, same gate
-
-k = 2, k_r = 1, a₁ = a₂ = 1, λ = 0.3, λ₂ = 0.5          (edits/g23v3.spec.json)
-```
-
-```
-                    x = layer-23 MLP input (d = 1024)
-                    │
-        ┌───────────┼─────────────────────────┐
-        ▼           ▼                         ▼
-  k·(s−λc−λ₂c₂)·x   k·(s·x)                 k_r·(r·x)
-   "is this a       "how strongly            "clarify (+)
-   tool-context     is it an                  or explain (−)?"
-   decision with    abstention?"
-   s·x > 0?"
-        │           │                         │
-      SiLU ──────── × ─────┐          ┌────── × ──────── SiLU (same gate)
-                           ▼          ▼
-                 down[:,J1] = u_AB     down[:,J2] = u_NE − u_NO
-                 (+1 NO, +1 NE,        (+1 NE, −1 NO,
-                  −1 <tool_call>,       0 on 39 competitors)
-                  −0.5 I/To/The,
-                  0 on 39 competitors)
-                           │          │
-                           └────┬─────┘
-                                ▼
-            residual → final RMSNorm → tied unembedding → logits
-```
-
-```mermaid
-flowchart LR
-  X["x = layer-23 MLP input<br/>(post-attention RMSNorm, d=1024)"] --> G["gate pre-activation<br/>k·(s − λc − λ₂c₂)·x"]
-  X --> U1["up J1 = 3468<br/>k·(s·x)"]
-  X --> U2["up J2 = 3421<br/>k_r·(r·x)"]
-  G --> S["SiLU"]
-  S --> M1(("×")); U1 --> M1
-  S --> M2(("×")); U2 --> M2
-  M1 --> D1["down[:,J1] = u_AB<br/>+NO +NE −tool_call"]
-  M2 --> D2["down[:,J2] = u_NE − u_NO"]
-  D1 --> R["residual → final RMSNorm → tied unembedding"]
-  D2 --> R
-```
-
-**The directions** (`edits/g23v3.vectors.npz`, all closed-form):
-
-* **s** (abstain feature): unit difference of class means (abstain − call) at residual layer 18 on the teacher set, orthogonalized against the end-of-literal and first-continuation signatures (mean *x* at the last / first generated position of abstain items minus the call decision mean), then against `ref = μ_call + 0.5·(μ_abstain_clear − μ_call)` so that its zero-crossing sits midway between the call cluster and the clear-abstain cluster.
-* **r** (route feature): unit difference of means (clarify − answer) at residual layer 14, orthogonalized against the midpoint of the explanation and explicit-missing clusters.
-* **c** (tool-context gate term, λ = 0.3): unit(ortho(mean non-tool decision *x* − mean tool-context decision *x*, mean tool-context decision *x*)). `c·x` is −2.5…3.7 at tool-context decision positions but 17.9…24.7 at the first token of prompts *without* tools, so the gate shuts there.
-* **c₂** (generated-position gate term, λ₂ = 0.5): the same construction with the mean over every captured *generated* position (literal continuations, positions inside tool calls, explanatory prose in tool contexts, and the model's own prose answers to 16 non-tool questions). `c₂·x` is −2.0…2.9 (sd 1.0) at tool-context decision positions but ≥ 9.3 at literal continuations, ≥ 12.4 inside calls, ≥ 10.1 at tool-context prose and ≥ 6.8 at non-tool prose positions. The gate therefore opens **only at the decision token of a tool-context prompt**; simulated |activation| is 0.00 at literal, in-call and non-tool first-token positions and exceeds 1.0 at only 6 of 1,953 non-tool prose positions (max 2.3).
-* **u_AB** and **u_NE − u_NO**: minimum-norm least-squares directions in pre-final-norm residual space (rows E_t ⊙ γ_final, with γ_final = stored weight + 1 in the MLX convention) with unit logit effect (+1 `NO`, +1 `NE`, −1 `<tool_call>`, −0.5 on the prose starters `I`, `To`, `The`) resp. (+1 `NE`, −1 `NO`), and **zero effect on 39 competitor tokens** (`I To The No None Based This Since Select < <think> Please NOT no Not Need Sure Here Okay You It Yes 1 \n <|im_end|> _TOOL ED <|endoftext|> Hello Certainly Let For In If We A As There Of`). Norms 0.87 and 0.80.
-
-Changed entries: 2,047 (`gate_proj`) + 2,047 (`up_proj`) + 2,048 (`down_proj`) = **6,142 of 752,393,024** text parameters (8.2 × 10⁻⁶; the campaign's limit was 0.25 %). An exact CPU simulator of the edit (final norm + tied unembedding on the captured *x*) predicted the real edited model's decision token on 64/64 calibration items (median |logit error| 0.06, max 0.38) before any generation pass was spent on it.
-
-### 3.1 Progression v1 → v2 → g23v3 and the negative controls
-
-| candidate | gate | output target | tool-context repair | non-tool behaviour |
-|---|---|---|---|---|
-| **v1** `g23_t05_a1.0` | `k·s` | ±1 on NO/NE/tool_call only | practice 24 → 52 (28/0) | one instruction prompt became `NENE`; **all 16 prose answers destroyed** (`NONENENE…`) |
-| **v2** `g23v2` | `k·(s − 0.3c)` | adds −0.5 on `I`/`To`/`The` | practice 24 → 53 (29/0) | first tokens fixed (32/32 + 32/32 identical), but **prose still corrupted** (1/16 token-identical, `NO,NO,…` injections) |
-| **g23v3** (final) | `k·(s − 0.3c − 0.5c₂)` | as v2 | practice 24 → 52 (28/0); 192-item total 68 → 155 (87/0) | 32/32 short answers identical; **32/32 prose intact**, lengths unchanged, 20/32 token-identical |
-
-The v2-vs-v3 choice followed a decision rule written into `notes.md` *before* any v2 result was read (0 right→wrong everywhere, calls token-identical, no injected literal fragments, non-tool length within 10 %). v2 failed the prose clause; v3 was built to fix it and judged on 16 fresh prose questions never used in any derivation.
-
-Controls on the same two neurons (64 practice items each; [results.md](results.md) §5 has every row):
-
-| control | result |
-|---|---|
-| zero edit (neurons zeroed) | 24 → 24, **64/64 token-identical** to baseline |
-| half dose (a₁ = a₂ = 0.5) | 24 → 52 |
-| double dose (a₁ = a₂ = 2) | 24 → 53 (hits the post-literal leakage ceiling) |
-| reversed sign (a₁ = a₂ = −1) | 24 → 24, **0 repairs**; the two baseline prose explanations become false calls |
-| norm-matched random directions, seed 7 (v1 norms) | 24 → 24, 0 repairs, 60/64 identical |
-| norm-matched random directions, seed 11 (v2 norms) | 24 → 24, 0 repairs, 57/64 identical |
-| norm-matched random directions, seed 13 (v3 norms) | **24 → 12**: breaks 12 calls by writing a random direction inside tool calls |
-
-A perturbation of this size on these neurons is at best harmless and never helpful unless it is the structured one. A fresh stock `mlx_lm` process loading the exported checkpoint reproduced the in-process token streams exactly (32/32 original, 32/32 edited).
-
-## 4. Limitations and residual failures
-
-* **Ambiguous requests** (`either "X" or "Y", with no preference specified`) are untouched: 0/30. No linear feature for "two candidate values" exists at any probed layer; the edit reads features, it cannot create one.
-* **Weak-cue explanation requests** ("Describe this operation now: <op>. <values>") mostly stay calls (2/20 in simulation). The edit's reach scales with how strongly the model itself represents the request as explanatory.
-* **Explicit-missing is phrasing-dependent**: `not provided`-style phrasings are repaired (28/30); other phrasings only when the model represents them as missing.
-* One practice explanation item (meters-to-feet, a prose explanation at baseline) is repaired by v2 but not by v3; it fails gracefully (same prose as baseline).
-* **Non-tool prose is not bit-identical** (20/32): a handful of generated positions still carry activations up to ≈ 2 units (≈ 5 logits on `NO`/`NE`), enough to flip near-tied word choices after which the text diverges benignly ("Bacteria are single-celled euka…" → "Bacteria are prokaryotic cells."). Short non-tool answers are identical.
-* Inside tool calls the readout is not perfectly silent at near-tied positions: one correct renamed call drops its explicit optional default (still correct under both scorings). Across 72 paired calls no call changed correctness; the four calls wrong at baseline (renamed-set function-choice errors) stay wrong.
-* Validated under two system-prompt framings (`standard`; `concise` for v2 only, 12 → 27 of 32), not under framings with format examples, multi-turn conversations, or tool results in context.
-
-## 5. Quickstart (three ways)
-
-**A. Download the patched checkpoint** from Hugging Face: [`scasella91/Qwen3.5-0.8B-toolpatch-g23v3`](https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v3) (full HF-format checkpoint; only the three layer-23 tensors differ from `Qwen/Qwen3.5-0.8B` rev `2fc0636`).
-
-```python
-from mlx_lm import load, generate
-from mlx_lm.sample_utils import make_sampler
-model, tok = load("scasella91/Qwen3.5-0.8B-toolpatch-g23v3")
-SYSTEM = ("Use the available tools when needed. For a request requiring no tool, reply exactly NO_TOOL. If required information "
-          "is missing or ambiguous, reply exactly NEED_CLARIFICATION. Otherwise make exactly one native tool call. No other text.")
-tools = [{"type": "function", "function": {"name": "uppercase_text", "description": "Change stored text to uppercase.",
-          "parameters": {"type": "object", "properties": {"text": {"type": "string", "description": "Stored text identifier"}}, "required": ["text"]}}}]
-prompt = tok.apply_chat_template([{"role": "system", "content": SYSTEM},
-                                  {"role": "user", "content": "Carry out this request: change stored text to uppercase.\nStored text identifier: not provided."}],
-                                 tools=tools, add_generation_prompt=True, enable_thinking=False)
-print(generate(model, tok, prompt, max_tokens=128, sampler=make_sampler(0)))   # -> NEED_CLARIFICATION
-```
-
-**B. Apply the 38 KB patch yourself** (≈ 2 s, numpy only). The script rebuilds the three tensors from `edits/g23v3.vectors.npz` + `edits/g23v3.spec.json`, copies the base checkpoint, overwrites only those tensors' bytes and verifies the SHA-256 of each edited tensor against the published values; `--full-hash` also checks the whole file (`886b4952…`).
+**Patch the stock checkpoint (under a second, numpy only):**
 
 ```bash
-BASE=$(hf download Qwen/Qwen3.5-0.8B --revision 2fc06364715b967f1860aea9cf38778875588b17)
-python apply_g23v3.py --base "$BASE" --out Qwen3.5-0.8B-toolpatch-g23v3 --full-hash
-# conversational readout of the same circuit (plain-English abstention instead of the NO_TOOL / NEED_CLARIFICATION literals, see below)
-python apply_g23v3.py --mode conversational --base "$BASE" --out Qwen3.5-0.8B-toolpatch-g23v3-conv --full-hash
+python apply_patch.py --base ~/.cache/huggingface/hub/models--Qwen--Qwen3.5-0.8B/snapshots/2fc06364715b967f1860aea9cf38778875588b17 --out /tmp/qwen35-g23v4
 ```
 
-Clean-room check (2026-11-04, Apple M4 Pro): a fresh `git clone` of this repository (63 MB, 5.6 s) and a fresh download of the base
-checkpoint into an empty Hugging Face cache (1.75 GB, 68 s; SHA-256 `04b1c301…e4696`), then `apply_g23v3.py --full-hash` (1.7 s, all four
-published hashes matched) and `demo_cli.py --check` (8.9 s, 10/10 generations token-identical to the recorded campaign runs). Under
-twelve seconds of compute after the download; nothing from this working copy was involved.
-
-**Conversational mode.** `--mode conversational` keeps the detector (the input rows of both neurons and every vector) and changes only
-what the abstain neuron writes: a least-squares readout with the single target −1 on `<tool_call>`, at half gain, with the route
-neuron silenced (`variants/g23v3_conv`, `scripts/make_conversational_variant.py`). The model then abstains in English instead of
-emitting the benchmark literals. Measured on the 96 practice + selection prompts under a plain assistant prompt and with no system
-prompt (`scripts/conversational_check.py`, every output in `docs/data/conversational_mode.json`): the original already explains in prose
-on 28/30 explanation requests under those prompts, but turns 8–9 of 15 missing-value requests into tool calls carrying the string
-`not provided`; the conversational readout brings those to 3/15 and 0/15 while keeping 35/36 and 33/36 required calls (token-identical
-in 35 and 32). Its cost is those one to three lost calls: the operating point t = 0.5 was set under the benchmark prompt and should be
-re-fitted under the prompt you deploy with. Verbatim, original → conversational:
-
-* `discovery-611401-0131`, "change stored text to uppercase. Stored text identifier: not provided" (plain prompt): `<tool_call> uppercase_text(text="not provided")` → *I cannot change stored text to uppercase as the stored text identifier is not provided.*
-* `discovery-611401-0235`, "cancel the reservation for a resource and slot. Resource identifier: not provided. Slot number: 34" (no system prompt): `<tool_call> cancel_reservation(resource="not provided", slot=34)` → *I cannot cancel a reservation for a resource and slot. The `cancel_reservation` function requires a specific resource identifier and slot number, but you have not provided those details. Please provide the resource identifier and the slot number so I can assist you with the cancellation.*
-* `selection-611402-0131`, "show differences between two versions. Earlier version identifier: not provided. Later version identifier: 039" (plain prompt, unseen family): `<tool_call> version_diff(old="not provided", new="039")` → *I cannot show differences between two versions because the earlier version identifier is not provided. Could you please provide the earlier version identifier so I can help you with that?*
-
-Two details made the difference between this and a readout that fails (both ablations are in the data file): the route neuron must be
-off, or explanation answers start with a spurious "NO."; and the gain must be halved, or the neuron's write inflates the final RMSNorm
-denominator, flattens the first-token distribution and lets unnamed tokens ("IO", "FOOL") win. See blog §5.1. Under the benchmark prompt itself (which asks for the literals) the conversational readout keeps all 36 required calls token-identical and answers 40 of the 45 non-ambiguous abstain prompts in prose rather than with the literal, but 6 of those are fragments ("IO", "Base 53 to 64"): that prompt instructs literals the neuron no longer pushes toward, so the runner-up token is sometimes junk. Use the readout with a prompt that asks for prose.
-
-Expected output:
-
-```
-gate_proj  cd759ae8a60c6cc2b5b7cbf397a03968464589f5490e11002028c6953d5c8429 OK
-up_proj    b40609ff4db37fa3f97d3eeb8a7ffd1ab75bb2dc01eac36c2afa0ef9dcaad196 OK
-down_proj  e4e9f7ead2e43fc920f9e91e44ef90a3f5ead92ca7d89f8a5c3774965abe9180 OK
-file       886b4952cc74601ad69bed4488c9f4e5621e7dbb8a51287db2e6a4af60f2927e OK
+```bash
+python apply_patch.py --base <snapshot> --out /tmp/qwen35-g23v3 --version g23v3
 ```
 
-Then run the six-case side-by-side demo (needs `mlx-lm` on Apple Silicon and the base model in your Hugging Face cache, or `--base <snapshot dir>`; ≈ 10 s after model load; edits are applied in-process from the vector files):
+```bash
+python apply_patch.py --base <snapshot> --out /tmp/qwen35-g23v4-conv --mode conversational
+```
+
+`--version g23v4` (default) places the four neurons' rows and columns (12,281 entries, six tensors); `--version g23v3` the two layer-23 neurons (6,142 entries, three tensors); `--version v1` the first qwen-6 candidate, kept for the prose-collapse demonstration. Every edited tensor's SHA-256 is checked against the published values; `--verify` additionally compares all 488 tensors of the output with the campaign export under `artifacts/exports/` bit-for-bit (when present), `--full-hash` checks the whole file (g23v4: `5fa3246b…d8b6`, g23v3: `886b4952…927e`). The patch is applied with round-to-nearest-even BF16 rounding, exactly as the campaigns did, so the result is the campaign checkpoint byte for byte (measured: 0.5–1.0 s, 488/488 tensors identical).
+
+**`--mode conversational`.** The same input circuit with the output columns replaced by `u_conv`, a least-squares direction that only removes `<tool_call>` (−1 on `<tool_call>`, 0 on `NO`, `NE`, `I`, `To`, `The` and 36 other named tokens): the model abstains or asks in plain English instead of emitting the benchmark literals. g23v3_conv (a₁ = 0.5, route neuron off) was measured in the qwen-6 campaign on 96 prompts; g23v4_conv additionally sets `down[:,J3] = 0.1·u_conv` and was spot-checked by generation (nine prompts at four gains; see [`patches/g23v4_conv.params.json`](patches/g23v4_conv.params.json)). It has no campaign export, so `--verify` reports it as unverified. Three outputs of `g23v4 --mode conversational` from `demo_cli.py`:
+
+| prompt (benchmark g23v4 output) | conversational g23v4 |
+|---|---|
+| explanation request (`NO_TOOL`) | *To copy an item into a destination while retaining it at the source, you are essentially performing a copy operation. This means the item will be placed …* (128 tokens of prose) |
+| required value explicitly missing (`NEED_CLARIFICATION`) | *I cannot change stored text to uppercase as the stored text identifier is not provided.* |
+| unresolved "either X or Y" (`NEED_CLARIFICATION`) | *I cannot perform this request.* |
+
+Calls stay token-identical in conversational mode. The readout is a choice of vector, not a policy: the model's English reason is its own and is not always the actual missing value.
+
+**Side-by-side demo (Apple Silicon, mlx-lm):**
 
 ```bash
 python demo_cli.py --check
 ```
 
-`--check` compares every generation with the token streams recorded in `runs/` during the campaign (10/10 identical on the authors' machine). Cases: a required call (preserved token-for-token), an explanation request (`<tool_call>` → `NO_TOOL`), an explicit missing value (`<tool_call>` with `not provided.` as the argument → `NEED_CLARIFICATION`), a renamed/opaque tool pair (the base model picks the wrong function *and* invents the missing item → `NEED_CLARIFICATION`), an ambiguous "either 18 or 189" request (both models call: the known limit), and a free-form 128-token prose question with no tools, shown for original / v1 / g23v3:
+Seven cases — required call, explanation request, explicit missing value, unresolved "either X or Y", an unseen stress-suite phrasing ("X or Y, I keep going back and forth"), a contrastive resolved call ("use X rather than Y") and a 128-token prose question — generated by Base, g23v3 and g23v4 (plus v1 on the prose case and the conversational g23v4 on the abstention cases) from one resident model; the edits are rebuilt from the 50 KB patch files on the fly. `--check` compares every generation with the recorded campaign runs: **18/18 token-identical** on this machine (log: [`docs/data/demo_cli_check.txt`](docs/data/demo_cli_check.txt)).
+
+## 3. Strict out-of-fold audit (CPU replay, no model passes)
+
+The shipped g23v4 directions were fit on all 192 captured triple items (D1 discovery families, D2 renamed twins, D3 selection/final families with unseen phrasings) and tested on the 64-item Ambiguity Stress Suite. [`scripts/oof_audit.py`](scripts/oof_audit.py) refits *every* direction of the circuit — u, g, r₁ (stage 1), p₆ (beacon), t, r₃ (stage 2) — on **D1+D2 only**, sets θ₁ = 9.6 (midway in the D1+D2 → D3 transfer gap noted in the qwen-7 notebook: ambiguous min 10.2 vs harmful max 9.0), keeps the shipped gains, and replays layer 23 exactly on the held-out items:
+
+| circuit | fit items | held-out set | ambiguous → NEED_CLARIFICATION (replay argmax) | non-ambiguous argmax kept | stage-1 act: ambiguous ends / max elsewhere | α₆ at the clause end (ambiguous) | J3 act: ambiguous / max elsewhere |
+|---|---|---|---|---|---|---|---|
+| **D1+D2-only fit**, k₁ = 4 | 128 | D3 (28 ambiguous, 18 calls, 18 resolved) | **27/28** | **36/36** | 2.5..749 / 0.48 | 0.080..0.999 | 0.0..113 / 0.0003 |
+| D1+D2-only fit, k₁ = 4 | 128 | stress suite (32 + 32) | **28/32** | **32/32** | 0.2..792 / 0.39 | 0.000..1.000 | 0.0..111 / 0.0003 |
+| D1+D2-only fit, k₁ = 1.53 (gain from a D1+D2 rule) | 128 | D3 | 27/28 | 36/36 | 0.3..109 / 0.45 | 0.000..0.999 | 0.0..106 / 0.0003 |
+| D1+D2-only fit, k₁ = 1.53 | 128 | stress suite | 24/32 | 32/32 | 0.2..115 / 0.48 | 0.000..0.999 | 0.0..100 / 0.0003 |
+| shipped g23v4 (reference) | 192 | D3 (in-fold) | 28/28 | 36/36 | 58..410 / 0.016 | 0.992..0.999 | 67..109 / 0.0003 |
+| shipped g23v4 (reference) | 192 | stress suite | 27/32 | 32/32 | 0.0..450 / 0.012 | 0.000..0.999 | 0.0..106 / 0.0003 |
+
+Direction level (gain-independent): on D3 all 28 held-out ambiguous clause ends are above the threshold and every position of every held-out call and resolved item is below it (margin +0.18); on the stress suite 30/32 ambiguous ends are above it and all 32 resolved items are fully below. End to end, the one D3 miss has a pre-activation of 0.43 — a write too small to capture head 6 (α₆ = 0.08) — so the honest statement is: **100% of the held-out D3 items are separated by the D1+D2-only direction, 27/28 are repaired end to end, and 0/36 held-out calls or resolved calls change**; on the stress suite the out-of-fold circuit (28/32) does as well as the shipped one (27/32 in real generation and in this replay, the same five phrasing misses). Simulator check in the same run: shipped replay vs the real edited model on the 64 D1 items, argmax 64/64, |logit error| median 0.062, max 0.50. Full tables: [`experiments/qwen7_g23v4/analysis/oof_audit.md`](experiments/qwen7_g23v4/analysis/oof_audit.md), machine-readable summary [`docs/data/oof_audit.json`](docs/data/oof_audit.json).
+
+## 4. Figures
+
+`scripts/make_figures.py` renders SVG + PNG into [`docs/figures/`](docs/figures/) from the campaign records: [fig1](docs/figures/fig1_progression_overview.svg) progression and controls, [fig2](docs/figures/fig2_positional_bottleneck_dprime.svg) decision-token vs clause-token separability per layer, [fig3](docs/figures/fig3_four_neuron_circuit_diagram.svg) the circuit with real activation distributions, [fig4](docs/figures/fig4_dose_and_controls.svg) dose-response and simulator-vs-real.
+
+## 5. The web app
+
+`docs/` is a static site (GitHub Pages serves it from `main`). **Tab 1** loads [`docs/data/circuit_traces.json`](docs/data/circuit_traces.json) (13 MB, 5 MB gzipped): 143 representative prompts across every cohort (valid calls, NO_TOOL, explicit missing, ambiguous, the 64 stress-suite items, 128-token prose) with the recorded outputs of Base / v1 / v2 / g23v3 / g23v4 / random and dose controls, and runs the exact circuit in JavaScript: J0 at every prompt token, the head-6 attention arc, J1/J2/J3 readouts, the first-token distribution, and the activations along the original model's generation, under sliders for a₁, a₂, λ, λ₂ (Act I), the stage-1 write scale b (snapped to four exactly replayed doses), a₃ and ρ (Act II), with presets for v1 / v2 / g23v3 / g23v4 / random controls / conversational readouts. It is built by [`scripts/capture_traces.py`](scripts/capture_traces.py) (one fresh pass of the original model with read-only taps) and [`scripts/export_circuit_traces.py`](scripts/export_circuit_traces.py) (exact CPU replay of layer 23 per dose; closed forms checked against direct recomputation: logits 1.9e-5, attention 3.3e-4; recorded first tokens reproduced 143/143 for Base and g23v4). **Tab 2** runs both models in the browser with Transformers.js + ONNX Runtime Web on WebGPU: one fp16 download (1.5 GB decoder + 147 MB 4-bit embeddings, cached in 64 MB chunks), the g23v4 model produced in memory by patching the 12,281 values from `patch_manifest.json` and SHA-256-verified.
+
+Local check: `python -m http.server 8766 --directory docs` and open http://localhost:8766/ (Tab 2 can load from `http://localhost:8766/models/g23v4-onnx` when `docs/models` points at `artifacts/exports`).
+
+## 6. ONNX export for WebGPU
+
+[`scripts/export_webgpu_onnx.py`](scripts/export_webgpu_onnx.py) builds `artifacts/exports/g23v4-onnx/` from onnx-community's fp16 export of Qwen3.5-0.8B (or from an earlier local export, cloned instantly on APFS): the original fp16 decoder byte for byte, an edited decoder that is a byte copy with exactly the edited entries overwritten (24,017 differing bytes, all inside the six layer-22/23 MLP tensors), `patch_manifest.json` with offsets and values, and a model card. ORT CPU validation (`--validate`): 11/11 prompts (practice: calls, NO_TOOL, explicit missing, ambiguous; stress: two unseen ambiguous phrasings and one resolved call) prefix-match the recorded runs for both decoders. **Why fp16 and not a ~650 MB 4-bit build:** with a q4/q4f16 backbone the layer-23 MLP input drifts to cosine 0.89 against the BF16 captures and the gates close (5/8 sign agreement), so the edit does not transfer; fp16 keeps cosine 0.99 and 8/8. The layer-22 and layer-23 MLP tensors are fp16 in any variant, so block quantization can never distort J0–J3; the published repository is fp16 ([report](docs/data/webgpu_export_report.json)).
+
+## 7. Repository layout
 
 ```
-6. Free-form prose, no tools (128 tokens)
-  user    | What are the main differences between bacteria and viruses?
-  original | The primary differences between bacteria and viruses can be categorized into **cell structure**, ...
-  v1       | NONENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENENE...
-  g23v3    | The primary differences between bacteria and viruses can be categorized into **cell structure**, ...
-           | (128 tokens; token-identical to original)
+apply_patch.py                 numpy-only patcher (88 lines): --version g23v4|g23v3|v1, --mode campaign|conversational, --verify, --full-hash
+demo_cli.py                    Base vs g23v3 vs g23v4 (+ v1, conversational) on 7 cases; --check vs the recorded runs
+patches/                       <label>.vectors.npz (final float32 rows/columns of the neurons) + <label>.spec.json (hashes, scalars, equations)
+                               g23v3, g23v3_conv, g23v4, g23v4_conv, v1; g23v4_conv.params.json
+scripts/make_patches.py        rebuilds patches/ from the campaigns' vector files and verifies them against the campaign bits/exports
+scripts/capture_traces.py      GPU: fresh original-model capture (x22, h23, x23, h24) for the explorer and the audit
+scripts/export_circuit_traces.py   CPU: exact layer-23 replay per dose -> docs/data/circuit_traces.json (with self-checks)
+scripts/oof_audit.py           strict D1+D2-only refit of every direction, replayed on D3 and the stress suite; simulator-vs-real check
+scripts/replay_tools.py        shared helpers (imports qwen-7's validated replay module read-only)
+scripts/make_figures.py        docs/figures/fig1..fig4 (SVG + PNG)
+scripts/export_webgpu_onnx.py  ONNX fp16 repository for Transformers.js / WebGPU (+ --validate, --drift, --upload)
+scripts/build_blog_html.py     blog/index.md -> docs/blog.html
+scripts/publish_release.sh     GitHub + Hugging Face publication (dry run by default, --execute to run)
+blog/index.md                  the post; docs/ the GitHub Pages site (index.html, app.js, worker.js, styles.css, data/, figures/, blog.html)
+hf_export/                     the Hugging Face model repository for g23v4: model card, patches, apply_patch.py, checkpoint (checkpoint files are not in git)
+experiments/qwen6_g23v3/       the g23v3 campaign: code, data, notes.md, hash-chained ledger.jsonl (47 passes), results.md, analysis/, runs/*.json
+experiments/qwen7_g23v4/       the g23v4 campaign: code, data (triples, stress suite), notes.md, ledger.jsonl (20 passes), results.md, analysis/ (+ oof_audit)
+artifacts/                     (not in git) campaign exports g23v3 / g23v4, the ONNX repository, the fresh capture used by the explorer
 ```
 
-**C. Reproduce the investigation** (47 budgeted forward passes, Apple Silicon, MLX). Create a venv from `requirements.txt`, download the base revision above, and point `BASE` in `runtime/common.py` at your snapshot directory (the one machine-specific path in the harness; campaign code is otherwise left exactly as it ran). Every forward pass is one hash-chained request in `ledger.jsonl`; `fp.py` refuses to run without a hypothesis/prediction string, and `primitives.py` refuses edits outside the task's scope (≤ 2 layers, ≤ 8 tensors, ≤ 0.25 % of entries, no whole-tensor rescaling). Full command list: [results.md](results.md) §7. In short:
+Both campaign folders are copied verbatim from the read-only workspaces (`/Users/scasella/Downloads/qwen-6`, `qwen-7`); the multi-GB activation captures (`runs/*.npz`) are not included, every JSON summary, ledger entry and notebook page is. The ledgers are hash chains: each entry carries the SHA-256 of its predecessor. Everything a reader needs to *use* the edits is checked in (patches, patcher, demo, data, figures, the explorer bundle, the audit tables); four scripts re-derive those outputs from the raw captures and therefore need the original workspaces on disk: `oof_audit.py`, `capture_traces.py` (plus a GPU), `export_circuit_traces.py` and `make_figures.py` (fig2–fig4 read `runs/*.npz` of qwen-6/qwen-7 through `scripts/replay_tools.py`).
 
-```bash
-P=.venv/bin/python
-$P build_data.py && $P build_extra.py                                   # deterministic item sets
-$P fp.py generate --set practice --model original --label p01_baseline --hypothesis ... --prediction ...
-$P fp.py teacher  --set teacher  --model original --label p05_teacher_allpos --mlpin 21,22,23 --colstats 21,22,23 ...
-$P -m analysis.dla ; $P -m analysis.separability ; $P -m analysis.crosslayer ; $P -m analysis.leak2
-$P build_g23.py --label g23v3 --a1 1.0 --a2 1.0 --t 0.5 --lam 0.3 --lam2 0.5 --prose_target 0.5
-$P fp.py generate --set selection --model both --edit g23v3 --label p40_v3_sel_both ...
-$P stock_reload.py --edit g23v3 --set practice --ids data/practice_stock.ids --label p44_v3_stock --compare p38_v3_gen_practice
-```
+## 8. Limitations
 
-The raw activation captures (`runs/*.npz`, 674 MB) and the full exported checkpoints (`artifacts/`, 1.7 GB each) are not in this repository; every per-pass summary (`runs/*.json`), the ledger, the notebook and every candidate's closed-form vectors are. All 12 candidates and controls rebuild bit-exactly from their `edits/<label>.vectors.npz` + `.spec.json` via `apply_g23v3.build` (verified against the original `.npz` snapshots).
+Validated under one system-prompt framing, single turn, no tool results in context, no vision, synthetic benchmark families. The ambiguity detector misses phrasings without a disjunction or indecision cue ("torn between X and Y": 1/5); it fails gracefully (the model calls, as the base model does). Prose is intact but not bit-identical (23/32 essays token-identical to g23v3). The ONNX runner reproduces the mechanism in fp16 but is not the BF16 campaign artefact. Three deviations from the brief are deliberate: the Hugging Face namespace is `scasella91` (the account that exists; `scasella` is the GitHub login); the browser model is fp16 rather than a ~650 MB 4-bit build for the reason in §6; and the worker loads the text-only `Qwen3_5ForCausalLM` class rather than `Qwen3_5ForConditionalGeneration` (the vision tower is not needed and the text-only load is what Transformers.js 4.4.0-next.0 runs reliably in a worker).
 
-### Interactive: the web app (GitHub Pages)
+## 9. Accounting
 
-[scasella.github.io/qwen3.5-toolpatch](https://scasella.github.io/qwen3.5-toolpatch/) is a static two-mode app built from this repository (`docs/`):
-
-* **Mode 1, circuit explorer (no download).** Every benchmark prompt (224: practice, selection, renamed A/B, final-split proxy, two prose sets) with the
-  recorded outputs of original / v1 / v2 / g23v3 / random control side by side, and an exact closed-form readout of the edited layer-23 SwiGLU →
-  final RMSNorm → unembedding at the decision position that is recomputed as you drag a₁, a₂, λ, λ₂: neuron activations, gate components, the
-  first-token distribution, and the two neurons' activity along the original model's whole generation. The data bundle
-  (`docs/data/circuit_traces.json`, `scripts/export_circuit_traces.py`) comes from a fresh, non-budgeted tap of the original model plus the campaign's
-  `runs/`; the readout reproduces the recorded first token of g23v3 on 224/224 prompts (v2 208/208, v1 176/176, random 64/64) and matches a direct
-  recomputation to 1e-13.
-* **Mode 2, live WebGPU runner.** Real generation of both models in the browser (Transformers.js + ONNX Runtime Web) from
-  [`scasella91/Qwen3.5-0.8B-toolpatch-g23v3-ONNX`](https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v3-ONNX): one fp16 download, the edited
-  model is produced in memory by writing the 6,142 edited values into the layer-23 tensors (SHA-256 checked against the published edited file).
-  Built by `scripts/export_webgpu_onnx.py`, which also measures why fp16 and not 4-bit: with a q4 backbone the layer-23 input drifts to cosine 0.89
-  with the BF16 activations and the abstain gate closes, so the edit does not transfer (fp16: 0.99, gate sign 8/8).
-
-## 6. Repository layout
-
-```
-apply_g23v3.py        standalone patcher (numpy only): vectors + spec -> edited tensors -> verified checkpoint copy
-demo_cli.py           six-case side-by-side demo, --check against recorded runs
-variants/             derived readouts of the same circuit (g23v3_conv: conversational abstention), never touched by the campaign
-edits/                g23v3.npz (final edit, BF16 bits of the 3 tensors), *.spec.json (every scalar + receipts + simulation),
-                      *.vectors.npz (s, r, c, c2, u_AB, u_route, gate_dir) for the final edit and all 11 controls/candidates
-results.md            final report: diagnosis, localization, edit, controls, paired tables, limitations, accounting, commands
-notes.md              running notebook: hypothesis and prediction before each pass, outcome after, decision rule, final state
-ledger.jsonl          hash-chained append-only record of every budgeted request, execution and failure (47/50 passes)
-runs/                 per-pass outputs: every prompt hash, raw output, token ids, score, memory (JSON); logs
-data/                 deterministic item sets (practice, selection, final_proxy, renamed, teacher, regression, prose) + id lists
-fp.py                 forward-pass tool: generate / teacher-forced capture, paired scoring, edit application and reversion
-primitives.py         scoped BF16 edit API with on-disk persistence (NAMES, load, load_original, save_edit, drop_edit, snapshot)
-build_g23.py          builds the edit from captures in closed form; --simulate_only runs the exact CPU simulator
-build_data.py, build_extra.py   item-set generators
-stock_reload.py       exports a full checkpoint and reruns it in a fresh stock mlx_lm process (imports nothing from here)
-analysis/             CPU-only localization: lens, dla, neurons, separability, features2, crosslayer, leak/leak2, simulate, pair, tables
-benchmark/ eval/ runtime/ patches/ interventions/ environment/   harness reused from the earlier campaigns (renderer, strict scorer,
-                      budget + lock + memory guard, safetensors inspection, architecture manifest)
-scripts/publish_release.sh      GitHub + Hugging Face publication (dry run by default)
-scripts/make_blog_figures.py, scripts/make_fig4_trace.py, scripts/build_blog_html.py   blog post figures and HTML (blog/, docs/blog.html)
-scripts/export_circuit_traces.py (+ circuit_items.py)   data bundle of the web app's circuit explorer (docs/data/)
-scripts/export_webgpu_onnx.py   fp16 ONNX pair + patch manifest for the in-browser runner; --drift / --validate checks on ORT
-scripts/make_conversational_variant.py, scripts/conversational_check.py   the conversational readout and its generation check (docs/data/conversational_mode.json)
-docs/                 GitHub Pages site: index.html / app.js / worker.js / styles.css (the app), blog.html, figures/, data/
-```
-
-## 7. Accounting and provenance
-
-47 of 50 budgeted passes (2,619 charged executions, 1.43 M input / 93.5 k generated tokens); three passes were charged without results (two memory-guard aborts while a sibling job shared the machine, one import-shadowing bug in the stock worker), all recorded in `ledger.jsonl` and `notes.md`. Peak process RSS 3.46 GiB, backend (Metal) peak 1.85 GiB. One resident model at a time under an advisory file lock. Prompts, template, decoding and post-processing were identical for original and edited weights in every pass. Base model: `Qwen/Qwen3.5-0.8B` revision `2fc06364715b967f1860aea9cf38778875588b17`, safetensors SHA-256 `04b1c301…e4696`; MLX 0.32.4, mlx-lm 0.32.2, transformers 5.22.1.
-
-## License
-
-Code, data and records: Apache-2.0 ([LICENSE](LICENSE)). The edited tensors are derived from Qwen3.5-0.8B (Apache-2.0, © Alibaba Cloud).
+qwen-6: 47 of 50 passes, 2,619 charged executions, peak RSS 3.46 GiB. qwen-7: 20 of 50 passes, 1,184 executions, peak RSS 2.42 GiB. Shared accelerator locks polled, never broken. No gradients, optimizers, LoRA, distillation or output-fitting regressions; identical prompts, template and greedy decoding for every model in every pass; `embed_tokens`, `lm_head`, final norm and vision tensors untouched. Research agent: Mythos 5.1. License: Apache-2.0 (base model: Qwen team, Apache-2.0).

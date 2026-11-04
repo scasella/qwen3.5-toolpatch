@@ -1,0 +1,161 @@
+{
+  "practice": {
+    "path": "/Users/scasella/Downloads/qwen-6/data/practice.jsonl",
+    "sha256": "7f4418afc257899abb8d452fc326edbc4303d8493b6023104f88362fefa8ca05",
+    "count": 64,
+    "class_counts": {
+      "call": 24,
+      "answer": 20,
+      "clarify": 20
+    },
+    "families": [
+      "access_control",
+      "archive_state",
+      "clock_shift",
+      "collection_size",
+      "graph_direction",
+      "interval_boundary",
+      "numeric_aggregation",
+      "numeric_comparison",
+      "queue_end",
+      "record_mutation",
+      "record_retrieval",
+      "reservation_lifecycle",
+      "set_membership",
+      "sort_direction",
+      "substring_position",
+      "text_case",
+      "transfer_direction",
+      "unit_conversion"
+    ],
+    "opaque": 32
+  },
+  "selection": {
+    "path": "/Users/scasella/Downloads/qwen-6/data/selection.jsonl",
+    "sha256": "d52911dd8de69512900585fde1ea8ac1570a5b293beea9e1f2845e3482318b70",
+    "count": 32,
+    "class_counts": {
+      "call": 12,
+      "answer": 10,
+      "clarify": 10
+    },
+    "families": [
+      "inventory_adjustment",
+      "job_priority",
+      "string_padding",
+      "subscription",
+      "tree_scope",
+      "version_comparison"
+    ],
+    "opaque": 16
+  },
+  "final_proxy": {
+    "path": "/Users/scasella/Downloads/qwen-6/data/final_proxy.jsonl",
+    "sha256": "9f4e5a42aabebfe6da75c691c40e379834cc1b1fc774cf45d1d8c8d896fe5991",
+    "count": 32,
+    "class_counts": {
+      "call": 12,
+      "answer": 10,
+      "clarify": 10
+    },
+    "families": [
+      "checksum",
+      "coordinate_transform",
+      "document_redaction",
+      "edge_mutation",
+      "encoding_direction",
+      "event_window",
+      "filter_parity",
+      "key_value_inverse",
+      "matrix_axis",
+      "partition",
+      "ranking",
+      "schedule_offset"
+    ],
+    "opaque": 16
+  },
+  "renamed": {
+    "path": "/Users/scasella/Downloads/qwen-6/data/renamed.jsonl",
+    "sha256": "2b3fb606123be31b452ea3d39ce1dc6c12fd6591913d88a79a9b2ab9f366a4eb",
+    "count": 64,
+    "class_counts": {
+      "call": 24,
+      "answer": 20,
+      "clarify": 20
+    },
+    "families": [
+      "access_control",
+      "archive_state",
+      "clock_shift",
+      "collection_size",
+      "graph_direction",
+      "interval_boundary",
+      "numeric_aggregation",
+      "numeric_comparison",
+      "queue_end",
+      "record_mutation",
+      "record_retrieval",
+      "reservation_lifecycle",
+      "set_membership",
+      "sort_direction",
+      "substring_position",
+      "text_case",
+      "transfer_direction",
+      "unit_conversion"
+    ],
+    "opaque": 64
+  },
+  "regression": {
+    "count": 32,
+    "sha256": "098ef06753114791f44e9dd2e0141590469a9f9138fefe7846a69353ea21e59c"
+  },
+  "teacher": {
+    "groups": 10,
+    "cases": 60,
+    "lengths": [
+      533,
+      641,
+      550,
+      562,
+      628,
+      569,
+      671,
+      563,
+      546,
+      513
+    ]
+  },
+  "prompt_tokens": {
+    "practice": {
+      "min": 536,
+      "max": 721,
+      "mean": 611.453125
+    },
+    "selection": {
+      "min": 543,
+      "max": 667,
+      "mean": 618.15625
+    },
+    "final_proxy": {
+      "min": 541,
+      "max": 666,
+      "mean": 606.125
+    },
+    "renamed": {
+      "min": 536,
+      "max": 705,
+      "mean": 598.765625
+    },
+    "teacher": {
+      "min": 515,
+      "max": 673,
+      "mean": 579.6
+    }
+  },
+  "provenance": {
+    "render_variant": "standard",
+    "thinking": false,
+    "format_examples": "none",
+    "final_proxy_note": "local proxy generated from final-split family definitions; hidden held-out test is separate and never seen"
+  }
+}

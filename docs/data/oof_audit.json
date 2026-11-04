@@ -1,0 +1,387 @@
+{
+ "generated_utc": "2026-11-04T20:50:50Z",
+ "stage1_fit_D1D2": {
+  "theta1": 9.6,
+  "k1": 4.0,
+  "k1_rule_value": 1.5265119363779553,
+  "k1_rule": "alternative gain: min D1+D2 ambiguous-end activation = 58 (shipped minimum)",
+  "fit_items": {
+   "D1": 64,
+   "D2": 64
+  },
+  "D12_ambiguous_w1x": [
+   14.730412766897157,
+   16.32111817570603
+  ],
+  "D12_ambiguous_z": [
+   4.990229703180481,
+   6.679837190184303
+  ],
+  "D12_harmful_w1x_max": 8.422706398551588,
+  "D12_harmful_z_max": -1.188489102840935,
+  "D12_harmful_positions": 101923,
+  "r1x_on_ambiguous_ends": [
+   0.9865614824856106,
+   1.0291617997232203
+  ]
+ },
+ "stage2_fit_D1D2": {
+  "cos_p6_oof_vs_shipped": 0.9996153164216147,
+  "cos_t_oof_vs_shipped_t": 0.9995249596442132,
+  "J3_z_delivered_D12": [
+   3.315545615838187,
+   5.741545193551657
+  ],
+  "J3_z_natural_decisions_D12_max": -6.467086355888718,
+  "J3_z_generated_max": -2.5556704964731694,
+  "cos_u_oof_vs_shipped": 0.8915777906551989,
+  "cos_g_oof_vs_shipped": 0.9944355297529239
+ },
+ "seconds": 87.45507433300372,
+ "results": {
+  "oof_D1D2:D3": {
+   "summary": {
+    "n_ambiguous": 28,
+    "n_non_ambiguous": 36,
+    "ambiguous_to_NE": 27,
+    "ambiguous_NE_minus_call_min": -15.125,
+    "ambiguous_NE_minus_runnerup_min": -15.125,
+    "non_ambiguous_argmax_kept": 36,
+    "non_ambiguous_max_abs_dlogit_top20": 0.125,
+    "stage1_act_at_ambiguous_ends": [
+     2.4973899294209048,
+     749.3214956958312
+    ],
+    "stage1_z_at_ambiguous_ends": [
+     1.7164442539215088,
+     27.373737335205078
+    ],
+    "stage1_act_max_non_ambiguous_positions": 0.48268743255697183,
+    "stage1_z_max_non_ambiguous_positions": -2.183344602584839,
+    "stage1_act_max_ambiguous_other_positions": 0.743164381967716,
+    "alpha6_at_end_ambiguous": [
+     0.08009447157382965,
+     0.9991388320922852
+    ],
+    "alpha6_at_end_non_ambiguous_max": 0.0005041693220846355,
+    "j3_act_ambiguous": [
+     0.0002324213825900661,
+     113.15279469211455
+    ],
+    "j3_act_non_ambiguous_max": 0.000285985429064433,
+    "misses": [
+     [
+      "final-711405-0004-amb-B2",
+      248058,
+      -15.12,
+      2.5
+     ]
+    ]
+   }
+  },
+  "oof_D1D2_k1rule:D3": {
+   "summary": {
+    "n_ambiguous": 28,
+    "n_non_ambiguous": 36,
+    "ambiguous_to_NE": 27,
+    "ambiguous_NE_minus_call_min": -15.0625,
+    "ambiguous_NE_minus_runnerup_min": -15.0625,
+    "non_ambiguous_argmax_kept": 36,
+    "non_ambiguous_max_abs_dlogit_top20": 0.125,
+    "stage1_act_at_ambiguous_ends": [
+     0.28239793491223575,
+     109.12794212501869
+    ],
+    "stage1_z_at_ambiguous_ends": [
+     0.6550427675247192,
+     10.44658374786377
+    ],
+    "stage1_act_max_non_ambiguous_positions": 0.4473552406266401,
+    "stage1_z_max_non_ambiguous_positions": -0.833226203918457,
+    "stage1_act_max_ambiguous_other_positions": 0.48262867151708116,
+    "alpha6_at_end_ambiguous": [
+     7.438725879183039e-05,
+     0.9994939565658569
+    ],
+    "alpha6_at_end_non_ambiguous_max": 0.000836539373267442,
+    "j3_act_ambiguous": [
+     0.00012736960042434827,
+     105.61390856033982
+    ],
+    "j3_act_non_ambiguous_max": 0.0002835416699037577,
+    "misses": [
+     [
+      "final-711405-0004-amb-B2",
+      248058,
+      -15.06,
+      0.28
+     ]
+    ]
+   }
+  },
+  "shipped:D3": {
+   "summary": {
+    "n_ambiguous": 28,
+    "n_non_ambiguous": 36,
+    "ambiguous_to_NE": 28,
+    "ambiguous_NE_minus_call_min": 35.671875,
+    "ambiguous_NE_minus_runnerup_min": 12.5,
+    "non_ambiguous_argmax_kept": 36,
+    "non_ambiguous_max_abs_dlogit_top20": 0.125,
+    "stage1_act_at_ambiguous_ends": [
+     57.82725059651268,
+     409.8969743976943
+    ],
+    "stage1_z_at_ambiguous_ends": [
+     7.606313705444336,
+     20.245912551879883
+    ],
+    "stage1_act_max_non_ambiguous_positions": 0.015817323903840417,
+    "stage1_z_max_non_ambiguous_positions": -8.403791427612305,
+    "stage1_act_max_ambiguous_other_positions": 0.4828299668376979,
+    "alpha6_at_end_ambiguous": [
+     0.9917534589767456,
+     0.9992115497589111
+    ],
+    "alpha6_at_end_non_ambiguous_max": 0.0005041722324676812,
+    "j3_act_ambiguous": [
+     67.43960423610248,
+     109.20886122461538
+    ],
+    "j3_act_non_ambiguous_max": 0.00027293610956223677,
+    "misses": []
+   }
+  },
+  "oof_D1D2:stress": {
+   "summary": {
+    "n_ambiguous": 32,
+    "n_non_ambiguous": 32,
+    "ambiguous_to_NE": 28,
+    "ambiguous_NE_minus_call_min": -16.53125,
+    "ambiguous_NE_minus_runnerup_min": -16.53125,
+    "non_ambiguous_argmax_kept": 32,
+    "non_ambiguous_max_abs_dlogit_top20": 0.125,
+    "stage1_act_at_ambiguous_ends": [
+     0.23414774277639158,
+     791.9837693535026
+    ],
+    "stage1_z_at_ambiguous_ends": [
+     -4.405264854431152,
+     28.1422061920166
+    ],
+    "stage1_act_max_non_ambiguous_positions": 0.3863792702484812,
+    "stage1_z_max_non_ambiguous_positions": -3.3071322441101074,
+    "stage1_act_max_ambiguous_other_positions": 21.73613342789109,
+    "alpha6_at_end_ambiguous": [
+     0.0001352404069621116,
+     0.9995595812797546
+    ],
+    "alpha6_at_end_non_ambiguous_max": 0.0007043342338874936,
+    "j3_act_ambiguous": [
+     2.168090221391956e-05,
+     110.86826171389369
+    ],
+    "j3_act_non_ambiguous_max": 0.00029300363118609814,
+    "misses": [
+     [
+      "stress-amb-03-discovery-711406-0012-amb-B4",
+      248058,
+      -13.69,
+      2.9
+     ],
+     [
+      "stress-amb-09-discovery-711406-0036-amb-B4",
+      248058,
+      -16.53,
+      2.13
+     ],
+     [
+      "stress-amb-21-discovery-711406-0048-amb-B4-renamed",
+      248058,
+      -14.06,
+      0.23
+     ],
+     [
+      "stress-amb-25-discovery-711406-0064-amb-B2-renamed",
+      248058,
+      -15.94,
+      0.48
+     ]
+    ]
+   }
+  },
+  "oof_D1D2_k1rule:stress": {
+   "summary": {
+    "n_ambiguous": 32,
+    "n_non_ambiguous": 32,
+    "ambiguous_to_NE": 24,
+    "ambiguous_NE_minus_call_min": -16.5,
+    "ambiguous_NE_minus_runnerup_min": -16.5,
+    "non_ambiguous_argmax_kept": 32,
+    "non_ambiguous_max_abs_dlogit_top20": 0.125,
+    "stage1_act_at_ambiguous_ends": [
+     0.2379070472280965,
+     115.3419826178732
+    ],
+    "stage1_z_at_ambiguous_ends": [
+     -1.681172490119934,
+     10.73985481262207
+    ],
+    "stage1_act_max_non_ambiguous_positions": 0.4765933676981502,
+    "stage1_z_max_non_ambiguous_positions": -1.2620939016342163,
+    "stage1_act_max_ambiguous_other_positions": 2.7368020752035473,
+    "alpha6_at_end_ambiguous": [
+     2.6054034606204368e-05,
+     0.9992671608924866
+    ],
+    "alpha6_at_end_non_ambiguous_max": 0.0017397926421836019,
+    "j3_act_ambiguous": [
+     2.363936054514413e-05,
+     100.07874925271662
+    ],
+    "j3_act_non_ambiguous_max": 0.0002910515350992003,
+    "misses": [
+     [
+      "stress-amb-03-discovery-711406-0012-amb-B4",
+      248058,
+      -12.62,
+      0.33
+     ],
+     [
+      "stress-amb-07-discovery-711406-0028-amb-B2",
+      248058,
+      -15.59,
+      8.84
+     ],
+     [
+      "stress-amb-09-discovery-711406-0036-amb-B4",
+      248058,
+      -16.5,
+      0.24
+     ],
+     [
+      "stress-amb-13-selection-711407-0024-amb-B4",
+      248058,
+      -6.0,
+      9.71
+     ],
+     [
+      "stress-amb-21-discovery-711406-0048-amb-B4-renamed",
+      248058,
+      -14.06,
+      0.44
+     ],
+     [
+      "stress-amb-22-discovery-711406-0052-amb-B5-renamed",
+      248058,
+      -10.62,
+      4.17
+     ],
+     [
+      "stress-amb-25-discovery-711406-0064-amb-B2-renamed",
+      248058,
+      -15.88,
+      0.24
+     ],
+     [
+      "stress-amb-31-selection-711407-0020-amb-B4-renamed",
+      248058,
+      -10.56,
+      1.83
+     ]
+    ]
+   }
+  },
+  "shipped:stress": {
+   "summary": {
+    "n_ambiguous": 32,
+    "n_non_ambiguous": 32,
+    "ambiguous_to_NE": 27,
+    "ambiguous_NE_minus_call_min": -16.625,
+    "ambiguous_NE_minus_runnerup_min": -16.625,
+    "non_ambiguous_argmax_kept": 32,
+    "non_ambiguous_max_abs_dlogit_top20": 0.125,
+    "stage1_act_at_ambiguous_ends": [
+     0.005974634987627885,
+     450.1430808728893
+    ],
+    "stage1_z_at_ambiguous_ends": [
+     -9.6551513671875,
+     21.216575622558594
+    ],
+    "stage1_act_max_non_ambiguous_positions": 0.011848463149380511,
+    "stage1_z_max_non_ambiguous_positions": -8.780461311340332,
+    "stage1_act_max_ambiguous_other_positions": 0.4825629826490272,
+    "alpha6_at_end_ambiguous": [
+     1.5570387404295616e-05,
+     0.9990074038505554
+    ],
+    "alpha6_at_end_non_ambiguous_max": 0.0007019743206910789,
+    "j3_act_ambiguous": [
+     2.3145830036880526e-05,
+     106.07457983098408
+    ],
+    "j3_act_non_ambiguous_max": 0.0002989996522881668,
+    "misses": [
+     [
+      "stress-amb-03-discovery-711406-0012-amb-B4",
+      248058,
+      -12.69,
+      0.25
+     ],
+     [
+      "stress-amb-09-discovery-711406-0036-amb-B4",
+      248058,
+      -16.62,
+      0.1
+     ],
+     [
+      "stress-amb-21-discovery-711406-0048-amb-B4-renamed",
+      248058,
+      -14.06,
+      0.01
+     ],
+     [
+      "stress-amb-25-discovery-711406-0064-amb-B2-renamed",
+      248058,
+      -15.94,
+      0.41
+     ],
+     [
+      "stress-amb-31-selection-711407-0020-amb-B4-renamed",
+      248058,
+      -10.56,
+      0.21
+     ]
+    ]
+   }
+  },
+  "direction_level": {
+   "oof_D1D2:D3": {
+    "ambiguous_end_min": 0.4291110728329726,
+    "ambiguous_end_max": 6.84343472356018,
+    "other_positions_max": 0.2518159799771506,
+    "margin": 0.177295092855822,
+    "sign_correct_ambiguous": 28,
+    "sign_correct_other_items": 61,
+    "n_amb": 28,
+    "n_other": 64
+   },
+   "oof_D1D2:stress": {
+    "ambiguous_end_min": -1.1013162713288984,
+    "ambiguous_end_max": 7.035551724037598,
+    "other_positions_max": 1.1709259403041679,
+    "margin": -2.272242211633066,
+    "sign_correct_ambiguous": 30,
+    "sign_correct_other_items": 57,
+    "n_amb": 32,
+    "n_other": 64
+   }
+  },
+  "simulator_vs_real_D1": {
+   "argmax_agreement": "64/64",
+   "abs_logit_error_NE_NO_call_median": 0.0625,
+   "max": 0.5
+  }
+ }
+}

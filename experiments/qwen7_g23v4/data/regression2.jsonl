@@ -1,0 +1,32 @@
+{"id": "regression-60132-0", "user": "Reply with exactly the word spruce0 and nothing else.", "domain": "instruction", "gold": "spruce0"}
+{"id": "regression-60132-1", "user": "Extract the value of target. Reply with that value only. distractor=58; target=birch1; other=22", "domain": "extraction", "gold": "birch1"}
+{"id": "regression-60132-2", "user": "What is 12 + 6? Reply with the integer only.", "domain": "arithmetic", "gold": "18"}
+{"id": "regression-60132-3", "user": "Return only a JSON object with key \"name\" set to \"cedar3\" and key \"count\" set to the integer 61.", "domain": "structured", "gold": {"name": "cedar3", "count": 61}}
+{"id": "regression-60132-4", "user": "Reply with exactly the word spruce4 and nothing else.", "domain": "instruction", "gold": "spruce4"}
+{"id": "regression-60132-5", "user": "Extract the value of target. Reply with that value only. distractor=10; target=cedar5; other=38", "domain": "extraction", "gold": "cedar5"}
+{"id": "regression-60132-6", "user": "What is 36 + 48? Reply with the integer only.", "domain": "arithmetic", "gold": "84"}
+{"id": "regression-60132-7", "user": "Return only a JSON object with key \"name\" set to \"birch7\" and key \"count\" set to the integer 74.", "domain": "structured", "gold": {"name": "birch7", "count": 74}}
+{"id": "regression-60132-8", "user": "Reply with exactly the word cedar8 and nothing else.", "domain": "instruction", "gold": "cedar8"}
+{"id": "regression-60132-9", "user": "Extract the value of target. Reply with that value only. distractor=18; target=maple9; other=45", "domain": "extraction", "gold": "maple9"}
+{"id": "regression-60132-10", "user": "What is 36 + 56? Reply with the integer only.", "domain": "arithmetic", "gold": "92"}
+{"id": "regression-60132-11", "user": "Return only a JSON object with key \"name\" set to \"spruce11\" and key \"count\" set to the integer 10.", "domain": "structured", "gold": {"name": "spruce11", "count": 10}}
+{"id": "regression-60132-12", "user": "Reply with exactly the word maple12 and nothing else.", "domain": "instruction", "gold": "maple12"}
+{"id": "regression-60132-13", "user": "Extract the value of target. Reply with that value only. distractor=54; target=maple13; other=75", "domain": "extraction", "gold": "maple13"}
+{"id": "regression-60132-14", "user": "What is 78 + 66? Reply with the integer only.", "domain": "arithmetic", "gold": "144"}
+{"id": "regression-60132-15", "user": "Return only a JSON object with key \"name\" set to \"maple15\" and key \"count\" set to the integer 66.", "domain": "structured", "gold": {"name": "maple15", "count": 66}}
+{"id": "regression-60132-16", "user": "Reply with exactly the word cedar16 and nothing else.", "domain": "instruction", "gold": "cedar16"}
+{"id": "regression-60132-17", "user": "Extract the value of target. Reply with that value only. distractor=17; target=birch17; other=53", "domain": "extraction", "gold": "birch17"}
+{"id": "regression-60132-18", "user": "What is 39 + 62? Reply with the integer only.", "domain": "arithmetic", "gold": "101"}
+{"id": "regression-60132-19", "user": "Return only a JSON object with key \"name\" set to \"maple19\" and key \"count\" set to the integer 43.", "domain": "structured", "gold": {"name": "maple19", "count": 43}}
+{"id": "regression-60132-20", "user": "Reply with exactly the word spruce20 and nothing else.", "domain": "instruction", "gold": "spruce20"}
+{"id": "regression-60132-21", "user": "Extract the value of target. Reply with that value only. distractor=26; target=maple21; other=55", "domain": "extraction", "gold": "maple21"}
+{"id": "regression-60132-22", "user": "What is 4 + 37? Reply with the integer only.", "domain": "arithmetic", "gold": "41"}
+{"id": "regression-60132-23", "user": "Return only a JSON object with key \"name\" set to \"maple23\" and key \"count\" set to the integer 62.", "domain": "structured", "gold": {"name": "maple23", "count": 62}}
+{"id": "regression-60132-24", "user": "Reply with exactly the word maple24 and nothing else.", "domain": "instruction", "gold": "maple24"}
+{"id": "regression-60132-25", "user": "Extract the value of target. Reply with that value only. distractor=74; target=cedar25; other=61", "domain": "extraction", "gold": "cedar25"}
+{"id": "regression-60132-26", "user": "What is 13 + 63? Reply with the integer only.", "domain": "arithmetic", "gold": "76"}
+{"id": "regression-60132-27", "user": "Return only a JSON object with key \"name\" set to \"spruce27\" and key \"count\" set to the integer 40.", "domain": "structured", "gold": {"name": "spruce27", "count": 40}}
+{"id": "regression-60132-28", "user": "Reply with exactly the word birch28 and nothing else.", "domain": "instruction", "gold": "birch28"}
+{"id": "regression-60132-29", "user": "Extract the value of target. Reply with that value only. distractor=9; target=maple29; other=36", "domain": "extraction", "gold": "maple29"}
+{"id": "regression-60132-30", "user": "What is 57 + 6? Reply with the integer only.", "domain": "arithmetic", "gold": "63"}
+{"id": "regression-60132-31", "user": "Return only a JSON object with key \"name\" set to \"cedar31\" and key \"count\" set to the integer 34.", "domain": "structured", "gold": {"name": "cedar31", "count": 34}}

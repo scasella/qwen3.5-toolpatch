@@ -1,0 +1,15 @@
+{"loaded_memory": {"rss_bytes": 1889943552, "system_available_bytes": 8963129344, "backend_active_bytes": 1504791240, "backend_peak_bytes": 1504791280, "backend_cache_bytes": 4086}}
+Traceback (most recent call last):
+  File "/Users/scasella/Downloads/qwen-7/fp2.py", line 264, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "/Users/scasella/Downloads/qwen-7/fp2.py", line 258, in main
+    result,arrays=run_teacher(engine,budget,items,models[0],a.prompt,a.continuation,roles_meta,layers,hfull,mlpin,colstats,a.attnrows)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/scasella/Downloads/qwen-7/fp2.py", line 196, in run_teacher
+    tags=tag_roles(engine.tok,p,pids,roles_meta[it['id']]) if roles_meta else {'dec':len(pids)-1}
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/scasella/Downloads/qwen-7/fp2.py", line 45, in tag_roles
+    enc=tok(p,add_special_tokens=False,return_offsets_mapping=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'TokenizerWrapper' object is not callable

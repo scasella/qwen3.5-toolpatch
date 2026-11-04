@@ -1,0 +1,6027 @@
+{
+  "attnrows": true,
+  "colstats": [],
+  "continuation": "none",
+  "hfull": [],
+  "label": "c02_stress_calib",
+  "layers": [
+    22,
+    23
+  ],
+  "memory": {
+    "backend_peak_gib": 1.8707913793623447,
+    "rss_gib": 1.27215576171875
+  },
+  "mlpin": [],
+  "mode": "teacher",
+  "model": "g23v4",
+  "models": [
+    "g23v4"
+  ],
+  "n_items": 32,
+  "prompt_variant": "standard",
+  "rows": [
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-00-discovery-711406-0000-amb-B1",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 54.000000008378144,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 54.0,
+            "text": "NE"
+          },
+          {
+            "id": 7608,
+            "logit": 35.25,
+            "text": " NE"
+          },
+          {
+            "id": 785,
+            "logit": 32.75,
+            "text": "ne"
+          },
+          {
+            "id": 8547,
+            "logit": 32.75,
+            "text": "Ne"
+          },
+          {
+            "id": 4044,
+            "logit": 26.5,
+            "text": " Ne"
+          },
+          {
+            "id": 46792,
+            "logit": 26.125,
+            "text": "(ne"
+          },
+          {
+            "id": 13636,
+            "logit": 25.0,
+            "text": "_NE"
+          },
+          {
+            "id": 13525,
+            "logit": 24.5,
+            "text": "_ne"
+          },
+          {
+            "id": 808,
+            "logit": 24.25,
+            "text": " ne"
+          },
+          {
+            "id": 21928,
+            "logit": 24.125,
+            "text": ".ne"
+          },
+          {
+            "id": 79428,
+            "logit": 24.0,
+            "text": " NEC"
+          },
+          {
+            "id": 3794,
+            "logit": 23.625,
+            "text": "NU"
+          },
+          {
+            "id": 38649,
+            "logit": 23.625,
+            "text": "-ne"
+          },
+          {
+            "id": 69320,
+            "logit": 23.375,
+            "text": "NES"
+          },
+          {
+            "id": 76069,
+            "logit": 22.75,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 86236,
+            "logit": 22.5,
+            "text": "/ne"
+          },
+          {
+            "id": 7096,
+            "logit": 22.5,
+            "text": "NA"
+          },
+          {
+            "id": 83593,
+            "logit": 22.375,
+            "text": " NEO"
+          },
+          {
+            "id": 9655,
+            "logit": 21.875,
+            "text": "NC"
+          },
+          {
+            "id": 211084,
+            "logit": 21.375,
+            "text": "\u041d\u0415"
+          },
+          {
+            "id": 71610,
+            "logit": 21.375,
+            "text": "NEY"
+          },
+          {
+            "id": 213695,
+            "logit": 20.625,
+            "text": "neu"
+          },
+          {
+            "id": 5948,
+            "logit": 20.5,
+            "text": "NG"
+          },
+          {
+            "id": 13497,
+            "logit": 20.25,
+            "text": "NER"
+          }
+        ],
+        "watch": {
+          "\n": 0.1455078125,
+          "1": 7.375,
+          "<": 8.6875,
+          "<think>": 8.0625,
+          "<tool_call>": -18.0,
+          "<|im_end|>": 5.375,
+          "Based": 8.75,
+          "Here": 7.03125,
+          "I": -4.625,
+          "It": 6.6875,
+          "NE": 54.0,
+          "NO": 16.625,
+          "NOT": 6.40625,
+          "No": 8.0,
+          "None": 8.8125,
+          "Okay": 5.90625,
+          "Please": 7.96875,
+          "Select": 4.40625,
+          "Since": 8.0,
+          "Sure": 4.59375,
+          "The": -5.9375,
+          "This": 8.0625,
+          "To": -7.0625,
+          "Yes": 5.09375,
+          "You": 7.40625,
+          "need": 5.78125,
+          "no": 4.625
+        }
+      },
+      "decision_position": 570,
+      "family": "record_retrieval",
+      "gaps": {
+        "NE_minus_NO": 37.375,
+        "call_minus_NE": -72.0,
+        "call_minus_NO": -34.625
+      },
+      "model": "g23v4",
+      "prompt_tokens": 571,
+      "roles": {
+        "conn": 522,
+        "dec": 570,
+        "end": 535,
+        "imend": 562,
+        "sysamb": 471,
+        "tail": 534,
+        "v1": 521,
+        "v1c": 520,
+        "v2": 527,
+        "v2c": 526,
+        "x": 521,
+        "xc": 520,
+        "y": 527,
+        "yc": 526
+      },
+      "seconds": 0.4423898750101216,
+      "sequence_tokens": 571
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-01-discovery-711406-0004-amb-B2",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 46.50000005910791,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 46.5,
+            "text": "NE"
+          },
+          {
+            "id": 7608,
+            "logit": 29.375,
+            "text": " NE"
+          },
+          {
+            "id": 8547,
+            "logit": 28.5,
+            "text": "Ne"
+          },
+          {
+            "id": 785,
+            "logit": 27.75,
+            "text": "ne"
+          },
+          {
+            "id": 7096,
+            "logit": 22.0,
+            "text": "NA"
+          },
+          {
+            "id": 46792,
+            "logit": 21.75,
+            "text": "(ne"
+          },
+          {
+            "id": 3794,
+            "logit": 21.625,
+            "text": "NU"
+          },
+          {
+            "id": 4044,
+            "logit": 21.5,
+            "text": " Ne"
+          },
+          {
+            "id": 8725,
+            "logit": 21.375,
+            "text": "NO"
+          },
+          {
+            "id": 13636,
+            "logit": 21.25,
+            "text": "_NE"
+          },
+          {
+            "id": 13525,
+            "logit": 21.0,
+            "text": "_ne"
+          },
+          {
+            "id": 9655,
+            "logit": 20.75,
+            "text": "NC"
+          },
+          {
+            "id": 69320,
+            "logit": 20.625,
+            "text": "NES"
+          },
+          {
+            "id": 5948,
+            "logit": 20.375,
+            "text": "NG"
+          },
+          {
+            "id": 38649,
+            "logit": 20.125,
+            "text": "-ne"
+          },
+          {
+            "id": 21928,
+            "logit": 20.0,
+            "text": ".ne"
+          },
+          {
+            "id": 808,
+            "logit": 19.875,
+            "text": " ne"
+          },
+          {
+            "id": 79428,
+            "logit": 19.75,
+            "text": " NEC"
+          },
+          {
+            "id": 76069,
+            "logit": 19.625,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 83593,
+            "logit": 19.625,
+            "text": " NEO"
+          },
+          {
+            "id": 25391,
+            "logit": 19.25,
+            "text": "NP"
+          },
+          {
+            "id": 32239,
+            "logit": 19.25,
+            "text": "NB"
+          },
+          {
+            "id": 86236,
+            "logit": 19.125,
+            "text": "/ne"
+          },
+          {
+            "id": 7812,
+            "logit": 19.0,
+            "text": "ND"
+          }
+        ],
+        "watch": {
+          "\n": 0.1552734375,
+          "1": 9.1875,
+          "<": 11.1875,
+          "<think>": 10.0,
+          "<tool_call>": -13.4375,
+          "<|im_end|>": 6.59375,
+          "Based": 11.625,
+          "Here": 8.375,
+          "I": -0.859375,
+          "It": 10.1875,
+          "NE": 46.5,
+          "NO": 21.375,
+          "NOT": 7.125,
+          "No": 9.625,
+          "None": 11.75,
+          "Okay": 7.6875,
+          "Please": 10.1875,
+          "Select": 6.875,
+          "Since": 11.3125,
+          "Sure": 7.25,
+          "The": -2.0,
+          "This": 10.3125,
+          "To": -3.171875,
+          "Yes": 7.5625,
+          "You": 10.1875,
+          "need": 7.125,
+          "no": 5.53125
+        }
+      },
+      "decision_position": 598,
+      "family": "collection_size",
+      "gaps": {
+        "NE_minus_NO": 25.125,
+        "call_minus_NE": -59.9375,
+        "call_minus_NO": -34.8125
+      },
+      "model": "g23v4",
+      "prompt_tokens": 599,
+      "roles": {
+        "conn": 576,
+        "dec": 598,
+        "end": 589,
+        "imend": 590,
+        "sysamb": 494,
+        "tail": 588,
+        "v1": 574,
+        "v1c": 573,
+        "v2": 584,
+        "v2c": 583,
+        "x": 574,
+        "xc": 573,
+        "y": 584,
+        "yc": 583
+      },
+      "seconds": 0.19616625001071952,
+      "sequence_tokens": 599
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-02-discovery-711406-0008-amb-B3",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 48.25000013360687,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 48.25,
+            "text": "NE"
+          },
+          {
+            "id": 7608,
+            "logit": 32.25,
+            "text": " NE"
+          },
+          {
+            "id": 8725,
+            "logit": 30.375,
+            "text": "NO"
+          },
+          {
+            "id": 8547,
+            "logit": 28.75,
+            "text": "Ne"
+          },
+          {
+            "id": 785,
+            "logit": 26.25,
+            "text": "ne"
+          },
+          {
+            "id": 7096,
+            "logit": 24.25,
+            "text": "NA"
+          },
+          {
+            "id": 69320,
+            "logit": 23.625,
+            "text": "NES"
+          },
+          {
+            "id": 4044,
+            "logit": 23.5,
+            "text": " Ne"
+          },
+          {
+            "id": 3794,
+            "logit": 23.25,
+            "text": "NU"
+          },
+          {
+            "id": 46792,
+            "logit": 22.875,
+            "text": "(ne"
+          },
+          {
+            "id": 9655,
+            "logit": 22.625,
+            "text": "NC"
+          },
+          {
+            "id": 5948,
+            "logit": 22.375,
+            "text": "NG"
+          },
+          {
+            "id": 79428,
+            "logit": 22.375,
+            "text": " NEC"
+          },
+          {
+            "id": 13636,
+            "logit": 22.25,
+            "text": "_NE"
+          },
+          {
+            "id": 13525,
+            "logit": 21.75,
+            "text": "_ne"
+          },
+          {
+            "id": 83593,
+            "logit": 21.625,
+            "text": " NEO"
+          },
+          {
+            "id": 808,
+            "logit": 20.625,
+            "text": " ne"
+          },
+          {
+            "id": 38649,
+            "logit": 20.625,
+            "text": "-ne"
+          },
+          {
+            "id": 21928,
+            "logit": 20.5,
+            "text": ".ne"
+          },
+          {
+            "id": 36090,
+            "logit": 19.875,
+            "text": "NM"
+          },
+          {
+            "id": 71610,
+            "logit": 19.875,
+            "text": "NEY"
+          },
+          {
+            "id": 86236,
+            "logit": 19.75,
+            "text": "/ne"
+          },
+          {
+            "id": 69285,
+            "logit": 19.25,
+            "text": "+N"
+          },
+          {
+            "id": 76069,
+            "logit": 19.25,
+            "text": "\u043d\u0435"
+          }
+        ],
+        "watch": {
+          "\n": 0.3671875,
+          "1": 4.625,
+          "<": 4.9375,
+          "<think>": 4.84375,
+          "<tool_call>": -29.125,
+          "<|im_end|>": 3.375,
+          "Based": 5.6875,
+          "Here": 3.984375,
+          "I": -11.5,
+          "It": 4.46875,
+          "NE": 48.25,
+          "NO": 30.375,
+          "NOT": 3.671875,
+          "No": 5.0625,
+          "None": 5.53125,
+          "Okay": 4.03125,
+          "Please": 5.53125,
+          "Select": 3.125,
+          "Since": 5.6875,
+          "Sure": 3.421875,
+          "The": -12.6875,
+          "This": 5.0625,
+          "To": -12.75,
+          "Yes": 3.890625,
+          "You": 5.09375,
+          "need": 2.9375,
+          "no": 3.015625
+        }
+      },
+      "decision_position": 680,
+      "family": "transfer_direction",
+      "gaps": {
+        "NE_minus_NO": 17.875,
+        "call_minus_NE": -77.375,
+        "call_minus_NO": -59.5
+      },
+      "model": "g23v4",
+      "prompt_tokens": 681,
+      "roles": {
+        "conn": 639,
+        "dec": 680,
+        "end": 644,
+        "imend": 672,
+        "sysamb": 554,
+        "v1": 638,
+        "v1c": 637,
+        "v2": 644,
+        "v2c": 643,
+        "x": 638,
+        "xc": 637,
+        "y": 644,
+        "yc": 643
+      },
+      "seconds": 0.19382495898753405,
+      "sequence_tokens": 681
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-03-discovery-711406-0012-amb-B4",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 248058,
+        "logsumexp": 21.499902411473514,
+        "topk": [
+          {
+            "id": 248058,
+            "logit": 21.25,
+            "text": "<tool_call>"
+          },
+          {
+            "id": 40,
+            "logit": 19.5,
+            "text": "I"
+          },
+          {
+            "id": 760,
+            "logit": 17.0,
+            "text": "The"
+          },
+          {
+            "id": 27775,
+            "logit": 16.75,
+            "text": "Based"
+          },
+          {
+            "id": 27,
+            "logit": 16.625,
+            "text": "<"
+          },
+          {
+            "id": 1206,
+            "logit": 16.375,
+            "text": "To"
+          },
+          {
+            "id": 3928,
+            "logit": 16.125,
+            "text": "None"
+          },
+          {
+            "id": 12189,
+            "logit": 15.625,
+            "text": "Since"
+          },
+          {
+            "id": 1919,
+            "logit": 15.375,
+            "text": "This"
+          },
+          {
+            "id": 248068,
+            "logit": 15.1875,
+            "text": "<think>"
+          },
+          {
+            "id": 15947,
+            "logit": 15.1875,
+            "text": "Using"
+          },
+          {
+            "id": 2665,
+            "logit": 15.1875,
+            "text": "No"
+          },
+          {
+            "id": 34,
+            "logit": 14.625,
+            "text": "C"
+          },
+          {
+            "id": 49332,
+            "logit": 14.5,
+            "text": "Sorted"
+          },
+          {
+            "id": 623,
+            "logit": 14.375,
+            "text": "In"
+          },
+          {
+            "id": 9764,
+            "logit": 14.375,
+            "text": "Let"
+          },
+          {
+            "id": 5328,
+            "logit": 14.375,
+            "text": "Please"
+          },
+          {
+            "id": 8160,
+            "logit": 14.3125,
+            "text": "Here"
+          },
+          {
+            "id": 2523,
+            "logit": 14.0,
+            "text": "You"
+          },
+          {
+            "id": 63,
+            "logit": 13.9375,
+            "text": "`"
+          },
+          {
+            "id": 26093,
+            "logit": 13.875,
+            "text": "Following"
+          },
+          {
+            "id": 332,
+            "logit": 13.875,
+            "text": "**"
+          },
+          {
+            "id": 4520,
+            "logit": 13.875,
+            "text": "cp"
+          },
+          {
+            "id": 1596,
+            "logit": 13.875,
+            "text": "We"
+          }
+        ],
+        "watch": {
+          "\n": 2.40625,
+          "1": 12.4375,
+          "<": 16.625,
+          "<think>": 15.1875,
+          "<tool_call>": 21.25,
+          "<|im_end|>": 9.3125,
+          "Based": 16.75,
+          "Here": 14.3125,
+          "I": 19.5,
+          "It": 13.3125,
+          "NE": 8.5,
+          "NO": 10.25,
+          "NOT": 9.5625,
+          "No": 15.1875,
+          "None": 16.125,
+          "Okay": 12.25,
+          "Please": 14.375,
+          "Select": 11.0625,
+          "Since": 15.625,
+          "Sure": 11.0625,
+          "The": 17.0,
+          "This": 15.375,
+          "To": 16.375,
+          "Yes": 10.75,
+          "You": 14.0,
+          "need": 8.0,
+          "no": 10.625
+        }
+      },
+      "decision_position": 581,
+      "family": "sort_direction",
+      "gaps": {
+        "NE_minus_NO": -1.75,
+        "call_minus_NE": 12.75,
+        "call_minus_NO": 11.0
+      },
+      "model": "g23v4",
+      "prompt_tokens": 582,
+      "roles": {
+        "conn": 567,
+        "dec": 581,
+        "end": 572,
+        "imend": 573,
+        "sysamb": 493,
+        "v1": 566,
+        "v1c": 565,
+        "v2": 572,
+        "v2c": 571,
+        "x": 566,
+        "xc": 565,
+        "y": 572,
+        "yc": 571
+      },
+      "seconds": 0.18076216700137593,
+      "sequence_tokens": 582
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-04-discovery-711406-0016-amb-B5",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 46.7500000714916,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 46.75,
+            "text": "NE"
+          },
+          {
+            "id": 7608,
+            "logit": 30.125,
+            "text": " NE"
+          },
+          {
+            "id": 8547,
+            "logit": 28.0,
+            "text": "Ne"
+          },
+          {
+            "id": 785,
+            "logit": 27.375,
+            "text": "ne"
+          },
+          {
+            "id": 8725,
+            "logit": 23.375,
+            "text": "NO"
+          },
+          {
+            "id": 46792,
+            "logit": 22.375,
+            "text": "(ne"
+          },
+          {
+            "id": 7096,
+            "logit": 22.125,
+            "text": "NA"
+          },
+          {
+            "id": 4044,
+            "logit": 21.875,
+            "text": " Ne"
+          },
+          {
+            "id": 9655,
+            "logit": 21.75,
+            "text": "NC"
+          },
+          {
+            "id": 13525,
+            "logit": 21.5,
+            "text": "_ne"
+          },
+          {
+            "id": 3794,
+            "logit": 21.5,
+            "text": "NU"
+          },
+          {
+            "id": 79428,
+            "logit": 21.125,
+            "text": " NEC"
+          },
+          {
+            "id": 13636,
+            "logit": 20.875,
+            "text": "_NE"
+          },
+          {
+            "id": 5948,
+            "logit": 20.75,
+            "text": "NG"
+          },
+          {
+            "id": 21928,
+            "logit": 20.5,
+            "text": ".ne"
+          },
+          {
+            "id": 808,
+            "logit": 20.5,
+            "text": " ne"
+          },
+          {
+            "id": 38649,
+            "logit": 20.0,
+            "text": "-ne"
+          },
+          {
+            "id": 76069,
+            "logit": 19.75,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 83593,
+            "logit": 19.625,
+            "text": " NEO"
+          },
+          {
+            "id": 69320,
+            "logit": 19.5,
+            "text": "NES"
+          },
+          {
+            "id": 86236,
+            "logit": 19.5,
+            "text": "/ne"
+          },
+          {
+            "id": 211084,
+            "logit": 19.0,
+            "text": "\u041d\u0415"
+          },
+          {
+            "id": 93778,
+            "logit": 18.625,
+            "text": "NEG"
+          },
+          {
+            "id": 7812,
+            "logit": 18.5,
+            "text": "ND"
+          }
+        ],
+        "watch": {
+          "\n": 0.85546875,
+          "1": 8.6875,
+          "<": 10.3125,
+          "<think>": 10.3125,
+          "<tool_call>": -14.8125,
+          "<|im_end|>": 6.75,
+          "Based": 10.75,
+          "Here": 8.0,
+          "I": -1.578125,
+          "It": 8.375,
+          "NE": 46.75,
+          "NO": 23.375,
+          "NOT": 7.15625,
+          "No": 10.0625,
+          "None": 10.9375,
+          "Okay": 8.5,
+          "Please": 9.625,
+          "Select": 5.9375,
+          "Since": 10.375,
+          "Sure": 7.125,
+          "The": -3.21875,
+          "This": 10.375,
+          "To": -4.75,
+          "Yes": 7.6875,
+          "You": 9.625,
+          "need": 6.53125,
+          "no": 6.21875
+        }
+      },
+      "decision_position": 607,
+      "family": "reservation_lifecycle",
+      "gaps": {
+        "NE_minus_NO": 23.375,
+        "call_minus_NE": -61.5625,
+        "call_minus_NO": -38.1875
+      },
+      "model": "g23v4",
+      "prompt_tokens": 608,
+      "roles": {
+        "conn": 549,
+        "dec": 607,
+        "end": 564,
+        "imend": 599,
+        "sysamb": 496,
+        "tail": 563,
+        "v1": 548,
+        "v1c": 547,
+        "v2": 557,
+        "v2c": 556,
+        "x": 548,
+        "xc": 547,
+        "y": 557,
+        "yc": 556
+      },
+      "seconds": 0.19069008299265988,
+      "sequence_tokens": 608
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-05-discovery-711406-0020-amb-B6",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 48.25000013408106,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 48.25,
+            "text": "NE"
+          },
+          {
+            "id": 7608,
+            "logit": 32.25,
+            "text": " NE"
+          },
+          {
+            "id": 8725,
+            "logit": 30.375,
+            "text": "NO"
+          },
+          {
+            "id": 8547,
+            "logit": 28.875,
+            "text": "Ne"
+          },
+          {
+            "id": 785,
+            "logit": 26.125,
+            "text": "ne"
+          },
+          {
+            "id": 7096,
+            "logit": 24.875,
+            "text": "NA"
+          },
+          {
+            "id": 69320,
+            "logit": 24.125,
+            "text": "NES"
+          },
+          {
+            "id": 3794,
+            "logit": 23.625,
+            "text": "NU"
+          },
+          {
+            "id": 4044,
+            "logit": 23.5,
+            "text": " Ne"
+          },
+          {
+            "id": 9655,
+            "logit": 23.125,
+            "text": "NC"
+          },
+          {
+            "id": 79428,
+            "logit": 22.5,
+            "text": " NEC"
+          },
+          {
+            "id": 5948,
+            "logit": 22.5,
+            "text": "NG"
+          },
+          {
+            "id": 13636,
+            "logit": 22.375,
+            "text": "_NE"
+          },
+          {
+            "id": 46792,
+            "logit": 22.375,
+            "text": "(ne"
+          },
+          {
+            "id": 83593,
+            "logit": 21.5,
+            "text": " NEO"
+          },
+          {
+            "id": 13525,
+            "logit": 21.5,
+            "text": "_ne"
+          },
+          {
+            "id": 36090,
+            "logit": 20.5,
+            "text": "NM"
+          },
+          {
+            "id": 38649,
+            "logit": 20.5,
+            "text": "-ne"
+          },
+          {
+            "id": 808,
+            "logit": 20.125,
+            "text": " ne"
+          },
+          {
+            "id": 21928,
+            "logit": 20.0,
+            "text": ".ne"
+          },
+          {
+            "id": 71610,
+            "logit": 19.625,
+            "text": "NEY"
+          },
+          {
+            "id": 86236,
+            "logit": 19.5,
+            "text": "/ne"
+          },
+          {
+            "id": 32239,
+            "logit": 19.5,
+            "text": "NB"
+          },
+          {
+            "id": 25391,
+            "logit": 19.375,
+            "text": "NP"
+          }
+        ],
+        "watch": {
+          "\n": 0.4140625,
+          "1": 4.90625,
+          "<": 5.3125,
+          "<think>": 4.9375,
+          "<tool_call>": -29.125,
+          "<|im_end|>": 3.296875,
+          "Based": 5.71875,
+          "Here": 4.125,
+          "I": -11.4375,
+          "It": 4.46875,
+          "NE": 48.25,
+          "NO": 30.375,
+          "NOT": 3.671875,
+          "No": 5.1875,
+          "None": 5.59375,
+          "Okay": 4.03125,
+          "Please": 5.5,
+          "Select": 2.734375,
+          "Since": 5.84375,
+          "Sure": 3.90625,
+          "The": -12.125,
+          "This": 5.0625,
+          "To": -12.75,
+          "Yes": 3.890625,
+          "You": 5.0,
+          "need": 2.90625,
+          "no": 2.78125
+        }
+      },
+      "decision_position": 594,
+      "family": "unit_conversion",
+      "gaps": {
+        "NE_minus_NO": 17.875,
+        "call_minus_NE": -77.375,
+        "call_minus_NO": -59.5
+      },
+      "model": "g23v4",
+      "prompt_tokens": 595,
+      "roles": {
+        "conn": 576,
+        "dec": 594,
+        "end": 585,
+        "imend": 586,
+        "sysamb": 497,
+        "tail": 584,
+        "v1": 574,
+        "v2": 579,
+        "x": 574,
+        "y": 579
+      },
+      "seconds": 0.18959479199838825,
+      "sequence_tokens": 595
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-06-discovery-711406-0024-amb-B1",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 52.50000002565718,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 52.5,
+            "text": "NE"
+          },
+          {
+            "id": 7608,
+            "logit": 35.0,
+            "text": " NE"
+          },
+          {
+            "id": 8547,
+            "logit": 30.875,
+            "text": "Ne"
+          },
+          {
+            "id": 785,
+            "logit": 29.75,
+            "text": "ne"
+          },
+          {
+            "id": 4044,
+            "logit": 25.75,
+            "text": " Ne"
+          },
+          {
+            "id": 8725,
+            "logit": 25.625,
+            "text": "NO"
+          },
+          {
+            "id": 46792,
+            "logit": 24.875,
+            "text": "(ne"
+          },
+          {
+            "id": 69320,
+            "logit": 24.625,
+            "text": "NES"
+          },
+          {
+            "id": 13636,
+            "logit": 24.25,
+            "text": "_NE"
+          },
+          {
+            "id": 79428,
+            "logit": 24.25,
+            "text": " NEC"
+          },
+          {
+            "id": 3794,
+            "logit": 24.125,
+            "text": "NU"
+          },
+          {
+            "id": 7096,
+            "logit": 24.125,
+            "text": "NA"
+          },
+          {
+            "id": 13525,
+            "logit": 23.5,
+            "text": "_ne"
+          },
+          {
+            "id": 808,
+            "logit": 23.125,
+            "text": " ne"
+          },
+          {
+            "id": 83593,
+            "logit": 22.875,
+            "text": " NEO"
+          },
+          {
+            "id": 38649,
+            "logit": 22.875,
+            "text": "-ne"
+          },
+          {
+            "id": 5948,
+            "logit": 22.75,
+            "text": "NG"
+          },
+          {
+            "id": 9655,
+            "logit": 22.625,
+            "text": "NC"
+          },
+          {
+            "id": 21928,
+            "logit": 22.375,
+            "text": ".ne"
+          },
+          {
+            "id": 86236,
+            "logit": 21.625,
+            "text": "/ne"
+          },
+          {
+            "id": 71610,
+            "logit": 21.375,
+            "text": "NEY"
+          },
+          {
+            "id": 76069,
+            "logit": 21.0,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 211084,
+            "logit": 20.625,
+            "text": "\u041d\u0415"
+          },
+          {
+            "id": 193183,
+            "logit": 20.25,
+            "text": "neos"
+          }
+        ],
+        "watch": {
+          "\n": 0.42578125,
+          "1": 4.0,
+          "<": 5.03125,
+          "<think>": 4.5625,
+          "<tool_call>": -29.125,
+          "<|im_end|>": 3.171875,
+          "Based": 4.90625,
+          "Here": 3.78125,
+          "I": -11.875,
+          "It": 3.78125,
+          "NE": 52.5,
+          "NO": 25.625,
+          "NOT": 3.609375,
+          "No": 4.46875,
+          "None": 5.15625,
+          "Okay": 3.53125,
+          "Please": 5.28125,
+          "Select": 2.65625,
+          "Since": 4.84375,
+          "Sure": 2.96875,
+          "The": -12.9375,
+          "This": 4.9375,
+          "To": -13.25,
+          "Yes": 3.03125,
+          "You": 4.4375,
+          "need": 3.15625,
+          "no": 2.53125
+        }
+      },
+      "decision_position": 600,
+      "family": "access_control",
+      "gaps": {
+        "NE_minus_NO": 26.875,
+        "call_minus_NE": -81.625,
+        "call_minus_NO": -54.75
+      },
+      "model": "g23v4",
+      "prompt_tokens": 601,
+      "roles": {
+        "conn": 551,
+        "dec": 600,
+        "end": 564,
+        "imend": 592,
+        "sysamb": 496,
+        "tail": 563,
+        "v1": 550,
+        "v1c": 549,
+        "v2": 556,
+        "v2c": 555,
+        "x": 550,
+        "xc": 549,
+        "y": 556,
+        "yc": 555
+      },
+      "seconds": 0.1963974579994101,
+      "sequence_tokens": 601
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-07-discovery-711406-0028-amb-B2",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 29.500186843485032,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 29.5,
+            "text": "NE"
+          },
+          {
+            "id": 8547,
+            "logit": 20.5,
+            "text": "Ne"
+          },
+          {
+            "id": 785,
+            "logit": 19.625,
+            "text": "ne"
+          },
+          {
+            "id": 7608,
+            "logit": 17.0,
+            "text": " NE"
+          },
+          {
+            "id": 27775,
+            "logit": 15.125,
+            "text": "Based"
+          },
+          {
+            "id": 3928,
+            "logit": 14.8125,
+            "text": "None"
+          },
+          {
+            "id": 46792,
+            "logit": 14.5625,
+            "text": "(ne"
+          },
+          {
+            "id": 45,
+            "logit": 14.5625,
+            "text": "N"
+          },
+          {
+            "id": 27,
+            "logit": 14.5,
+            "text": "<"
+          },
+          {
+            "id": 76069,
+            "logit": 14.375,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 9655,
+            "logit": 14.0625,
+            "text": "NC"
+          },
+          {
+            "id": 7096,
+            "logit": 14.0625,
+            "text": "NA"
+          },
+          {
+            "id": 6207,
+            "logit": 14.0625,
+            "text": "NT"
+          },
+          {
+            "id": 12189,
+            "logit": 13.6875,
+            "text": "Since"
+          },
+          {
+            "id": 13525,
+            "logit": 13.625,
+            "text": "_ne"
+          },
+          {
+            "id": 4044,
+            "logit": 13.625,
+            "text": " Ne"
+          },
+          {
+            "id": 1919,
+            "logit": 13.5625,
+            "text": "This"
+          },
+          {
+            "id": 25391,
+            "logit": 13.5,
+            "text": "NP"
+          },
+          {
+            "id": 60099,
+            "logit": 13.5,
+            "text": "Neither"
+          },
+          {
+            "id": 28243,
+            "logit": 13.4375,
+            "text": "<N"
+          },
+          {
+            "id": 21928,
+            "logit": 13.4375,
+            "text": ".ne"
+          },
+          {
+            "id": 2665,
+            "logit": 13.3125,
+            "text": "No"
+          },
+          {
+            "id": 14481,
+            "logit": 13.3125,
+            "text": "NI"
+          },
+          {
+            "id": 7812,
+            "logit": 13.3125,
+            "text": "ND"
+          }
+        ],
+        "watch": {
+          "\n": 0.83203125,
+          "1": 11.4375,
+          "<": 14.5,
+          "<think>": 12.375,
+          "<tool_call>": 7.21875,
+          "<|im_end|>": 8.9375,
+          "Based": 15.125,
+          "Here": 11.125,
+          "I": 11.0625,
+          "It": 11.5625,
+          "NE": 29.5,
+          "NO": 8.375,
+          "NOT": 8.8125,
+          "No": 13.3125,
+          "None": 14.8125,
+          "Okay": 10.125,
+          "Please": 12.6875,
+          "Select": 6.71875,
+          "Since": 13.6875,
+          "Sure": 7.375,
+          "The": 9.5625,
+          "This": 13.5625,
+          "To": 7.34375,
+          "Yes": 9.25,
+          "You": 11.6875,
+          "need": 7.53125,
+          "no": 7.59375
+        }
+      },
+      "decision_position": 676,
+      "family": "substring_position",
+      "gaps": {
+        "NE_minus_NO": 21.125,
+        "call_minus_NE": -22.28125,
+        "call_minus_NO": -1.15625
+      },
+      "model": "g23v4",
+      "prompt_tokens": 677,
+      "roles": {
+        "conn": 642,
+        "dec": 676,
+        "end": 655,
+        "imend": 668,
+        "sysamb": 557,
+        "tail": 654,
+        "v1": 640,
+        "v1c": 639,
+        "v2": 650,
+        "v2c": 649,
+        "x": 640,
+        "xc": 639,
+        "y": 650,
+        "yc": 649
+      },
+      "seconds": 0.20500895800068974,
+      "sequence_tokens": 677
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-08-discovery-711406-0032-amb-B3",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 44.50000090006788,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 44.5,
+            "text": "NE"
+          },
+          {
+            "id": 785,
+            "logit": 30.25,
+            "text": "ne"
+          },
+          {
+            "id": 8547,
+            "logit": 29.125,
+            "text": "Ne"
+          },
+          {
+            "id": 7608,
+            "logit": 27.5,
+            "text": " NE"
+          },
+          {
+            "id": 46792,
+            "logit": 22.5,
+            "text": "(ne"
+          },
+          {
+            "id": 4044,
+            "logit": 22.25,
+            "text": " Ne"
+          },
+          {
+            "id": 808,
+            "logit": 21.375,
+            "text": " ne"
+          },
+          {
+            "id": 21928,
+            "logit": 21.0,
+            "text": ".ne"
+          },
+          {
+            "id": 13525,
+            "logit": 21.0,
+            "text": "_ne"
+          },
+          {
+            "id": 38649,
+            "logit": 20.25,
+            "text": "-ne"
+          },
+          {
+            "id": 76069,
+            "logit": 20.125,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 13636,
+            "logit": 19.875,
+            "text": "_NE"
+          },
+          {
+            "id": 86236,
+            "logit": 19.75,
+            "text": "/ne"
+          },
+          {
+            "id": 3794,
+            "logit": 18.125,
+            "text": "NU"
+          },
+          {
+            "id": 213695,
+            "logit": 18.0,
+            "text": "neu"
+          },
+          {
+            "id": 148820,
+            "logit": 17.375,
+            "text": "\u043d\u0435\u0439"
+          },
+          {
+            "id": 79428,
+            "logit": 17.375,
+            "text": " NEC"
+          },
+          {
+            "id": 231763,
+            "logit": 17.375,
+            "text": "nei"
+          },
+          {
+            "id": 7096,
+            "logit": 16.75,
+            "text": "NA"
+          },
+          {
+            "id": 209619,
+            "logit": 16.75,
+            "text": "neur"
+          },
+          {
+            "id": 32239,
+            "logit": 16.625,
+            "text": "NB"
+          },
+          {
+            "id": 83593,
+            "logit": 16.625,
+            "text": " NEO"
+          },
+          {
+            "id": 34614,
+            "logit": 16.5,
+            "text": "nej"
+          },
+          {
+            "id": 211084,
+            "logit": 16.5,
+            "text": "\u041d\u0415"
+          }
+        ],
+        "watch": {
+          "\n": 1.015625,
+          "1": 10.0625,
+          "<": 11.6875,
+          "<think>": 10.5625,
+          "<tool_call>": -4.8125,
+          "<|im_end|>": 7.5,
+          "Based": 10.6875,
+          "Here": 9.5,
+          "I": 3.6875,
+          "It": 9.3125,
+          "NE": 44.5,
+          "NO": 6.625,
+          "NOT": 6.4375,
+          "No": 10.8125,
+          "None": 12.375,
+          "Okay": 8.3125,
+          "Please": 10.9375,
+          "Select": 7.78125,
+          "Since": 10.8125,
+          "Sure": 8.1875,
+          "The": 1.1875,
+          "This": 10.9375,
+          "To": 0.267578125,
+          "Yes": 8.375,
+          "You": 10.4375,
+          "need": 6.46875,
+          "no": 6.875
+        }
+      },
+      "decision_position": 610,
+      "family": "queue_end",
+      "gaps": {
+        "NE_minus_NO": 37.875,
+        "call_minus_NE": -49.3125,
+        "call_minus_NO": -11.4375
+      },
+      "model": "g23v4",
+      "prompt_tokens": 611,
+      "roles": {
+        "conn": 567,
+        "dec": 610,
+        "end": 575,
+        "imend": 602,
+        "sysamb": 500,
+        "v1": 566,
+        "v1c": 565,
+        "v2": 575,
+        "v2c": 574,
+        "x": 566,
+        "xc": 565,
+        "y": 575,
+        "yc": 574
+      },
+      "seconds": 0.1856896250101272,
+      "sequence_tokens": 611
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-09-discovery-711406-0036-amb-B4",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 248058,
+        "logsumexp": 23.790053961439313,
+        "topk": [
+          {
+            "id": 248058,
+            "logit": 23.75,
+            "text": "<tool_call>"
+          },
+          {
+            "id": 40,
+            "logit": 20.25,
+            "text": "I"
+          },
+          {
+            "id": 760,
+            "logit": 17.375,
+            "text": "The"
+          },
+          {
+            "id": 27,
+            "logit": 16.75,
+            "text": "<"
+          },
+          {
+            "id": 27775,
+            "logit": 16.75,
+            "text": "Based"
+          },
+          {
+            "id": 1206,
+            "logit": 16.125,
+            "text": "To"
+          },
+          {
+            "id": 3928,
+            "logit": 15.875,
+            "text": "None"
+          },
+          {
+            "id": 1919,
+            "logit": 15.875,
+            "text": "This"
+          },
+          {
+            "id": 12189,
+            "logit": 15.5625,
+            "text": "Since"
+          },
+          {
+            "id": 15947,
+            "logit": 15.375,
+            "text": "Using"
+          },
+          {
+            "id": 2665,
+            "logit": 15.3125,
+            "text": "No"
+          },
+          {
+            "id": 5328,
+            "logit": 15.25,
+            "text": "Please"
+          },
+          {
+            "id": 8160,
+            "logit": 15.0625,
+            "text": "Here"
+          },
+          {
+            "id": 63,
+            "logit": 14.8125,
+            "text": "`"
+          },
+          {
+            "id": 248068,
+            "logit": 14.75,
+            "text": "<think>"
+          },
+          {
+            "id": 4520,
+            "logit": 14.625,
+            "text": "cp"
+          },
+          {
+            "id": 34,
+            "logit": 14.5625,
+            "text": "C"
+          },
+          {
+            "id": 15771,
+            "logit": 14.5,
+            "text": "Under"
+          },
+          {
+            "id": 332,
+            "logit": 14.3125,
+            "text": "**"
+          },
+          {
+            "id": 248069,
+            "logit": 14.1875,
+            "text": "</think>"
+          },
+          {
+            "id": 71093,
+            "logit": 14.1875,
+            "text": "```"
+          },
+          {
+            "id": 623,
+            "logit": 14.125,
+            "text": "In"
+          },
+          {
+            "id": 58,
+            "logit": 14.0625,
+            "text": "["
+          },
+          {
+            "id": 9764,
+            "logit": 14.0625,
+            "text": "Let"
+          }
+        ],
+        "watch": {
+          "\n": 1.1875,
+          "1": 12.1875,
+          "<": 16.75,
+          "<think>": 14.75,
+          "<tool_call>": 23.75,
+          "<|im_end|>": 9.3125,
+          "Based": 16.75,
+          "Here": 15.0625,
+          "I": 20.25,
+          "It": 13.25,
+          "NE": 6.9375,
+          "NO": 10.0625,
+          "NOT": 10.6875,
+          "No": 15.3125,
+          "None": 15.875,
+          "Okay": 13.3125,
+          "Please": 15.25,
+          "Select": 12.0,
+          "Since": 15.5625,
+          "Sure": 11.4375,
+          "The": 17.375,
+          "This": 15.875,
+          "To": 16.125,
+          "Yes": 11.3125,
+          "You": 12.9375,
+          "need": 9.3125,
+          "no": 12.125
+        }
+      },
+      "decision_position": 702,
+      "family": "interval_boundary",
+      "gaps": {
+        "NE_minus_NO": -3.125,
+        "call_minus_NE": 16.8125,
+        "call_minus_NO": 13.6875
+      },
+      "model": "g23v4",
+      "prompt_tokens": 703,
+      "roles": {
+        "conn": 688,
+        "dec": 702,
+        "end": 693,
+        "imend": 694,
+        "sysamb": 603,
+        "v1": 687,
+        "v1c": 686,
+        "v2": 693,
+        "v2c": 692,
+        "x": 687,
+        "xc": 686,
+        "y": 693,
+        "yc": 692
+      },
+      "seconds": 0.20663870801217854,
+      "sequence_tokens": 703
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-10-discovery-711406-0040-amb-B5",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 49.75000004453794,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 49.75,
+            "text": "NE"
+          },
+          {
+            "id": 7608,
+            "logit": 32.75,
+            "text": " NE"
+          },
+          {
+            "id": 8547,
+            "logit": 29.875,
+            "text": "Ne"
+          },
+          {
+            "id": 785,
+            "logit": 28.75,
+            "text": "ne"
+          },
+          {
+            "id": 8725,
+            "logit": 24.75,
+            "text": "NO"
+          },
+          {
+            "id": 4044,
+            "logit": 24.25,
+            "text": " Ne"
+          },
+          {
+            "id": 46792,
+            "logit": 23.625,
+            "text": "(ne"
+          },
+          {
+            "id": 3794,
+            "logit": 23.5,
+            "text": "NU"
+          },
+          {
+            "id": 7096,
+            "logit": 23.125,
+            "text": "NA"
+          },
+          {
+            "id": 79428,
+            "logit": 22.75,
+            "text": " NEC"
+          },
+          {
+            "id": 13525,
+            "logit": 22.75,
+            "text": "_ne"
+          },
+          {
+            "id": 9655,
+            "logit": 22.25,
+            "text": "NC"
+          },
+          {
+            "id": 13636,
+            "logit": 22.25,
+            "text": "_NE"
+          },
+          {
+            "id": 808,
+            "logit": 22.125,
+            "text": " ne"
+          },
+          {
+            "id": 69320,
+            "logit": 21.75,
+            "text": "NES"
+          },
+          {
+            "id": 5948,
+            "logit": 21.75,
+            "text": "NG"
+          },
+          {
+            "id": 21928,
+            "logit": 21.625,
+            "text": ".ne"
+          },
+          {
+            "id": 38649,
+            "logit": 21.375,
+            "text": "-ne"
+          },
+          {
+            "id": 83593,
+            "logit": 21.0,
+            "text": " NEO"
+          },
+          {
+            "id": 86236,
+            "logit": 20.875,
+            "text": "/ne"
+          },
+          {
+            "id": 76069,
+            "logit": 20.375,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 32239,
+            "logit": 20.375,
+            "text": "NB"
+          },
+          {
+            "id": 211084,
+            "logit": 19.625,
+            "text": "\u041d\u0415"
+          },
+          {
+            "id": 7812,
+            "logit": 19.5,
+            "text": "ND"
+          }
+        ],
+        "watch": {
+          "\n": 0.66015625,
+          "1": 7.09375,
+          "<": 8.875,
+          "<think>": 7.59375,
+          "<tool_call>": -20.875,
+          "<|im_end|>": 5.40625,
+          "Based": 9.0,
+          "Here": 7.0,
+          "I": -5.75,
+          "It": 6.875,
+          "NE": 49.75,
+          "NO": 24.75,
+          "NOT": 5.5625,
+          "No": 8.4375,
+          "None": 8.5625,
+          "Okay": 5.90625,
+          "Please": 8.4375,
+          "Select": 5.1875,
+          "Since": 8.75,
+          "Sure": 5.03125,
+          "The": -6.75,
+          "This": 8.8125,
+          "To": -7.625,
+          "Yes": 5.75,
+          "You": 8.125,
+          "need": 5.34375,
+          "no": 5.15625
+        }
+      },
+      "decision_position": 611,
+      "family": "record_mutation",
+      "gaps": {
+        "NE_minus_NO": 25.0,
+        "call_minus_NE": -70.625,
+        "call_minus_NO": -45.625
+      },
+      "model": "g23v4",
+      "prompt_tokens": 612,
+      "roles": {
+        "conn": 560,
+        "dec": 611,
+        "end": 575,
+        "imend": 603,
+        "sysamb": 497,
+        "tail": 574,
+        "v1": 559,
+        "v1c": 558,
+        "v2": 568,
+        "v2c": 567,
+        "x": 559,
+        "xc": 558,
+        "y": 568,
+        "yc": 567
+      },
+      "seconds": 0.19641070801299065,
+      "sequence_tokens": 612
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-11-discovery-711406-0044-amb-B6",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 42.500000345405965,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 42.5,
+            "text": "NE"
+          },
+          {
+            "id": 8547,
+            "logit": 27.0,
+            "text": "Ne"
+          },
+          {
+            "id": 7608,
+            "logit": 26.625,
+            "text": " NE"
+          },
+          {
+            "id": 785,
+            "logit": 24.875,
+            "text": "ne"
+          },
+          {
+            "id": 8725,
+            "logit": 23.75,
+            "text": "NO"
+          },
+          {
+            "id": 7096,
+            "logit": 21.5,
+            "text": "NA"
+          },
+          {
+            "id": 9655,
+            "logit": 21.125,
+            "text": "NC"
+          },
+          {
+            "id": 46792,
+            "logit": 20.625,
+            "text": "(ne"
+          },
+          {
+            "id": 5948,
+            "logit": 20.375,
+            "text": "NG"
+          },
+          {
+            "id": 4044,
+            "logit": 20.25,
+            "text": " Ne"
+          },
+          {
+            "id": 3794,
+            "logit": 19.875,
+            "text": "NU"
+          },
+          {
+            "id": 32239,
+            "logit": 19.625,
+            "text": "NB"
+          },
+          {
+            "id": 25391,
+            "logit": 19.125,
+            "text": "NP"
+          },
+          {
+            "id": 13525,
+            "logit": 19.0,
+            "text": "_ne"
+          },
+          {
+            "id": 13636,
+            "logit": 19.0,
+            "text": "_NE"
+          },
+          {
+            "id": 21928,
+            "logit": 18.75,
+            "text": ".ne"
+          },
+          {
+            "id": 79428,
+            "logit": 18.375,
+            "text": " NEC"
+          },
+          {
+            "id": 38649,
+            "logit": 18.375,
+            "text": "-ne"
+          },
+          {
+            "id": 69320,
+            "logit": 18.375,
+            "text": "NES"
+          },
+          {
+            "id": 808,
+            "logit": 18.25,
+            "text": " ne"
+          },
+          {
+            "id": 6207,
+            "logit": 18.25,
+            "text": "NT"
+          },
+          {
+            "id": 86236,
+            "logit": 18.125,
+            "text": "/ne"
+          },
+          {
+            "id": 76069,
+            "logit": 18.0,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 7812,
+            "logit": 17.875,
+            "text": "ND"
+          }
+        ],
+        "watch": {
+          "\n": 0.97265625,
+          "1": 9.4375,
+          "<": 11.3125,
+          "<think>": 10.1875,
+          "<tool_call>": -12.6875,
+          "<|im_end|>": 7.09375,
+          "Based": 11.9375,
+          "Here": 9.4375,
+          "I": 0.000598907470703125,
+          "It": 9.3125,
+          "NE": 42.5,
+          "NO": 23.75,
+          "NOT": 6.8125,
+          "No": 10.0625,
+          "None": 12.0625,
+          "Okay": 8.5,
+          "Please": 10.625,
+          "Select": 6.34375,
+          "Since": 11.6875,
+          "Sure": 7.59375,
+          "The": -2.0625,
+          "This": 10.75,
+          "To": -2.421875,
+          "Yes": 8.1875,
+          "You": 10.25,
+          "need": 5.9375,
+          "no": 5.5
+        }
+      },
+      "decision_position": 592,
+      "family": "graph_direction",
+      "gaps": {
+        "NE_minus_NO": 18.75,
+        "call_minus_NE": -55.1875,
+        "call_minus_NO": -36.4375
+      },
+      "model": "g23v4",
+      "prompt_tokens": 593,
+      "roles": {
+        "conn": 570,
+        "dec": 592,
+        "end": 583,
+        "imend": 584,
+        "sysamb": 490,
+        "tail": 582,
+        "v1": 569,
+        "v1c": 568,
+        "v2": 578,
+        "v2c": 577,
+        "x": 569,
+        "xc": 568,
+        "y": 578,
+        "yc": 577
+      },
+      "seconds": 0.18854925001505762,
+      "sequence_tokens": 593
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-12-selection-711407-0000-amb-B3",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 46.50000027033322,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 46.5,
+            "text": "NE"
+          },
+          {
+            "id": 785,
+            "logit": 30.875,
+            "text": "ne"
+          },
+          {
+            "id": 8547,
+            "logit": 29.75,
+            "text": "Ne"
+          },
+          {
+            "id": 7608,
+            "logit": 29.75,
+            "text": " NE"
+          },
+          {
+            "id": 46792,
+            "logit": 23.5,
+            "text": "(ne"
+          },
+          {
+            "id": 4044,
+            "logit": 23.25,
+            "text": " Ne"
+          },
+          {
+            "id": 21928,
+            "logit": 22.0,
+            "text": ".ne"
+          },
+          {
+            "id": 808,
+            "logit": 22.0,
+            "text": " ne"
+          },
+          {
+            "id": 13525,
+            "logit": 21.625,
+            "text": "_ne"
+          },
+          {
+            "id": 76069,
+            "logit": 21.0,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 38649,
+            "logit": 21.0,
+            "text": "-ne"
+          },
+          {
+            "id": 13636,
+            "logit": 20.5,
+            "text": "_NE"
+          },
+          {
+            "id": 79428,
+            "logit": 20.25,
+            "text": " NEC"
+          },
+          {
+            "id": 86236,
+            "logit": 20.125,
+            "text": "/ne"
+          },
+          {
+            "id": 3794,
+            "logit": 19.0,
+            "text": "NU"
+          },
+          {
+            "id": 83593,
+            "logit": 18.375,
+            "text": " NEO"
+          },
+          {
+            "id": 9655,
+            "logit": 17.875,
+            "text": "NC"
+          },
+          {
+            "id": 211084,
+            "logit": 17.875,
+            "text": "\u041d\u0415"
+          },
+          {
+            "id": 231763,
+            "logit": 17.625,
+            "text": "nei"
+          },
+          {
+            "id": 148820,
+            "logit": 17.5,
+            "text": "\u043d\u0435\u0439"
+          },
+          {
+            "id": 7096,
+            "logit": 17.5,
+            "text": "NA"
+          },
+          {
+            "id": 32239,
+            "logit": 17.25,
+            "text": "NB"
+          },
+          {
+            "id": 71610,
+            "logit": 17.125,
+            "text": "NEY"
+          },
+          {
+            "id": 34614,
+            "logit": 17.125,
+            "text": "nej"
+          }
+        ],
+        "watch": {
+          "\n": 1.4609375,
+          "1": 9.8125,
+          "<": 11.375,
+          "<think>": 11.125,
+          "<tool_call>": -6.375,
+          "<|im_end|>": 7.65625,
+          "Based": 11.0625,
+          "Here": 8.0625,
+          "I": 2.984375,
+          "It": 8.375,
+          "NE": 46.5,
+          "NO": 7.5625,
+          "NOT": 6.8125,
+          "No": 10.5,
+          "None": 11.375,
+          "Okay": 9.0,
+          "Please": 11.3125,
+          "Select": 6.96875,
+          "Since": 11.1875,
+          "Sure": 7.5,
+          "The": 0.85546875,
+          "This": 10.875,
+          "To": 0.2255859375,
+          "Yes": 7.71875,
+          "You": 10.125,
+          "need": 7.84375,
+          "no": 6.125
+        }
+      },
+      "decision_position": 595,
+      "family": "job_priority",
+      "gaps": {
+        "NE_minus_NO": 38.9375,
+        "call_minus_NE": -52.875,
+        "call_minus_NO": -13.9375
+      },
+      "model": "g23v4",
+      "prompt_tokens": 596,
+      "roles": {
+        "conn": 555,
+        "dec": 595,
+        "end": 560,
+        "imend": 587,
+        "sysamb": 499,
+        "v1": 554,
+        "v1c": 553,
+        "v2": 560,
+        "v2c": 559,
+        "x": 554,
+        "xc": 553,
+        "y": 560,
+        "yc": 559
+      },
+      "seconds": 0.18164524997700937,
+      "sequence_tokens": 596
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-13-selection-711407-0024-amb-B4",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 33.50001355591272,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 33.5,
+            "text": "NE"
+          },
+          {
+            "id": 785,
+            "logit": 21.375,
+            "text": "ne"
+          },
+          {
+            "id": 8547,
+            "logit": 21.375,
+            "text": "Ne"
+          },
+          {
+            "id": 7608,
+            "logit": 20.625,
+            "text": " NE"
+          },
+          {
+            "id": 4044,
+            "logit": 15.4375,
+            "text": " Ne"
+          },
+          {
+            "id": 21928,
+            "logit": 15.3125,
+            "text": ".ne"
+          },
+          {
+            "id": 808,
+            "logit": 15.1875,
+            "text": " ne"
+          },
+          {
+            "id": 76069,
+            "logit": 15.125,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 46792,
+            "logit": 15.0,
+            "text": "(ne"
+          },
+          {
+            "id": 9655,
+            "logit": 14.6875,
+            "text": "NC"
+          },
+          {
+            "id": 13525,
+            "logit": 14.125,
+            "text": "_ne"
+          },
+          {
+            "id": 25391,
+            "logit": 14.0,
+            "text": "NP"
+          },
+          {
+            "id": 3794,
+            "logit": 13.875,
+            "text": "NU"
+          },
+          {
+            "id": 13636,
+            "logit": 13.8125,
+            "text": "_NE"
+          },
+          {
+            "id": 27,
+            "logit": 13.75,
+            "text": "<"
+          },
+          {
+            "id": 86236,
+            "logit": 13.6875,
+            "text": "/ne"
+          },
+          {
+            "id": 79428,
+            "logit": 13.6875,
+            "text": " NEC"
+          },
+          {
+            "id": 38649,
+            "logit": 13.625,
+            "text": "-ne"
+          },
+          {
+            "id": 2366,
+            "logit": 13.5625,
+            "text": "TE"
+          },
+          {
+            "id": 6207,
+            "logit": 13.4375,
+            "text": "NT"
+          },
+          {
+            "id": 3848,
+            "logit": 13.3125,
+            "text": "INE"
+          },
+          {
+            "id": 28243,
+            "logit": 13.125,
+            "text": "<N"
+          },
+          {
+            "id": 45,
+            "logit": 13.125,
+            "text": "N"
+          },
+          {
+            "id": 7096,
+            "logit": 12.9375,
+            "text": "NA"
+          }
+        ],
+        "watch": {
+          "\n": 1.546875,
+          "1": 10.625,
+          "<": 13.75,
+          "<think>": 12.125,
+          "<tool_call>": 3.265625,
+          "<|im_end|>": 9.375,
+          "Based": 11.75,
+          "Here": 9.5,
+          "I": 8.1875,
+          "It": 9.4375,
+          "NE": 33.5,
+          "NO": 5.71875,
+          "NOT": 6.03125,
+          "No": 11.625,
+          "None": 12.5,
+          "Okay": 9.9375,
+          "Please": 11.8125,
+          "Select": 6.25,
+          "Since": 11.1875,
+          "Sure": 7.34375,
+          "The": 5.8125,
+          "This": 12.75,
+          "To": 4.25,
+          "Yes": 9.4375,
+          "You": 10.6875,
+          "need": 5.40625,
+          "no": 6.25
+        }
+      },
+      "decision_position": 644,
+      "family": "job_priority",
+      "gaps": {
+        "NE_minus_NO": 27.78125,
+        "call_minus_NE": -30.234375,
+        "call_minus_NO": -2.453125
+      },
+      "model": "g23v4",
+      "prompt_tokens": 645,
+      "roles": {
+        "conn": 597,
+        "dec": 644,
+        "end": 602,
+        "imend": 636,
+        "sysamb": 550,
+        "v1": 596,
+        "v1c": 595,
+        "v2": 602,
+        "v2c": 601,
+        "x": 596,
+        "xc": 595,
+        "y": 602,
+        "yc": 601
+      },
+      "seconds": 0.20048879098612815,
+      "sequence_tokens": 645
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-14-selection-711407-0004-amb-B5",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 45.25001701696763,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 45.25,
+            "text": "NE"
+          },
+          {
+            "id": 8725,
+            "logit": 34.25,
+            "text": "NO"
+          },
+          {
+            "id": 7608,
+            "logit": 30.25,
+            "text": " NE"
+          },
+          {
+            "id": 8547,
+            "logit": 26.5,
+            "text": "Ne"
+          },
+          {
+            "id": 7096,
+            "logit": 24.375,
+            "text": "NA"
+          },
+          {
+            "id": 785,
+            "logit": 23.375,
+            "text": "ne"
+          },
+          {
+            "id": 3794,
+            "logit": 23.125,
+            "text": "NU"
+          },
+          {
+            "id": 9655,
+            "logit": 23.125,
+            "text": "NC"
+          },
+          {
+            "id": 69320,
+            "logit": 23.0,
+            "text": "NES"
+          },
+          {
+            "id": 5948,
+            "logit": 22.625,
+            "text": "NG"
+          },
+          {
+            "id": 4044,
+            "logit": 21.625,
+            "text": " Ne"
+          },
+          {
+            "id": 79428,
+            "logit": 21.25,
+            "text": " NEC"
+          },
+          {
+            "id": 5486,
+            "logit": 21.0,
+            "text": " NO"
+          },
+          {
+            "id": 13636,
+            "logit": 20.625,
+            "text": "_NE"
+          },
+          {
+            "id": 83593,
+            "logit": 20.5,
+            "text": " NEO"
+          },
+          {
+            "id": 46792,
+            "logit": 20.375,
+            "text": "(ne"
+          },
+          {
+            "id": 75261,
+            "logit": 19.875,
+            "text": "(NO"
+          },
+          {
+            "id": 13525,
+            "logit": 19.875,
+            "text": "_ne"
+          },
+          {
+            "id": 36090,
+            "logit": 19.875,
+            "text": "NM"
+          },
+          {
+            "id": 69285,
+            "logit": 19.625,
+            "text": "+N"
+          },
+          {
+            "id": 32239,
+            "logit": 19.5,
+            "text": "NB"
+          },
+          {
+            "id": 25391,
+            "logit": 19.125,
+            "text": "NP"
+          },
+          {
+            "id": 9455,
+            "logit": 19.125,
+            "text": "NN"
+          },
+          {
+            "id": 38649,
+            "logit": 18.875,
+            "text": "-ne"
+          }
+        ],
+        "watch": {
+          "\n": 0.1376953125,
+          "1": 4.125,
+          "<": 5.1875,
+          "<think>": 4.4375,
+          "<tool_call>": -30.0,
+          "<|im_end|>": 2.96875,
+          "Based": 5.25,
+          "Here": 3.953125,
+          "I": -12.125,
+          "It": 4.1875,
+          "NE": 45.25,
+          "NO": 34.25,
+          "NOT": 3.578125,
+          "No": 4.90625,
+          "None": 5.21875,
+          "Okay": 3.609375,
+          "Please": 5.0,
+          "Select": 2.96875,
+          "Since": 5.1875,
+          "Sure": 3.171875,
+          "The": -12.6875,
+          "This": 4.90625,
+          "To": -13.3125,
+          "Yes": 3.109375,
+          "You": 4.59375,
+          "need": 2.203125,
+          "no": 2.6875
+        }
+      },
+      "decision_position": 665,
+      "family": "string_padding",
+      "gaps": {
+        "NE_minus_NO": 11.0,
+        "call_minus_NE": -75.25,
+        "call_minus_NO": -64.25
+      },
+      "model": "g23v4",
+      "prompt_tokens": 666,
+      "roles": {
+        "conn": 641,
+        "dec": 665,
+        "end": 656,
+        "imend": 657,
+        "sysamb": 553,
+        "tail": 655,
+        "v1": 640,
+        "v1c": 639,
+        "v2": 649,
+        "v2c": 648,
+        "x": 640,
+        "xc": 639,
+        "y": 649,
+        "yc": 648
+      },
+      "seconds": 0.21660174999851733,
+      "sequence_tokens": 666
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-15-selection-711407-0028-amb-B6",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 47.000000156571126,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 47.0,
+            "text": "NE"
+          },
+          {
+            "id": 785,
+            "logit": 30.75,
+            "text": "ne"
+          },
+          {
+            "id": 8547,
+            "logit": 29.875,
+            "text": "Ne"
+          },
+          {
+            "id": 7608,
+            "logit": 29.75,
+            "text": " NE"
+          },
+          {
+            "id": 4044,
+            "logit": 23.25,
+            "text": " Ne"
+          },
+          {
+            "id": 46792,
+            "logit": 23.125,
+            "text": "(ne"
+          },
+          {
+            "id": 808,
+            "logit": 22.0,
+            "text": " ne"
+          },
+          {
+            "id": 13525,
+            "logit": 22.0,
+            "text": "_ne"
+          },
+          {
+            "id": 21928,
+            "logit": 21.5,
+            "text": ".ne"
+          },
+          {
+            "id": 76069,
+            "logit": 21.125,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 38649,
+            "logit": 21.125,
+            "text": "-ne"
+          },
+          {
+            "id": 13636,
+            "logit": 20.875,
+            "text": "_NE"
+          },
+          {
+            "id": 86236,
+            "logit": 20.0,
+            "text": "/ne"
+          },
+          {
+            "id": 3794,
+            "logit": 19.125,
+            "text": "NU"
+          },
+          {
+            "id": 79428,
+            "logit": 19.125,
+            "text": " NEC"
+          },
+          {
+            "id": 7096,
+            "logit": 19.0,
+            "text": "NA"
+          },
+          {
+            "id": 83593,
+            "logit": 18.25,
+            "text": " NEO"
+          },
+          {
+            "id": 7227,
+            "logit": 18.125,
+            "text": "ME"
+          },
+          {
+            "id": 148820,
+            "logit": 18.0,
+            "text": "\u043d\u0435\u0439"
+          },
+          {
+            "id": 231763,
+            "logit": 18.0,
+            "text": "nei"
+          },
+          {
+            "id": 69320,
+            "logit": 18.0,
+            "text": "NES"
+          },
+          {
+            "id": 211084,
+            "logit": 18.0,
+            "text": "\u041d\u0415"
+          },
+          {
+            "id": 213695,
+            "logit": 17.875,
+            "text": "neu"
+          },
+          {
+            "id": 13497,
+            "logit": 17.875,
+            "text": "NER"
+          }
+        ],
+        "watch": {
+          "\n": 1.0546875,
+          "1": 9.6875,
+          "<": 11.8125,
+          "<think>": 10.5625,
+          "<tool_call>": -6.15625,
+          "<|im_end|>": 7.4375,
+          "Based": 11.375,
+          "Here": 9.25,
+          "I": 3.1875,
+          "It": 8.9375,
+          "NE": 47.0,
+          "NO": 8.0625,
+          "NOT": 7.4375,
+          "No": 10.875,
+          "None": 11.625,
+          "Okay": 8.5,
+          "Please": 10.875,
+          "Select": 6.71875,
+          "Since": 11.875,
+          "Sure": 7.21875,
+          "The": 1.265625,
+          "This": 10.625,
+          "To": 0.5234375,
+          "Yes": 7.59375,
+          "You": 9.8125,
+          "need": 8.0,
+          "no": 6.34375
+        }
+      },
+      "decision_position": 612,
+      "family": "string_padding",
+      "gaps": {
+        "NE_minus_NO": 38.9375,
+        "call_minus_NE": -53.15625,
+        "call_minus_NO": -14.21875
+      },
+      "model": "g23v4",
+      "prompt_tokens": 613,
+      "roles": {
+        "conn": 582,
+        "dec": 612,
+        "end": 595,
+        "imend": 604,
+        "sysamb": 501,
+        "tail": 594,
+        "v1": 581,
+        "v1c": 580,
+        "v2": 590,
+        "v2c": 589,
+        "x": 581,
+        "xc": 580,
+        "y": 590,
+        "yc": 589
+      },
+      "seconds": 0.19366112499847077,
+      "sequence_tokens": 613
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-16-selection-711407-0008-amb-B1",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 48.50000005346015,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 48.5,
+            "text": "NE"
+          },
+          {
+            "id": 7608,
+            "logit": 31.625,
+            "text": " NE"
+          },
+          {
+            "id": 8547,
+            "logit": 29.375,
+            "text": "Ne"
+          },
+          {
+            "id": 785,
+            "logit": 28.125,
+            "text": "ne"
+          },
+          {
+            "id": 8725,
+            "logit": 25.625,
+            "text": "NO"
+          },
+          {
+            "id": 7096,
+            "logit": 23.625,
+            "text": "NA"
+          },
+          {
+            "id": 46792,
+            "logit": 23.25,
+            "text": "(ne"
+          },
+          {
+            "id": 4044,
+            "logit": 23.125,
+            "text": " Ne"
+          },
+          {
+            "id": 3794,
+            "logit": 22.625,
+            "text": "NU"
+          },
+          {
+            "id": 13525,
+            "logit": 22.625,
+            "text": "_ne"
+          },
+          {
+            "id": 13636,
+            "logit": 22.5,
+            "text": "_NE"
+          },
+          {
+            "id": 69320,
+            "logit": 22.375,
+            "text": "NES"
+          },
+          {
+            "id": 9655,
+            "logit": 21.875,
+            "text": "NC"
+          },
+          {
+            "id": 5948,
+            "logit": 21.625,
+            "text": "NG"
+          },
+          {
+            "id": 79428,
+            "logit": 21.375,
+            "text": " NEC"
+          },
+          {
+            "id": 808,
+            "logit": 21.375,
+            "text": " ne"
+          },
+          {
+            "id": 83593,
+            "logit": 20.875,
+            "text": " NEO"
+          },
+          {
+            "id": 21928,
+            "logit": 20.75,
+            "text": ".ne"
+          },
+          {
+            "id": 38649,
+            "logit": 20.625,
+            "text": "-ne"
+          },
+          {
+            "id": 76069,
+            "logit": 20.125,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 86236,
+            "logit": 20.0,
+            "text": "/ne"
+          },
+          {
+            "id": 71610,
+            "logit": 19.25,
+            "text": "NEY"
+          },
+          {
+            "id": 211084,
+            "logit": 19.25,
+            "text": "\u041d\u0415"
+          },
+          {
+            "id": 93778,
+            "logit": 19.0,
+            "text": "NEG"
+          }
+        ],
+        "watch": {
+          "\n": 1.9140625,
+          "1": 7.15625,
+          "<": 9.125,
+          "<think>": 8.5625,
+          "<tool_call>": -20.875,
+          "<|im_end|>": 6.3125,
+          "Based": 9.9375,
+          "Here": 6.8125,
+          "I": -5.40625,
+          "It": 7.65625,
+          "NE": 48.5,
+          "NO": 25.625,
+          "NOT": 6.0625,
+          "No": 8.75,
+          "None": 10.125,
+          "Okay": 6.1875,
+          "Please": 8.4375,
+          "Select": 4.4375,
+          "Since": 9.5,
+          "Sure": 5.65625,
+          "The": -6.53125,
+          "This": 9.1875,
+          "To": -6.6875,
+          "Yes": 8.0,
+          "You": 8.1875,
+          "need": 5.21875,
+          "no": 5.46875
+        }
+      },
+      "decision_position": 609,
+      "family": "version_comparison",
+      "gaps": {
+        "NE_minus_NO": 22.875,
+        "call_minus_NE": -69.375,
+        "call_minus_NO": -46.5
+      },
+      "model": "g23v4",
+      "prompt_tokens": 610,
+      "roles": {
+        "conn": 548,
+        "dec": 609,
+        "end": 564,
+        "imend": 601,
+        "sysamb": 496,
+        "tail": 563,
+        "v1": 547,
+        "v1c": 546,
+        "v2": 556,
+        "v2c": 555,
+        "x": 547,
+        "xc": 546,
+        "y": 556,
+        "yc": 555
+      },
+      "seconds": 0.19385004197829403,
+      "sequence_tokens": 610
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-17-selection-711407-0032-amb-B2",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 38.00000214130301,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 38.0,
+            "text": "NE"
+          },
+          {
+            "id": 8547,
+            "logit": 24.5,
+            "text": "Ne"
+          },
+          {
+            "id": 7608,
+            "logit": 23.25,
+            "text": " NE"
+          },
+          {
+            "id": 785,
+            "logit": 22.625,
+            "text": "ne"
+          },
+          {
+            "id": 8725,
+            "logit": 22.0,
+            "text": "NO"
+          },
+          {
+            "id": 7096,
+            "logit": 20.25,
+            "text": "NA"
+          },
+          {
+            "id": 9655,
+            "logit": 19.375,
+            "text": "NC"
+          },
+          {
+            "id": 5948,
+            "logit": 18.75,
+            "text": "NG"
+          },
+          {
+            "id": 3794,
+            "logit": 18.625,
+            "text": "NU"
+          },
+          {
+            "id": 25391,
+            "logit": 17.875,
+            "text": "NP"
+          },
+          {
+            "id": 46792,
+            "logit": 17.875,
+            "text": "(ne"
+          },
+          {
+            "id": 13525,
+            "logit": 17.75,
+            "text": "_ne"
+          },
+          {
+            "id": 32239,
+            "logit": 17.25,
+            "text": "NB"
+          },
+          {
+            "id": 4044,
+            "logit": 17.125,
+            "text": " Ne"
+          },
+          {
+            "id": 6207,
+            "logit": 17.0,
+            "text": "NT"
+          },
+          {
+            "id": 76069,
+            "logit": 17.0,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 13636,
+            "logit": 16.875,
+            "text": "_NE"
+          },
+          {
+            "id": 21928,
+            "logit": 16.5,
+            "text": ".ne"
+          },
+          {
+            "id": 9455,
+            "logit": 16.5,
+            "text": "NN"
+          },
+          {
+            "id": 28243,
+            "logit": 16.5,
+            "text": "<N"
+          },
+          {
+            "id": 7812,
+            "logit": 16.5,
+            "text": "ND"
+          },
+          {
+            "id": 7947,
+            "logit": 16.5,
+            "text": "(N"
+          },
+          {
+            "id": 45,
+            "logit": 16.375,
+            "text": "N"
+          },
+          {
+            "id": 14481,
+            "logit": 16.125,
+            "text": "NI"
+          }
+        ],
+        "watch": {
+          "\n": 1.4140625,
+          "1": 10.25,
+          "<": 13.5,
+          "<think>": 11.3125,
+          "<tool_call>": -6.4375,
+          "<|im_end|>": 7.90625,
+          "Based": 14.3125,
+          "Here": 11.0625,
+          "I": 4.0625,
+          "It": 10.5625,
+          "NE": 38.0,
+          "NO": 22.0,
+          "NOT": 8.125,
+          "No": 12.125,
+          "None": 13.6875,
+          "Okay": 9.125,
+          "Please": 12.0625,
+          "Select": 6.59375,
+          "Since": 13.875,
+          "Sure": 7.78125,
+          "The": 1.765625,
+          "This": 12.25,
+          "To": 1.125,
+          "Yes": 8.3125,
+          "You": 10.625,
+          "need": 7.25,
+          "no": 7.5
+        }
+      },
+      "decision_position": 660,
+      "family": "version_comparison",
+      "gaps": {
+        "NE_minus_NO": 16.0,
+        "call_minus_NE": -44.4375,
+        "call_minus_NO": -28.4375
+      },
+      "model": "g23v4",
+      "prompt_tokens": 661,
+      "roles": {
+        "conn": 602,
+        "dec": 660,
+        "end": 615,
+        "imend": 652,
+        "sysamb": 548,
+        "tail": 614,
+        "v1": 600,
+        "v1c": 599,
+        "v2": 610,
+        "v2c": 609,
+        "x": 600,
+        "xc": 599,
+        "y": 610,
+        "yc": 609
+      },
+      "seconds": 0.203354874975048,
+      "sequence_tokens": 661
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-18-selection-711407-0012-amb-A1",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 45.750000223813224,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 45.75,
+            "text": "NE"
+          },
+          {
+            "id": 785,
+            "logit": 29.625,
+            "text": "ne"
+          },
+          {
+            "id": 8547,
+            "logit": 29.375,
+            "text": "Ne"
+          },
+          {
+            "id": 7608,
+            "logit": 28.875,
+            "text": " NE"
+          },
+          {
+            "id": 4044,
+            "logit": 22.625,
+            "text": " Ne"
+          },
+          {
+            "id": 46792,
+            "logit": 22.25,
+            "text": "(ne"
+          },
+          {
+            "id": 808,
+            "logit": 20.75,
+            "text": " ne"
+          },
+          {
+            "id": 13525,
+            "logit": 20.75,
+            "text": "_ne"
+          },
+          {
+            "id": 21928,
+            "logit": 20.5,
+            "text": ".ne"
+          },
+          {
+            "id": 38649,
+            "logit": 20.25,
+            "text": "-ne"
+          },
+          {
+            "id": 3794,
+            "logit": 20.0,
+            "text": "NU"
+          },
+          {
+            "id": 13636,
+            "logit": 20.0,
+            "text": "_NE"
+          },
+          {
+            "id": 76069,
+            "logit": 19.875,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 86236,
+            "logit": 19.75,
+            "text": "/ne"
+          },
+          {
+            "id": 7096,
+            "logit": 19.625,
+            "text": "NA"
+          },
+          {
+            "id": 79428,
+            "logit": 19.625,
+            "text": " NEC"
+          },
+          {
+            "id": 83593,
+            "logit": 18.5,
+            "text": " NEO"
+          },
+          {
+            "id": 32239,
+            "logit": 18.125,
+            "text": "NB"
+          },
+          {
+            "id": 7227,
+            "logit": 18.0,
+            "text": "ME"
+          },
+          {
+            "id": 69320,
+            "logit": 18.0,
+            "text": "NES"
+          },
+          {
+            "id": 213695,
+            "logit": 17.75,
+            "text": "neu"
+          },
+          {
+            "id": 7812,
+            "logit": 17.625,
+            "text": "ND"
+          },
+          {
+            "id": 5948,
+            "logit": 17.25,
+            "text": "NG"
+          },
+          {
+            "id": 71610,
+            "logit": 17.25,
+            "text": "NEY"
+          }
+        ],
+        "watch": {
+          "\n": 0.734375,
+          "1": 10.125,
+          "<": 11.625,
+          "<think>": 10.125,
+          "<tool_call>": -7.21875,
+          "<|im_end|>": 7.0625,
+          "Based": 12.5625,
+          "Here": 9.0625,
+          "I": 3.15625,
+          "It": 9.25,
+          "NE": 45.75,
+          "NO": 10.9375,
+          "NOT": 6.90625,
+          "No": 10.875,
+          "None": 11.5,
+          "Okay": 8.875,
+          "Please": 12.375,
+          "Select": 8.5,
+          "Since": 12.25,
+          "Sure": 6.34375,
+          "The": 1.4609375,
+          "This": 11.125,
+          "To": 0.1533203125,
+          "Yes": 7.34375,
+          "You": 10.9375,
+          "need": 7.5,
+          "no": 5.90625
+        }
+      },
+      "decision_position": 650,
+      "family": "inventory_adjustment",
+      "gaps": {
+        "NE_minus_NO": 34.8125,
+        "call_minus_NE": -52.96875,
+        "call_minus_NO": -18.15625
+      },
+      "model": "g23v4",
+      "prompt_tokens": 651,
+      "roles": {
+        "conn": 631,
+        "dec": 650,
+        "end": 641,
+        "imend": 642,
+        "sysamb": 551,
+        "tail": 640,
+        "v1": 630,
+        "v1c": 629,
+        "v2": 636,
+        "v2c": 635,
+        "x": 630,
+        "xc": 629,
+        "y": 636,
+        "yc": 635
+      },
+      "seconds": 0.19909716700203717,
+      "sequence_tokens": 651
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-19-selection-711407-0036-amb-A2",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 46.50000016724444,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 46.5,
+            "text": "NE"
+          },
+          {
+            "id": 785,
+            "logit": 30.125,
+            "text": "ne"
+          },
+          {
+            "id": 8547,
+            "logit": 29.75,
+            "text": "Ne"
+          },
+          {
+            "id": 7608,
+            "logit": 29.375,
+            "text": " NE"
+          },
+          {
+            "id": 4044,
+            "logit": 23.125,
+            "text": " Ne"
+          },
+          {
+            "id": 46792,
+            "logit": 23.125,
+            "text": "(ne"
+          },
+          {
+            "id": 808,
+            "logit": 21.5,
+            "text": " ne"
+          },
+          {
+            "id": 13525,
+            "logit": 21.5,
+            "text": "_ne"
+          },
+          {
+            "id": 76069,
+            "logit": 20.875,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 38649,
+            "logit": 20.875,
+            "text": "-ne"
+          },
+          {
+            "id": 21928,
+            "logit": 20.875,
+            "text": ".ne"
+          },
+          {
+            "id": 13636,
+            "logit": 20.0,
+            "text": "_NE"
+          },
+          {
+            "id": 86236,
+            "logit": 19.75,
+            "text": "/ne"
+          },
+          {
+            "id": 79428,
+            "logit": 19.75,
+            "text": " NEC"
+          },
+          {
+            "id": 3794,
+            "logit": 19.5,
+            "text": "NU"
+          },
+          {
+            "id": 7096,
+            "logit": 18.875,
+            "text": "NA"
+          },
+          {
+            "id": 83593,
+            "logit": 18.5,
+            "text": " NEO"
+          },
+          {
+            "id": 32239,
+            "logit": 18.25,
+            "text": "NB"
+          },
+          {
+            "id": 211084,
+            "logit": 17.875,
+            "text": "\u041d\u0415"
+          },
+          {
+            "id": 9655,
+            "logit": 17.75,
+            "text": "NC"
+          },
+          {
+            "id": 7227,
+            "logit": 17.625,
+            "text": "ME"
+          },
+          {
+            "id": 7812,
+            "logit": 17.5,
+            "text": "ND"
+          },
+          {
+            "id": 71610,
+            "logit": 17.25,
+            "text": "NEY"
+          },
+          {
+            "id": 5948,
+            "logit": 17.25,
+            "text": "NG"
+          }
+        ],
+        "watch": {
+          "\n": 1.5234375,
+          "1": 9.75,
+          "<": 11.5,
+          "<think>": 10.9375,
+          "<tool_call>": -6.3125,
+          "<|im_end|>": 7.34375,
+          "Based": 11.75,
+          "Here": 8.75,
+          "I": 3.34375,
+          "It": 8.4375,
+          "NE": 46.5,
+          "NO": 9.3125,
+          "NOT": 7.125,
+          "No": 10.5625,
+          "None": 11.1875,
+          "Okay": 8.8125,
+          "Please": 12.4375,
+          "Select": 7.4375,
+          "Since": 10.9375,
+          "Sure": 7.0625,
+          "The": 0.859375,
+          "This": 10.75,
+          "To": 0.1865234375,
+          "Yes": 7.5,
+          "You": 10.0,
+          "need": 7.8125,
+          "no": 5.5625
+        }
+      },
+      "decision_position": 600,
+      "family": "inventory_adjustment",
+      "gaps": {
+        "NE_minus_NO": 37.1875,
+        "call_minus_NE": -52.8125,
+        "call_minus_NO": -15.625
+      },
+      "model": "g23v4",
+      "prompt_tokens": 601,
+      "roles": {
+        "conn": 572,
+        "dec": 600,
+        "end": 583,
+        "imend": 592,
+        "sysamb": 499,
+        "tail": 582,
+        "v1": 570,
+        "v1c": 569,
+        "v2": 577,
+        "v2c": 576,
+        "x": 570,
+        "xc": 569,
+        "y": 577,
+        "yc": 576
+      },
+      "seconds": 0.19078862501191907,
+      "sequence_tokens": 601
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-20-selection-711407-0016-amb-A3",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 45.00000015031408,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 45.0,
+            "text": "NE"
+          },
+          {
+            "id": 8547,
+            "logit": 28.375,
+            "text": "Ne"
+          },
+          {
+            "id": 785,
+            "logit": 28.25,
+            "text": "ne"
+          },
+          {
+            "id": 7608,
+            "logit": 27.875,
+            "text": " NE"
+          },
+          {
+            "id": 46792,
+            "logit": 22.375,
+            "text": "(ne"
+          },
+          {
+            "id": 4044,
+            "logit": 21.75,
+            "text": " Ne"
+          },
+          {
+            "id": 21928,
+            "logit": 20.5,
+            "text": ".ne"
+          },
+          {
+            "id": 3794,
+            "logit": 20.25,
+            "text": "NU"
+          },
+          {
+            "id": 13525,
+            "logit": 20.25,
+            "text": "_ne"
+          },
+          {
+            "id": 808,
+            "logit": 20.125,
+            "text": " ne"
+          },
+          {
+            "id": 13636,
+            "logit": 20.125,
+            "text": "_NE"
+          },
+          {
+            "id": 38649,
+            "logit": 19.75,
+            "text": "-ne"
+          },
+          {
+            "id": 76069,
+            "logit": 19.375,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 7096,
+            "logit": 19.375,
+            "text": "NA"
+          },
+          {
+            "id": 86236,
+            "logit": 19.375,
+            "text": "/ne"
+          },
+          {
+            "id": 79428,
+            "logit": 18.875,
+            "text": " NEC"
+          },
+          {
+            "id": 9655,
+            "logit": 18.625,
+            "text": "NC"
+          },
+          {
+            "id": 69320,
+            "logit": 18.125,
+            "text": "NES"
+          },
+          {
+            "id": 5948,
+            "logit": 18.0,
+            "text": "NG"
+          },
+          {
+            "id": 32239,
+            "logit": 18.0,
+            "text": "NB"
+          },
+          {
+            "id": 7227,
+            "logit": 17.75,
+            "text": "ME"
+          },
+          {
+            "id": 6207,
+            "logit": 17.75,
+            "text": "NT"
+          },
+          {
+            "id": 7812,
+            "logit": 17.75,
+            "text": "ND"
+          },
+          {
+            "id": 83593,
+            "logit": 17.75,
+            "text": " NEO"
+          }
+        ],
+        "watch": {
+          "\n": 0.65625,
+          "1": 10.3125,
+          "<": 12.0,
+          "<think>": 10.5625,
+          "<tool_call>": -8.375,
+          "<|im_end|>": 7.3125,
+          "Based": 12.1875,
+          "Here": 10.0625,
+          "I": 2.390625,
+          "It": 9.875,
+          "NE": 45.0,
+          "NO": 14.125,
+          "NOT": 6.84375,
+          "No": 10.6875,
+          "None": 12.6875,
+          "Okay": 8.625,
+          "Please": 11.1875,
+          "Select": 7.03125,
+          "Since": 12.75,
+          "Sure": 7.8125,
+          "The": 0.53125,
+          "This": 11.125,
+          "To": 0.39453125,
+          "Yes": 9.1875,
+          "You": 11.0,
+          "need": 6.25,
+          "no": 6.03125
+        }
+      },
+      "decision_position": 560,
+      "family": "tree_scope",
+      "gaps": {
+        "NE_minus_NO": 30.875,
+        "call_minus_NE": -53.375,
+        "call_minus_NO": -22.5
+      },
+      "model": "g23v4",
+      "prompt_tokens": 561,
+      "roles": {
+        "conn": 517,
+        "dec": 560,
+        "end": 525,
+        "imend": 552,
+        "sysamb": 460,
+        "v1": 516,
+        "v1c": 515,
+        "v2": 525,
+        "v2c": 524,
+        "x": 516,
+        "xc": 515,
+        "y": 525,
+        "yc": 524
+      },
+      "seconds": 0.17328637500759214,
+      "sequence_tokens": 561
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-21-discovery-711406-0048-amb-B4-renamed",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 248058,
+        "logsumexp": 23.28313442433583,
+        "topk": [
+          {
+            "id": 248058,
+            "logit": 23.25,
+            "text": "<tool_call>"
+          },
+          {
+            "id": 40,
+            "logit": 19.0,
+            "text": "I"
+          },
+          {
+            "id": 760,
+            "logit": 17.875,
+            "text": "The"
+          },
+          {
+            "id": 27,
+            "logit": 17.25,
+            "text": "<"
+          },
+          {
+            "id": 3928,
+            "logit": 17.125,
+            "text": "None"
+          },
+          {
+            "id": 27775,
+            "logit": 16.5,
+            "text": "Based"
+          },
+          {
+            "id": 1206,
+            "logit": 16.375,
+            "text": "To"
+          },
+          {
+            "id": 248068,
+            "logit": 16.25,
+            "text": "<think>"
+          },
+          {
+            "id": 1919,
+            "logit": 15.5625,
+            "text": "This"
+          },
+          {
+            "id": 15947,
+            "logit": 15.3125,
+            "text": "Using"
+          },
+          {
+            "id": 2665,
+            "logit": 15.125,
+            "text": "No"
+          },
+          {
+            "id": 12189,
+            "logit": 14.8125,
+            "text": "Since"
+          },
+          {
+            "id": 510,
+            "logit": 14.75,
+            "text": "</"
+          },
+          {
+            "id": 5328,
+            "logit": 14.5,
+            "text": "Please"
+          },
+          {
+            "id": 248069,
+            "logit": 14.3125,
+            "text": "</think>"
+          },
+          {
+            "id": 623,
+            "logit": 14.1875,
+            "text": "In"
+          },
+          {
+            "id": 8160,
+            "logit": 14.0,
+            "text": "Here"
+          },
+          {
+            "id": 15,
+            "logit": 13.9375,
+            "text": "0"
+          },
+          {
+            "id": 63,
+            "logit": 13.8125,
+            "text": "`"
+          },
+          {
+            "id": 71093,
+            "logit": 13.8125,
+            "text": "```"
+          },
+          {
+            "id": 332,
+            "logit": 13.6875,
+            "text": "**"
+          },
+          {
+            "id": 34,
+            "logit": 13.625,
+            "text": "C"
+          },
+          {
+            "id": 58,
+            "logit": 13.625,
+            "text": "["
+          },
+          {
+            "id": 9764,
+            "logit": 13.5625,
+            "text": "Let"
+          }
+        ],
+        "watch": {
+          "\n": 2.296875,
+          "1": 13.375,
+          "<": 17.25,
+          "<think>": 16.25,
+          "<tool_call>": 23.25,
+          "<|im_end|>": 10.75,
+          "Based": 16.5,
+          "Here": 14.0,
+          "I": 19.0,
+          "It": 12.25,
+          "NE": 9.0625,
+          "NO": 11.125,
+          "NOT": 12.125,
+          "No": 15.125,
+          "None": 17.125,
+          "Okay": 12.6875,
+          "Please": 14.5,
+          "Select": 9.125,
+          "Since": 14.8125,
+          "Sure": 10.4375,
+          "The": 17.875,
+          "This": 15.5625,
+          "To": 16.375,
+          "Yes": 11.375,
+          "You": 13.5,
+          "need": 8.75,
+          "no": 11.6875
+        }
+      },
+      "decision_position": 547,
+      "family": "numeric_aggregation",
+      "gaps": {
+        "NE_minus_NO": -2.0625,
+        "call_minus_NE": 14.1875,
+        "call_minus_NO": 12.125
+      },
+      "model": "g23v4",
+      "prompt_tokens": 548,
+      "roles": {
+        "conn": 506,
+        "dec": 547,
+        "end": 511,
+        "imend": 539,
+        "sysamb": 460,
+        "v1": 505,
+        "v1c": 504,
+        "v2": 511,
+        "v2c": 510,
+        "x": 505,
+        "xc": 504,
+        "y": 511,
+        "yc": 510
+      },
+      "seconds": 0.17259141599060968,
+      "sequence_tokens": 548
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-22-discovery-711406-0052-amb-B5-renamed",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 18.1659203385501,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 17.75,
+            "text": "NE"
+          },
+          {
+            "id": 27775,
+            "logit": 14.5,
+            "text": "Based"
+          },
+          {
+            "id": 40,
+            "logit": 14.4375,
+            "text": "I"
+          },
+          {
+            "id": 27,
+            "logit": 14.125,
+            "text": "<"
+          },
+          {
+            "id": 12189,
+            "logit": 14.125,
+            "text": "Since"
+          },
+          {
+            "id": 2665,
+            "logit": 13.875,
+            "text": "No"
+          },
+          {
+            "id": 3928,
+            "logit": 13.8125,
+            "text": "None"
+          },
+          {
+            "id": 8547,
+            "logit": 13.8125,
+            "text": "Ne"
+          },
+          {
+            "id": 1919,
+            "logit": 13.75,
+            "text": "This"
+          },
+          {
+            "id": 45,
+            "logit": 13.5,
+            "text": "N"
+          },
+          {
+            "id": 2523,
+            "logit": 13.4375,
+            "text": "You"
+          },
+          {
+            "id": 8160,
+            "logit": 13.0625,
+            "text": "Here"
+          },
+          {
+            "id": 9764,
+            "logit": 12.9375,
+            "text": "Let"
+          },
+          {
+            "id": 5328,
+            "logit": 12.9375,
+            "text": "Please"
+          },
+          {
+            "id": 248068,
+            "logit": 12.8125,
+            "text": "<think>"
+          },
+          {
+            "id": 623,
+            "logit": 12.625,
+            "text": "In"
+          },
+          {
+            "id": 353,
+            "logit": 12.5,
+            "text": " I"
+          },
+          {
+            "id": 760,
+            "logit": 12.3125,
+            "text": "The"
+          },
+          {
+            "id": 15947,
+            "logit": 12.25,
+            "text": "Using"
+          },
+          {
+            "id": 17,
+            "logit": 12.25,
+            "text": "2"
+          },
+          {
+            "id": 1596,
+            "logit": 12.0,
+            "text": "We"
+          },
+          {
+            "id": 248058,
+            "logit": 12.0,
+            "text": "<tool_call>"
+          },
+          {
+            "id": 32597,
+            "logit": 12.0,
+            "text": "Currently"
+          },
+          {
+            "id": 7,
+            "logit": 12.0,
+            "text": "("
+          }
+        ],
+        "watch": {
+          "\n": 1.1015625,
+          "1": 11.5,
+          "<": 14.125,
+          "<think>": 12.8125,
+          "<tool_call>": 12.0,
+          "<|im_end|>": 9.5625,
+          "Based": 14.5,
+          "Here": 13.0625,
+          "I": 14.4375,
+          "It": 11.4375,
+          "NE": 17.75,
+          "NO": 9.25,
+          "NOT": 7.5625,
+          "No": 13.875,
+          "None": 13.8125,
+          "Okay": 11.0625,
+          "Please": 12.9375,
+          "Select": 8.625,
+          "Since": 14.125,
+          "Sure": 9.75,
+          "The": 12.3125,
+          "This": 13.75,
+          "To": 11.1875,
+          "Yes": 10.375,
+          "You": 13.4375,
+          "need": 4.625,
+          "no": 6.84375
+        }
+      },
+      "decision_position": 613,
+      "family": "clock_shift",
+      "gaps": {
+        "NE_minus_NO": 8.5,
+        "call_minus_NE": -5.75,
+        "call_minus_NO": 2.75
+      },
+      "model": "g23v4",
+      "prompt_tokens": 614,
+      "roles": {
+        "conn": 582,
+        "dec": 613,
+        "end": 593,
+        "imend": 605,
+        "sysamb": 507,
+        "tail": 592,
+        "v1": 581,
+        "v2": 585,
+        "x": 581,
+        "y": 585
+      },
+      "seconds": 0.1864952910109423,
+      "sequence_tokens": 614
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-23-discovery-711406-0056-amb-B6-renamed",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 42.7500013905003,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 42.75,
+            "text": "NE"
+          },
+          {
+            "id": 785,
+            "logit": 28.875,
+            "text": "ne"
+          },
+          {
+            "id": 8547,
+            "logit": 28.0,
+            "text": "Ne"
+          },
+          {
+            "id": 7608,
+            "logit": 26.0,
+            "text": " NE"
+          },
+          {
+            "id": 46792,
+            "logit": 22.25,
+            "text": "(ne"
+          },
+          {
+            "id": 4044,
+            "logit": 20.75,
+            "text": " Ne"
+          },
+          {
+            "id": 13525,
+            "logit": 20.25,
+            "text": "_ne"
+          },
+          {
+            "id": 808,
+            "logit": 19.875,
+            "text": " ne"
+          },
+          {
+            "id": 38649,
+            "logit": 19.625,
+            "text": "-ne"
+          },
+          {
+            "id": 76069,
+            "logit": 19.5,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 21928,
+            "logit": 19.375,
+            "text": ".ne"
+          },
+          {
+            "id": 13636,
+            "logit": 19.125,
+            "text": "_NE"
+          },
+          {
+            "id": 86236,
+            "logit": 19.0,
+            "text": "/ne"
+          },
+          {
+            "id": 3794,
+            "logit": 17.75,
+            "text": "NU"
+          },
+          {
+            "id": 32239,
+            "logit": 17.5,
+            "text": "NB"
+          },
+          {
+            "id": 7227,
+            "logit": 17.375,
+            "text": "ME"
+          },
+          {
+            "id": 213695,
+            "logit": 17.375,
+            "text": "neu"
+          },
+          {
+            "id": 7096,
+            "logit": 17.25,
+            "text": "NA"
+          },
+          {
+            "id": 79428,
+            "logit": 17.25,
+            "text": " NEC"
+          },
+          {
+            "id": 211084,
+            "logit": 17.0,
+            "text": "\u041d\u0415"
+          },
+          {
+            "id": 2366,
+            "logit": 17.0,
+            "text": "TE"
+          },
+          {
+            "id": 231763,
+            "logit": 17.0,
+            "text": "nei"
+          },
+          {
+            "id": 13497,
+            "logit": 16.625,
+            "text": "NER"
+          },
+          {
+            "id": 7812,
+            "logit": 16.5,
+            "text": "ND"
+          }
+        ],
+        "watch": {
+          "\n": 1.2265625,
+          "1": 10.9375,
+          "<": 12.8125,
+          "<think>": 11.9375,
+          "<tool_call>": -1.546875,
+          "<|im_end|>": 8.9375,
+          "Based": 12.0625,
+          "Here": 10.625,
+          "I": 6.0625,
+          "It": 9.5625,
+          "NE": 42.75,
+          "NO": 9.25,
+          "NOT": 8.5625,
+          "No": 12.125,
+          "None": 13.4375,
+          "Okay": 9.625,
+          "Please": 11.25,
+          "Select": 5.96875,
+          "Since": 12.0,
+          "Sure": 7.9375,
+          "The": 3.8125,
+          "This": 11.875,
+          "To": 2.640625,
+          "Yes": 8.25,
+          "You": 11.3125,
+          "need": 9.0,
+          "no": 8.3125
+        }
+      },
+      "decision_position": 570,
+      "family": "text_case",
+      "gaps": {
+        "NE_minus_NO": 33.5,
+        "call_minus_NE": -44.296875,
+        "call_minus_NO": -10.796875
+      },
+      "model": "g23v4",
+      "prompt_tokens": 571,
+      "roles": {
+        "conn": 521,
+        "dec": 570,
+        "end": 534,
+        "imend": 562,
+        "sysamb": 469,
+        "tail": 533,
+        "v1": 520,
+        "v1c": 519,
+        "v2": 529,
+        "v2c": 528,
+        "x": 520,
+        "xc": 519,
+        "y": 529,
+        "yc": 528
+      },
+      "seconds": 0.18675120899570175,
+      "sequence_tokens": 571
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-24-discovery-711406-0060-amb-B1-renamed",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 44.50000025124882,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 44.5,
+            "text": "NE"
+          },
+          {
+            "id": 8547,
+            "logit": 28.75,
+            "text": "Ne"
+          },
+          {
+            "id": 785,
+            "logit": 27.75,
+            "text": "ne"
+          },
+          {
+            "id": 7608,
+            "logit": 27.75,
+            "text": " NE"
+          },
+          {
+            "id": 4044,
+            "logit": 21.625,
+            "text": " Ne"
+          },
+          {
+            "id": 46792,
+            "logit": 21.625,
+            "text": "(ne"
+          },
+          {
+            "id": 13525,
+            "logit": 20.5,
+            "text": "_ne"
+          },
+          {
+            "id": 21928,
+            "logit": 20.125,
+            "text": ".ne"
+          },
+          {
+            "id": 808,
+            "logit": 19.75,
+            "text": " ne"
+          },
+          {
+            "id": 38649,
+            "logit": 19.5,
+            "text": "-ne"
+          },
+          {
+            "id": 76069,
+            "logit": 19.5,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 13636,
+            "logit": 19.5,
+            "text": "_NE"
+          },
+          {
+            "id": 3794,
+            "logit": 19.5,
+            "text": "NU"
+          },
+          {
+            "id": 79428,
+            "logit": 19.5,
+            "text": " NEC"
+          },
+          {
+            "id": 7096,
+            "logit": 19.25,
+            "text": "NA"
+          },
+          {
+            "id": 86236,
+            "logit": 18.875,
+            "text": "/ne"
+          },
+          {
+            "id": 9655,
+            "logit": 18.375,
+            "text": "NC"
+          },
+          {
+            "id": 5948,
+            "logit": 18.125,
+            "text": "NG"
+          },
+          {
+            "id": 69320,
+            "logit": 18.0,
+            "text": "NES"
+          },
+          {
+            "id": 32239,
+            "logit": 17.625,
+            "text": "NB"
+          },
+          {
+            "id": 211084,
+            "logit": 17.125,
+            "text": "\u041d\u0415"
+          },
+          {
+            "id": 7227,
+            "logit": 17.0,
+            "text": "ME"
+          },
+          {
+            "id": 13497,
+            "logit": 16.875,
+            "text": "NER"
+          },
+          {
+            "id": 25391,
+            "logit": 16.75,
+            "text": "NP"
+          }
+        ],
+        "watch": {
+          "\n": 0.21484375,
+          "1": 9.9375,
+          "<": 11.875,
+          "<think>": 10.75,
+          "<tool_call>": -8.75,
+          "<|im_end|>": 7.0625,
+          "Based": 12.0,
+          "Here": 10.25,
+          "I": 2.171875,
+          "It": 9.0625,
+          "NE": 44.5,
+          "NO": 14.6875,
+          "NOT": 6.4375,
+          "No": 10.6875,
+          "None": 11.5,
+          "Okay": 9.0,
+          "Please": 12.1875,
+          "Select": 7.84375,
+          "Since": 11.8125,
+          "Sure": 7.4375,
+          "The": 0.02490234375,
+          "This": 11.1875,
+          "To": -0.80859375,
+          "Yes": 8.0,
+          "You": 10.6875,
+          "need": 6.15625,
+          "no": 5.78125
+        }
+      },
+      "decision_position": 551,
+      "family": "archive_state",
+      "gaps": {
+        "NE_minus_NO": 29.8125,
+        "call_minus_NE": -53.25,
+        "call_minus_NO": -23.4375
+      },
+      "model": "g23v4",
+      "prompt_tokens": 552,
+      "roles": {
+        "conn": 529,
+        "dec": 551,
+        "end": 542,
+        "imend": 543,
+        "sysamb": 458,
+        "tail": 541,
+        "v1": 528,
+        "v1c": 527,
+        "v2": 534,
+        "v2c": 533,
+        "x": 528,
+        "xc": 527,
+        "y": 534,
+        "yc": 533
+      },
+      "seconds": 0.18295433299499564,
+      "sequence_tokens": 552
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-25-discovery-711406-0064-amb-B2-renamed",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 248058,
+        "logsumexp": 23.54419167512215,
+        "topk": [
+          {
+            "id": 248058,
+            "logit": 23.5,
+            "text": "<tool_call>"
+          },
+          {
+            "id": 40,
+            "logit": 19.125,
+            "text": "I"
+          },
+          {
+            "id": 27775,
+            "logit": 19.0,
+            "text": "Based"
+          },
+          {
+            "id": 760,
+            "logit": 18.5,
+            "text": "The"
+          },
+          {
+            "id": 3928,
+            "logit": 16.875,
+            "text": "None"
+          },
+          {
+            "id": 1206,
+            "logit": 16.875,
+            "text": "To"
+          },
+          {
+            "id": 27,
+            "logit": 16.625,
+            "text": "<"
+          },
+          {
+            "id": 12189,
+            "logit": 16.5,
+            "text": "Since"
+          },
+          {
+            "id": 1919,
+            "logit": 16.5,
+            "text": "This"
+          },
+          {
+            "id": 248068,
+            "logit": 16.125,
+            "text": "<think>"
+          },
+          {
+            "id": 15947,
+            "logit": 15.875,
+            "text": "Using"
+          },
+          {
+            "id": 63,
+            "logit": 15.625,
+            "text": "`"
+          },
+          {
+            "id": 9764,
+            "logit": 15.5625,
+            "text": "Let"
+          },
+          {
+            "id": 8160,
+            "logit": 15.5625,
+            "text": "Here"
+          },
+          {
+            "id": 2665,
+            "logit": 15.4375,
+            "text": "No"
+          },
+          {
+            "id": 71093,
+            "logit": 15.0,
+            "text": "```"
+          },
+          {
+            "id": 21365,
+            "logit": 14.9375,
+            "text": "Given"
+          },
+          {
+            "id": 623,
+            "logit": 14.8125,
+            "text": "In"
+          },
+          {
+            "id": 2381,
+            "logit": 14.5625,
+            "text": "For"
+          },
+          {
+            "id": 34,
+            "logit": 14.5,
+            "text": "C"
+          },
+          {
+            "id": 2064,
+            "logit": 14.5,
+            "text": "It"
+          },
+          {
+            "id": 21765,
+            "logit": 14.5,
+            "text": "Looking"
+          },
+          {
+            "id": 10865,
+            "logit": 14.4375,
+            "text": "According"
+          },
+          {
+            "id": 332,
+            "logit": 14.4375,
+            "text": "**"
+          }
+        ],
+        "watch": {
+          "\n": 1.8046875,
+          "1": 11.8125,
+          "<": 16.625,
+          "<think>": 16.125,
+          "<tool_call>": 23.5,
+          "<|im_end|>": 10.4375,
+          "Based": 19.0,
+          "Here": 15.5625,
+          "I": 19.125,
+          "It": 14.5,
+          "NE": 7.4375,
+          "NO": 10.0,
+          "NOT": 9.8125,
+          "No": 15.4375,
+          "None": 16.875,
+          "Okay": 12.875,
+          "Please": 13.6875,
+          "Select": 9.4375,
+          "Since": 16.5,
+          "Sure": 10.75,
+          "The": 18.5,
+          "This": 16.5,
+          "To": 16.875,
+          "Yes": 12.375,
+          "You": 14.375,
+          "need": 8.625,
+          "no": 11.3125
+        }
+      },
+      "decision_position": 616,
+      "family": "set_membership",
+      "gaps": {
+        "NE_minus_NO": -2.5625,
+        "call_minus_NE": 16.0625,
+        "call_minus_NO": 13.5
+      },
+      "model": "g23v4",
+      "prompt_tokens": 617,
+      "roles": {
+        "conn": 555,
+        "dec": 616,
+        "end": 568,
+        "imend": 608,
+        "sysamb": 500,
+        "tail": 567,
+        "v1": 553,
+        "v1c": 552,
+        "v2": 563,
+        "v2c": 562,
+        "x": 553,
+        "xc": 552,
+        "y": 563,
+        "yc": 562
+      },
+      "seconds": 0.19824691701796837,
+      "sequence_tokens": 617
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-26-discovery-711406-0068-amb-B3-renamed",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 50.00000003036383,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 50.0,
+            "text": "NE"
+          },
+          {
+            "id": 7608,
+            "logit": 32.5,
+            "text": " NE"
+          },
+          {
+            "id": 8547,
+            "logit": 30.75,
+            "text": "Ne"
+          },
+          {
+            "id": 785,
+            "logit": 29.125,
+            "text": "ne"
+          },
+          {
+            "id": 46792,
+            "logit": 24.125,
+            "text": "(ne"
+          },
+          {
+            "id": 4044,
+            "logit": 24.125,
+            "text": " Ne"
+          },
+          {
+            "id": 8725,
+            "logit": 23.875,
+            "text": "NO"
+          },
+          {
+            "id": 7096,
+            "logit": 23.5,
+            "text": "NA"
+          },
+          {
+            "id": 3794,
+            "logit": 23.375,
+            "text": "NU"
+          },
+          {
+            "id": 79428,
+            "logit": 22.75,
+            "text": " NEC"
+          },
+          {
+            "id": 13636,
+            "logit": 22.625,
+            "text": "_NE"
+          },
+          {
+            "id": 13525,
+            "logit": 22.625,
+            "text": "_ne"
+          },
+          {
+            "id": 69320,
+            "logit": 22.625,
+            "text": "NES"
+          },
+          {
+            "id": 808,
+            "logit": 22.0,
+            "text": " ne"
+          },
+          {
+            "id": 9655,
+            "logit": 22.0,
+            "text": "NC"
+          },
+          {
+            "id": 38649,
+            "logit": 21.625,
+            "text": "-ne"
+          },
+          {
+            "id": 5948,
+            "logit": 21.25,
+            "text": "NG"
+          },
+          {
+            "id": 21928,
+            "logit": 21.25,
+            "text": ".ne"
+          },
+          {
+            "id": 83593,
+            "logit": 21.25,
+            "text": " NEO"
+          },
+          {
+            "id": 76069,
+            "logit": 21.125,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 86236,
+            "logit": 20.375,
+            "text": "/ne"
+          },
+          {
+            "id": 211084,
+            "logit": 19.75,
+            "text": "\u041d\u0415"
+          },
+          {
+            "id": 32239,
+            "logit": 19.75,
+            "text": "NB"
+          },
+          {
+            "id": 71610,
+            "logit": 19.375,
+            "text": "NEY"
+          }
+        ],
+        "watch": {
+          "\n": 0.58203125,
+          "1": 7.0625,
+          "<": 7.9375,
+          "<think>": 7.59375,
+          "<tool_call>": -21.125,
+          "<|im_end|>": 5.53125,
+          "Based": 9.0625,
+          "Here": 6.40625,
+          "I": -6.09375,
+          "It": 7.0625,
+          "NE": 50.0,
+          "NO": 23.875,
+          "NOT": 5.6875,
+          "No": 7.96875,
+          "None": 8.75,
+          "Okay": 6.0625,
+          "Please": 8.1875,
+          "Select": 6.78125,
+          "Since": 8.5,
+          "Sure": 5.53125,
+          "The": -7.40625,
+          "This": 8.0625,
+          "To": -8.375,
+          "Yes": 5.625,
+          "You": 7.4375,
+          "need": 5.34375,
+          "no": 4.75
+        }
+      },
+      "decision_position": 608,
+      "family": "numeric_comparison",
+      "gaps": {
+        "NE_minus_NO": 26.125,
+        "call_minus_NE": -71.125,
+        "call_minus_NO": -45.0
+      },
+      "model": "g23v4",
+      "prompt_tokens": 609,
+      "roles": {
+        "conn": 596,
+        "dec": 608,
+        "end": 599,
+        "imend": 600,
+        "sysamb": 508,
+        "v1": 595,
+        "v2": 598,
+        "x": 595,
+        "y": 598
+      },
+      "seconds": 0.18072904099244624,
+      "sequence_tokens": 609
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-27-selection-711407-0040-amb-A2-renamed",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 43.75000020710065,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 43.75,
+            "text": "NE"
+          },
+          {
+            "id": 8547,
+            "logit": 27.625,
+            "text": "Ne"
+          },
+          {
+            "id": 7608,
+            "logit": 27.125,
+            "text": " NE"
+          },
+          {
+            "id": 785,
+            "logit": 26.875,
+            "text": "ne"
+          },
+          {
+            "id": 46792,
+            "logit": 21.125,
+            "text": "(ne"
+          },
+          {
+            "id": 4044,
+            "logit": 21.0,
+            "text": " Ne"
+          },
+          {
+            "id": 7096,
+            "logit": 20.0,
+            "text": "NA"
+          },
+          {
+            "id": 3794,
+            "logit": 20.0,
+            "text": "NU"
+          },
+          {
+            "id": 9655,
+            "logit": 19.5,
+            "text": "NC"
+          },
+          {
+            "id": 13525,
+            "logit": 19.375,
+            "text": "_ne"
+          },
+          {
+            "id": 13636,
+            "logit": 19.375,
+            "text": "_NE"
+          },
+          {
+            "id": 21928,
+            "logit": 19.25,
+            "text": ".ne"
+          },
+          {
+            "id": 808,
+            "logit": 19.125,
+            "text": " ne"
+          },
+          {
+            "id": 5948,
+            "logit": 18.875,
+            "text": "NG"
+          },
+          {
+            "id": 79428,
+            "logit": 18.625,
+            "text": " NEC"
+          },
+          {
+            "id": 38649,
+            "logit": 18.625,
+            "text": "-ne"
+          },
+          {
+            "id": 76069,
+            "logit": 18.625,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 32239,
+            "logit": 18.375,
+            "text": "NB"
+          },
+          {
+            "id": 86236,
+            "logit": 18.0,
+            "text": "/ne"
+          },
+          {
+            "id": 6207,
+            "logit": 17.875,
+            "text": "NT"
+          },
+          {
+            "id": 25391,
+            "logit": 17.75,
+            "text": "NP"
+          },
+          {
+            "id": 8725,
+            "logit": 17.625,
+            "text": "NO"
+          },
+          {
+            "id": 7227,
+            "logit": 17.5,
+            "text": "ME"
+          },
+          {
+            "id": 69320,
+            "logit": 17.5,
+            "text": "NES"
+          }
+        ],
+        "watch": {
+          "\n": 1.2734375,
+          "1": 10.125,
+          "<": 12.0625,
+          "<think>": 11.0,
+          "<tool_call>": -8.75,
+          "<|im_end|>": 7.59375,
+          "Based": 12.625,
+          "Here": 10.375,
+          "I": 2.5,
+          "It": 10.0,
+          "NE": 43.75,
+          "NO": 17.625,
+          "NOT": 6.9375,
+          "No": 10.75,
+          "None": 12.6875,
+          "Okay": 8.8125,
+          "Please": 11.4375,
+          "Select": 6.625,
+          "Since": 12.9375,
+          "Sure": 7.5625,
+          "The": 0.427734375,
+          "This": 11.375,
+          "To": 0.68359375,
+          "Yes": 8.9375,
+          "You": 11.3125,
+          "need": 6.40625,
+          "no": 6.0625
+        }
+      },
+      "decision_position": 562,
+      "family": "tree_scope",
+      "gaps": {
+        "NE_minus_NO": 26.125,
+        "call_minus_NE": -52.5,
+        "call_minus_NO": -26.375
+      },
+      "model": "g23v4",
+      "prompt_tokens": 563,
+      "roles": {
+        "conn": 513,
+        "dec": 562,
+        "end": 527,
+        "imend": 554,
+        "sysamb": 459,
+        "tail": 526,
+        "v1": 511,
+        "v1c": 510,
+        "v2": 521,
+        "v2c": 520,
+        "x": 511,
+        "xc": 510,
+        "y": 521,
+        "yc": 520
+      },
+      "seconds": 0.18254720797995105,
+      "sequence_tokens": 563
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-28-selection-711407-0020-amb-A3-renamed",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 53.00000002040018,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 53.0,
+            "text": "NE"
+          },
+          {
+            "id": 7608,
+            "logit": 35.25,
+            "text": " NE"
+          },
+          {
+            "id": 8547,
+            "logit": 31.875,
+            "text": "Ne"
+          },
+          {
+            "id": 785,
+            "logit": 30.5,
+            "text": "ne"
+          },
+          {
+            "id": 4044,
+            "logit": 26.125,
+            "text": " Ne"
+          },
+          {
+            "id": 46792,
+            "logit": 25.625,
+            "text": "(ne"
+          },
+          {
+            "id": 13636,
+            "logit": 24.75,
+            "text": "_NE"
+          },
+          {
+            "id": 3794,
+            "logit": 24.25,
+            "text": "NU"
+          },
+          {
+            "id": 69320,
+            "logit": 24.125,
+            "text": "NES"
+          },
+          {
+            "id": 8725,
+            "logit": 24.0,
+            "text": "NO"
+          },
+          {
+            "id": 13525,
+            "logit": 24.0,
+            "text": "_ne"
+          },
+          {
+            "id": 79428,
+            "logit": 23.75,
+            "text": " NEC"
+          },
+          {
+            "id": 83593,
+            "logit": 23.625,
+            "text": " NEO"
+          },
+          {
+            "id": 808,
+            "logit": 23.625,
+            "text": " ne"
+          },
+          {
+            "id": 21928,
+            "logit": 23.25,
+            "text": ".ne"
+          },
+          {
+            "id": 38649,
+            "logit": 23.125,
+            "text": "-ne"
+          },
+          {
+            "id": 7096,
+            "logit": 23.0,
+            "text": "NA"
+          },
+          {
+            "id": 86236,
+            "logit": 22.5,
+            "text": "/ne"
+          },
+          {
+            "id": 9655,
+            "logit": 22.25,
+            "text": "NC"
+          },
+          {
+            "id": 76069,
+            "logit": 21.875,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 5948,
+            "logit": 21.75,
+            "text": "NG"
+          },
+          {
+            "id": 211084,
+            "logit": 20.875,
+            "text": "\u041d\u0415"
+          },
+          {
+            "id": 32239,
+            "logit": 20.75,
+            "text": "NB"
+          },
+          {
+            "id": 71610,
+            "logit": 20.25,
+            "text": "NEY"
+          }
+        ],
+        "watch": {
+          "\n": -0.1943359375,
+          "1": 5.9375,
+          "<": 6.40625,
+          "<think>": 6.34375,
+          "<tool_call>": -24.75,
+          "<|im_end|>": 3.9375,
+          "Based": 7.125,
+          "Here": 4.875,
+          "I": -8.4375,
+          "It": 5.4375,
+          "NE": 53.0,
+          "NO": 24.0,
+          "NOT": 5.1875,
+          "No": 6.65625,
+          "None": 6.84375,
+          "Okay": 4.78125,
+          "Please": 6.53125,
+          "Select": 4.5,
+          "Since": 6.75,
+          "Sure": 4.25,
+          "The": -9.375,
+          "This": 6.5625,
+          "To": -10.1875,
+          "Yes": 4.25,
+          "You": 6.4375,
+          "need": 5.0,
+          "no": 3.828125
+        }
+      },
+      "decision_position": 605,
+      "family": "subscription",
+      "gaps": {
+        "NE_minus_NO": 29.0,
+        "call_minus_NE": -77.75,
+        "call_minus_NO": -48.75
+      },
+      "model": "g23v4",
+      "prompt_tokens": 606,
+      "roles": {
+        "conn": 588,
+        "dec": 605,
+        "end": 596,
+        "imend": 597,
+        "sysamb": 499,
+        "v1": 587,
+        "v1c": 586,
+        "v2": 596,
+        "v2c": 595,
+        "x": 587,
+        "xc": 586,
+        "y": 596,
+        "yc": 595
+      },
+      "seconds": 0.18301249999785796,
+      "sequence_tokens": 606
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-29-selection-711407-0044-amb-B1-renamed",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 45.0000002776384,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 45.0,
+            "text": "NE"
+          },
+          {
+            "id": 8547,
+            "logit": 29.375,
+            "text": "Ne"
+          },
+          {
+            "id": 7608,
+            "logit": 28.375,
+            "text": " NE"
+          },
+          {
+            "id": 785,
+            "logit": 28.25,
+            "text": "ne"
+          },
+          {
+            "id": 46792,
+            "logit": 22.625,
+            "text": "(ne"
+          },
+          {
+            "id": 4044,
+            "logit": 22.125,
+            "text": " Ne"
+          },
+          {
+            "id": 21928,
+            "logit": 20.75,
+            "text": ".ne"
+          },
+          {
+            "id": 38649,
+            "logit": 20.625,
+            "text": "-ne"
+          },
+          {
+            "id": 13525,
+            "logit": 20.625,
+            "text": "_ne"
+          },
+          {
+            "id": 808,
+            "logit": 20.625,
+            "text": " ne"
+          },
+          {
+            "id": 13636,
+            "logit": 20.5,
+            "text": "_NE"
+          },
+          {
+            "id": 76069,
+            "logit": 20.0,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 3794,
+            "logit": 19.875,
+            "text": "NU"
+          },
+          {
+            "id": 7096,
+            "logit": 19.375,
+            "text": "NA"
+          },
+          {
+            "id": 86236,
+            "logit": 19.375,
+            "text": "/ne"
+          },
+          {
+            "id": 32239,
+            "logit": 18.5,
+            "text": "NB"
+          },
+          {
+            "id": 83593,
+            "logit": 18.25,
+            "text": " NEO"
+          },
+          {
+            "id": 79428,
+            "logit": 18.125,
+            "text": " NEC"
+          },
+          {
+            "id": 9655,
+            "logit": 18.125,
+            "text": "NC"
+          },
+          {
+            "id": 69320,
+            "logit": 17.875,
+            "text": "NES"
+          },
+          {
+            "id": 7227,
+            "logit": 17.75,
+            "text": "ME"
+          },
+          {
+            "id": 5948,
+            "logit": 17.75,
+            "text": "NG"
+          },
+          {
+            "id": 211084,
+            "logit": 17.5,
+            "text": "\u041d\u0415"
+          },
+          {
+            "id": 13497,
+            "logit": 17.25,
+            "text": "NER"
+          }
+        ],
+        "watch": {
+          "\n": 0.78515625,
+          "1": 10.25,
+          "<": 11.0625,
+          "<think>": 10.4375,
+          "<tool_call>": -7.46875,
+          "<|im_end|>": 7.28125,
+          "Based": 12.0,
+          "Here": 9.625,
+          "I": 3.203125,
+          "It": 9.375,
+          "NE": 45.0,
+          "NO": 14.1875,
+          "NOT": 8.0625,
+          "No": 11.375,
+          "None": 12.3125,
+          "Okay": 8.625,
+          "Please": 11.5,
+          "Select": 8.0,
+          "Since": 12.3125,
+          "Sure": 7.375,
+          "The": 0.921875,
+          "This": 11.375,
+          "To": 0.11767578125,
+          "Yes": 7.34375,
+          "You": 10.625,
+          "need": 7.875,
+          "no": 6.78125
+        }
+      },
+      "decision_position": 616,
+      "family": "subscription",
+      "gaps": {
+        "NE_minus_NO": 30.8125,
+        "call_minus_NE": -52.46875,
+        "call_minus_NO": -21.65625
+      },
+      "model": "g23v4",
+      "prompt_tokens": 617,
+      "roles": {
+        "conn": 583,
+        "dec": 616,
+        "end": 599,
+        "imend": 608,
+        "sysamb": 506,
+        "tail": 598,
+        "v1": 582,
+        "v1c": 581,
+        "v2": 591,
+        "v2c": 590,
+        "x": 582,
+        "xc": 581,
+        "y": 591,
+        "yc": 590
+      },
+      "seconds": 0.19590662501286715,
+      "sequence_tokens": 617
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-30-selection-711407-0044-amb-A1-renamed",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 3811,
+        "logsumexp": 36.75000908501636,
+        "topk": [
+          {
+            "id": 3811,
+            "logit": 36.75,
+            "text": "NE"
+          },
+          {
+            "id": 8547,
+            "logit": 24.75,
+            "text": "Ne"
+          },
+          {
+            "id": 785,
+            "logit": 23.875,
+            "text": "ne"
+          },
+          {
+            "id": 7608,
+            "logit": 21.875,
+            "text": " NE"
+          },
+          {
+            "id": 46792,
+            "logit": 18.25,
+            "text": "(ne"
+          },
+          {
+            "id": 4044,
+            "logit": 17.25,
+            "text": " Ne"
+          },
+          {
+            "id": 21928,
+            "logit": 17.125,
+            "text": ".ne"
+          },
+          {
+            "id": 808,
+            "logit": 16.75,
+            "text": " ne"
+          },
+          {
+            "id": 13525,
+            "logit": 16.625,
+            "text": "_ne"
+          },
+          {
+            "id": 38649,
+            "logit": 16.5,
+            "text": "-ne"
+          },
+          {
+            "id": 13636,
+            "logit": 16.375,
+            "text": "_NE"
+          },
+          {
+            "id": 76069,
+            "logit": 16.375,
+            "text": "\u043d\u0435"
+          },
+          {
+            "id": 86236,
+            "logit": 15.9375,
+            "text": "/ne"
+          },
+          {
+            "id": 7227,
+            "logit": 15.8125,
+            "text": "ME"
+          },
+          {
+            "id": 3794,
+            "logit": 15.5,
+            "text": "NU"
+          },
+          {
+            "id": 7096,
+            "logit": 15.1875,
+            "text": "NA"
+          },
+          {
+            "id": 32239,
+            "logit": 14.6875,
+            "text": "NB"
+          },
+          {
+            "id": 841,
+            "logit": 14.6875,
+            "text": "LE"
+          },
+          {
+            "id": 2366,
+            "logit": 14.625,
+            "text": "TE"
+          },
+          {
+            "id": 45,
+            "logit": 14.5625,
+            "text": "N"
+          },
+          {
+            "id": 9655,
+            "logit": 14.4375,
+            "text": "NC"
+          },
+          {
+            "id": 6207,
+            "logit": 14.4375,
+            "text": "NT"
+          },
+          {
+            "id": 79428,
+            "logit": 14.0625,
+            "text": " NEC"
+          },
+          {
+            "id": 94480,
+            "logit": 14.0625,
+            "text": "Neo"
+          }
+        ],
+        "watch": {
+          "\n": 1.0546875,
+          "1": 11.25,
+          "<": 12.4375,
+          "<think>": 12.5625,
+          "<tool_call>": 1.7109375,
+          "<|im_end|>": 8.375,
+          "Based": 12.875,
+          "Here": 10.6875,
+          "I": 8.125,
+          "It": 9.8125,
+          "NE": 36.75,
+          "NO": 7.4375,
+          "NOT": 7.21875,
+          "No": 11.75,
+          "None": 13.125,
+          "Okay": 10.1875,
+          "Please": 12.0625,
+          "Select": 8.8125,
+          "Since": 13.0625,
+          "Sure": 7.96875,
+          "The": 5.1875,
+          "This": 12.4375,
+          "To": 3.765625,
+          "Yes": 8.75,
+          "You": 11.125,
+          "need": 7.21875,
+          "no": 6.59375
+        }
+      },
+      "decision_position": 602,
+      "family": "subscription",
+      "gaps": {
+        "NE_minus_NO": 29.3125,
+        "call_minus_NE": -35.0390625,
+        "call_minus_NO": -5.7265625
+      },
+      "model": "g23v4",
+      "prompt_tokens": 603,
+      "roles": {
+        "conn": 583,
+        "dec": 602,
+        "end": 593,
+        "imend": 594,
+        "sysamb": 497,
+        "tail": 592,
+        "v1": 582,
+        "v1c": 581,
+        "v2": 588,
+        "v2c": 587,
+        "x": 582,
+        "xc": 581,
+        "y": 588,
+        "yc": 587
+      },
+      "seconds": 0.19446674999198876,
+      "sequence_tokens": 603
+    },
+    {
+      "action": "clarify",
+      "case_id": "stress-amb-31-selection-711407-0020-amb-B4-renamed",
+      "continuation": "",
+      "continuation_tokens": [],
+      "decision": {
+        "argmax": 248058,
+        "logsumexp": 21.415925139069163,
+        "topk": [
+          {
+            "id": 248058,
+            "logit": 21.25,
+            "text": "<tool_call>"
+          },
+          {
+            "id": 40,
+            "logit": 18.875,
+            "text": "I"
+          },
+          {
+            "id": 2665,
+            "logit": 16.375,
+            "text": "No"
+          },
+          {
+            "id": 248068,
+            "logit": 16.125,
+            "text": "<think>"
+          },
+          {
+            "id": 760,
+            "logit": 16.125,
+            "text": "The"
+          },
+          {
+            "id": 10358,
+            "logit": 16.0,
+            "text": "Stop"
+          },
+          {
+            "id": 1919,
+            "logit": 15.8125,
+            "text": "This"
+          },
+          {
+            "id": 9215,
+            "logit": 15.5625,
+            "text": "stop"
+          },
+          {
+            "id": 45,
+            "logit": 15.375,
+            "text": "N"
+          },
+          {
+            "id": 48964,
+            "logit": 15.3125,
+            "text": "STOP"
+          },
+          {
+            "id": 3928,
+            "logit": 15.25,
+            "text": "None"
+          },
+          {
+            "id": 27,
+            "logit": 15.0625,
+            "text": "<"
+          },
+          {
+            "id": 1206,
+            "logit": 14.9375,
+            "text": "To"
+          },
+          {
+            "id": 34,
+            "logit": 14.5,
+            "text": "C"
+          },
+          {
+            "id": 25562,
+            "logit": 14.3125,
+            "text": "Topic"
+          },
+          {
+            "id": 27775,
+            "logit": 14.25,
+            "text": "Based"
+          },
+          {
+            "id": 2,
+            "logit": 14.125,
+            "text": "#"
+          },
+          {
+            "id": 9764,
+            "logit": 14.0,
+            "text": "Let"
+          },
+          {
+            "id": 8725,
+            "logit": 14.0,
+            "text": "NO"
+          },
+          {
+            "id": 63,
+            "logit": 14.0,
+            "text": "`"
+          },
+          {
+            "id": 15947,
+            "logit": 14.0,
+            "text": "Using"
+          },
+          {
+            "id": 77,
+            "logit": 13.9375,
+            "text": "n"
+          },
+          {
+            "id": 332,
+            "logit": 13.875,
+            "text": "**"
+          },
+          {
+            "id": 58,
+            "logit": 13.875,
+            "text": "["
+          }
+        ],
+        "watch": {
+          "\n": 0.95703125,
+          "1": 11.5,
+          "<": 15.0625,
+          "<think>": 16.125,
+          "<tool_call>": 21.25,
+          "<|im_end|>": 9.4375,
+          "Based": 14.25,
+          "Here": 13.3125,
+          "I": 18.875,
+          "It": 12.125,
+          "NE": 10.625,
+          "NO": 14.0,
+          "NOT": 11.5625,
+          "No": 16.375,
+          "None": 15.25,
+          "Okay": 13.4375,
+          "Please": 13.75,
+          "Select": 9.4375,
+          "Since": 13.6875,
+          "Sure": 11.0625,
+          "The": 16.125,
+          "This": 15.8125,
+          "To": 14.9375,
+          "Yes": 11.1875,
+          "You": 12.75,
+          "need": 10.1875,
+          "no": 13.5625
+        }
+      },
+      "decision_position": 608,
+      "family": "subscription",
+      "gaps": {
+        "NE_minus_NO": -3.375,
+        "call_minus_NE": 10.625,
+        "call_minus_NO": 7.25
+      },
+      "model": "g23v4",
+      "prompt_tokens": 609,
+      "roles": {
+        "conn": 583,
+        "dec": 608,
+        "end": 588,
+        "imend": 600,
+        "sysamb": 507,
+        "v1": 582,
+        "v1c": 581,
+        "v2": 588,
+        "v2c": 587,
+        "x": 582,
+        "xc": 581,
+        "y": 588,
+        "yc": 587
+      },
+      "seconds": 0.1854158749920316,
+      "sequence_tokens": 609
+    }
+  ],
+  "seconds": 9.494224916998064,
+  "set": "stress",
+  "usage": {
+    "candidates": 0,
+    "executions": 864,
+    "input_tokens": 477486,
+    "output_tokens": 20393,
+    "requests": 15
+  }
+}

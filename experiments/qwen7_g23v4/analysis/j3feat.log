@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/scasella/Downloads/qwen-7/analysis/j3feat.py", line 49, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "/Users/scasella/Downloads/qwen-7/analysis/j3feat.py", line 47, in main
+    v=np.concatenate([np.atleast_1d(x) for x in rows[k]]); print(f'  {k:45s} n={len(v):5d} max {v.max():6.2f} 99.9th {np.percentile(v,99.9):6.2f} min {v.min():6.2f}')
+                                                                                                ^^^^^^^
+  File "/Users/scasella/Downloads/qwen-3/toolpatch/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py", line 41, in _amax
+    return umr_maximum(a, axis, None, out, keepdims, initial, where)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation maximum which has no identity
+alpha(h6 at marker) mean 0.998 min 0.992; |dx23| mean 11.89
+t.x23 natural at decision: amb [-6.14,-4.64] call [-6.13,-4.14] res [-6.29,-4.49] | delivered (amb with marker) [5.54,6.94]
+s.x23 (g23v3 abstain) at decision: amb [-2.93,2.79] -> with marker [-2.86,2.75]
+c.x23: amb nat [-1.52,3.62] marker [-2.45,2.37] | c2.x23: nat [-1.53,2.08] marker [-1.73,1.55]
+
+natural t.x23 elsewhere (max / 99.9th):
+  g01:dec:prose                                 n=   32 max  -3.87 99.9th  -3.88 min  -6.22
+  g01:dec:reg2                                  n=   32 max  -2.33 99.9th  -2.34 min  -6.56
+  g01:gen:prose                                 n= 3999 max   3.61 99.9th   3.08 min  -6.44
+  g01:gen:reg2                                  n=  247 max   1.01 99.9th   1.01 min  -6.57
+  p04c_practice_allpos:dec:answer               n=   20 max  -4.10 99.9th  -4.10 min  -5.33
+  p04c_practice_allpos:dec:call                 n=   24 max  -4.45 99.9th  -4.45 min  -6.02
+  p04c_practice_allpos:dec:clarify              n=   20 max  -4.82 99.9th  -4.83 min  -5.98
+  p04c_practice_allpos:gen:answer               n=   40 max  -0.24 99.9th  -0.25 min  -3.54
+  p04c_practice_allpos:gen:call                 n= 1069 max   0.45 99.9th   0.38 min  -6.97
+  p04c_practice_allpos:gen:clarify              n=  100 max  -0.57 99.9th  -0.59 min  -3.98
+  p05_teacher_allpos:dec:answer                 n=   20 max  -4.54 99.9th  -4.54 min  -5.56
+  p05_teacher_allpos:dec:call                   n=   20 max  -4.98 99.9th  -4.98 min  -5.89
+  p05_teacher_allpos:dec:clarify                n=   20 max  -4.94 99.9th  -4.94 min  -5.76
+  p05_teacher_allpos:gen:answer                 n=   40 max  -0.39 99.9th  -0.40 min  -3.70
+  p05_teacher_allpos:gen:call                   n=  896 max   0.61 99.9th   0.29 min  -6.37
+  p05_teacher_allpos:gen:clarify                n=  100 max  -1.07 99.9th  -1.08 min  -4.18
+  p16_regression_capture:dec:regression         n=   32 max  -2.37 99.9th  -2.38 min  -6.58
