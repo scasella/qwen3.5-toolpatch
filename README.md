@@ -132,12 +132,12 @@ A perturbation of this size on these neurons is at best harmless and never helpf
 
 ## 5. Quickstart (three ways)
 
-**A. Download the patched checkpoint** from Hugging Face: [`scasella/Qwen3.5-0.8B-toolpatch-g23v3`](https://huggingface.co/scasella/Qwen3.5-0.8B-toolpatch-g23v3) (full HF-format checkpoint; only the three layer-23 tensors differ from `Qwen/Qwen3.5-0.8B` rev `2fc0636`).
+**A. Download the patched checkpoint** from Hugging Face: [`scasella91/Qwen3.5-0.8B-toolpatch-g23v3`](https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v3) (full HF-format checkpoint; only the three layer-23 tensors differ from `Qwen/Qwen3.5-0.8B` rev `2fc0636`).
 
 ```python
 from mlx_lm import load, generate
 from mlx_lm.sample_utils import make_sampler
-model, tok = load("scasella/Qwen3.5-0.8B-toolpatch-g23v3")
+model, tok = load("scasella91/Qwen3.5-0.8B-toolpatch-g23v3")
 SYSTEM = ("Use the available tools when needed. For a request requiring no tool, reply exactly NO_TOOL. If required information "
           "is missing or ambiguous, reply exactly NEED_CLARIFICATION. Otherwise make exactly one native tool call. No other text.")
 tools = [{"type": "function", "function": {"name": "uppercase_text", "description": "Change stored text to uppercase.",

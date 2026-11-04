@@ -11,7 +11,7 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 GH_REPO="${GH_REPO:-scasella/qwen3.5-toolpatch}"
-HF_REPO="${HF_REPO:-scasella/Qwen3.5-0.8B-toolpatch-g23v3}"
+HF_REPO="${HF_REPO:-scasella91/Qwen3.5-0.8B-toolpatch-g23v3}"
 EXPORT="$ROOT/artifacts/exports/g23v3"
 EXECUTE=0; SKIP_GH=0; SKIP_HF=0
 for arg in "$@"; do
