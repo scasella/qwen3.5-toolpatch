@@ -5,149 +5,205 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Four-Neuron Circuit Explorer: Qwen3.5-0.8B, g23v3 and g23v4</title>
 <meta name="description" content="Interactively compare the original Qwen3.5-0.8B with the g23v3 (2 neurons) and g23v4 (4 neurons, 2 layers) weight edits: recorded benchmark outputs, a real-time exact simulator of the edited circuit including the layer-22 → head-6 → layer-23 route, and a live in-browser WebGPU runner.">
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='7' cy='16' r='5' fill='%230f766e'/%3E%3Ccircle cx='17' cy='9' r='5' fill='%23b45309'/%3E%3Ccircle cx='17' cy='23' r='5' fill='%23b45309'/%3E%3Ccircle cx='27' cy='16' r='5' fill='%230f766e'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131412" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261104b">
+<script src="theme.js?v=20261104b"></script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M5 21C10 7 22 7 27 21' fill='none' stroke='%23888' stroke-width='1.5'/%3E%3Ccircle cx='5' cy='21' r='4' fill='%236250d6'/%3E%3Ccircle cx='12.3' cy='21' r='4' fill='%23eb6834'/%3E%3Ccircle cx='19.7' cy='21' r='4' fill='%23d6409f'/%3E%3Ccircle cx='27' cy='21' r='4' fill='%231baf7a'/%3E%3C/svg%3E">
 </head>
 <body>
-<header class="top">
-  <div class="wrap">
-    <div class="brand">
-      <span class="dots" aria-hidden="true"><i class="n1"></i><i class="n2"></i><i class="n2"></i><i class="n1"></i></span>
-      <div>
-        <h1>Four-Neuron Circuit Explorer</h1>
-        <p class="sub">Original <code>Qwen/Qwen3.5-0.8B</code> vs. <code>g23v3</code> (2 neurons, layer 23; 6,142 BF16 weights) vs. <code>g23v4</code> (4 neurons, layers 22 + 23; 12,281 weights, 0.0016%). No training, no attention weight changed.</p>
-      </div>
-    </div>
-    <nav class="tabs" role="tablist">
-      <button class="tab active" role="tab" data-tab="explore" aria-selected="true">1 · Circuit &amp; attention explorer <span class="pill">no download</span></button>
-      <button class="tab" role="tab" data-tab="live" aria-selected="false">2 · Run live in browser <span class="pill">WebGPU</span></button>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap navbar">
+    <a class="brand" href="./" aria-label="qwen3.5-toolpatch home">
+      <svg class="glyph" viewBox="0 0 34 20" aria-hidden="true"><path d="M4 14 C 10 1, 24 1, 30 14" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".45"/><circle cx="4" cy="14" r="3.3" fill="var(--n-j0)"/><circle cx="12.7" cy="14" r="3.3" fill="var(--n-j1)"/><circle cx="21.3" cy="14" r="3.3" fill="var(--n-j2)"/><circle cx="30" cy="14" r="3.3" fill="var(--n-j3)"/></svg>
+      <span class="name">qwen3.5-toolpatch</span>
+    </a>
+    <nav class="sitenav" aria-label="Site">
+      <a class="current" href="./" aria-current="page">Explorer</a>
+      <a href="blog.html">Blog post</a>
+      <a class="ext" href="https://github.com/scasella/qwen3.5-toolpatch">GitHub</a>
+      <a class="ext" href="https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v4">Hugging Face</a>
     </nav>
-    <p class="links"><a href="blog.html">Blog post</a> · <a href="https://github.com/scasella/qwen3.5-toolpatch">GitHub</a> · <a href="https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v4">g23v4 weights on Hugging Face</a> · <a href="https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v3">g23v3</a></p>
+    <button id="theme-toggle" class="iconbtn" type="button" aria-label="Theme">
+      <svg class="auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17A8.5 8.5 0 0 0 12 3.5z" fill="currentColor" stroke="none"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
   </div>
 </header>
 
-<main class="wrap">
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">Weight-space programming · Qwen3.5-0.8B · research agent Mythos 5.1</p>
+    <h1>Four-Neuron Circuit <em>Explorer</em></h1>
+    <p class="deck">Two closed-form weight edits of <code>Qwen/Qwen3.5-0.8B</code> — <b>g23v3</b> (2 neurons, layer 23, 6,142 BF16 weights) and <b>g23v4</b> (4 neurons, layers 22 + 23, 12,281 weights, 0.0016% of the model) — rebuilt exactly in your browser: 143 recorded prompts, every gain and gate on a slider, the layer-22 → head-6 → layer-23 route, and both models running live on WebGPU. No training; no attention weight changed.</p>
+    <!-- Headline numbers are the campaigns' final tables (experiments/*/analysis, blog §1): 192 benchmark tool items and the 32 ambiguous items of the 64-item stress suite. They are not derivable from the 143-prompt explorer bundle, hence hard-coded here. -->
+    <ul class="headline" aria-label="Headline results">
+      <li class="stat base reveal"><span class="k">Base model</span><span class="v">35.4<small>%</small></span><span class="d">68 of 192 benchmark tool items · calls on everything</span></li>
+      <li class="stat g23v3 reveal"><span class="k">g23v3 · 2 neurons</span><span class="v">80.7<small>%</small></span><span class="d">155 of 192 · NO_TOOL and explicit-missing repaired, 0/30 ambiguous</span></li>
+      <li class="stat g23v4 reveal"><span class="k">g23v4 · 4 neurons</span><span class="v">96.4<small>%</small></span><span class="d">185 of 192 · +117 wrong→right, 0 right→wrong, 30/30 ambiguous</span></li>
+      <li class="stat weights reveal"><span class="k">Unseen phrasings</span><span class="v">0<span class="arrow">→</span>9<span class="arrow">→</span>27</span><span class="d">of 32 stress-suite ambiguous items; all 32 resolved calls token-identical</span></li>
+    </ul>
+    <nav class="modes" role="tablist" aria-label="Mode">
+      <button class="tab active" role="tab" id="tabbtn-explore" data-tab="explore" aria-selected="true" aria-controls="tab-explore"><span class="n">01</span> Recorded runs &amp; exact circuit <span class="pill">no download</span></button>
+      <button class="tab" role="tab" id="tabbtn-live" data-tab="live" aria-selected="false" aria-controls="tab-live" tabindex="-1"><span class="n">02</span> Run both models live <span class="pill">WebGPU</span></button>
+    </nav>
+  </div>
+</section>
+
+<main id="main" class="wrap">
 <!-- ===================================================== TAB 1 -->
-<section id="tab-explore" class="tabpanel" role="tabpanel">
-  <div id="loading" class="notice">Loading <code>data/circuit_traces.json</code>…</div>
+<section id="tab-explore" class="tabpanel" role="tabpanel" aria-labelledby="tabbtn-explore">
+  <div id="loading" class="loader" role="status"><div class="track"><div class="fill"></div></div><span class="msg">Loading the recorded runs and replay states (<code>data/circuit_traces.json</code>, 13 MB)…</span></div>
   <div id="explorer" class="explorer" hidden>
     <aside class="side">
-      <div class="card">
-        <h2>Benchmark prompt</h2>
-        <input id="search" type="search" placeholder="Search id, family or text…" aria-label="Search prompts">
-        <fieldset class="filters" id="filter-cohort"><legend>Expected behaviour</legend></fieldset>
-        <fieldset class="filters" id="filter-set"><legend>Item set</legend></fieldset>
-        <p class="count" id="count"></p>
+      <div class="mobilebar"><span class="cur" id="mobile-cur">—</span><button class="ghost" id="browser-toggle" type="button" aria-expanded="false" aria-controls="browser">Change prompt</button></div>
+      <div class="card browser" id="browser">
+        <div class="browser-head"><h2>Prompts</h2><span class="count" id="count"></span></div>
+        <div class="searchbox">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="search" type="search" placeholder="Search id, family or text…" aria-label="Search prompts" autocomplete="off">
+          <button class="clear" id="search-clear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
+        <div class="filtergroups">
+          <fieldset class="filters" id="filter-cohort"><legend>Expected behaviour</legend></fieldset>
+          <details class="morefilters"><summary>Item sets</summary><fieldset class="filters" id="filter-set"><legend class="sr-only">Item set</legend></fieldset></details>
+          <div class="filters-row"><button class="linkbtn" id="filters-all" type="button">toggle all filters</button></div>
+        </div>
         <ul id="itemlist" class="itemlist" role="listbox" aria-label="Prompts"></ul>
+        <p class="kbd-hint"><kbd>↑</kbd> <kbd>↓</kbd> move between prompts · <kbd>/</kbd> search</p>
       </div>
-      <details class="card provenance"><summary>Where these numbers come from</summary><div id="provenance"></div></details>
+      <nav class="card onpage" aria-label="On this page"><h3>On this page</h3><ol id="onpage"></ol></nav>
     </aside>
 
     <div class="mainpane">
-      <article class="card" id="prompt-card">
-        <div class="cardhead"><h2 id="item-title">—</h2><span class="badges" id="item-badges"></span></div>
+      <section class="sec reveal" id="s-prompt" aria-labelledby="item-title">
+        <header class="sechead"><span class="num">01</span><h2 id="item-title">—</h2><div class="badges" id="item-badges"></div></header>
         <dl class="prompt">
-          <dt>System</dt><dd id="p-system" class="mono small"></dd>
-          <dt>Tools</dt><dd><details><summary id="p-tools-summary">tools</summary><pre id="p-tools" class="mono small"></pre></details></dd>
-          <dt>User</dt><dd id="p-user" class="mono"></dd>
-          <dt>Expected</dt><dd id="p-expected" class="mono"></dd>
+          <dt>User</dt><dd><div id="p-user" class="user"></div></dd>
+          <dt>Expected</dt><dd id="p-expected" class="expected"></dd>
+          <dt>System</dt><dd id="p-system" class="sys"></dd>
+          <dt>Tools</dt><dd><details class="tools"><summary id="p-tools-summary">tools</summary><pre id="p-tools" class="mono"></pre></details></dd>
         </dl>
-      </article>
+      </section>
 
-      <article class="card">
-        <div class="cardhead"><h2>Recorded outputs, side by side</h2><span class="hint">Greedy, 128 tokens, identical prompts. Copied verbatim from the two campaigns' run records under <code>experiments/</code>.</span></div>
+      <section class="sec reveal" id="s-outputs">
+        <header class="sechead"><span class="num">02</span><h2>Recorded outputs, side by side</h2><p class="hint">Greedy decoding, 128 new tokens, identical prompts. Copied verbatim from the two campaigns' run records under <code>experiments/</code>; the first token decides everything.</p></header>
         <div class="outputs" id="outputs"></div>
-        <details class="controls-box"><summary>Dose and negative controls on this item (qwen-7 passes k01–k04, 64-item control set)</summary><div class="outputs" id="outputs-ctrl"></div></details>
-      </article>
+        <details class="more" id="outputs-more"><summary>Earlier candidates and the random control on this item (v1, v2, random J1/J2)</summary><div class="outputs" id="outputs-extra"></div></details>
+        <details class="more"><summary>Dose and negative controls on this item (qwen-7 passes k01–k04, 64-item control set)</summary><div class="outputs" id="outputs-ctrl"></div></details>
+      </section>
 
-      <article class="card">
-        <div class="cardhead"><h2>The circuit, live</h2><span class="hint">Exact closed-form readout of the edited layer-23 SwiGLU → final RMSNorm → tied unembedding at the decision position; the layer-22 → head-6 route is an exact CPU replay of layer 23 at four stage-1 write scales. Recomputed on every slider move.</span></div>
-        <div class="variants" id="variants" role="group" aria-label="Edit variant"></div>
+      <section class="sec reveal" id="s-circuit">
+        <header class="sechead"><span class="num">03</span><h2>The circuit, live</h2><p class="hint">Exact closed-form readout of the edited layer-23 SwiGLU → final RMSNorm → tied unembedding at the decision position. The layer-22 → head-6 route is an exact CPU replay of layer 23 at four stage-1 write scales. Everything below is recomputed on every slider move.</p></header>
+        <div class="presets" id="variants" role="group" aria-label="Edit variant"></div>
+        <p class="vdesc" id="variant-desc"></p>
         <div class="stages">
-          <label class="check"><input type="checkbox" id="ck-stage1" checked> <b>Act I</b> — layer 23: J1 = 3468 (abstain), J2 = 3421 (route)</label>
-          <label class="check"><input type="checkbox" id="ck-stage2"> <b>Act II</b> — layer 22: J0 = 2525 → layer-23 head 6 → layer 23: J3 = 2331</label>
+          <label class="switch act1"><input type="checkbox" id="ck-stage1" checked><b>Act I</b><span>layer 23 · J1 = 3468 abstains · J2 = 3421 routes</span></label>
+          <label class="switch act2"><input type="checkbox" id="ck-stage2"><b>Act II</b><span>layer 22 · J0 = 2525 → head 6 → layer 23 · J3 = 2331</span></label>
         </div>
         <div class="circuit">
           <div class="sliders">
-            <h3>Act I readout</h3>
-            <label><span>a<sub>1</sub> · J1 = 3468 (abstain) output gain</span><input type="range" id="sl-a1" min="0" max="3" step="0.05"><output id="o-a1"></output></label>
-            <label><span>a<sub>2</sub> · J2 = 3421 (route NE vs NO) output gain</span><input type="range" id="sl-a2" min="0" max="3" step="0.05"><output id="o-a2"></output></label>
-            <label><span>λ · tool-context gate c (shared by J1, J2, J3)</span><input type="range" id="sl-lam" min="0" max="1.5" step="0.01"><output id="o-lam"></output></label>
-            <label><span>λ<sub>2</sub> · generated-position gate c<sub>2</sub> (shared)</span><input type="range" id="sl-lam2" min="0" max="1.5" step="0.01"><output id="o-lam2"></output></label>
-            <h3>Act II route</h3>
-            <label><span>b · stage-1 write scale (marker p<sub>6</sub> at the clause end; snapped to the exactly replayed doses 0 / ½ / 1 / 2)</span><input type="range" id="sl-b" min="0" max="3" step="1"><output id="o-b"></output></label>
-            <label><span>a<sub>3</sub> · J3 = 2331 output gain</span><input type="range" id="sl-a3" min="0" max="0.4" step="0.005"><output id="o-a3"></output></label>
-            <label><span>ρ · share of u<sub>route</sub> in J3's output</span><input type="range" id="sl-rho" min="0" max="2" step="0.05"><output id="o-rho"></output></label>
-            <p class="eq mono small" id="eq"></p>
+            <div class="slgroup">
+              <h3 class="act1">Act I · readout gains and gates</h3>
+              <label class="act1"><span><var>a</var><sub>1</sub> <i>· output gain of J1 = 3468 (abstain)</i></span><input type="range" id="sl-a1" min="0" max="3" step="0.05" aria-label="a1, J1 output gain"><output id="o-a1"></output></label>
+              <label class="act1"><span><var>a</var><sub>2</sub> <i>· output gain of J2 = 3421 (route NE vs NO)</i></span><input type="range" id="sl-a2" min="0" max="3" step="0.05" aria-label="a2, J2 output gain"><output id="o-a2"></output></label>
+              <label class="act1"><span><var>λ</var> <i>· tool-context gate c (shared by J1, J2, J3)</i></span><input type="range" id="sl-lam" min="0" max="1.5" step="0.01" aria-label="lambda, tool-context gate"><output id="o-lam"></output></label>
+              <label class="act1"><span><var>λ</var><sub>2</sub> <i>· generated-position gate c<sub>2</sub> (shared)</i></span><input type="range" id="sl-lam2" min="0" max="1.5" step="0.01" aria-label="lambda 2, generated-position gate"><output id="o-lam2"></output></label>
+            </div>
+            <div class="slgroup">
+              <h3 class="act2">Act II · route</h3>
+              <label class="act2"><span><var>b</var> <i>· stage-1 write scale of the marker p<sub>6</sub> at the clause end — snapped to the exactly replayed doses 0 / ½ / 1 / 2</i></span><input type="range" id="sl-b" min="0" max="3" step="1" aria-label="b, stage-1 write scale"><output id="o-b"></output></label>
+              <label class="act2"><span><var>a</var><sub>3</sub> <i>· output gain of J3 = 2331</i></span><input type="range" id="sl-a3" min="0" max="0.4" step="0.005" aria-label="a3, J3 output gain"><output id="o-a3"></output></label>
+              <label class="act2"><span><var>ρ</var> <i>· share of u<sub>route</sub> in J3's output</i></span><input type="range" id="sl-rho" min="0" max="2" step="0.05" aria-label="rho, share of u_route"><output id="o-rho"></output></label>
+            </div>
+            <details class="eqbox"><summary>Equations being evaluated</summary><p class="eq mono" id="eq"></p></details>
           </div>
           <div class="schematic" id="schematic"></div>
         </div>
         <div class="readouts" id="readouts"></div>
-      </article>
+        <div class="sr-only" id="a11y-decision" aria-live="polite"></div>
+      </section>
 
-      <article class="card">
-        <div class="cardhead"><h2>Prompt tokens: layer-22 J0 and the head-6 attention arc</h2><span class="hint" id="heat-hint"></span></div>
+      <section class="sec reveal" id="s-tokens">
+        <header class="sechead"><span class="num">04</span><h2>Prompt tokens: layer-22 J0 and the head-6 attention arc</h2><p class="hint" id="heat-hint"></p></header>
+        <div class="legend"><span class="lg"><i class="sw" style="--lc:var(--n-j0)"></i>J0 = 2525 activation per token (log scale)</span><span class="lg"><i class="sw ring" style="--lc:var(--ink)"></i>clause-end token</span><span class="lg"><i class="sw ring" style="--lc:var(--c-g23v4)"></i>decision token</span><span class="lg"><i class="sw line" style="--lc:var(--c-g23v4)"></i>head-6 attention, decision → clause end</span></div>
         <div id="posstrip" class="trace"></div>
         <div id="tokheat" class="tokheat"></div>
-        <p class="small"><label class="check"><input type="checkbox" id="ck-alltok"> show every prompt token (system prompt and tool schema included)</label></p>
-      </article>
+        <p class="small" style="margin:10px 0 0"><label class="check"><input type="checkbox" id="ck-alltok"> show every prompt token (system prompt and tool schema included)</label></p>
+      </section>
 
-      <article class="card">
-        <div class="cardhead"><h2>First-token distribution at the decision position</h2><span class="hint" id="dist-hint"></span></div>
+      <section class="sec reveal" id="s-dist">
+        <header class="sechead"><span class="num">05</span><h2>First-token distribution at the decision position</h2><p class="hint" id="dist-hint"></p></header>
         <div class="dist">
-          <table class="tokens" id="toktable"><thead><tr><th>token</th><th>logit</th><th>Δ vs original</th><th>p</th><th></th></tr></thead><tbody></tbody></table>
+          <table class="tokens" id="toktable"><thead><tr><th>token</th><th class="num">logit</th><th class="num">Δ vs original</th><th class="num">p</th><th></th></tr></thead><tbody></tbody></table>
         </div>
-      </article>
+      </section>
 
-      <article class="card">
-        <div class="cardhead"><h2>Neuron activity along the original model's generation</h2><span class="hint">Layer-22 and layer-23 MLP inputs at every generated position of the <em>original</em> model, re-read through the four edited neurons with the current sliders. Bars: J1 (teal), J2 (amber), J3 (green), J0 (red); the circuit must stay silent inside tool calls and 128-token prose.</span></div>
+      <section class="sec reveal" id="s-trace">
+        <header class="sechead"><span class="num">06</span><h2>Neuron activity along the original model's generation</h2><p class="hint" id="trace-hint">Layer-22 and layer-23 MLP inputs at every generated position of the <em>original</em> model, re-read through the four edited neurons with the current sliders. The circuit must stay silent inside tool calls and 128-token prose.</p></header>
+        <div class="legend"><span class="lg"><i class="sw" style="--lc:var(--n-j1)"></i>J1 = 3468 abstain</span><span class="lg"><i class="sw" style="--lc:var(--n-j2)"></i>J2 = 3421 route</span><span class="lg"><i class="sw" style="--lc:var(--n-j3)"></i>J3 = 2331 reader</span><span class="lg"><i class="sw" style="--lc:var(--n-j0)"></i>J0 = 2525 detector (layer 22)</span></div>
         <div id="trace" class="trace"></div>
-      </article>
+      </section>
+
+      <details class="sec provenance" id="s-provenance"><summary>Where these numbers come from</summary><div id="provenance"></div></details>
     </div>
   </div>
 </section>
 
 <!-- ===================================================== TAB 2 -->
-<section id="tab-live" class="tabpanel" role="tabpanel" hidden>
-  <div class="live">
-    <article class="card">
-      <div class="cardhead"><h2>Run both models in your browser</h2></div>
-      <p>Real token generation with <a href="https://huggingface.co/docs/transformers.js">Transformers.js</a> + ONNX Runtime Web on WebGPU, in a Web Worker. One download (fp16 decoder ≈1.5&nbsp;GB plus 4-bit embeddings ≈150&nbsp;MB, cached by your browser in 64&nbsp;MB chunks) serves both models: the edited model is produced in memory by writing the 12,281 edited values into the layer-22 and layer-23 MLP tensors of the downloaded original, and the SHA-256 of the result is checked against the published edited file.</p>
-      <p class="small">Why fp16 and not a ~650&nbsp;MB 4-bit build: the edit reads directions in the residual stream that were fitted on the BF16 model. With a q4 backbone that input drifts (cosine ≈0.89 to the BF16 activations on the same prompts) and the gates stay closed, so the neurons never fire; measured by <code>scripts/export_webgpu_onnx.py --drift</code> (report: <a href="data/webgpu_export_report.json">webgpu_export_report.json</a>). The layer-22 and layer-23 MLP tensors are kept in fp16 so block quantization cannot distort J0, J1, J2 or J3.</p>
+<section id="tab-live" class="tabpanel live" role="tabpanel" aria-labelledby="tabbtn-live" hidden>
+  <ol class="steps">
+    <li class="step">
+      <div class="stephead"><span class="sn" aria-hidden="true"></span><h2>Check WebGPU</h2></div>
+      <p class="small">Real token generation with <a href="https://huggingface.co/docs/transformers.js">Transformers.js</a> + ONNX Runtime Web on WebGPU, inside a Web Worker. Everything stays in your browser.</p>
       <div id="gpu-status" class="notice">Checking WebGPU…</div>
-      <p class="warn small">The live runner uses an ONNX export, not the campaigns' BF16 MLX weights. Treat its outputs as a demonstration; the token-identical claims in the blog post refer to the recorded runs in Tab&nbsp;1.</p>
+    </li>
+    <li class="step">
+      <div class="stephead"><span class="sn" aria-hidden="true"></span><h2>Load the models</h2></div>
+      <p class="small">One download serves both models: the fp16 decoder (≈1.5&nbsp;GB) plus 4-bit embeddings (≈150&nbsp;MB), cached by your browser in 64&nbsp;MB chunks. The edited model is produced in memory by writing the 12,281 edited values into the layer-22 and layer-23 MLP tensors of the downloaded original; the SHA-256 of the result is checked against the published edited file.</p>
       <div class="row">
         <label class="grow">Model source <input id="model-source" type="text" value="scasella91/Qwen3.5-0.8B-toolpatch-g23v4-ONNX" spellcheck="false"></label>
-        <label class="check"><input type="checkbox" id="keep-both" checked> keep both models resident</label>
-        <button id="btn-load" class="primary" disabled>Load models</button>
+        <label class="check inline"><input type="checkbox" id="keep-both" checked> keep both models resident</label>
+        <button id="btn-load" class="primary" type="button" disabled>Load models</button>
       </div>
       <div id="load-progress" class="progress"></div>
-    </article>
-
-    <article class="card">
-      <div class="cardhead"><h2>Prompt</h2><button id="btn-use-item" class="ghost">Use the prompt selected in Tab 1</button></div>
+      <details class="more"><summary>Why fp16 and not a ~650 MB 4-bit build</summary><p class="small">The edit reads directions in the residual stream that were fitted on the BF16 model. With a q4 backbone that input drifts (cosine ≈0.89 to the BF16 activations on the same prompts) and the gates stay closed, so the neurons never fire; measured by <code>scripts/export_webgpu_onnx.py --drift</code> (report: <a href="data/webgpu_export_report.json">webgpu_export_report.json</a>). The layer-22 and layer-23 MLP tensors are kept in fp16 so block quantization cannot distort J0, J1, J2 or J3.</p></details>
+      <p class="callout">The live runner uses an ONNX export, not the campaigns' BF16 MLX weights. Treat its outputs as a demonstration; the token-identical claims in the blog post refer to the recorded runs in the first mode.</p>
+    </li>
+    <li class="step">
+      <div class="stephead"><span class="sn" aria-hidden="true"></span><h2>Prompt</h2><button id="btn-use-item" class="ghost" type="button" style="margin-left:auto">Use the prompt selected in the explorer</button></div>
       <label>System prompt<textarea id="live-system" rows="2"></textarea></label>
       <label>Tools (JSON array of OpenAI-style function tools, <code>[]</code> for none)<textarea id="live-tools" rows="6" class="mono" spellcheck="false"></textarea></label>
       <label>User message<textarea id="live-user" rows="3"></textarea></label>
+    </li>
+    <li class="step">
+      <div class="stephead"><span class="sn" aria-hidden="true"></span><h2>Run original → g23v4</h2></div>
       <div class="row">
-        <label>max new tokens <input id="live-max" type="number" min="1" max="512" value="128"></label>
-        <button id="btn-run" class="primary" disabled>Run original → g23v4</button>
-        <button id="btn-stop" class="ghost" disabled>Stop</button>
+        <label class="inline">max new tokens <input id="live-max" type="number" min="1" max="512" value="128"></label>
+        <button id="btn-run" class="primary" type="button" disabled>Run both</button>
+        <button id="btn-stop" class="ghost" type="button" disabled>Stop</button>
       </div>
-    </article>
-
-    <div class="livegrid">
-      <article class="card gen" id="gen-original"><div class="cardhead"><h2>Original Qwen3.5-0.8B</h2><span class="stats"></span></div><pre class="out mono"></pre><div class="firstlogits"></div></article>
-      <article class="card gen" id="gen-edited"><div class="cardhead"><h2>Edited g23v4</h2><span class="stats"></span></div><pre class="out mono"></pre><div class="firstlogits"></div></article>
-    </div>
-    <pre id="live-log" class="log mono small"></pre>
-  </div>
+      <div class="livegrid" style="margin-top:12px">
+        <article class="gen original" id="gen-original"><div class="genhead"><h3>Original Qwen3.5-0.8B</h3><span class="stats"></span></div><pre class="out mono"></pre><div class="firstlogits"></div></article>
+        <article class="gen edited" id="gen-edited"><div class="genhead"><h3>Edited g23v4</h3><span class="stats"></span></div><pre class="out mono"></pre><div class="firstlogits"></div></article>
+      </div>
+      <pre id="live-log" class="log mono" style="margin-top:12px" aria-label="Runner log"></pre>
+    </li>
+  </ol>
 </section>
 </main>
 
-<footer class="wrap foot">
-  <p>Data: <a href="data/circuit_traces.json">circuit_traces.json</a> (recorded outputs, per-token projections, exact replay states, head-attention scalars and the readout basis), built by <code>scripts/capture_traces.py</code> + <code>scripts/export_circuit_traces.py</code> from the campaign records under <code>experiments/</code>; the ONNX export by <code>scripts/export_webgpu_onnx.py</code>. Read the <a href="blog.html">blog post</a> for the full story.</p>
+<footer class="foot">
+  <div class="wrap">
+    <p>Data: <a href="data/circuit_traces.json">circuit_traces.json</a> (recorded outputs, per-token projections, exact replay states, head-attention scalars and the readout basis), built by <code>scripts/capture_traces.py</code> + <code>scripts/export_circuit_traces.py</code> from the campaign records under <code>experiments/</code>; the ONNX export by <code>scripts/export_webgpu_onnx.py</code>. Read the <a href="blog.html">blog post</a> for the full story, controls and limitations.</p>
+    <p class="credit">Research agent: Mythos 5.1 · Apache-2.0</p>
+  </div>
 </footer>
-<script type="module" src="app.js"></script>
+<script type="module" src="app.js?v=20261104b"></script>
 </body>
 </html>

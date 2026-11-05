@@ -5,40 +5,124 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Programming Four Dead Neurons: Repairing Tool Calling and Routing Stranded Information in Qwen3.5-0.8B Without Training</title>
 <meta name="description" content="Two closed-form weight edits of Qwen3.5-0.8B, built without training: a two-neuron layer-23 readout that repairs trigger-happy tool calling (g23v3), and a four-neuron, two-layer circuit that routes a stranded ambiguity feature from the user's clause to the decision token through an unchanged attention head (g23v4). 12,281 weights, 0.0016% of the model.">
+<meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131412" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261104b">
+<script src="theme.js?v=20261104b"></script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M5 21C10 7 22 7 27 21' fill='none' stroke='%23888' stroke-width='1.5'/%3E%3Ccircle cx='5' cy='21' r='4' fill='%236250d6'/%3E%3Ccircle cx='12.3' cy='21' r='4' fill='%23eb6834'/%3E%3Ccircle cx='19.7' cy='21' r='4' fill='%23d6409f'/%3E%3Ccircle cx='27' cy='21' r='4' fill='%231baf7a'/%3E%3C/svg%3E">
 <style>
-:root{--ink:#111827;--muted:#4b5563;--rule:#e5e7eb;--accent:#0f766e;--bg:#ffffff;--code:#f3f4f6;--quote:#f8fafc}
-@media (prefers-color-scheme:dark){:root{--ink:#e5e7eb;--muted:#9ca3af;--rule:#374151;--accent:#5eead4;--bg:#0b1220;--code:#111827;--quote:#0f172a} img{background:#fff;border-radius:6px;padding:6px}}
-*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-main{max-width:860px;margin:0 auto;padding:40px 16px 80px}
-h1{font-size:2.1rem;line-height:1.2;margin:0 0 .4em;letter-spacing:-.01em}
-h1+p>em{font-size:1.15rem;color:var(--muted);display:block;margin-bottom:1.2em;font-style:italic}
-h2{font-size:1.45rem;margin:2.2em 0 .6em;border-top:1px solid var(--rule);padding-top:1.2em}
-p,li{max-width:72ch}
-a{color:var(--accent)}
-code{font:0.9em/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--code);padding:.1em .3em;border-radius:4px}
-pre{background:var(--code);padding:14px 16px;border-radius:8px;overflow-x:auto;font-size:.82rem;line-height:1.45}
-pre code{background:none;padding:0;font-size:inherit}
-table{border-collapse:collapse;font-size:.88rem;margin:1.2em 0;display:block;overflow-x:auto;max-width:100%}
-th,td{border-bottom:1px solid var(--rule);padding:.45em .7em;text-align:left;vertical-align:top}
-th{background:var(--code)}
-figure{margin:2em 0 .6em}figure img{width:100%;height:auto}
-p.caption{font-size:.92rem;color:var(--muted);max-width:none;margin-top:0;border-left:3px solid var(--accent);padding-left:12px}
-blockquote{margin:1em 0;padding:.2em 1em;background:var(--quote);border-left:3px solid var(--rule)}
-footer{margin-top:4em;color:var(--muted);font-size:.85rem;border-top:1px solid var(--rule);padding-top:1em}
+.post{padding:0 0 40px}
+.masthead{position:relative;padding:38px 0 26px;border-bottom:1px solid var(--rule);background:radial-gradient(var(--dot) 1px,transparent 1.2px) 0 0/18px 18px}
+.masthead::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 0%,var(--bg) 92%);pointer-events:none}
+.masthead .wrap{position:relative;max-width:1100px}
+.masthead h1{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,3.4vw,2.9rem);line-height:1.1;letter-spacing:-.02em;font-variation-settings:"opsz" 72;max-width:26ch;margin:0}
+.masthead .deck{font-family:var(--serif);font-style:italic;font-size:1.18rem;line-height:1.5;max-width:62ch;color:var(--ink-2);margin:16px 0 0}
+.byline{margin:18px 0 0;font-size:.9rem;color:var(--muted);max-width:90ch;line-height:1.6}
+.byline a{color:var(--accent-ink)}
+.readmeta{display:flex;flex-wrap:wrap;gap:6px 18px;margin:16px 0 0;font-family:var(--mono);font-size:.76rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.masthead .headline{margin-top:22px;max-width:1060px}
+.post-body{display:grid;grid-template-columns:230px minmax(0,740px);gap:56px;justify-content:center;padding:34px 20px 0;max-width:1100px;margin:0 auto}
+.toc{position:sticky;top:70px;align-self:start;font-size:.86em}
+.toc h2{font-family:var(--sans);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:500;margin:0 0 8px}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.toc a{display:block;color:var(--ink-2);text-decoration:none;padding:4px 8px;border-left:2px solid var(--rule);line-height:1.35}
+.toc a:hover{color:var(--ink);border-color:var(--ink)}
+.toc .back{margin-top:16px;display:block;color:var(--accent-ink);text-decoration:none;padding:4px 8px}
+.toc details summary{display:none}
+.prose{font-family:var(--serif);font-size:1.1rem;line-height:1.66;color:var(--ink)}
+.prose>p,.prose>ul,.prose>ol{max-width:68ch}
+.prose p{margin:0 0 1.15em}
+.prose ul,.prose ol{padding-left:1.3em;margin:0 0 1.15em}
+.prose li{margin:.35em 0}
+.prose li::marker{color:var(--muted)}
+.prose h2{font-family:var(--display);font-size:1.75rem;line-height:1.15;letter-spacing:-.015em;font-variation-settings:"opsz" 36;margin:2.4em 0 .7em;padding-top:1.1em;border-top:1px solid var(--rule);font-weight:600}
+.prose h2:first-child{margin-top:0;padding-top:0;border-top:none}
+.prose h3{font-family:var(--sans);font-size:1.02rem;font-weight:600;letter-spacing:0;margin:1.9em 0 .55em;color:var(--ink)}
+.prose strong{font-weight:600}
+.prose em{font-style:italic}
+.prose a{color:var(--accent-ink);text-decoration-thickness:1px;text-underline-offset:.16em}
+.prose a:hover{color:var(--ink)}
+.prose code{font-size:.84em;background:var(--panel-2);border:1px solid var(--rule);padding:.08em .35em;border-radius:5px;color:var(--ink);font-family:var(--mono)}
+.prose pre{background:var(--panel);border:1px solid var(--rule);padding:14px 16px;border-radius:10px;overflow-x:auto;font-size:.82rem;line-height:1.5;margin:0 0 1.3em;font-family:var(--mono);box-shadow:var(--shadow)}
+.prose pre code{background:none;border:none;padding:0;font-size:inherit}
+.prose blockquote{margin:1.2em 0;padding:.4em 1.1em;background:var(--panel-2);border-left:3px solid var(--rule-2);border-radius:0 8px 8px 0;color:var(--ink-2)}
+.tablewrap{overflow-x:auto;margin:1.3em 0;border:1px solid var(--rule);border-radius:10px;background:var(--panel);box-shadow:var(--shadow)}
+.prose table{border-collapse:collapse;font-family:var(--sans);font-size:.86rem;width:100%;min-width:520px}
+.prose th,.prose td{border-bottom:1px solid var(--rule);padding:.55em .8em;text-align:left;vertical-align:top}
+.prose th{background:var(--panel-2);font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.prose tr:last-child td{border-bottom:none}
+.prose td code,.prose th code{font-size:.9em}
+.fig{margin:1.8em 0 1.8em;width:100%}
+.fig img{width:100%;height:auto;display:block;background:#fcfcfb;border:1px solid var(--rule);border-radius:10px;padding:8px}
+.fig figcaption{font-family:var(--sans);font-size:.86rem;color:var(--muted);line-height:1.5;margin-top:10px;padding-left:12px;border-left:3px solid var(--accent);max-width:none}
+.fig figcaption b{color:var(--ink);font-weight:600}
+.prose .try{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 35%,var(--rule));border-radius:12px;padding:14px 18px;font-family:var(--sans);font-size:.98rem;line-height:1.55;max-width:none}
+.prose .try::before{content:"Try it";display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:4px}
+@media (min-width:1101px){.fig.wide{width:calc(100% + 120px);margin-left:-60px}}
+@media (max-width:1100px){
+  .post-body{grid-template-columns:minmax(0,1fr);gap:0;max-width:780px;padding-top:24px}
+  .toc{position:static;margin-bottom:14px}.toc h2{display:none}.toc ol{display:none}.toc details summary{display:list-item;cursor:pointer;color:var(--accent-ink);font-family:var(--sans);font-size:.9em}.toc details[open] ol{display:grid;margin-top:8px}.toc .back{display:none}
+}
+@media (max-width:640px){
+  .masthead{padding:24px 0 20px}.masthead .deck{font-size:1.05rem}.prose{font-size:1.02rem}.prose h2{font-size:1.45rem}
+  .prose pre{font-size:.76rem;padding:12px}
+}
 </style>
 </head>
 <body>
-<main>
-<h1 id="programming-four-dead-neurons-repairing-tool-calling-and-routing-stranded-information-in-qwen35-08b-without-training">Programming Four Dead Neurons: Repairing Tool Calling and Routing Stranded Information in Qwen3.5-0.8B Without Training</h1>
-<p><em>How Mythos 5.1 diagnosed a missing inhibition and a positional attention bottleneck in Qwen3.5-0.8B — and hand-wired a 4-neuron, 2-layer circuit (0.0016% of weights) on an M4 Pro MacBook.</em></p>
-<p>Research agent: Mythos 5.1. Hardware: one Apple M4 Pro (24 GB unified memory), MLX-LM 0.32.2, BF16 weights. Code, data, hash-chained ledgers and the two lab notebooks: <a href="https://github.com/scasella/qwen3.5-toolpatch">github.com/scasella/qwen3.5-toolpatch</a>. Weights: <a href="https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v4">scasella91/Qwen3.5-0.8B-toolpatch-g23v4</a> (and <a href="https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v3">g23v3</a>). Interactive companion: the <a href="index.html">four-neuron circuit explorer</a> (runs the exact closed-form circuit in your browser, no download) and its live WebGPU tab.</p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap navbar">
+    <a class="brand" href="./" aria-label="qwen3.5-toolpatch home">
+      <svg class="glyph" viewBox="0 0 34 20" aria-hidden="true"><path d="M4 14 C 10 1, 24 1, 30 14" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".45"/><circle cx="4" cy="14" r="3.3" fill="var(--n-j0)"/><circle cx="12.7" cy="14" r="3.3" fill="var(--n-j1)"/><circle cx="21.3" cy="14" r="3.3" fill="var(--n-j2)"/><circle cx="30" cy="14" r="3.3" fill="var(--n-j3)"/></svg>
+      <span class="name">qwen3.5-toolpatch</span>
+    </a>
+    <nav class="sitenav" aria-label="Site">
+      <a href="./">Explorer</a>
+      <a class="current" href="blog.html" aria-current="page">Blog post</a>
+      <a class="ext" href="https://github.com/scasella/qwen3.5-toolpatch">GitHub</a>
+      <a class="ext" href="https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v4">Hugging Face</a>
+    </nav>
+    <button id="theme-toggle" class="iconbtn" type="button" aria-label="Theme">
+      <svg class="auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17A8.5 8.5 0 0 0 12 3.5z" fill="currentColor" stroke="none"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+    </button>
+  </div>
+</header>
+<main id="main">
+<article class="post">
+  <header class="masthead">
+    <div class="wrap">
+      <p class="kicker">Weight-space programming · Qwen3.5-0.8B · research agent Mythos 5.1</p>
+      <h1>Programming Four Dead Neurons: Repairing Tool Calling and Routing Stranded Information in Qwen3.5-0.8B Without Training</h1>
+      <p class="deck">How Mythos 5.1 diagnosed a missing inhibition and a positional attention bottleneck in Qwen3.5-0.8B — and hand-wired a 4-neuron, 2-layer circuit (0.0016% of weights) on an M4 Pro MacBook.</p>
+      <div class="byline">Research agent: Mythos 5.1. Hardware: one Apple M4 Pro (24 GB unified memory), MLX-LM 0.32.2, BF16 weights. Code, data, hash-chained ledgers and the two lab notebooks: <a href="https://github.com/scasella/qwen3.5-toolpatch">github.com/scasella/qwen3.5-toolpatch</a>. Weights: <a href="https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v4">scasella91/Qwen3.5-0.8B-toolpatch-g23v4</a> (and <a href="https://huggingface.co/scasella91/Qwen3.5-0.8B-toolpatch-g23v3">g23v3</a>). Interactive companion: the <a href="index.html">four-neuron circuit explorer</a> (runs the exact closed-form circuit in your browser, no download) and its live WebGPU tab.</div>
+      <p class="readmeta"><span>19 min read</span><span>6 sections · 4 figures</span><span>November 2026</span></p>
+      <!-- Headline numbers: the campaigns' final tables (experiments/*/analysis, §1 below). -->
+      <ul class="headline" aria-label="Headline results">
+        <li class="stat base reveal"><span class="k">Base model</span><span class="v">35.4<small>%</small></span><span class="d">68 of 192 benchmark tool items · calls on everything</span></li>
+        <li class="stat g23v3 reveal"><span class="k">g23v3 · 2 neurons</span><span class="v">80.7<small>%</small></span><span class="d">155 of 192 · NO_TOOL and explicit-missing repaired, 0/30 ambiguous</span></li>
+        <li class="stat g23v4 reveal"><span class="k">g23v4 · 4 neurons</span><span class="v">96.4<small>%</small></span><span class="d">185 of 192 · +117 wrong→right, 0 right→wrong, 30/30 ambiguous</span></li>
+        <li class="stat weights reveal"><span class="k">Unseen phrasings</span><span class="v">0<span class="arrow">→</span>9<span class="arrow">→</span>27</span><span class="d">of 32 stress-suite ambiguous items; all 32 resolved calls token-identical</span></li>
+      </ul>
+    </div>
+  </header>
+  <div class="post-body">
+    <aside class="toc" aria-label="Contents">
+      <h2>Contents</h2>
+      <details open><summary>Contents</summary><ol><li><a href="#1-introduction-and-headline-results">1. Introduction and headline results</a></li><li><a href="#2-act-i-g23v3-a-missing-inhibition-and-the-two-neuron-layer-23-swiglu-gate">2. Act I (g23v3): a missing inhibition and the two-neuron layer-23 SwiGLU gate</a></li><li><a href="#3-the-wall-030-on-either-x-or-y-and-where-the-missing-information-hides">3. The wall: 0/30 on &quot;either X or Y&quot;, and where the missing information hides</a></li><li><a href="#4-act-ii-g23v4-hijacking-an-attention-head-across-layers">4. Act II (g23v4): hijacking an attention head across layers</a></li><li><a href="#5-predictive-simulation-negative-controls-and-limitations">5. Predictive simulation, negative controls, and limitations</a></li><li><a href="#6-what-this-cost-and-how-to-check-it">6. What this cost, and how to check it</a></li><li><a href="#acknowledgements">Acknowledgements</a></li><li><a href="#citation">Citation</a></li></ol></details>
+      <a class="back" href="./">← Open the interactive explorer</a>
+    </aside>
+    <div class="prose">
 <h2 id="1-introduction-and-headline-results">1. Introduction and headline results</h2>
 <p>There are two ways to change what a language model does by editing its weights. The first is <em>unconditional global steering</em>: find a direction in the residual stream that correlates with a behaviour, and add or remove it everywhere (the "abliteration" family does this with refusal). It is cheap and it works, in the sense that the behaviour moves; it also moves on every prompt, because nothing in the edit asks whether the behaviour was appropriate. The second is <em>conditional circuit construction</em>: find the evidence the model already computes, find a place where it is read, and wire a small piece of logic that fires only when that evidence is present. The second is harder, because the evidence has to be where you need it, and because the model does not come with a bias term you can set.</p>
 <p>This post is the story of doing the second thing twice on the same model, with the same constraints: no gradients, no optimizer, no LoRA, no fitting to target outputs; only closed-form linear algebra on activations captured from a budget of forward passes, and a hard cap of 0.05% of the weights, eight tensors, three layers. The model is <code>Qwen/Qwen3.5-0.8B</code> (24 layers, width 1,024, SwiGLU MLPs of width 3,584, six full-attention layers among eighteen linear-attention layers, tied unembedding), run in BF16 with greedy decoding on a laptop.</p>
 <p>The task is semantic tool calling under a fixed system prompt: <em>call the tool when a request needs it; reply exactly <code>NO_TOOL</code> when it does not; reply exactly <code>NEED_CLARIFICATION</code> when a required value is missing or ambiguous</em>. The base model is trigger-happy: on 192 benchmark items spanning five cohorts (practice, held-out selection families, two renamed-identifier sets, a final-split proxy) it gets 68 right. It makes every required call (68/72) and almost nothing else: 0/60 explanation requests, 0/30 explicitly-missing values, 0/30 unresolved two-value requests (<code>either "X" or "Y", with no preference specified</code>) — it just calls, picking one value.</p>
-<figure><img alt="Figure 1" src="figures/fig1_progression_overview.svg"></figure>
-<p class="caption"><strong>Figure 1.</strong> Base → g23v3 → g23v4 on the 192 benchmark tool items (A), the held-out 64-item Ambiguity Stress Suite (B) and the reversed / random controls on the same six tensors (C). Non-tool cohorts (not drawn): 32 short regression answers token-identical, 32 free-form 128-token essays intact, under both edits.</p>
+<figure class="fig wide"><img alt="Figure 1" src="figures/fig1_progression_overview.svg" loading="lazy"><figcaption><b>Figure 1.</b> Base → g23v3 → g23v4 on the 192 benchmark tool items (A), the held-out 64-item Ambiguity Stress Suite (B) and the reversed / random controls on the same six tensors (C). Non-tool cohorts (not drawn): 32 short regression answers token-identical, 32 free-form 128-token essays intact, under both edits.</figcaption></figure>
 <p>Two edits, built in two campaigns:</p>
 <ul>
 <li><strong>g23v3</strong> (Act I) re-purposes two near-dead neurons of the last MLP layer into a gated readout. It takes the 192 items from <strong>35.4% to 80.7%</strong> (68 → 155), repairs 59/60 explanation requests and 28/30 explicit-missing requests, keeps all 72 required calls token-identical, and leaves 128-token prose intact. 6,142 BF16 entries, three tensors, one layer. It repairs <strong>0/30</strong> of the ambiguous "either X or Y" requests.</li>
@@ -63,15 +147,13 @@ up[J2]   = k_r·r        down[:,J2] = u_NE − u_NO   (NEED_CLARIFICATION over N
 <p>The result: 59/60 NO_TOOL, 28/30 explicit-missing, 68/72 calls token-identical, 32/32 regression answers token-identical, 32/32 essays intact; reversed-sign and norm-matched random controls on the same two neurons do nothing useful or break calls. And 0/30 on ambiguity.</p>
 <h2 id="3-the-wall-030-on-either-x-or-y-and-where-the-missing-information-hides">3. The wall: 0/30 on "either X or Y", and where the missing information hides</h2>
 <p>Why did a readout that repairs "explain, do not run" fail on "either <code>cedar_488</code> or <code>birch_690</code>, no preference"? Because at the decision position the ambiguous items look like complete calls. Leave-one-family-out probes against calls at the <code>\n\n</code> token never exceeded d′ ≈ 3 in any of the 25 layer boundaries (Figure 2A, green), and no linear readout of that position — raw, with the family subspace projected out, or with shrinkage LDA — got past d′ ≈ 3.9, always with negative margins (the campaign called this Hypothesis A, within-pair subspace masking: refuted as a sufficient mechanism). A third layer-23 neuron reading the decision position could not reach zero regressions.</p>
-<figure><img alt="Figure 2" src="figures/fig2_positional_bottleneck_dprime.svg"></figure>
-<p class="caption"><strong>Figure 2.</strong> Leave-one-family-out separability (d′) per layer boundary. A: at the decision token, the explanation feature is strong (blue) and the ambiguity feature is weak (green, three estimators). B: at the user's clause tokens — the connector "or", the second value, the indecision tail and the clause-end "." — the same 192 items separate ambiguous from call/resolved with shrinkage-LDA d′ 9.5–21.8 and 100% accuracy, from layer 10 onward. The natural attention from the decision query to the clause-end token is 0.000–0.003 at layer 23.</p>
+<figure class="fig wide"><img alt="Figure 2" src="figures/fig2_positional_bottleneck_dprime.svg" loading="lazy"><figcaption><b>Figure 2.</b> Leave-one-family-out separability (d′) per layer boundary. A: at the decision token, the explanation feature is strong (blue) and the ambiguity feature is weak (green, three estimators). B: at the user's clause tokens — the connector "or", the second value, the indecision tail and the clause-end "." — the same 192 items separate ambiguous from call/resolved with shrinkage-LDA d′ 9.5–21.8 and 100% accuracy, from layer 10 onward. The natural attention from the decision query to the clause-end token is 0.000–0.003 at layer 23.</figcaption></figure>
 <p>So the second campaign probed <em>other positions</em>. Matched triples were built for each tool family — (i) a complete single-value call, (ii) a <strong>resolved</strong> two-value call that mentions both values but settles the choice ("use X rather than Y", "previously Y, but today use X", "X instead of Y"), (iii) an <strong>unresolved</strong> ambiguous request — with six derivation phrasings, renamed twins, and held-out phrasings on held-out families: 192 items, three teacher-forced passes. The contrast between (ii) and (iii) is the point: a circuit that fires on "two values are mentioned" would be wrong half the time.</p>
 <p>At the user's clause tokens the picture flips (Figure 2B). At the clause-end period, shrinkage-LDA separates unresolved from {call, resolved} with d′ 9.5–14.2 and perfect accuracy; at the connector "or" and the indecision tail, d′ 13–22. The representation of "unresolved alternatives" is strong, linear and present from layer 10 on — where the two values are written. It is simply never routed to where the decision is made: the attention mass from the decision query onto the clause-end token is 0.000–0.003 at layer 23 (heads 2 and 6 attend 97% and 87% to themselves), ≤ 0.008 at layer 19, and at most 0.062 at layer 15. This is the <strong>positional bottleneck</strong> (Hypothesis B, supported): the feature exists but sits stranded in the prompt. No single head's output at the decision carries it (d′ ≤ 2.3 for every head of every full-attention layer; Hypothesis C, no), and transport through the existing layer-15 heads was rejected on arithmetic — gain 0.6, attention 0.06, residual RMS 0.09 at the clause end gives about 0.2 units delivered per unit written, while a usable feature at layer 23 needs a write of about 3 that would then be reprocessed by eight layers.</p>
 <p>The question became: can a weight edit move a feature from one position to another?</p>
 <h2 id="4-act-ii-g23v4-hijacking-an-attention-head-across-layers">4. Act II (g23v4): hijacking an attention head across layers</h2>
 <p>The answer is a two-stage circuit — J0 → head 6 → J3 — that leaves every attention weight untouched. It uses the fact that attention is a <em>content-addressed read</em>: a head reads from whichever position has a key aligned with its query. If an upstream neuron writes, at the clause end, a residual vector whose layer-23 key is aligned with head 6's decision query, head 6 will attend there and copy that position's value to the decision, whether or not it was ever trained to. Three constructions made this work.</p>
-<figure><img alt="Figure 3" src="figures/fig3_four_neuron_circuit_diagram.svg"></figure>
-<p class="caption"><strong>Figure 3.</strong> The four-neuron circuit and the real activation distributions. Top: Act I (layer 23, decision position) and Act II (layer 22 → head 6 → layer 23). Bottom: J1 at the decision on a fresh capture of 143 items across all cohorts (original model); J0 at the clause end, head-6 attention and J3 at the decision from the real edited model's teacher-forced passes on 64 derivation items and the 32 stress-suite ambiguous items (27 hits, 5 misses whose stage-1 gate stayed shut). Values below 10⁻⁴ are drawn at 10⁻⁴.</p>
+<figure class="fig wide"><img alt="Figure 3" src="figures/fig3_four_neuron_circuit_diagram.svg" loading="lazy"><figcaption><b>Figure 3.</b> The four-neuron circuit and the real activation distributions. Top: Act I (layer 23, decision position) and Act II (layer 22 → head 6 → layer 23). Bottom: J1 at the decision on a fresh capture of 143 items across all cohorts (original model); J0 at the clause end, head-6 attention and J3 at the decision from the real edited model's teacher-forced passes on 64 derivation items and the 32 stress-suite ambiguous items (27 hits, 5 misses whose stage-1 gate stayed shut). Values below 10⁻⁴ are drawn at 10⁻⁴.</figcaption></figure>
 <h3 id="41-conjunction-gating-clause-end-and-unresolved">4.1 Conjunction gating: "clause end AND unresolved"</h3>
 <p>Stage 1 is <strong>J0 = 2525</strong>, the quietest neuron of the layer-22 MLP (max |activation| 0.205 over 116k prompt positions). It reads the layer-22 MLP input <code>x₂₂</code> at every prompt token. The unresolved direction <code>u</code> (shrinkage-LDA, ambiguous clause end vs call/resolved clause end; leave-one-family-out d′ 10) on its own is not safe: it also lights up on the system prompt's own words ("missing or ambiguous", "reply exactly NO_TOOL.") and inside <em>resolved</em> clauses before the resolution arrives (up to 9.6 on the w₁ scale, against 13.7–16.6 on true ambiguous ends). A second direction <code>g</code> — "end of a user fact clause" vs every other position (d′ 9–19 at the ends) — turns the gate into a conjunction: <code>w₁ = unit(0.5·g + u)</code>. On the ambiguous clause ends <code>w₁·x</code> is 13.7–16.6; on 141,000 other positions (every prompt and generated token of call, resolved and NO_TOOL items, prose, short answers) it is at most 9.8. That is what keeps the resolved two-value calls — "use X rather than Y" — from ever triggering: 32/32 of them are token-identical to g23v3 and the base model.</p>
 <h3 id="42-a-threshold-without-a-bias-the-constant-projection-direction">4.2 A threshold without a bias: the constant-projection direction</h3>
@@ -97,8 +179,7 @@ k₃ = 2, θ₃ = 2, λ = 0.3, λ₂ = 0.5, a₃ = 0.1, ρ = 1
 <h2 id="5-predictive-simulation-negative-controls-and-limitations">5. Predictive simulation, negative controls, and limitations</h2>
 <h3 id="51-the-simulator-said-so-first">5.1 The simulator said so first</h3>
 <p>Every number in §4 was computed before the edited model was ever run. An exact CPU replay of layer 23 (the stock MLX modules, fed the captured layer-23 input sequences with J0's write added at every prompt position) predicted that 84/84 captured ambiguous items would emit <code>NE</code> with a margin of at least 11.6 logits over the runner-up, that 108/108 call and resolved items would keep the g23v3 argmax with at most 0.125 logit of change on their top-20 tokens, and that J0's largest write at any generated position would be 0.016. The real model's teacher-forced calibration pass agreed on <strong>64/64</strong> decision tokens with a median absolute logit error of 0.06 (max 0.50), and matched the mechanism quantities point for point (Figure 4B–C: attention, J0, J3). The replay's predictions for the controls were written into the notebook before the control passes were read.</p>
-<figure><img alt="Figure 4" src="figures/fig4_dose_and_controls.svg"></figure>
-<p class="caption"><strong>Figure 4.</strong> A: dose-response and negative controls on the 64-item control set (32 stress ambiguous, 16 stress resolved, 8 practice calls, 4 NO_TOOL, 4 explicit-missing). B–C: CPU replay against the real edited model on the 64 derivation items.</p>
+<figure class="fig wide"><img alt="Figure 4" src="figures/fig4_dose_and_controls.svg" loading="lazy"><figcaption><b>Figure 4.</b> A: dose-response and negative controls on the 64-item control set (32 stress ambiguous, 16 stress resolved, 8 practice calls, 4 NO_TOOL, 4 explicit-missing). B–C: CPU replay against the real edited model on the 64 derivation items.</figcaption></figure>
 <h3 id="52-controls-on-the-same-support">5.2 Controls on the same support</h3>
 <p>Half dose (a₃ = 0.05, b = 0.5) keeps the transport but weakens the readout: 24/32. Double dose is token-identical to the intended edit on all 64 items — a larger write cannot open a shut stage-1 gate and breaks nothing. Reversing J3's output sign gives 0/32 and loses the nine stress items g23v3 had repaired (12 of them become <code>NO_TOOL</code>). And <strong>norm-matched random vectors on the same six tensors</strong> — the same four neurons, the same norms, g23v3's rows kept — are catastrophic: 4/64, 0/16 resolved calls, 0/8 practice calls, 37 items right→wrong against g23v3. The random stage-1 gate fires at arbitrary prompt positions (replay maximum activation <strong>521</strong>) and writes random markers that every later attention head reads. A perturbation of this size is destructive unless it is the structured one.</p>
 <h3 id="53-out-of-fold-honesty">5.3 Out-of-fold honesty</h3>
@@ -108,7 +189,7 @@ k₃ = 2, θ₃ = 2, λ = 0.3, λ₂ = 0.5, a₃ = 0.1, ρ = 1
 <p>One more thing the circuit is not: a policy. The output columns decide what "abstain" means. Swapping <code>u_AB</code> for a least-squares direction that only removes <code>&lt;tool_call&gt;</code> — no literal, no suppression of prose starters — gives a <em>conversational</em> readout of the same circuit: calls stay token-identical, and where the benchmark model says <code>NO_TOOL</code> or <code>NEED_CLARIFICATION</code> the model writes an English sentence ("I cannot change stored text to uppercase as the stored text identifier is not provided."). The detection is the same; the behaviour is a choice of vector.</p>
 <h2 id="6-what-this-cost-and-how-to-check-it">6. What this cost, and how to check it</h2>
 <p>Two campaigns, 67 budgeted forward passes in total (47 of 50 for g23v3, 20 of 50 for g23v4; each pass at most 64 model executions), every one recorded in a hash-chained ledger with its hypothesis and prediction written before execution. Peak process memory 3.5 GiB. No pass was run on held-out test instances; the stress suite was generated after the circuit was designed. The exported BF16 checkpoints reproduce the in-process token streams bit-for-bit in a fresh stock MLX-LM process, and the 40 KB patch files in the repository rebuild them from the public base checkpoint in under a second, with every edited tensor's SHA-256 checked against the published values.</p>
-<p>If you want to see the circuit rather than read about it: the <a href="index.html">explorer</a> runs the exact closed-form readout in the browser — pick any of 143 prompts, toggle Act I and Act II, drag the gains and gates, watch J0 light up on the clause-end period, the head-6 attention arc jump from 0.0001 to 0.99, and the first-token distribution move from <code>&lt;tool_call&gt;</code> to <code>NE</code> — and its second tab runs both models live on WebGPU.</p>
+<p class="try">If you want to see the circuit rather than read about it: the <a href="index.html">explorer</a> runs the exact closed-form readout in the browser — pick any of 143 prompts, toggle Act I and Act II, drag the gains and gates, watch J0 light up on the clause-end period, the head-6 attention arc jump from 0.0001 to 0.99, and the first-token distribution move from <code>&lt;tool_call&gt;</code> to <code>NE</code> — and its second tab runs both models live on WebGPU.</p>
 <h2 id="acknowledgements">Acknowledgements</h2>
 <p>Research, engineering and writing by Mythos 5.1, working from a brief that fixed the task, the budget and the rules of evidence. The base model is Qwen3.5-0.8B by the Qwen team (Apache-2.0); the ONNX graphs behind the live tab are onnx-community's. Apache-2.0 throughout.</p>
 <h2 id="citation">Citation</h2>
@@ -119,7 +200,15 @@ k₃ = 2, θ₃ = 2, λ = 0.3, λ₂ = 0.5, a₃ = 0.1, ρ = 1
   url    = {https://scasella.github.io/qwen3.5-toolpatch/blog.html}
 }
 </code></pre>
-<footer>Built from <code>blog/index.md</code> by <code>scripts/build_blog_html.py</code>. Figures: <code>scripts/make_figures.py</code>, computed from the campaign records under <code>experiments/</code>. Apache-2.0.</footer>
+    </div>
+  </div>
+</article>
 </main>
+<footer class="foot">
+  <div class="wrap">
+    <p>Built from <code>blog/index.md</code> by <code>scripts/build_blog_html.py</code>. Figures: <code>scripts/make_figures.py</code>, computed from the campaign records under <code>experiments/</code>. Code, data, ledgers and the explorer: <a href="https://github.com/scasella/qwen3.5-toolpatch">github.com/scasella/qwen3.5-toolpatch</a>. Apache-2.0.</p>
+    <p class="credit">Research agent: Mythos 5.1 · Apache-2.0</p>
+  </div>
+</footer>
 </body>
 </html>
