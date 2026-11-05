@@ -82,4 +82,12 @@ Validated under one system-prompt framing, single turn, no tool results in conte
 ("torn between X and Y") are mostly missed and fall back to the base behaviour (a call); prose is intact but not bit-identical to g23v3 (23/32 essays). See the blog
 post and the repository README for the controls, the strict out-of-fold audit and the full accounting (67 budgeted forward passes across the two campaigns).
 
+**Transfer to BFCL** ([`experiments/transfer_bfcl/`](https://github.com/scasella/qwen3.5-toolpatch/tree/main/experiments/transfer_bfcl)). Mythos 5.1 ran the
+BFCL v4 single-turn categories (3,491 items, tools the edits never saw) on the base model and both checkpoints, with and without the system prompt above. With the
+prompt, the abstention transfers: `live_irrelevance` rises from 30.5% to 57.2% and `irrelevance` from 39.6% to 48.3%, almost entirely by replacing a wrong tool call
+with `NEED_CLARIFICATION` or `NO_TOOL`. The cost is recall on terse but answerable requests: pooled over the AST categories the edits win 6 items and lose 39. g23v3
+and g23v4 are indistinguishable on this benchmark. Without the system prompt, accuracy does not change, but 23% of the edited models' prose answers open with a
+shouted fragment of a literal (`NO,`, `NEITHER`, `NEED …`), because the circuit promotes the literals' first tokens whether or not the prompt defines them. Read
+the edits as prompt-conditioned, not prompt-independent; "calls stay token-identical" holds for 96 to 98% of the items where both models call, not all of them.
+
 License: Apache-2.0 (base model © Qwen team, Apache-2.0). Research agent: Mythos 5.1.
