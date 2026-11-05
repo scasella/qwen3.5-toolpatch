@@ -1,0 +1,1238 @@
+{
+ "accuracy": {
+  "base/stock/simple_python": {
+   "correct": 270,
+   "total": 400,
+   "accuracy": 0.675
+  },
+  "g23v3/stock/simple_python": {
+   "correct": 267,
+   "total": 400,
+   "accuracy": 0.6675
+  },
+  "g23v4/stock/simple_python": {
+   "correct": 267,
+   "total": 400,
+   "accuracy": 0.6675
+  },
+  "base/stock/multiple": {
+   "correct": 127,
+   "total": 200,
+   "accuracy": 0.635
+  },
+  "g23v3/stock/multiple": {
+   "correct": 127,
+   "total": 200,
+   "accuracy": 0.635
+  },
+  "g23v4/stock/multiple": {
+   "correct": 127,
+   "total": 200,
+   "accuracy": 0.635
+  },
+  "base/stock/parallel": {
+   "correct": 71,
+   "total": 200,
+   "accuracy": 0.355
+  },
+  "g23v3/stock/parallel": {
+   "correct": 67,
+   "total": 200,
+   "accuracy": 0.335
+  },
+  "g23v4/stock/parallel": {
+   "correct": 68,
+   "total": 200,
+   "accuracy": 0.34
+  },
+  "base/stock/parallel_multiple": {
+   "correct": 104,
+   "total": 200,
+   "accuracy": 0.52
+  },
+  "g23v3/stock/parallel_multiple": {
+   "correct": 104,
+   "total": 200,
+   "accuracy": 0.52
+  },
+  "g23v4/stock/parallel_multiple": {
+   "correct": 101,
+   "total": 200,
+   "accuracy": 0.505
+  },
+  "base/stock/irrelevance": {
+   "correct": 195,
+   "total": 240,
+   "accuracy": 0.8125
+  },
+  "g23v3/stock/irrelevance": {
+   "correct": 188,
+   "total": 240,
+   "accuracy": 0.7833333333333333
+  },
+  "g23v4/stock/irrelevance": {
+   "correct": 189,
+   "total": 240,
+   "accuracy": 0.7875
+  },
+  "base/stock/live_simple": {
+   "correct": 136,
+   "total": 258,
+   "accuracy": 0.5271317829457365
+  },
+  "g23v3/stock/live_simple": {
+   "correct": 138,
+   "total": 258,
+   "accuracy": 0.5348837209302325
+  },
+  "g23v4/stock/live_simple": {
+   "correct": 138,
+   "total": 258,
+   "accuracy": 0.5348837209302325
+  },
+  "base/stock/live_multiple": {
+   "correct": 607,
+   "total": 1053,
+   "accuracy": 0.5764482431149098
+  },
+  "g23v3/stock/live_multiple": {
+   "correct": 611,
+   "total": 1053,
+   "accuracy": 0.5802469135802469
+  },
+  "g23v4/stock/live_multiple": {
+   "correct": 608,
+   "total": 1053,
+   "accuracy": 0.577397910731244
+  },
+  "base/stock/live_parallel": {
+   "correct": 10,
+   "total": 16,
+   "accuracy": 0.625
+  },
+  "g23v3/stock/live_parallel": {
+   "correct": 10,
+   "total": 16,
+   "accuracy": 0.625
+  },
+  "g23v4/stock/live_parallel": {
+   "correct": 10,
+   "total": 16,
+   "accuracy": 0.625
+  },
+  "base/stock/live_parallel_multiple": {
+   "correct": 10,
+   "total": 24,
+   "accuracy": 0.4166666666666667
+  },
+  "g23v3/stock/live_parallel_multiple": {
+   "correct": 10,
+   "total": 24,
+   "accuracy": 0.4166666666666667
+  },
+  "g23v4/stock/live_parallel_multiple": {
+   "correct": 10,
+   "total": 24,
+   "accuracy": 0.4166666666666667
+  },
+  "base/stock/live_irrelevance": {
+   "correct": 690,
+   "total": 884,
+   "accuracy": 0.7805429864253394
+  },
+  "g23v3/stock/live_irrelevance": {
+   "correct": 696,
+   "total": 884,
+   "accuracy": 0.7873303167420814
+  },
+  "g23v4/stock/live_irrelevance": {
+   "correct": 698,
+   "total": 884,
+   "accuracy": 0.7895927601809954
+  },
+  "base/stock/live_relevance": {
+   "correct": 10,
+   "total": 16,
+   "accuracy": 0.625
+  },
+  "g23v3/stock/live_relevance": {
+   "correct": 10,
+   "total": 16,
+   "accuracy": 0.625
+  },
+  "g23v4/stock/live_relevance": {
+   "correct": 10,
+   "total": 16,
+   "accuracy": 0.625
+  },
+  "base/campaign/simple_python": {
+   "correct": 325,
+   "total": 400,
+   "accuracy": 0.8125
+  },
+  "g23v3/campaign/simple_python": {
+   "correct": 319,
+   "total": 400,
+   "accuracy": 0.7975
+  },
+  "g23v4/campaign/simple_python": {
+   "correct": 321,
+   "total": 400,
+   "accuracy": 0.8025
+  },
+  "base/campaign/multiple": {
+   "correct": 159,
+   "total": 200,
+   "accuracy": 0.795
+  },
+  "g23v3/campaign/multiple": {
+   "correct": 155,
+   "total": 200,
+   "accuracy": 0.775
+  },
+  "g23v4/campaign/multiple": {
+   "correct": 155,
+   "total": 200,
+   "accuracy": 0.775
+  },
+  "base/campaign/parallel": {
+   "correct": 141,
+   "total": 200,
+   "accuracy": 0.705
+  },
+  "g23v3/campaign/parallel": {
+   "correct": 135,
+   "total": 200,
+   "accuracy": 0.675
+  },
+  "g23v4/campaign/parallel": {
+   "correct": 136,
+   "total": 200,
+   "accuracy": 0.68
+  },
+  "base/campaign/parallel_multiple": {
+   "correct": 144,
+   "total": 200,
+   "accuracy": 0.72
+  },
+  "g23v3/campaign/parallel_multiple": {
+   "correct": 141,
+   "total": 200,
+   "accuracy": 0.705
+  },
+  "g23v4/campaign/parallel_multiple": {
+   "correct": 141,
+   "total": 200,
+   "accuracy": 0.705
+  },
+  "base/campaign/irrelevance": {
+   "correct": 95,
+   "total": 240,
+   "accuracy": 0.3958333333333333
+  },
+  "g23v3/campaign/irrelevance": {
+   "correct": 117,
+   "total": 240,
+   "accuracy": 0.4875
+  },
+  "g23v4/campaign/irrelevance": {
+   "correct": 116,
+   "total": 240,
+   "accuracy": 0.48333333333333334
+  },
+  "base/campaign/live_simple": {
+   "correct": 153,
+   "total": 258,
+   "accuracy": 0.5930232558139535
+  },
+  "g23v3/campaign/live_simple": {
+   "correct": 140,
+   "total": 258,
+   "accuracy": 0.5426356589147286
+  },
+  "g23v4/campaign/live_simple": {
+   "correct": 140,
+   "total": 258,
+   "accuracy": 0.5426356589147286
+  },
+  "base/campaign/live_multiple": {
+   "correct": 648,
+   "total": 1053,
+   "accuracy": 0.6153846153846154
+  },
+  "g23v3/campaign/live_multiple": {
+   "correct": 644,
+   "total": 1053,
+   "accuracy": 0.6115859449192782
+  },
+  "g23v4/campaign/live_multiple": {
+   "correct": 646,
+   "total": 1053,
+   "accuracy": 0.6134852801519468
+  },
+  "base/campaign/live_parallel": {
+   "correct": 11,
+   "total": 16,
+   "accuracy": 0.6875
+  },
+  "g23v3/campaign/live_parallel": {
+   "correct": 11,
+   "total": 16,
+   "accuracy": 0.6875
+  },
+  "g23v4/campaign/live_parallel": {
+   "correct": 11,
+   "total": 16,
+   "accuracy": 0.6875
+  },
+  "base/campaign/live_parallel_multiple": {
+   "correct": 14,
+   "total": 24,
+   "accuracy": 0.5833333333333334
+  },
+  "g23v3/campaign/live_parallel_multiple": {
+   "correct": 14,
+   "total": 24,
+   "accuracy": 0.5833333333333334
+  },
+  "g23v4/campaign/live_parallel_multiple": {
+   "correct": 14,
+   "total": 24,
+   "accuracy": 0.5833333333333334
+  },
+  "base/campaign/live_irrelevance": {
+   "correct": 270,
+   "total": 884,
+   "accuracy": 0.3054298642533937
+  },
+  "g23v3/campaign/live_irrelevance": {
+   "correct": 509,
+   "total": 884,
+   "accuracy": 0.5757918552036199
+  },
+  "g23v4/campaign/live_irrelevance": {
+   "correct": 506,
+   "total": 884,
+   "accuracy": 0.5723981900452488
+  },
+  "base/campaign/live_relevance": {
+   "correct": 15,
+   "total": 16,
+   "accuracy": 0.9375
+  },
+  "g23v3/campaign/live_relevance": {
+   "correct": 13,
+   "total": 16,
+   "accuracy": 0.8125
+  },
+  "g23v4/campaign/live_relevance": {
+   "correct": 13,
+   "total": 16,
+   "accuracy": 0.8125
+  }
+ },
+ "flips": {
+  "stock/base->g23v4/simple_python": {
+   "wrong_right": 4,
+   "right_wrong": 7,
+   "both_right": 263,
+   "both_wrong": 126
+  },
+  "stock/base->g23v4/multiple": {
+   "wrong_right": 3,
+   "right_wrong": 3,
+   "both_right": 124,
+   "both_wrong": 70
+  },
+  "stock/base->g23v4/parallel": {
+   "wrong_right": 3,
+   "right_wrong": 6,
+   "both_right": 65,
+   "both_wrong": 126
+  },
+  "stock/base->g23v4/parallel_multiple": {
+   "wrong_right": 0,
+   "right_wrong": 3,
+   "both_right": 101,
+   "both_wrong": 96
+  },
+  "stock/base->g23v4/irrelevance": {
+   "wrong_right": 9,
+   "right_wrong": 15,
+   "both_right": 180,
+   "both_wrong": 36
+  },
+  "stock/base->g23v4/live_simple": {
+   "wrong_right": 11,
+   "right_wrong": 9,
+   "both_right": 127,
+   "both_wrong": 111
+  },
+  "stock/base->g23v4/live_multiple": {
+   "wrong_right": 7,
+   "right_wrong": 6,
+   "both_right": 601,
+   "both_wrong": 439
+  },
+  "stock/base->g23v4/live_parallel": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 10,
+   "both_wrong": 6
+  },
+  "stock/base->g23v4/live_parallel_multiple": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 10,
+   "both_wrong": 14
+  },
+  "stock/base->g23v4/live_irrelevance": {
+   "wrong_right": 50,
+   "right_wrong": 42,
+   "both_right": 648,
+   "both_wrong": 144
+  },
+  "stock/base->g23v4/live_relevance": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 10,
+   "both_wrong": 6
+  },
+  "stock/g23v3->g23v4/simple_python": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 267,
+   "both_wrong": 133
+  },
+  "stock/g23v3->g23v4/multiple": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 127,
+   "both_wrong": 73
+  },
+  "stock/g23v3->g23v4/parallel": {
+   "wrong_right": 1,
+   "right_wrong": 0,
+   "both_right": 67,
+   "both_wrong": 132
+  },
+  "stock/g23v3->g23v4/parallel_multiple": {
+   "wrong_right": 0,
+   "right_wrong": 3,
+   "both_right": 101,
+   "both_wrong": 96
+  },
+  "stock/g23v3->g23v4/irrelevance": {
+   "wrong_right": 1,
+   "right_wrong": 0,
+   "both_right": 188,
+   "both_wrong": 51
+  },
+  "stock/g23v3->g23v4/live_simple": {
+   "wrong_right": 1,
+   "right_wrong": 1,
+   "both_right": 137,
+   "both_wrong": 119
+  },
+  "stock/g23v3->g23v4/live_multiple": {
+   "wrong_right": 3,
+   "right_wrong": 6,
+   "both_right": 605,
+   "both_wrong": 439
+  },
+  "stock/g23v3->g23v4/live_parallel": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 10,
+   "both_wrong": 6
+  },
+  "stock/g23v3->g23v4/live_parallel_multiple": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 10,
+   "both_wrong": 14
+  },
+  "stock/g23v3->g23v4/live_irrelevance": {
+   "wrong_right": 6,
+   "right_wrong": 4,
+   "both_right": 692,
+   "both_wrong": 182
+  },
+  "stock/g23v3->g23v4/live_relevance": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 10,
+   "both_wrong": 6
+  },
+  "stock/base->g23v3/simple_python": {
+   "wrong_right": 4,
+   "right_wrong": 7,
+   "both_right": 263,
+   "both_wrong": 126
+  },
+  "stock/base->g23v3/multiple": {
+   "wrong_right": 3,
+   "right_wrong": 3,
+   "both_right": 124,
+   "both_wrong": 70
+  },
+  "stock/base->g23v3/parallel": {
+   "wrong_right": 2,
+   "right_wrong": 6,
+   "both_right": 65,
+   "both_wrong": 127
+  },
+  "stock/base->g23v3/parallel_multiple": {
+   "wrong_right": 1,
+   "right_wrong": 1,
+   "both_right": 103,
+   "both_wrong": 95
+  },
+  "stock/base->g23v3/irrelevance": {
+   "wrong_right": 9,
+   "right_wrong": 16,
+   "both_right": 179,
+   "both_wrong": 36
+  },
+  "stock/base->g23v3/live_simple": {
+   "wrong_right": 10,
+   "right_wrong": 8,
+   "both_right": 128,
+   "both_wrong": 112
+  },
+  "stock/base->g23v3/live_multiple": {
+   "wrong_right": 7,
+   "right_wrong": 3,
+   "both_right": 604,
+   "both_wrong": 439
+  },
+  "stock/base->g23v3/live_parallel": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 10,
+   "both_wrong": 6
+  },
+  "stock/base->g23v3/live_parallel_multiple": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 10,
+   "both_wrong": 14
+  },
+  "stock/base->g23v3/live_irrelevance": {
+   "wrong_right": 50,
+   "right_wrong": 44,
+   "both_right": 646,
+   "both_wrong": 144
+  },
+  "stock/base->g23v3/live_relevance": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 10,
+   "both_wrong": 6
+  },
+  "campaign/base->g23v4/simple_python": {
+   "wrong_right": 0,
+   "right_wrong": 4,
+   "both_right": 321,
+   "both_wrong": 75
+  },
+  "campaign/base->g23v4/multiple": {
+   "wrong_right": 1,
+   "right_wrong": 5,
+   "both_right": 154,
+   "both_wrong": 40
+  },
+  "campaign/base->g23v4/parallel": {
+   "wrong_right": 1,
+   "right_wrong": 6,
+   "both_right": 135,
+   "both_wrong": 58
+  },
+  "campaign/base->g23v4/parallel_multiple": {
+   "wrong_right": 0,
+   "right_wrong": 3,
+   "both_right": 141,
+   "both_wrong": 56
+  },
+  "campaign/base->g23v4/irrelevance": {
+   "wrong_right": 29,
+   "right_wrong": 8,
+   "both_right": 87,
+   "both_wrong": 116
+  },
+  "campaign/base->g23v4/live_simple": {
+   "wrong_right": 1,
+   "right_wrong": 14,
+   "both_right": 139,
+   "both_wrong": 104
+  },
+  "campaign/base->g23v4/live_multiple": {
+   "wrong_right": 3,
+   "right_wrong": 5,
+   "both_right": 643,
+   "both_wrong": 402
+  },
+  "campaign/base->g23v4/live_parallel": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 11,
+   "both_wrong": 5
+  },
+  "campaign/base->g23v4/live_parallel_multiple": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 14,
+   "both_wrong": 10
+  },
+  "campaign/base->g23v4/live_irrelevance": {
+   "wrong_right": 264,
+   "right_wrong": 28,
+   "both_right": 242,
+   "both_wrong": 350
+  },
+  "campaign/base->g23v4/live_relevance": {
+   "wrong_right": 0,
+   "right_wrong": 2,
+   "both_right": 13,
+   "both_wrong": 1
+  },
+  "campaign/g23v3->g23v4/simple_python": {
+   "wrong_right": 2,
+   "right_wrong": 0,
+   "both_right": 319,
+   "both_wrong": 79
+  },
+  "campaign/g23v3->g23v4/multiple": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 155,
+   "both_wrong": 45
+  },
+  "campaign/g23v3->g23v4/parallel": {
+   "wrong_right": 1,
+   "right_wrong": 0,
+   "both_right": 135,
+   "both_wrong": 64
+  },
+  "campaign/g23v3->g23v4/parallel_multiple": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 141,
+   "both_wrong": 59
+  },
+  "campaign/g23v3->g23v4/irrelevance": {
+   "wrong_right": 0,
+   "right_wrong": 1,
+   "both_right": 116,
+   "both_wrong": 123
+  },
+  "campaign/g23v3->g23v4/live_simple": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 140,
+   "both_wrong": 118
+  },
+  "campaign/g23v3->g23v4/live_multiple": {
+   "wrong_right": 3,
+   "right_wrong": 1,
+   "both_right": 643,
+   "both_wrong": 406
+  },
+  "campaign/g23v3->g23v4/live_parallel": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 11,
+   "both_wrong": 5
+  },
+  "campaign/g23v3->g23v4/live_parallel_multiple": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 14,
+   "both_wrong": 10
+  },
+  "campaign/g23v3->g23v4/live_irrelevance": {
+   "wrong_right": 0,
+   "right_wrong": 3,
+   "both_right": 506,
+   "both_wrong": 375
+  },
+  "campaign/g23v3->g23v4/live_relevance": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 13,
+   "both_wrong": 3
+  },
+  "campaign/base->g23v3/simple_python": {
+   "wrong_right": 0,
+   "right_wrong": 6,
+   "both_right": 319,
+   "both_wrong": 75
+  },
+  "campaign/base->g23v3/multiple": {
+   "wrong_right": 1,
+   "right_wrong": 5,
+   "both_right": 154,
+   "both_wrong": 40
+  },
+  "campaign/base->g23v3/parallel": {
+   "wrong_right": 0,
+   "right_wrong": 6,
+   "both_right": 135,
+   "both_wrong": 59
+  },
+  "campaign/base->g23v3/parallel_multiple": {
+   "wrong_right": 0,
+   "right_wrong": 3,
+   "both_right": 141,
+   "both_wrong": 56
+  },
+  "campaign/base->g23v3/irrelevance": {
+   "wrong_right": 29,
+   "right_wrong": 7,
+   "both_right": 88,
+   "both_wrong": 116
+  },
+  "campaign/base->g23v3/live_simple": {
+   "wrong_right": 1,
+   "right_wrong": 14,
+   "both_right": 139,
+   "both_wrong": 104
+  },
+  "campaign/base->g23v3/live_multiple": {
+   "wrong_right": 1,
+   "right_wrong": 5,
+   "both_right": 643,
+   "both_wrong": 404
+  },
+  "campaign/base->g23v3/live_parallel": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 11,
+   "both_wrong": 5
+  },
+  "campaign/base->g23v3/live_parallel_multiple": {
+   "wrong_right": 0,
+   "right_wrong": 0,
+   "both_right": 14,
+   "both_wrong": 10
+  },
+  "campaign/base->g23v3/live_irrelevance": {
+   "wrong_right": 265,
+   "right_wrong": 26,
+   "both_right": 244,
+   "both_wrong": 349
+  },
+  "campaign/base->g23v3/live_relevance": {
+   "wrong_right": 0,
+   "right_wrong": 2,
+   "both_right": 13,
+   "both_wrong": 1
+  }
+ },
+ "call_identity": {
+  "stock/base-g23v3": {
+   "both_call": 2024,
+   "identical": 1971,
+   "differ": 53,
+   "differ_same_decoded": 28
+  },
+  "stock/base-g23v4": {
+   "both_call": 2023,
+   "identical": 1940,
+   "differ": 83,
+   "differ_same_decoded": 33
+  },
+  "stock/g23v3-g23v4": {
+   "both_call": 2112,
+   "identical": 2050,
+   "differ": 62,
+   "differ_same_decoded": 16
+  },
+  "campaign/base-g23v3": {
+   "both_call": 2698,
+   "identical": 2671,
+   "differ": 27,
+   "differ_same_decoded": 3
+  },
+  "campaign/base-g23v4": {
+   "both_call": 2698,
+   "identical": 2650,
+   "differ": 48,
+   "differ_same_decoded": 3
+  },
+  "campaign/g23v3-g23v4": {
+   "both_call": 2733,
+   "identical": 2691,
+   "differ": 42,
+   "differ_same_decoded": 0
+  }
+ },
+ "outcomes": {
+  "base/stock": {
+   "call": 2142,
+   "prose": 1163,
+   "truncated": 186
+  },
+  "base/campaign": {
+   "call": 3076,
+   "prose": 371,
+   "truncated": 40,
+   "NEED_CLARIFICATION": 2,
+   "NO_TOOL": 2
+  },
+  "g23v3/stock": {
+   "call": 2126,
+   "prose": 1188,
+   "truncated": 177
+  },
+  "g23v3/campaign": {
+   "call": 2735,
+   "prose": 254,
+   "NEED_CLARIFICATION": 329,
+   "NO_TOOL": 143,
+   "truncated": 30
+  },
+  "g23v4/stock": {
+   "call": 2123,
+   "prose": 1195,
+   "truncated": 173
+  },
+  "g23v4/campaign": {
+   "call": 2740,
+   "prose": 246,
+   "NEED_CLARIFICATION": 331,
+   "NO_TOOL": 144,
+   "truncated": 30
+  }
+ },
+ "parallel_abstentions": [
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel",
+   "id": "parallel_22",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "What is the status and scheduled trial date for case number XY1234 in Los Angeles County Court, and case number GH5678 in Orange County Court?"
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel",
+   "id": "parallel_25",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "List all cases against a company named 'Dara Inc' filed in 2019, Also list cases filed in the year 2018 against the same company."
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel",
+   "id": "parallel_32",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "Provide me the major events during the presidency of Abraham Lincoln and George Washington."
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel",
+   "id": "parallel_36",
+   "output": "NO_TOOL",
+   "base_output": "prose",
+   "base_correct": false,
+   "user_text": "Using watercolor, what combination of colors should I mix to get the color magenta and what quantity for each color? Also, I want to know how to get color navy by using acrylic paint and their respective quantities."
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel",
+   "id": "parallel_48",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "In a game of Pokemon GO, what moves can a Pikachu learn? Also, check if Bulbasaur can learn a specific move named 'Solar Beam'."
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel",
+   "id": "parallel_104",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "\"In a thermodynamics experiment, you are tasked with calculating the entropy change for a process. The process starts at an initial temperature of 300 Kelvin and ends at a final temperature of 350 Kelvin. The heat capacity of the system is 4.18 J/K. The process is isothermal. Can you calculate the entropy change for this process? What if the process is not isothermal, how does the entropy change?\""
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel",
+   "id": "parallel_127",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "Can you help me find restaurants in New York, NY that cater to my dietary preferences which include Vegan, Gluten-free and Dairy-free options, and then do the same for Los Angeles, CA and Chicago, IL?"
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel",
+   "id": "parallel_130",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "\"Can you help me find four restaurants in New York that serve Italian food and cater to my dietary requirements of being vegan and gluten-free, and then find four more restaurants in Los Angeles that serve the same type of food and also cater to my dietary requirements?\""
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel",
+   "id": "parallel_156",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "You are given a dataset \"data_random_forest\" in the form of a dataframe and you want to train a Random Forest Model on this data. You decide to experiment with different numbers of trees in the forest and different maximum depths of the trees to see how these parameters affect the model's performance. \n\nFirst, you train a model with 100 trees and a maximum depth of 10. Then, you train another model with 200 trees and a maximum depth of 20. After that, you train a third model with 300 trees and a maximum depth of 30. Finally, you train a fourth model with 400 trees and a maximum depth of 40. \n\nCan you invoke the 'random_forest.train' function four times with these different parameters and compare the performance of the four models?"
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel",
+   "id": "parallel_185",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "Can you estimate the population of Bengal Tigers in India for the year 2021, compare it with the estimated population of African Elephants in Kenya for the same year, and then estimate the population of both these species in their respective countries for year 2023?"
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel",
+   "id": "parallel_197",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "\"Can you provide me with the details of the lawsuit case with the case number '12345ABC', which was initiated in the year 2018 and filed in the New York court jurisdiction? Also, can you retrieve the same information for another lawsuit case with the case number '67890XYZ', initiated in the year 2019 and filed in the California court jurisdiction?\""
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel_multiple",
+   "id": "parallel_multiple_22",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "Find me the sales growth rate for company XYZ for the last 3 years and also the interest coverage ratio for the same duration."
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel_multiple",
+   "id": "parallel_multiple_28",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "Find the conviction status of a criminal with name John Doe in New York, also find the nature of the criminal offenses he committed."
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel_multiple",
+   "id": "parallel_multiple_35",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "Identify objects in my backyard image my_backyard_image_url and analyze the sentiment of today's journal entry my_journal_entry_text."
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel_multiple",
+   "id": "parallel_multiple_64",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "\"Can you help me understand the ecological impact of the African Elephant in the Serengeti ecosystem over the last 5 years and also assess the population growth of the same species in the same location over the last 10 years? After that, I would also like to know the ecological impact of the Bengal Tiger in the Sundarbans ecosystem over the last 3 years and assess the population growth of the same species in the same location over the last 7 years.\""
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel_multiple",
+   "id": "parallel_multiple_88",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "\"Could you help me find a book in the library? I am looking for a book named 'To Kill a Mockingbird' in the city of New York. I would like to know if it's available. Also, I am interested in the genre of 'Fiction'. Once you find it, can you reserve it for me? The book id is '123ABC' and the branch id is 'XYZ789'. I plan to return it by '2022-12-31'.\""
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "parallel_multiple",
+   "id": "parallel_multiple_173",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "\"Can you help me find a Thai restaurant in New York, NY within a 10-mile radius, and then find an Italian restaurant in the same location within the same distance? After that, could you provide the precipitation statistics for the Amazon rainforest for the past year and then for the past five years?\""
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "live_parallel",
+   "id": "live_parallel_3-0-3",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "\u00bfPodr\u00edas decirme las condiciones actuales del clima en Canc\u00fan, QR, Playa del Carmen, QR y Tulum, QR?"
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "live_parallel",
+   "id": "live_parallel_11-7-0",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "I had 8 pieces of frozen mango and a chai tea.\n\nEarlier I had two slices of pepperoni pizza and a coffee"
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "live_parallel",
+   "id": "live_parallel_15-11-0",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "list file in c drive and make file called testing.txt"
+  },
+  {
+   "config": "campaign",
+   "model": "g23v3",
+   "category": "live_parallel_multiple",
+   "id": "live_parallel_multiple_12-10-1",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "To address the compilation failure due to 'No suitable method found for get_weather(String)', could you identify the available methods or properties for the 'Weather' class? Also, provide the signature for the 'get_weather' method within the same class if it exists."
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel",
+   "id": "parallel_22",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "What is the status and scheduled trial date for case number XY1234 in Los Angeles County Court, and case number GH5678 in Orange County Court?"
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel",
+   "id": "parallel_25",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "List all cases against a company named 'Dara Inc' filed in 2019, Also list cases filed in the year 2018 against the same company."
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel",
+   "id": "parallel_32",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "Provide me the major events during the presidency of Abraham Lincoln and George Washington."
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel",
+   "id": "parallel_36",
+   "output": "NO_TOOL",
+   "base_output": "prose",
+   "base_correct": false,
+   "user_text": "Using watercolor, what combination of colors should I mix to get the color magenta and what quantity for each color? Also, I want to know how to get color navy by using acrylic paint and their respective quantities."
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel",
+   "id": "parallel_48",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "In a game of Pokemon GO, what moves can a Pikachu learn? Also, check if Bulbasaur can learn a specific move named 'Solar Beam'."
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel",
+   "id": "parallel_104",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "\"In a thermodynamics experiment, you are tasked with calculating the entropy change for a process. The process starts at an initial temperature of 300 Kelvin and ends at a final temperature of 350 Kelvin. The heat capacity of the system is 4.18 J/K. The process is isothermal. Can you calculate the entropy change for this process? What if the process is not isothermal, how does the entropy change?\""
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel",
+   "id": "parallel_127",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "Can you help me find restaurants in New York, NY that cater to my dietary preferences which include Vegan, Gluten-free and Dairy-free options, and then do the same for Los Angeles, CA and Chicago, IL?"
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel",
+   "id": "parallel_130",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "\"Can you help me find four restaurants in New York that serve Italian food and cater to my dietary requirements of being vegan and gluten-free, and then find four more restaurants in Los Angeles that serve the same type of food and also cater to my dietary requirements?\""
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel",
+   "id": "parallel_156",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "You are given a dataset \"data_random_forest\" in the form of a dataframe and you want to train a Random Forest Model on this data. You decide to experiment with different numbers of trees in the forest and different maximum depths of the trees to see how these parameters affect the model's performance. \n\nFirst, you train a model with 100 trees and a maximum depth of 10. Then, you train another model with 200 trees and a maximum depth of 20. After that, you train a third model with 300 trees and a maximum depth of 30. Finally, you train a fourth model with 400 trees and a maximum depth of 40. \n\nCan you invoke the 'random_forest.train' function four times with these different parameters and compare the performance of the four models?"
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel",
+   "id": "parallel_185",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "Can you estimate the population of Bengal Tigers in India for the year 2021, compare it with the estimated population of African Elephants in Kenya for the same year, and then estimate the population of both these species in their respective countries for year 2023?"
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel",
+   "id": "parallel_197",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "\"Can you provide me with the details of the lawsuit case with the case number '12345ABC', which was initiated in the year 2018 and filed in the New York court jurisdiction? Also, can you retrieve the same information for another lawsuit case with the case number '67890XYZ', initiated in the year 2019 and filed in the California court jurisdiction?\""
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel_multiple",
+   "id": "parallel_multiple_22",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "Find me the sales growth rate for company XYZ for the last 3 years and also the interest coverage ratio for the same duration."
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel_multiple",
+   "id": "parallel_multiple_28",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "Find the conviction status of a criminal with name John Doe in New York, also find the nature of the criminal offenses he committed."
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel_multiple",
+   "id": "parallel_multiple_35",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "Identify objects in my backyard image my_backyard_image_url and analyze the sentiment of today's journal entry my_journal_entry_text."
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel_multiple",
+   "id": "parallel_multiple_64",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "\"Can you help me understand the ecological impact of the African Elephant in the Serengeti ecosystem over the last 5 years and also assess the population growth of the same species in the same location over the last 10 years? After that, I would also like to know the ecological impact of the Bengal Tiger in the Sundarbans ecosystem over the last 3 years and assess the population growth of the same species in the same location over the last 7 years.\""
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel_multiple",
+   "id": "parallel_multiple_88",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "\"Could you help me find a book in the library? I am looking for a book named 'To Kill a Mockingbird' in the city of New York. I would like to know if it's available. Also, I am interested in the genre of 'Fiction'. Once you find it, can you reserve it for me? The book id is '123ABC' and the branch id is 'XYZ789'. I plan to return it by '2022-12-31'.\""
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "parallel_multiple",
+   "id": "parallel_multiple_173",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": true,
+   "user_text": "\"Can you help me find a Thai restaurant in New York, NY within a 10-mile radius, and then find an Italian restaurant in the same location within the same distance? After that, could you provide the precipitation statistics for the Amazon rainforest for the past year and then for the past five years?\""
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "live_parallel",
+   "id": "live_parallel_3-0-3",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "\u00bfPodr\u00edas decirme las condiciones actuales del clima en Canc\u00fan, QR, Playa del Carmen, QR y Tulum, QR?"
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "live_parallel",
+   "id": "live_parallel_11-7-0",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "I had 8 pieces of frozen mango and a chai tea.\n\nEarlier I had two slices of pepperoni pizza and a coffee"
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "live_parallel",
+   "id": "live_parallel_15-11-0",
+   "output": "NEED_CLARIFICATION",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "list file in c drive and make file called testing.txt"
+  },
+  {
+   "config": "campaign",
+   "model": "g23v4",
+   "category": "live_parallel_multiple",
+   "id": "live_parallel_multiple_12-10-1",
+   "output": "NO_TOOL",
+   "base_output": "call",
+   "base_correct": false,
+   "user_text": "To address the compilation failure due to 'No suitable method found for get_weather(String)', could you identify the available methods or properties for the 'Weather' class? Also, provide the signature for the 'get_weather' method within the same class if it exists."
+  }
+ ],
+ "errors": {
+  "base/stock": 0,
+  "base/campaign": 0,
+  "g23v3/stock": 0,
+  "g23v3/campaign": 0,
+  "g23v4/stock": 0,
+  "g23v4/campaign": 0
+ }
+}

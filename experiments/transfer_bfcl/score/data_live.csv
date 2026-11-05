@@ -1,0 +1,7 @@
+Rank,Model,Live Overall Acc,AST Summary,Python Simple AST,Python Multiple AST,Python Parallel AST,Python Parallel Multiple AST,Irrelevance Detection,Relevance Detection
+1,Qwen3.5-0.8B (FC, campaign system prompt),61.14%,61.14%,59.30%,61.54%,68.75%,58.33%,30.54%,93.75%
+2,Qwen3.5-0.8B-toolpatch-g23v4 (FC, campaign system prompt),60.03%,60.03%,54.26%,61.35%,68.75%,58.33%,57.24%,81.25%
+3,Qwen3.5-0.8B-toolpatch-g23v3 (FC, campaign system prompt),59.88%,59.88%,54.26%,61.16%,68.75%,58.33%,57.58%,81.25%
+4,Qwen3.5-0.8B-toolpatch-g23v3 (FC),56.92%,56.92%,53.49%,58.02%,62.50%,41.67%,78.73%,62.50%
+5,Qwen3.5-0.8B-toolpatch-g23v4 (FC),56.70%,56.70%,53.49%,57.74%,62.50%,41.67%,78.96%,62.50%
+6,Qwen3.5-0.8B (FC),56.48%,56.48%,52.71%,57.64%,62.50%,41.67%,78.05%,62.50%
